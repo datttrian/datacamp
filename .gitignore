@@ -1,0 +1,6 @@
+.DS_Store
+.python-version
+.html
+*/.ipynb_checkpoints
+*/*.html
+*/*.Rmd
