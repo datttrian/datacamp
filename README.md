@@ -1,7 +1,7 @@
 # Data Scientist with Python Career Track
 
-1. Introduction to Python
-1. Intermediate Python
+1. [Introduction to Python](introduction-to-python)
+1. [Intermediate Python](intermediate-python)
 1. Investigating Netflix Movies and Guest Stars in The Office
 1. Data Manipulation with pandas
 1. Joining Data with pandas
@@ -34,3 +34,28 @@
 1. Predicting Credit Card Approvals
 1. Unsupervised Learning in Python
 1. Machine Learning with Tree-Based Models in Python
+
+# Data Scientist with R Career Track
+
+1. [Introduction to R](introduction-to-r)
+1. [Intermediate R](intermediate-r)
+1. Introduction to the Tidyverse
+1. Data Manipulation with dplyr 
+1. Joining Data with dplyr
+1. Introduction to Statistics in R
+1. Introduction to Data Visualization with ggplot2
+1. Intermediate Data Visualization with ggplot2
+1. Data Communication Concepts
+1. Introduction to Importing Data in R
+1. Cleaning Data in R
+1. Working with Dates and Times in R
+1. Introduction to Writing Functions in R
+1. Exploratory Data Analysis in R
+1. Introduction to Regression in R
+1. Intermediate Regression in R
+1. Sampling in R
+1. Hypothesis Testing in R
+1. Experimental Design in R
+1. Supervised Learning in R: Classification
+1. Supervised Learning in R: Regression
+1. Unsupervised Learning in R
