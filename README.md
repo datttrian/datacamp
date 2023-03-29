@@ -3,7 +3,7 @@
 1. [Introduction to Python](introduction-to-python)
 1. [Intermediate Python](intermediate-python)
 1. Investigating Netflix Movies and Guest Stars in The Office
-1. Data Manipulation with pandas
+1. [Data Manipulation with pandas](data-manipulation-with-pandas)
 1. Joining Data with pandas
 1. Introduction to Statistics in Python
 1. The GitHub History of the Scala Language
