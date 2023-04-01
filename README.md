@@ -39,7 +39,7 @@
 
 1. [Introduction to R](introduction-to-r)
 1. [Intermediate R](intermediate-r)
-1. Introduction to the Tidyverse
+1. [Introduction to the Tidyverse](introduction-to-the-tidyverse)
 1. Data Manipulation with dplyr 
 1. Joining Data with dplyr
 1. Introduction to Statistics in R
