@@ -1,6 +1,6 @@
 # Introduction to Python
 
-## [View the Notebook](introduction-to-python.ipynb)
+## [View the notebook](introduction-to-python.ipynb)
 
 ## Run the codes
 

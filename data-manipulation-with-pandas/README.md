@@ -1,6 +1,6 @@
 # Data Manipulation with pandas
 
-## [View the Notebook](data-manipulation-with-pandas.ipynb)
+## [View the notebook](data-manipulation-with-pandas.ipynb)
 
 ## Run the codes
 

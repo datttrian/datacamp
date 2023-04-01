@@ -1,6 +1,6 @@
 # Intermediate Python
 
-## [View the Notebook](intermediate-python.ipynb)
+## [View the notebook](intermediate-python.ipynb)
 
 ## Run the codes
 
