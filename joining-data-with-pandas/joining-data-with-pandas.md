@@ -1,5 +1,3 @@
-<a href="https://github.com/datttrian/datacamp" target="_blank">![](https://raw.githubusercontent.com/datttrian/datacamp/main/assets/badges/github.svg)</a>
-
 **Course Description**
 
 Being able to combine and work with multiple datasets is an essential
@@ -66,8 +64,8 @@ the `taxi_owners` and `taxi_veh` DataFrames are loaded for you.
 ``` python
 # edited/added
 import pandas as pd
-taxi_owners = pd.read_pickle("taxi_owners.p")
-taxi_veh = pd.read_pickle("taxi_vehicles.p")
+taxi_owners = pd.read_pickle('taxi_owners.p')
+taxi_veh = pd.read_pickle('taxi_vehicles.p')
 
 # Merge the taxi_owners and taxi_veh tables
 taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid')
@@ -207,8 +205,8 @@ The `licenses` and `biz_owners` DataFrames are loaded for you.
 
 ``` python
 # edited/added
-licenses = pd.read_pickle("licenses.p")
-biz_owners = pd.read_pickle("business_owners.p")
+licenses = pd.read_pickle('licenses.p')
+biz_owners = pd.read_pickle('business_owners.p')
 
 # Merge the licenses and biz_owners table on account
 licenses_owners = licenses.merge(biz_owners, on='account')
@@ -255,9 +253,9 @@ station_id.](https://assets.datacamp.com/production/repositories/5486/datasets/5
 
 ``` python
 # edited/added
-ridership = pd.read_pickle("cta_ridership.p")
-cal = pd.read_pickle("cta_calendar.p")
-stations = pd.read_pickle("stations.p")
+ridership = pd.read_pickle('cta_ridership.p')
+cal = pd.read_pickle('cta_calendar.p')
+stations = pd.read_pickle('stations.p')
 
 # Merge the ridership and cal tables
 ridership_cal = ridership.merge(cal, on=['year','month','day'])
@@ -293,9 +291,9 @@ you.
 
 ``` python
 # edited/added
-wards = pd.read_pickle("ward.p")
-licenses = pd.read_pickle("licenses.p")
-zip_demo = pd.read_pickle("zip_demo.p")
+wards = pd.read_pickle('ward.p')
+licenses = pd.read_pickle('licenses.p')
+zip_demo = pd.read_pickle('zip_demo.p')
 
 # Merge licenses and zip_demo, on zip; and merge the wards on ward
 licenses_zip_ward = licenses.merge(zip_demo, on='zip') \
@@ -333,7 +331,7 @@ you.
 
 ``` python
 # edited/added
-land_use = pd.read_pickle("land_use.p").astype(str)
+land_use = pd.read_pickle('land_use.p').astype(str)
 
 # Merge land_use and census and merge result with licenses including suffixes
 land_cen_lic = land_use.merge(census, on='ward').merge(licenses, on='ward', suffixes=('_cen','_lic'))
@@ -384,8 +382,8 @@ What column is likely the best column to merge the two tables on?
 
 ``` python
 # edited/added
-movies = pd.read_pickle("movies.p").astype(str)
-financials = pd.read_pickle("financials.p").astype(str)
+movies = pd.read_pickle('movies.p').astype(str)
+financials = pd.read_pickle('financials.p').astype(str)
 
 # Merge movies and financials with a left join
 movies_financials = movies.merge(financials, on='id', how='left')
@@ -419,8 +417,8 @@ The `toy_story` DataFrame contains the *Toy Story* movies. The
 
 ``` python
 # edited/added
-toy_story = movies[movies['title'].str.contains("Toy Story")]
-taglines = pd.read_pickle("taglines.p").astype(str)
+toy_story = movies[movies['title'].str.contains('Toy Story')]
+taglines = pd.read_pickle('taglines.p').astype(str)
 
 # Merge the toy_story and taglines tables with a left join
 toystory_tag = toy_story.merge(taglines, on='id', how='left')
@@ -491,7 +489,7 @@ loaded for you.
 
 ``` python
 # edited/added
-movie_to_genres = pd.read_pickle("movie_to_genres.p").astype(str)
+movie_to_genres = pd.read_pickle('movie_to_genres.p').astype(str)
 action_movies = movie_to_genres[movie_to_genres['genre'] == 'Action']
 scifi_movies = movie_to_genres[movie_to_genres['genre'] == 'Science Fiction']
 
@@ -622,7 +620,7 @@ The `crews` table has been loaded for you.
 
 ``` python
 # edited/added
-crews = pd.read_pickle("crews.p").astype(str)
+crews = pd.read_pickle('crews.p').astype(str)
 
 # Merge the crews table to itself
 crews_self_merged = crews.merge(crews, on='id', how='inner', suffixes=('_dir','_crew'))
@@ -664,7 +662,7 @@ The `movies` and `ratings` tables have been loaded for you.
 
 ``` python
 # edited/added
-ratings = pd.read_pickle("ratings.p").astype(str)
+ratings = pd.read_pickle('ratings.p').astype(str)
 
 # Merge to the movies table the ratings table on the index
 movies_ratings = movies.merge(ratings, on='id', how='left')
@@ -701,7 +699,7 @@ The `sequels` and `financials` tables have been provided.
 
 ``` python
 # edited/added
-sequels = pd.read_pickle("sequels.p").astype(str)
+sequels = pd.read_pickle('sequels.p').astype(str)
 
 # Merge sequels and financials on index id
 sequels_fin = sequels.merge(financials, on='id', how='left')
