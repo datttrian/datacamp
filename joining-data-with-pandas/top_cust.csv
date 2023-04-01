@@ -1,0 +1,60 @@
+cid,srid,fname,lname,phone,fax,email
+1,3,Luís,Gonçalves,+55 (12) 3923-5555,+55 (12) 3923-5566,luisg@embraer.com.br
+2,5,Leonie,Köhler,+49 0711 2842222,,leonekohler@surfeu.de
+3,3,François,Tremblay,+1 (514) 721-4711,,ftremblay@gmail.com
+4,4,Bjørn,Hansen,+47 22 44 22 22,,bjorn.hansen@yahoo.no
+5,4,František,Wichterlová,+420 2 4172 5555,+420 2 4172 5555,frantisekw@jetbrains.com
+6,5,Helena,Holý,+420 2 4177 0449,,hholy@gmail.com
+7,5,Astrid,Gruber,+43 01 5134505,,astrid.gruber@apple.at
+8,4,Daan,Peeters,+32 02 219 03 03,,daan_peeters@apple.be
+9,4,Kara,Nielsen,+453 3331 9991,,kara.nielsen@jubii.dk
+10,4,Eduardo,Martins,+55 (11) 3033-5446,+55 (11) 3033-4564,eduardo@woodstock.com.br
+11,5,Alexandre,Rocha,+55 (11) 3055-3278,+55 (11) 3055-8131,alero@uol.com.br
+12,3,Roberto,Almeida,+55 (21) 2271-7000,+55 (21) 2271-7070,roberto.almeida@riotur.gov.br
+13,4,Ferda,Ramos,+55 (61) 3363-5547,+55 (61) 3363-7855,fernadaramos4@uol.com.br
+14,5,Mark,Philips,+1 (780) 434-4554,+1 (780) 434-5565,mphilips12@shaw.ca
+15,3,Jennifer,Peterson,+1 (604) 688-2255,+1 (604) 688-8756,jenniferp@rogers.ca
+16,4,Frank,Harris,+1 (650) 253-0000,+1 (650) 253-0000,fharris@google.com
+17,5,Jack,Smith,+1 (425) 882-8080,+1 (425) 882-8081,jacksmith@microsoft.com
+18,3,Michelle,Brooks,+1 (212) 221-3546,+1 (212) 221-4679,michelleb@aol.com
+19,3,Tim,Goyer,+1 (408) 996-1010,+1 (408) 996-1011,tgoyer@apple.com
+20,4,Dan,Miller,+1 (650) 644-3358,,dmiller@comcast.com
+21,5,Kathy,Chase,+1 (775) 223-7665,,kachase@hotmail.com
+22,4,Heather,Leacock,+1 (407) 999-7788,,hleacock@gmail.com
+23,4,John,Gordon,+1 (617) 522-1333,,johngordon22@yahoo.com
+24,3,Frank,Ralston,+1 (312) 332-3232,,fralston@gmail.com
+25,5,Victor,Stevens,+1 (608) 257-0597,,vstevens@yahoo.com
+26,4,Richard,Cunningham,+1 (817) 924-7272,,ricunningham@hotmail.com
+27,4,Patrick,Gray,+1 (520) 622-4200,,patrick.gray@aol.com
+28,5,Julia,Barnett,+1 (801) 531-7272,,jubarnett@gmail.com
+29,3,Robert,Brown,+1 (416) 363-8888,,robbrown@shaw.ca
+30,3,Edward,Francis,+1 (613) 234-3322,,edfrancis@yachoo.ca
+31,5,Martha,Silk,+1 (902) 450-0450,,marthasilk@gmail.com
+32,4,Aaron,Mitchell,+1 (204) 452-6452,,aaronmitchell@yahoo.ca
+33,3,Ellie,Sullivan,+1 (867) 920-2233,,ellie.sullivan@shaw.ca
+34,4,João,Ferdes,+351 (213) 466-111,,jferdes@yahoo.pt
+35,4,Madalena,Sampaio,+351 (225) 022-448,,masampaio@sapo.pt
+36,5,Hannah,Schneider,+49 030 26550280,,hannah.schneider@yahoo.de
+37,3,Fynn,Zimmermann,+49 069 40598889,,fzimmermann@yahoo.de
+38,3,Niklas,Schröder,+49 030 2141444,,nschroder@surfeu.de
+39,4,Camille,Bernard,+33 01 49 70 65 65,,camille.bernard@yahoo.fr
+40,4,Dominique,Lefebvre,+33 01 47 42 71 71,,dominiquelefebvre@gmail.com
+41,5,Marc,Dubois,+33 04 78 30 30 30,,marc.dubois@hotmail.com
+42,3,Wyatt,Girard,+33 05 56 96 96 96,,wyatt.girard@yahoo.fr
+43,3,Isabelle,Mercier,+33 03 80 73 66 99,,isabelle_mercier@apple.fr
+44,3,Terhi,Hämäläinen,+358 09 870 2000,,terhi.hamalainen@apple.fi
+45,3,Ladislav,Kovács,,,ladislav_kovacs@apple.hu
+46,3,Hugh,O'Reilly,+353 01 6792424,,hughoreilly@apple.ie
+47,5,Lucas,Mancini,+39 06 39733434,,lucas.mancini@yahoo.it
+48,5,Johannes,Van der Berg,+31 020 6223130,,johavanderberg@yahoo.nl
+49,4,Stanisław,Wójcik,+48 22 828 37 39,,stanisław.wójcik@wp.pl
+50,5,Enrique,Muñoz,+34 914 454 454,,enrique_munoz@yahoo.es
+51,5,Joakim,Johansson,+46 08-651 52 52,,joakim.johansson@yahoo.se
+52,3,Emma,Jones,+44 020 7707 0707,,emma_jones@hotmail.com
+53,3,Phil,Hughes,+44 020 7976 5722,,phil.hughes@gmail.com
+54,5,Steve,Murray,+44 0131 315 3300,,steve.murray@yahoo.uk
+55,4,Mark,Taylor,+61 (02) 9332 3633,,mark.taylor@yahoo.au
+56,4,Diego,Gutiérrez,+54 (0)11 4311 4333,,diego.gutierrez@yahoo.ar
+57,5,Luis,Rojas,+56 (0)2 635 4444,,luisrojas@yahoo.cl
+58,3,Manoj,Pareek,+91 0124 39883988,,manoj.pareek@rediff.com
+59,3,Puja,Srivastava,+91 080 22289999,,puja_srivastava@yahoo.in
