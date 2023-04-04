@@ -7,7 +7,7 @@
 1. [Joining Data with pandas](joining-data-with-pandas)
 1. [Introduction to Statistics in Python](introduction-to-statistics-in-python)
 1. The GitHub History of the Scala Language
-1. Introduction to Data Visualization with Matplotlib
+1. [Introduction to Data Visualization with Matplotlib](introduction-to-data-visualization-with-matplotlib)
 1. Introduction to Data Visualization with Seaborn
 1. Introduction to NumPy
 1. Python Data Science Toolbox (Part 1)
