@@ -556,7 +556,7 @@ values](https://assets.datacamp.com/production/repositories/5758/datasets/bd64d4
 - [x] B
 - [ ] C
 
-## Expected value vs. sample mean
+### Expected value vs. sample mean
 
 The app to the right will take a sample from a discrete uniform
 distribution, which includes the numbers 1 through 9, and calculate the
@@ -1059,7 +1059,7 @@ mean(amir_deals$num_users)
 
 ## The Poisson distribution
 
-## Identifying lambda
+### Identifying lambda
 
 Now that you’ve learned about the Poisson distribution, you know that
 its shape is described by a value called lambda. In this exercise,

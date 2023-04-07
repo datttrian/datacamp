@@ -74,17 +74,37 @@ taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid')
 print(taxi_own_veh.columns)
 
 # Merge the taxi_owners and taxi_veh tables setting a suffix
+```
+
+    ## Index(['rid', 'vid', 'owner_x', 'address', 'zip', 'make', 'model', 'year',
+    ##        'fuel_type', 'owner_y'],
+    ##       dtype='object')
+
+``` python
 taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid', suffixes=('_own','_veh'))
 
 # Print the column names of taxi_own_veh
 print(taxi_own_veh.columns)
 
 # Merge the taxi_owners and taxi_veh tables setting a suffix
+```
+
+    ## Index(['rid', 'vid', 'owner_own', 'address', 'zip', 'make', 'model', 'year',
+    ##        'fuel_type', 'owner_veh'],
+    ##       dtype='object')
+
+``` python
 taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid', suffixes=('_own','_veh'))
 
 # Print the value_counts to find the most popular fuel_type
 print(taxi_own_veh['fuel_type'].value_counts())
 ```
+
+    ## HYBRID                    2792
+    ## GASOLINE                   611
+    ## FLEX FUEL                   89
+    ## COMPRESSED NATURAL GAS      27
+    ## Name: fuel_type, dtype: int64
 
 ### Inner joins and number of rows returned
 
@@ -128,23 +148,55 @@ wards_census = wards.merge(census, on='ward')
 print('wards_census table shape:', wards_census.shape)
 
 # Print the first few rows of the wards_altered table to view the change 
+```
+
+    ## wards_census table shape: (50, 9)
+
+``` python
 print(wards_altered[['ward']].head())
 
 # Merge the wards_altered and census tables on the ward column
+```
+
+    ##   ward
+    ## 0   61
+    ## 1    2
+    ## 2    3
+    ## 3    4
+    ## 4    5
+
+``` python
 wards_altered_census = wards_altered.merge(census, on='ward')
 
 # Print the shape of wards_altered_census
 print('wards_altered_census table shape:', wards_altered_census.shape)
 
 # Print the first few rows of the census_altered table to view the change 
+```
+
+    ## wards_altered_census table shape: (49, 9)
+
+``` python
 print(census_altered[['ward']].head())
 
 # Merge the wards and census_altered tables on the ward column
+```
+
+    ##    ward
+    ## 0  None
+    ## 1     2
+    ## 2     3
+    ## 3     4
+    ## 4     5
+
+``` python
 wards_census_altered = wards.merge(census_altered, on='ward')
 
 # Print the shape of wards_census_altered
 print('wards_census_altered table shape:', wards_census_altered.shape)
 ```
+
+    ## wards_census_altered table shape: (49, 9)
 
 ## One-to-many relationships
 
@@ -221,6 +273,14 @@ sorted_df = counted_df.sort_values(by='account', ascending=False)
 print(sorted_df.head())
 ```
 
+    ##                  account
+    ## title                   
+    ## PRESIDENT           6259
+    ## SECRETARY           5205
+    ## SOLE PROPRIETOR     1658
+    ## OTHER               1200
+    ## VICE PRESIDENT       970
+
 ## Merging multiple DataFrames
 
 ### Total riders in a month
@@ -270,6 +330,8 @@ filter_criteria = ((ridership_cal_stations['month'] == 7) & (ridership_cal_stati
 print(ridership_cal_stations.loc[filter_criteria, 'rides'].sum())
 ```
 
+    ## 140005
+
 ### Three table merge
 
 To solidify the concept of a three DataFrame merge, practice another
@@ -302,6 +364,59 @@ licenses_zip_ward = licenses.merge(zip_demo, on='zip') \
 # Print the results by alderman and show median income
 print(licenses_zip_ward.groupby('alderman').agg({'income':'median'}))
 ```
+
+    ##                              income
+    ## alderman                           
+    ## Ameya Pawar                 66246.0
+    ## Anthony A. Beale            38206.0
+    ## Anthony V. Napolitano       82226.0
+    ## Ariel E. Reyboras           41307.0
+    ## Brendan Reilly             110215.0
+    ## Brian Hopkins               87143.0
+    ## Carlos Ramirez-Rosa         66246.0
+    ## Carrie M. Austin            38206.0
+    ## Chris Taliaferro            55566.0
+    ## Daniel "Danny" Solis        41226.0
+    ## David H. Moore              33304.0
+    ## Deborah Mell                66246.0
+    ## Debra L. Silverstein        50554.0
+    ## Derrick G. Curtis           65770.0
+    ## Edward M. Burke             42335.0
+    ## Emma M. Mitts               36283.0
+    ## George Cardenas             33959.0
+    ## Gilbert Villegas            41307.0
+    ## Gregory I. Mitchell         24941.0
+    ## Harry Osterman              45442.0
+    ## Howard B. Brookins, Jr.     33304.0
+    ## James Cappleman             79565.0
+    ## Jason C. Ervin              41226.0
+    ## Joe Moore                   39163.0
+    ## John S. Arena               70122.0
+    ## Leslie A. Hairston          28024.0
+    ## Margaret Laurino            70122.0
+    ## Marty Quinn                 67045.0
+    ## Matthew J. O'Shea           59488.0
+    ## Michael R. Zalewski         42335.0
+    ## Michael Scott, Jr.          31445.0
+    ## Michelle A. Harris          32558.0
+    ## Michelle Smith             100116.0
+    ## Milagros "Milly" Santiago   41307.0
+    ## Nicholas Sposato            62223.0
+    ## Pat Dowell                  46340.0
+    ## Patrick Daley Thompson      41226.0
+    ## Patrick J. O'Connor         50554.0
+    ## Proco "Joe" Moreno          87143.0
+    ## Raymond A. Lopez            33959.0
+    ## Ricardo Munoz               31445.0
+    ## Roberto Maldonado           68223.0
+    ## Roderick T. Sawyer          32558.0
+    ## Scott Waguespack            68223.0
+    ## Susan Sadlowski Garza       38417.0
+    ## Tom Tunney                  88708.0
+    ## Toni L. Foulkes             27573.0
+    ## Walter Burnett, Jr.         87143.0
+    ## William D. Burns           107811.0
+    ## Willie B. Cochran           28024.0
 
 ### One-to-many merge with multiple tables
 
@@ -345,6 +460,13 @@ sorted_pop_vac_lic = pop_vac_lic.sort_values(['vacant', 'account', 'pop_2010'], 
 # Print the top few rows of sorted_pop_vac_lic
 print(sorted_pop_vac_lic.head())
 ```
+
+    ##    ward pop_2010 vacant  account
+    ## 46    6    52341      8      149
+    ## 27   34    51599      7       99
+    ## 14   22    53515      7      156
+    ## 33    4    54589      7      160
+    ## 19   27    52939      7      497
 
 # Merging Tables With Different Join Types
 
@@ -395,6 +517,8 @@ number_of_missing_fin = movies_financials['budget'].isnull().sum()
 print(number_of_missing_fin)
 ```
 
+    ## 1574
+
 ### Enriching a dataset
 
 Setting `how='left'` with the `.merge()`method is a useful technique for
@@ -425,15 +549,37 @@ toystory_tag = toy_story.merge(taglines, on='id', how='left')
 
 # Print the rows and shape of toystory_tag
 print(toystory_tag)
+```
+
+    ##       id        title         popularity release_date                   tagline
+    ## 0  10193  Toy Story 3  59.99541800000001   2010-06-16  No toy gets left behind.
+    ## 1    863  Toy Story 2          73.575118   1999-10-30        The toys are back!
+    ## 2    862    Toy Story          73.640445   1995-10-30                       NaN
+
+``` python
 print(toystory_tag.shape)
 
 # Merge the toy_story and taglines tables with a inner join
+```
+
+    ## (3, 5)
+
+``` python
 toystory_tag = toy_story.merge(taglines, on='id', how='inner')
 
 # Print the rows and shape of toystory_tag
 print(toystory_tag)
+```
+
+    ##       id        title         popularity release_date                   tagline
+    ## 0  10193  Toy Story 3  59.99541800000001   2010-06-16  No toy gets left behind.
+    ## 1    863  Toy Story 2          73.575118   1999-10-30        The toys are back!
+
+``` python
 print(toystory_tag.shape)
 ```
+
+    ## (2, 5)
 
 ### How many rows with a left join?
 
@@ -503,6 +649,16 @@ action_scifi = action_movies.merge(scifi_movies, on='movie_id', how='right',suff
 print(action_scifi.head())
 
 # From action_scifi, select only the rows where the genre_act column is null
+```
+
+    ##   movie_id genre_act        genre_sci
+    ## 0       11    Action  Science Fiction
+    ## 1       18    Action  Science Fiction
+    ## 2       19       NaN  Science Fiction
+    ## 3       38       NaN  Science Fiction
+    ## 4       62       NaN  Science Fiction
+
+``` python
 scifi_only = action_scifi[action_scifi['genre_act'].isnull()]
 
 # Merge the movies and scifi_only tables with an inner join
@@ -510,8 +666,22 @@ movies_and_scifi_only = movies.merge(scifi_only, how='inner', left_on='id', righ
 
 # Print the first few rows and shape of movies_and_scifi_only
 print(movies_and_scifi_only.head())
+```
+
+    ##       id                         title  ... genre_act        genre_sci
+    ## 0  18841  The Lost Skeleton of Cadavra  ...       NaN  Science Fiction
+    ## 1  26672     The Thief and the Cobbler  ...       NaN  Science Fiction
+    ## 2  15301      Twilight Zone: The Movie  ...       NaN  Science Fiction
+    ## 3   8452                   The 6th Day  ...       NaN  Science Fiction
+    ## 4   1649    Bill & Ted's Bogus Journey  ...       NaN  Science Fiction
+    ## 
+    ## [5 rows x 7 columns]
+
+``` python
 print(movies_and_scifi_only.shape)
 ```
+
+    ## (258, 7)
 
 ### Popular genres with right join
 
@@ -548,6 +718,8 @@ genre_count = genres_movies.groupby('genre').agg({'id':'count'})
 genre_count.plot(kind='bar')
 plt.show()
 ```
+
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-10-1.png" width="672" />
 
 ### Using outer join to select actors
 
@@ -591,6 +763,13 @@ m = ((iron_1_and_2['name_1'].isnull()) |
 print(iron_1_and_2[m].head())
 ```
 
+    ##                    character_1      id           name_1 character_2 name_2
+    ## 0                       Yinsen   17857       Shaun Toub         NaN    NaN
+    ## 2  Obadiah Stane / Iron Monger    1229     Jeff Bridges         NaN    NaN
+    ## 3                  War Machine   18288  Terrence Howard         NaN    NaN
+    ## 5                         Raza   57452      Faran Tahir         NaN    NaN
+    ## 8                   Abu Bakaar  173810    Sayed Badreya         NaN    NaN
+
 ## Merging a table to itself
 
 ### Self join
@@ -633,6 +812,15 @@ direct_crews = crews_self_merged[boolean_filter]
 print(direct_crews.head())
 ```
 
+    ##         id department_dir  ...        job_crew          name_crew
+    ## 156  19995      Directing  ...          Editor  Stephen E. Rivkin
+    ## 157  19995      Directing  ...  Sound Designer  Christopher Boyes
+    ## 158  19995      Directing  ...         Casting          Mali Finn
+    ## 160  19995      Directing  ...          Writer      James Cameron
+    ## 161  19995      Directing  ...    Set Designer    Richard F. Mays
+    ## 
+    ## [5 rows x 7 columns]
+
 ### How does pandas handle self joins?
 
 Select the **false** statement about merging a table to itself.
@@ -671,6 +859,15 @@ movies_ratings = movies.merge(ratings, on='id', how='left')
 print(movies_ratings.head())
 ```
 
+    ##       id                 title  ... vote_average vote_count
+    ## 0    257          Oliver Twist  ...          6.7      274.0
+    ## 1  14290  Better Luck Tomorrow  ...          6.5       27.0
+    ## 2  38365             Grown Ups  ...          6.0     1705.0
+    ## 3   9672              Infamous  ...          6.4       60.0
+    ## 4  12819       Alpha and Omega  ...          5.3      124.0
+    ## 
+    ## [5 rows x 6 columns]
+
 ### Do sequels earn more?
 
 It is time to put together many of the aspects that you have learned in
@@ -699,19 +896,29 @@ The `sequels` and `financials` tables have been provided.
 
 ``` python
 # edited/added
-sequels = pd.read_pickle('sequels.p').astype(str)
+sequels = pd.read_pickle('sequels.p').astype(object)
+financials = pd.read_pickle('financials.p')
 
 # Merge sequels and financials on index id
 sequels_fin = sequels.merge(financials, on='id', how='left')
 
+# edited/added
+#sequels_fin['id'] = sequels_fin['id']
+#sequels_fin['sequel'] = sequels_fin['sequel']
+
 # Self merge with suffixes as inner join with left on sequel and right on id
-#orig_seq = sequels_fin.merge(sequels_fin, how='inner', left_on='sequel', right_on='id', right_index=True, suffixes=('_org','_seq'))
+orig_seq = sequels_fin.merge(sequels_fin, how='inner', left_on='sequel', right_on='id', right_index=True, suffixes=('_org','_seq'))
 
 # Add calculation to subtract revenue_org from revenue_seq 
-#orig_seq['diff'] = orig_seq['revenue_seq'] - orig_seq['revenue_org']
+```
+
+    ## <string>:1: FutureWarning: In a future version, the Index constructor will not infer numeric dtypes when passed object-dtype sequences (matching Series behavior)
+
+``` python
+orig_seq['diff'] = orig_seq['revenue_seq'] - orig_seq['revenue_org']
 
 # Select the title_org, title_seq, and diff 
-#titles_diff = orig_seq[['title_org','title_seq','diff']]
+titles_diff = orig_seq[['title_org','title_seq','diff']]
 ```
 
 # Advanced Merging and Concatenating
@@ -773,6 +980,13 @@ srid_list = empl_cust.loc[empl_cust['_merge'] == 'left_only', 'srid']
 print(employees[employees['srid'].isin(srid_list)])
 ```
 
+    ##   srid     lname    fname            title  hire_date                    email
+    ## 0    1     Adams   Andrew  General Manager 2002-08-14   andrew@chinookcorp.com
+    ## 1    2   Edwards       cy    Sales Manager 2002-05-01       cy@chinookcorp.com
+    ## 5    6  Mitchell  Michael       IT Manager 2003-10-17  michael@chinookcorp.com
+    ## 6    7      King   Robert         IT Staff 2004-01-02   robert@chinookcorp.com
+    ## 7    8  Callahan    Laura         IT Staff 2004-03-04    laura@chinookcorp.com
+
 ### Performing a semi join
 
 Some of the tracks that have generated the most significant amount of
@@ -814,6 +1028,11 @@ cnt_by_gid = top_tracks.groupby(['gid'], as_index=False).agg({'tid':'count'})
 print(cnt_by_gid.merge(genres, on='gid'))
 ```
 
+    ##   gid  tid
+    ## 0  19    4
+    ## 1  21    2
+    ## 2  22    1
+
 ## Concatenate DataFrames together vertically
 
 ### Concatenation basics
@@ -851,13 +1070,70 @@ tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st], sort=Tru
 print(tracks_from_albums)
 
 # Concatenate the tracks so the index goes from 0 to n-1
+```
+
+    ##    aid gid mtid                     name   tid u_price
+    ## 0  155   3    1                  Frantic  1882    0.99
+    ## 1  155   3    1                St. Anger  1883    0.99
+    ## 2  155   3    1     Some Kind Of Monster  1884    0.99
+    ## 3  155   3    1             Dirty Window  1885    0.99
+    ## 4  155   3    1            Invisible Kid  1886     0.9
+    ## 0  154   3    1     Fight Fire With Fire  1874    0.99
+    ## 1  154   3    1       Ride The Lightning  1875    0.99
+    ## 2  154   3    1  For Whom The Bell Tolls  1876    0.99
+    ## 3  154   3    1            Fade To Black  1877    0.99
+    ## 4  154   3    1        Trapped Under Ice  1878    0.99
+    ## 0  155   3    1                  Frantic  1882    0.99
+    ## 1  155   3    1                St. Anger  1883    0.99
+    ## 2  155   3    1     Some Kind Of Monster  1884    0.99
+    ## 3  155   3    1             Dirty Window  1885    0.99
+    ## 4  155   3    1            Invisible Kid  1886    0.99
+
+``` python
 tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st], ignore_index=True, sort=True)
 print(tracks_from_albums)
 
 # Concatenate the tracks, show only columns names that are in all tables
+```
+
+    ##     aid gid mtid                     name   tid u_price
+    ## 0   155   3    1                  Frantic  1882    0.99
+    ## 1   155   3    1                St. Anger  1883    0.99
+    ## 2   155   3    1     Some Kind Of Monster  1884    0.99
+    ## 3   155   3    1             Dirty Window  1885    0.99
+    ## 4   155   3    1            Invisible Kid  1886     0.9
+    ## 5   154   3    1     Fight Fire With Fire  1874    0.99
+    ## 6   154   3    1       Ride The Lightning  1875    0.99
+    ## 7   154   3    1  For Whom The Bell Tolls  1876    0.99
+    ## 8   154   3    1            Fade To Black  1877    0.99
+    ## 9   154   3    1        Trapped Under Ice  1878    0.99
+    ## 10  155   3    1                  Frantic  1882    0.99
+    ## 11  155   3    1                St. Anger  1883    0.99
+    ## 12  155   3    1     Some Kind Of Monster  1884    0.99
+    ## 13  155   3    1             Dirty Window  1885    0.99
+    ## 14  155   3    1            Invisible Kid  1886    0.99
+
+``` python
 tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st], join='inner', sort=True)
 print(tracks_from_albums)
 ```
+
+    ##    aid gid mtid                     name   tid u_price
+    ## 0  155   3    1                  Frantic  1882    0.99
+    ## 1  155   3    1                St. Anger  1883    0.99
+    ## 2  155   3    1     Some Kind Of Monster  1884    0.99
+    ## 3  155   3    1             Dirty Window  1885    0.99
+    ## 4  155   3    1            Invisible Kid  1886     0.9
+    ## 0  154   3    1     Fight Fire With Fire  1874    0.99
+    ## 1  154   3    1       Ride The Lightning  1875    0.99
+    ## 2  154   3    1  For Whom The Bell Tolls  1876    0.99
+    ## 3  154   3    1            Fade To Black  1877    0.99
+    ## 4  154   3    1        Trapped Under Ice  1878    0.99
+    ## 0  155   3    1                  Frantic  1882    0.99
+    ## 1  155   3    1                St. Anger  1883    0.99
+    ## 2  155   3    1     Some Kind Of Monster  1884    0.99
+    ## 3  155   3    1             Dirty Window  1885    0.99
+    ## 4  155   3    1            Invisible Kid  1886    0.99
 
 ### Concatenating with keys
 
@@ -892,6 +1168,8 @@ avg_inv_by_month = inv_jul_thr_sep.groupby(level=0).agg({'total':'mean'})
 avg_inv_by_month.plot(kind='bar')
 plt.show()
 ```
+
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-18-3.png" width="672" />
 
 ## Verifying integrity
 
@@ -960,6 +1238,14 @@ popular_classic = classic_18_19[classic_18_19['tid'].isin(classic_pop['tid'])]
 print(popular_classic)
 ```
 
+    ##    pid   tid
+    ## 3   12  3479
+    ## 10  12  3439
+    ## 21  12  3445
+    ## 23  12  3449
+    ## 48  12  3437
+    ## 50  12  3435
+
 # Merging Ordered and Time-Series Data
 
 In this final chapter, you’ll step up a gear and learn to apply pandas’
@@ -1003,12 +1289,106 @@ gdp_sp500 = pd.merge_ordered(gdp, sp500, left_on='year', right_on='date', how='l
 print(gdp_sp500)
 
 # Use merge_ordered() to merge gdp and sp500, interpolate missing value
+```
+
+    ##      country name country code  ...  date returns
+    ## 0           China          CHN  ...  2010   12.78
+    ## 1         Germany          DEU  ...  2010   12.78
+    ## 2           Japan          JPN  ...  2010   12.78
+    ## 3   United States          USA  ...  2010   12.78
+    ## 4           China          CHN  ...  2011     0.0
+    ## 5         Germany          DEU  ...  2011     0.0
+    ## 6           Japan          JPN  ...  2011     0.0
+    ## 7   United States          USA  ...  2011     0.0
+    ## 8           China          CHN  ...  2012   13.41
+    ## 9         Germany          DEU  ...  2012   13.41
+    ## 10          Japan          JPN  ...  2012   13.41
+    ## 11  United States          USA  ...  2012   13.41
+    ## 12          China          CHN  ...  2012   13.41
+    ## 13        Germany          DEU  ...  2012   13.41
+    ## 14          Japan          JPN  ...  2012   13.41
+    ## 15  United States          USA  ...  2012   13.41
+    ## 16          China          CHN  ...  2013    29.6
+    ## 17        Germany          DEU  ...  2013    29.6
+    ## 18          Japan          JPN  ...  2013    29.6
+    ## 19  United States          USA  ...  2013    29.6
+    ## 20          China          CHN  ...  2014   11.39
+    ## 21        Germany          DEU  ...  2014   11.39
+    ## 22          Japan          JPN  ...  2014   11.39
+    ## 23  United States          USA  ...  2014   11.39
+    ## 24          China          CHN  ...  2015   -0.73
+    ## 25        Germany          DEU  ...  2015   -0.73
+    ## 26          Japan          JPN  ...  2015   -0.73
+    ## 27  United States          USA  ...  2015   -0.73
+    ## 28          China          CHN  ...  2016    9.54
+    ## 29        Germany          DEU  ...  2016    9.54
+    ## 30          Japan          JPN  ...  2016    9.54
+    ## 31  United States          USA  ...  2016    9.54
+    ## 32          China          CHN  ...  2017   19.42
+    ## 33        Germany          DEU  ...  2017   19.42
+    ## 34          Japan          JPN  ...  2017   19.42
+    ## 35  United States          USA  ...  2017   19.42
+    ## 36          China          CHN  ...   NaN     NaN
+    ## 37        Germany          DEU  ...   NaN     NaN
+    ## 38          Japan          JPN  ...   NaN     NaN
+    ## 39  United States          USA  ...   NaN     NaN
+    ## 
+    ## [40 rows x 7 columns]
+
+``` python
 gdp_sp500 = pd.merge_ordered(gdp, sp500, left_on='year', right_on='date', how='left',  fill_method='ffill')
 
 # Print gdp_sp500
 print (gdp_sp500)
 
 # Subset the gdp and returns columns
+```
+
+    ##      country name country code  ...  date returns
+    ## 0           China          CHN  ...  2010   12.78
+    ## 1         Germany          DEU  ...  2010   12.78
+    ## 2           Japan          JPN  ...  2010   12.78
+    ## 3   United States          USA  ...  2010   12.78
+    ## 4           China          CHN  ...  2011     0.0
+    ## 5         Germany          DEU  ...  2011     0.0
+    ## 6           Japan          JPN  ...  2011     0.0
+    ## 7   United States          USA  ...  2011     0.0
+    ## 8           China          CHN  ...  2012   13.41
+    ## 9         Germany          DEU  ...  2012   13.41
+    ## 10          Japan          JPN  ...  2012   13.41
+    ## 11  United States          USA  ...  2012   13.41
+    ## 12          China          CHN  ...  2012   13.41
+    ## 13        Germany          DEU  ...  2012   13.41
+    ## 14          Japan          JPN  ...  2012   13.41
+    ## 15  United States          USA  ...  2012   13.41
+    ## 16          China          CHN  ...  2013    29.6
+    ## 17        Germany          DEU  ...  2013    29.6
+    ## 18          Japan          JPN  ...  2013    29.6
+    ## 19  United States          USA  ...  2013    29.6
+    ## 20          China          CHN  ...  2014   11.39
+    ## 21        Germany          DEU  ...  2014   11.39
+    ## 22          Japan          JPN  ...  2014   11.39
+    ## 23  United States          USA  ...  2014   11.39
+    ## 24          China          CHN  ...  2015   -0.73
+    ## 25        Germany          DEU  ...  2015   -0.73
+    ## 26          Japan          JPN  ...  2015   -0.73
+    ## 27  United States          USA  ...  2015   -0.73
+    ## 28          China          CHN  ...  2016    9.54
+    ## 29        Germany          DEU  ...  2016    9.54
+    ## 30          Japan          JPN  ...  2016    9.54
+    ## 31  United States          USA  ...  2016    9.54
+    ## 32          China          CHN  ...  2017   19.42
+    ## 33        Germany          DEU  ...  2017   19.42
+    ## 34          Japan          JPN  ...  2017   19.42
+    ## 35  United States          USA  ...  2017   19.42
+    ## 36          China          CHN  ...  2017   19.42
+    ## 37        Germany          DEU  ...  2017   19.42
+    ## 38          Japan          JPN  ...  2017   19.42
+    ## 39  United States          USA  ...  2017   19.42
+    ## 
+    ## [40 rows x 7 columns]
+
+``` python
 gdp_returns = gdp_sp500[['gdp','returns']]
 
 # edited/added
@@ -1017,6 +1397,10 @@ gdp_returns = gdp_returns.astype(float)
 # Print gdp_returns correlation
 print(gdp_returns.corr())
 ```
+
+    ##               gdp   returns
+    ## gdp      1.000000  0.040669
+    ## returns  0.040669  1.000000
 
 ### Phillips curve using merge_ordered()
 
@@ -1055,9 +1439,28 @@ inflation_unemploy = pd.merge_ordered(inflation, unemployment,
 print(inflation_unemploy)
 
 # Plot a scatter plot of unemployment_rate vs cpi of inflation_unemploy
+```
+
+    ##          date      cpi  ...                  data_type unemployment_rate
+    ## 0  2014-01-01  235.288  ...  SEASONALLY ADJUSTED INDEX               6.7
+    ## 1  2014-06-01  237.231  ...  SEASONALLY ADJUSTED INDEX               6.1
+    ## 2  2015-01-01  234.718  ...  SEASONALLY ADJUSTED INDEX               5.6
+    ## 3  2015-06-01  237.684  ...  SEASONALLY ADJUSTED INDEX               5.3
+    ## 4  2016-01-01  237.833  ...  SEASONALLY ADJUSTED INDEX               5.0
+    ## 5  2016-06-01  240.167  ...  SEASONALLY ADJUSTED INDEX               4.9
+    ## 6  2017-01-01  243.780  ...  SEASONALLY ADJUSTED INDEX               4.7
+    ## 7  2017-06-01  244.182  ...  SEASONALLY ADJUSTED INDEX               4.3
+    ## 8  2018-01-01  248.884  ...  SEASONALLY ADJUSTED INDEX               4.1
+    ## 9  2018-06-01  251.134  ...  SEASONALLY ADJUSTED INDEX               4.0
+    ## 
+    ## [10 rows x 5 columns]
+
+``` python
 inflation_unemploy.plot(kind='scatter', x='unemployment_rate', y='cpi')
 plt.show()
 ```
+
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-21-5.png" width="672" />
 
 ### merge_ordered() caution, multiple columns
 
@@ -1094,11 +1497,82 @@ ctry_date = pd.merge_ordered(gdp, pop, on=['date','country'], fill_method='ffill
 print(ctry_date)
 
 # Merge gdp and pop on country and date with fill
+```
+
+    ##           date    country         gdp  series_code_x       pop series_code_y
+    ## 0   1990-01-01  Australia  158051.132  NYGDPMKTPSAKD  17065100   SP.POP.TOTL
+    ## 1   1990-01-01     Sweden   79837.846  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 2   1990-04-01  Australia  158263.582  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 3   1990-04-01     Sweden   80582.286  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 4   1990-07-01  Australia  157329.279  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 5   1990-07-01     Sweden   79974.360  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 6   1990-09-01  Australia  158240.678  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 7   1990-09-01     Sweden   80106.497  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 8   1991-01-01  Australia  156195.954  NYGDPMKTPSAKD  17284000   SP.POP.TOTL
+    ## 9   1991-01-01     Sweden   79524.242  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 10  1991-04-01  Australia  155989.033  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 11  1991-04-01     Sweden   79073.059  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 12  1991-07-01  Australia  156635.858  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 13  1991-07-01     Sweden   79084.770  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 14  1991-09-01  Australia  156744.057  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 15  1991-09-01     Sweden   79740.606  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 16  1992-01-01  Australia  157916.081  NYGDPMKTPSAKD  17495000   SP.POP.TOTL
+    ## 17  1992-01-01     Sweden   79390.922  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 18  1992-04-01  Australia  159047.827  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 19  1992-04-01     Sweden   79060.283  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 20  1992-07-01  Australia  160658.176  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 21  1992-07-01     Sweden   78904.605  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 22  1992-09-01  Australia  163960.221  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 23  1992-09-01     Sweden   76996.837  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 24  1993-01-01  Australia  165097.495  NYGDPMKTPSAKD  17667000   SP.POP.TOTL
+    ## 25  1993-01-01     Sweden   75783.588  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 26  1993-04-01  Australia  166027.059  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 27  1993-04-01     Sweden   76708.548  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 28  1993-07-01  Australia  166203.179  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 29  1993-07-01     Sweden   77662.018  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 30  1993-09-01  Australia  169279.348  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 31  1993-09-01     Sweden   77703.304  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+
+``` python
 date_ctry = pd.merge_ordered(gdp, pop, on=['country','date'], fill_method='ffill')
 
 # Print date_ctry
 print(date_ctry)
 ```
+
+    ##           date    country         gdp  series_code_x       pop series_code_y
+    ## 0   1990-01-01  Australia  158051.132  NYGDPMKTPSAKD  17065100   SP.POP.TOTL
+    ## 1   1990-04-01  Australia  158263.582  NYGDPMKTPSAKD  17065100   SP.POP.TOTL
+    ## 2   1990-07-01  Australia  157329.279  NYGDPMKTPSAKD  17065100   SP.POP.TOTL
+    ## 3   1990-09-01  Australia  158240.678  NYGDPMKTPSAKD  17065100   SP.POP.TOTL
+    ## 4   1991-01-01  Australia  156195.954  NYGDPMKTPSAKD  17284000   SP.POP.TOTL
+    ## 5   1991-04-01  Australia  155989.033  NYGDPMKTPSAKD  17284000   SP.POP.TOTL
+    ## 6   1991-07-01  Australia  156635.858  NYGDPMKTPSAKD  17284000   SP.POP.TOTL
+    ## 7   1991-09-01  Australia  156744.057  NYGDPMKTPSAKD  17284000   SP.POP.TOTL
+    ## 8   1992-01-01  Australia  157916.081  NYGDPMKTPSAKD  17495000   SP.POP.TOTL
+    ## 9   1992-04-01  Australia  159047.827  NYGDPMKTPSAKD  17495000   SP.POP.TOTL
+    ## 10  1992-07-01  Australia  160658.176  NYGDPMKTPSAKD  17495000   SP.POP.TOTL
+    ## 11  1992-09-01  Australia  163960.221  NYGDPMKTPSAKD  17495000   SP.POP.TOTL
+    ## 12  1993-01-01  Australia  165097.495  NYGDPMKTPSAKD  17667000   SP.POP.TOTL
+    ## 13  1993-04-01  Australia  166027.059  NYGDPMKTPSAKD  17667000   SP.POP.TOTL
+    ## 14  1993-07-01  Australia  166203.179  NYGDPMKTPSAKD  17667000   SP.POP.TOTL
+    ## 15  1993-09-01  Australia  169279.348  NYGDPMKTPSAKD  17667000   SP.POP.TOTL
+    ## 16  1990-01-01     Sweden   79837.846  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 17  1990-04-01     Sweden   80582.286  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 18  1990-07-01     Sweden   79974.360  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 19  1990-09-01     Sweden   80106.497  NYGDPMKTPSAKD   8558835   SP.POP.TOTL
+    ## 20  1991-01-01     Sweden   79524.242  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 21  1991-04-01     Sweden   79073.059  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 22  1991-07-01     Sweden   79084.770  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 23  1991-09-01     Sweden   79740.606  NYGDPMKTPSAKD   8617375   SP.POP.TOTL
+    ## 24  1992-01-01     Sweden   79390.922  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 25  1992-04-01     Sweden   79060.283  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 26  1992-07-01     Sweden   78904.605  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 27  1992-09-01     Sweden   76996.837  NYGDPMKTPSAKD   8668067   SP.POP.TOTL
+    ## 28  1993-01-01     Sweden   75783.588  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 29  1993-04-01     Sweden   76708.548  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 30  1993-07-01     Sweden   77662.018  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
+    ## 31  1993-09-01     Sweden   77703.304  NYGDPMKTPSAKD   8718561   SP.POP.TOTL
 
 ## Using merge_asof()
 
@@ -1152,6 +1626,8 @@ price_diffs.plot(y=['close_jpm','close_wells','close_bac'])
 plt.show()
 ```
 
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-23-7.png" width="672" />
+
 ### Using merge_asof() to create dataset
 
 The `merge_asof()` function can be used to create datasets where you
@@ -1192,6 +1668,8 @@ is_recession = ['r' if s=='recession' else 'g' for s in gdp_recession['econ_stat
 gdp_recession.plot(kind='bar', y='gdp', x='date', color=is_recession, rot=90)
 plt.show()
 ```
+
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-24-9.png" width="672" />
 
 ### merge_asof() and merge_ordered() differences
 
@@ -1284,6 +1762,8 @@ recent_gdp_pop.plot(rot=90)
 plt.show()
 ```
 
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-25-11.png" width="672" />
+
 ## Reshaping data with .melt()
 
 ### Select the right .melt() arguments
@@ -1363,6 +1843,8 @@ ur_sorted.plot(x='date', y='unempl_rate')
 plt.show()
 ```
 
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-26-13.png" width="672" />
+
 ### Using .melt() for stocks vs bond performance
 
 It is widespread knowledge that the price of bonds is inversely related
@@ -1407,6 +1889,8 @@ dow_bond = pd.merge_ordered(dji, bond_perc_close, on='date',
 dow_bond.plot(y=['close_dow', 'close_bond'], x='date', rot=90)
 plt.show()
 ```
+
+<img src="joining-data-with-pandas_files/figure-gfm/unnamed-chunk-27-15.png" width="672" />
 
 ## Course wrap-up
 
