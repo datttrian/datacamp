@@ -8,7 +8,7 @@
 1. [Introduction to Statistics in Python](introduction-to-statistics-in-python)
 1. The GitHub History of the Scala Language
 1. [Introduction to Data Visualization with Matplotlib](introduction-to-data-visualization-with-matplotlib)
-1. Introduction to Data Visualization with Seaborn
+1. [Introduction to Data Visualization with Seaborn](introduction-to-data-visualization-with-seaborn)
 1. Introduction to NumPy
 1. Python Data Science Toolbox (Part 1)
 1. The Android App Market on Google Play
@@ -42,8 +42,8 @@
 1. [Introduction to the Tidyverse](introduction-to-the-tidyverse)
 1. [Data Manipulation with dplyr](data-manipulation-with-dplyr)
 1. [Joining Data with dplyr](joining-data-with-dplyr)
-1. Introduction to Statistics in R
-1. Introduction to Data Visualization with ggplot2
+1. [Introduction to Statistics in R](introduction-to-statistics-in-r)
+1. [Introduction to Data Visualization with ggplot2](introduction-to-data-visualization-with-ggplot2)
 1. Intermediate Data Visualization with ggplot2
 1. Data Communication Concepts
 1. Introduction to Importing Data in R
