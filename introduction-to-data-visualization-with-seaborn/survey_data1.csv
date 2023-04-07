@@ -1,0 +1,1011 @@
+Music,Techno,Movies,History,Mathematics,Pets,Spiders,Loneliness,Parents Advice,Internet usage,Finances,Age,Siblings,Gender,Village - town
+5,4,5,3,1,3,2,2,Never,most of the day,3,21,1,male,city
+5,1,4,2,2,2,3,3,Never,most of the day,1,22,1,female,city
+5,2,5,3,5,3,3,1,Never,few hours a day,3,21,0,female,city
+4,4,5,2,1,2,1,3,Never,less than an hour a day,1,30,1,female,village
+5,1,5,5,1,5,1,1,Never,less than an hour a day,1,19,1,female,city
+5,1,5,3,1,5,4,5,Never,few hours a day,1,19,1,female,city
+4,4,5,5,1,3,1,1,Never,most of the day,4,23,0,male,city
+NaN,2,5,5,2,4,5,1,Never,few hours a day,3,24,2,female,village
+5,3,4,2,3,4,2,2,Never,few hours a day,4,17,0,male,city
+4,3,5,2,2,2,5,3,Never,few hours a day,3,26,1,female,city
+3,4,5,4,3,4,1,1,Never,few hours a day,3,19,1,male,city
+5,5,5,3,3,5,5,5,Never,few hours a day,2,20,1,female,city
+4,5,5,1,3,1,3,4,Never,most of the day,1,26,3,male,city
+5,3,5,5,5,4,5,4,Never,most of the day,4,27,1,male,NaN
+5,2,5,2,1,5,5,1,Never,few hours a day,3,21,0,female,city
+5,1,3,4,1,4,3,3,Never,few hours a day,4,19,1,female,city
+5,1,5,5,2,5,2,5,Never,less than an hour a day,5,29,0,male,village
+5,1,5,4,1,1,3,3,Never,few hours a day,3,18,2,female,city
+5,1,4,1,4,3,5,3,Never,few hours a day,3,27,3,male,city
+5,4,5,3,1,4,5,5,Never,few hours a day,1,16,1,female,village
+5,1,5,2,2,2,2,5,Never,few hours a day,1,18,3,female,village
+5,4,5,3,1,3,1,4,Never,few hours a day,5,21,1,male,city
+5,1,5,4,1,5,4,3,Never,few hours a day,2,27,1,female,city
+5,5,5,3,4,5,3,2,Never,few hours a day,1,17,2,male,city
+5,5,5,3,4,1,2,1,Never,few hours a day,1,26,5,male,village
+3,3,3,1,1,1,5,5,Never,few hours a day,3,22,1,male,village
+5,1,5,4,5,5,2,4,Never,few hours a day,3,16,1,female,village
+4,3,4,3,4,2,2,1,Never,few hours a day,1,26,1,male,city
+5,1,4,5,2,1,1,5,Never,few hours a day,2,23,1,male,city
+5,2,5,4,1,5,3,2,Never,most of the day,3,21,0,male,city
+5,2,5,2,2,5,5,3,Never,few hours a day,3,19,1,female,village
+5,1,5,3,1,5,4,4,Never,few hours a day,1,20,1,female,village
+5,1,5,5,3,1,2,4,Never,few hours a day,3,22,1,male,village
+5,1,4,1,1,4,5,3,Never,most of the day,4,21,1,female,city
+5,1,5,4,1,2,4,3,Never,few hours a day,5,20,1,female,city
+5,1,5,3,4,1,2,3,Rarely,most of the day,5,19,1,male,city
+5,2,5,4,4,3,5,4,Rarely,few hours a day,5,21,1,male,village
+4,3,5,4,3,2,2,3,Rarely,most of the day,2,19,1,female,city
+5,4,2,1,1,1,4,2,Rarely,few hours a day,1,19,1,male,city
+5,1,5,2,1,1,1,4,Rarely,few hours a day,4,20,1,male,village
+5,2,5,4,3,5,1,2,Rarely,few hours a day,4,20,0,female,village
+5,5,5,3,1,5,1,3,Rarely,few hours a day,5,22,1,female,village
+5,1,5,2,1,4,1,1,Rarely,few hours a day,1,19,0,male,city
+5,4,5,3,4,4,2,2,Rarely,few hours a day,1,30,2,male,city
+5,1,3,5,1,5,5,4,Rarely,less than an hour a day,3,19,1,female,city
+5,2,5,4,2,5,5,2,Rarely,few hours a day,1,18,1,female,city
+5,1,5,5,1,5,3,4,Rarely,few hours a day,5,18,1,female,city
+3,1,5,5,5,4,2,1,Rarely,few hours a day,3,25,1,male,city
+5,1,4,5,3,2,3,3,Rarely,most of the day,4,28,2,female,city
+3,1,5,1,5,4,4,5,Rarely,most of the day,2,22,2,female,village
+4,2,5,2,3,3,4,2,Rarely,less than an hour a day,4,17,2,female,city
+5,2,5,4,1,2,3,4,Rarely,most of the day,1,20,2,male,city
+4,3,4,1,4,3,1,2,Rarely,few hours a day,2,21,2,male,city
+4,2,5,1,3,3,5,5,Rarely,few hours a day,1,17,1,female,city
+5,3,3,5,5,5,1,2,Rarely,most of the day,4,23,0,male,city
+5,3,4,2,2,1,5,3,Rarely,few hours a day,3,20,1,male,city
+5,2,3,1,1,2,1,1,Rarely,few hours a day,3,19,4,male,city
+4,1,3,5,2,3,1,3,Rarely,most of the day,1,23,1,male,city
+5,3,5,1,1,3,2,3,Rarely,few hours a day,4,18,2,male,village
+5,1,5,1,4,5,5,5,Rarely,most of the day,5,15,1,female,village
+5,4,5,3,3,1,2,5,Rarely,few hours a day,4,20,NaN,female,village
+5,2,4,1,1,3,1,4,Rarely,few hours a day,1,21,1,female,village
+4,1,5,5,1,4,1,3,Rarely,few hours a day,2,19,0,male,city
+3,3,3,3,1,4,4,4,Rarely,few hours a day,4,21,1,male,village
+5,NaN,5,3,1,3,1,4,Rarely,less than an hour a day,2,22,2,male,city
+5,1,5,4,1,5,1,5,Rarely,most of the day,1,17,1,male,village
+4,1,4,5,1,2,2,3,Rarely,few hours a day,4,21,0,male,city
+5,2,4,1,3,2,1,3,Rarely,few hours a day,2,19,1,male,city
+1,1,4,1,2,2,5,1,Rarely,less than an hour a day,3,16,2,female,city
+5,2,4,4,1,5,3,4,Rarely,few hours a day,2,17,3,female,city
+4,3,4,3,2,4,4,3,Rarely,few hours a day,2,26,1,male,city
+4,1,4,4,4,1,1,3,Rarely,few hours a day,4,21,0,male,city
+5,2,5,3,4,5,5,2,Rarely,few hours a day,3,19,1,female,city
+5,4,5,5,2,5,3,2,Rarely,few hours a day,4,20,1,male,city
+5,2,4,2,2,4,2,4,Rarely,less than an hour a day,4,21,1,female,city
+5,2,4,3,4,5,4,2,Rarely,few hours a day,4,21,1,female,city
+5,3,5,4,5,1,1,3,Rarely,few hours a day,3,19,1,male,city
+5,4,5,5,3,3,1,4,Rarely,few hours a day,3,17,1,male,city
+5,1,5,5,1,5,2,3,Rarely,few hours a day,NaN,16,1,female,village
+5,1,5,5,4,3,3,3,Rarely,few hours a day,4,25,3,male,village
+5,3,4,4,1,1,2,5,Rarely,few hours a day,2,21,0,male,city
+5,2,5,4,1,4,4,4,Rarely,few hours a day,1,21,1,male,city
+5,4,5,2,1,4,4,3,Rarely,few hours a day,3,15,0,male,city
+5,NaN,5,5,1,4,1,3,Rarely,few hours a day,5,21,1,male,city
+5,2,5,4,3,5,5,3,Rarely,few hours a day,3,19,3,female,city
+5,1,5,3,1,5,1,1,Rarely,few hours a day,1,19,1,male,city
+5,5,5,3,1,2,5,5,Rarely,most of the day,1,16,1,male,village
+4,1,4,4,1,1,1,1,Rarely,most of the day,2,18,0,male,city
+3,1,5,3,1,5,4,3,Rarely,few hours a day,3,20,0,male,city
+4,2,5,3,1,5,1,5,Rarely,most of the day,4,21,2,male,city
+5,4,4,2,1,3,2,3,Rarely,less than an hour a day,1,21,1,male,village
+5,2,3,4,1,4,5,1,Rarely,few hours a day,1,20,1,male,village
+5,1,5,5,1,4,1,2,Rarely,few hours a day,1,17,1,female,city
+5,2,4,1,2,1,4,3,Rarely,most of the day,2,NaN,NaN,male,city
+5,1,5,5,1,5,4,3,Rarely,few hours a day,4,18,1,female,city
+5,2,5,2,3,2,1,1,Rarely,few hours a day,1,23,1,male,city
+5,4,5,2,3,3,2,2,Rarely,few hours a day,2,19,1,male,village
+5,5,5,5,1,5,5,1,Rarely,most of the day,3,23,1,female,village
+5,4,5,1,3,3,5,5,Rarely,few hours a day,3,16,0,female,city
+5,1,5,3,3,1,2,1,Rarely,few hours a day,2,19,2,male,village
+5,2,5,3,2,3,2,3,Rarely,few hours a day,4,17,1,female,village
+5,1,3,1,1,1,3,4,Rarely,few hours a day,3,17,2,female,city
+5,2,4,4,3,5,1,1,Rarely,few hours a day,3,21,2,female,city
+5,1,5,4,3,1,2,2,Rarely,few hours a day,3,20,5,male,city
+5,2,4,5,1,4,4,2,Rarely,few hours a day,4,22,0,female,city
+5,3,5,2,5,5,5,3,Rarely,few hours a day,5,19,0,female,city
+5,4,5,5,2,2,4,4,Rarely,few hours a day,2,20,1,female,city
+5,1,5,5,4,5,1,1,Rarely,less than an hour a day,3,22,1,female,city
+5,1,4,2,4,3,2,3,Rarely,few hours a day,4,24,2,male,village
+5,5,5,4,4,1,1,3,Rarely,few hours a day,3,21,1,male,city
+5,3,5,3,4,5,2,4,Rarely,few hours a day,3,20,1,male,city
+5,2,5,3,5,5,3,5,Rarely,few hours a day,5,18,4,female,village
+5,1,5,2,2,5,3,3,Rarely,few hours a day,2,20,3,female,city
+5,3,3,2,3,1,4,2,Rarely,few hours a day,2,18,1,male,city
+4,1,5,1,5,5,1,2,Rarely,few hours a day,3,19,2,female,city
+5,5,5,3,2,4,3,3,Rarely,few hours a day,4,22,1,male,city
+5,2,5,4,4,1,5,5,Rarely,most of the day,2,22,1,female,city
+5,3,3,2,1,2,1,3,Rarely,few hours a day,4,22,1,male,city
+5,3,3,3,1,4,1,2,Rarely,few hours a day,2,18,2,female,city
+5,3,5,3,1,5,1,3,Rarely,few hours a day,1,16,1,female,city
+5,1,5,5,1,1,5,4,Rarely,most of the day,5,19,1,female,village
+5,1,4,1,1,1,5,1,Rarely,less than an hour a day,3,22,1,female,city
+5,2,5,3,1,1,5,3,Rarely,few hours a day,1,19,1,male,city
+5,1,5,3,1,1,1,2,Rarely,few hours a day,1,29,1,male,city
+5,1,4,2,4,2,2,4,Rarely,few hours a day,3,27,1,male,city
+5,1,5,2,4,2,1,2,Rarely,most of the day,4,20,1,female,city
+4,1,4,5,2,2,2,4,Rarely,few hours a day,3,20,1,male,city
+5,1,4,5,2,3,2,4,Rarely,few hours a day,3,20,1,male,city
+4,4,NaN,2,5,3,3,3,Rarely,few hours a day,3,20,1,female,village
+5,5,5,4,2,5,5,3,Rarely,few hours a day,5,23,1,female,village
+3,4,5,5,3,1,4,3,Rarely,few hours a day,5,22,3,male,city
+3,1,5,2,4,4,1,2,Rarely,few hours a day,3,24,0,female,village
+5,2,4,5,1,4,1,2,Rarely,most of the day,1,19,0,male,city
+5,2,5,5,3,3,1,5,Rarely,few hours a day,1,20,1,female,city
+5,5,5,NaN,1,5,5,2,Rarely,few hours a day,3,22,2,female,city
+4,4,4,3,1,1,1,2,Rarely,most of the day,3,20,2,male,city
+5,3,5,3,3,3,1,2,Rarely,few hours a day,2,20,1,male,village
+5,3,5,2,1,4,2,4,Rarely,most of the day,3,30,3,male,city
+5,4,5,2,5,4,4,4,Rarely,few hours a day,1,18,1,female,village
+5,4,5,4,5,1,2,3,Rarely,most of the day,2,22,2,male,city
+5,3,4,2,4,5,5,2,Rarely,few hours a day,3,18,3,female,city
+5,3,5,3,3,1,1,3,Rarely,few hours a day,2,25,1,male,city
+5,1,5,2,2,3,4,2,Rarely,few hours a day,1,19,2,female,city
+3,2,5,4,3,1,5,2,Rarely,few hours a day,2,28,1,female,city
+5,1,5,5,3,3,1,1,Rarely,few hours a day,2,19,3,female,village
+5,4,5,3,3,1,1,4,Rarely,most of the day,4,22,2,male,city
+5,1,3,3,1,1,1,1,Rarely,less than an hour a day,3,20,1,female,city
+5,2,5,5,1,1,4,4,Rarely,few hours a day,1,22,1,female,city
+3,2,3,3,2,3,3,3,Rarely,few hours a day,2,21,1,male,city
+5,4,5,2,3,5,1,3,Rarely,few hours a day,3,23,1,male,city
+5,3,5,3,1,5,5,3,Rarely,few hours a day,4,19,0,female,city
+5,2,5,1,4,1,1,2,Rarely,few hours a day,2,21,1,male,city
+5,1,5,3,1,2,5,2,Rarely,few hours a day,1,21,1,female,city
+5,2,3,4,2,4,2,2,Sometimes,few hours a day,2,19,1,female,city
+5,4,5,2,2,4,2,3,Sometimes,less than an hour a day,4,22,0,female,village
+5,2,5,2,3,5,5,1,Sometimes,few hours a day,4,19,1,female,city
+5,1,5,5,1,3,1,4,Sometimes,few hours a day,1,21,3,male,city
+5,1,4,2,1,5,2,2,Sometimes,less than an hour a day,4,21,1,female,city
+4,1,3,3,1,3,1,1,Sometimes,few hours a day,4,20,1,female,city
+5,1,5,3,1,3,5,2,Sometimes,less than an hour a day,2,21,1,female,city
+5,2,5,3,3,1,3,3,Sometimes,less than an hour a day,5,20,1,female,city
+5,5,5,4,1,4,3,NaN,Sometimes,few hours a day,2,21,2,male,village
+5,3,5,2,2,3,2,4,Sometimes,most of the day,4,17,2,male,city
+5,1,5,1,1,3,1,1,Sometimes,less than an hour a day,2,21,2,male,city
+5,5,4,3,3,1,5,3,Sometimes,few hours a day,3,19,1,female,city
+4,2,5,2,1,1,2,1,Sometimes,few hours a day,3,22,1,male,city
+5,1,4,4,1,5,3,3,Sometimes,few hours a day,2,21,1,female,city
+5,1,5,5,1,5,3,3,Sometimes,most of the day,3,21,0,female,village
+5,2,5,2,2,2,4,2,Sometimes,few hours a day,3,23,3,female,city
+5,2,5,3,1,5,5,4,Sometimes,few hours a day,2,17,1,female,city
+4,3,5,4,2,3,3,2,Sometimes,few hours a day,5,22,1,male,village
+5,1,5,5,1,5,5,5,Sometimes,few hours a day,3,21,1,female,city
+5,4,5,2,1,5,5,4,Sometimes,most of the day,3,18,0,female,city
+5,4,5,5,1,2,1,2,Sometimes,few hours a day,5,22,1,male,city
+4,3,4,4,3,4,4,3,Sometimes,few hours a day,4,24,2,male,village
+5,1,5,1,1,3,4,3,Sometimes,most of the day,3,24,1,female,city
+4,3,5,3,2,5,4,4,Sometimes,few hours a day,5,19,1,male,city
+5,3,5,3,3,5,4,3,Sometimes,most of the day,2,18,0,female,city
+5,4,5,1,5,4,1,1,Sometimes,few hours a day,4,22,3,male,city
+5,2,NaN,4,5,5,1,2,Sometimes,less than an hour a day,2,29,1,male,village
+5,1,5,2,3,1,3,5,Sometimes,few hours a day,3,18,1,male,city
+5,3,5,3,4,5,4,2,Sometimes,few hours a day,2,18,1,female,village
+5,2,5,3,5,1,3,2,Sometimes,few hours a day,2,27,4,male,city
+5,5,3,2,1,4,1,5,Sometimes,few hours a day,4,20,0,male,city
+5,1,2,2,3,2,1,5,Sometimes,few hours a day,4,20,1,male,village
+5,1,5,3,2,5,3,3,Sometimes,few hours a day,3,19,1,female,village
+5,5,5,4,5,3,4,3,Sometimes,few hours a day,5,28,1,female,city
+5,5,5,5,5,2,2,4,Sometimes,most of the day,1,19,0,male,city
+5,5,5,1,1,1,3,1,Sometimes,few hours a day,1,19,0,male,city
+5,2,5,3,3,1,3,1,Sometimes,few hours a day,1,20,1,male,city
+3,1,3,2,5,2,1,5,Sometimes,few hours a day,3,25,1,male,village
+5,1,4,4,3,5,1,3,Sometimes,few hours a day,1,18,4,female,city
+5,1,5,3,1,5,2,3,Sometimes,few hours a day,3,20,2,female,city
+5,2,5,2,1,5,3,2,Sometimes,few hours a day,3,20,1,female,city
+3,1,5,4,4,5,2,1,Sometimes,few hours a day,4,22,2,male,city
+5,1,5,3,4,3,4,5,Sometimes,few hours a day,1,20,1,female,city
+5,2,5,4,4,1,5,3,Sometimes,few hours a day,2,20,1,female,city
+5,1,5,1,1,1,5,5,Sometimes,few hours a day,3,19,1,female,city
+5,1,5,1,1,1,3,1,Sometimes,most of the day,1,19,3,female,village
+5,1,5,5,1,2,5,1,Sometimes,few hours a day,4,20,2,female,village
+5,1,5,2,2,2,5,3,Sometimes,less than an hour a day,3,19,1,female,city
+5,2,5,3,2,5,2,2,Sometimes,most of the day,5,21,1,male,city
+3,2,4,3,3,2,5,3,Sometimes,less than an hour a day,3,25,1,female,city
+5,1,5,1,3,4,2,5,Sometimes,less than an hour a day,3,18,0,female,city
+5,1,5,4,1,5,1,3,Sometimes,few hours a day,2,19,3,female,village
+5,2,4,3,3,3,1,3,Sometimes,few hours a day,3,29,3,male,village
+5,4,5,3,5,2,2,3,Sometimes,few hours a day,5,19,2,male,city
+5,5,5,3,1,5,5,3,Sometimes,few hours a day,2,19,2,female,city
+5,1,5,2,1,4,2,3,Sometimes,most of the day,3,21,0,female,city
+5,3,5,4,2,4,3,3,Sometimes,less than an hour a day,4,19,1,female,village
+5,2,5,3,5,1,1,3,Sometimes,few hours a day,3,19,3,female,city
+4,3,4,2,2,2,3,5,Sometimes,few hours a day,1,19,1,male,city
+5,4,5,1,1,1,5,3,Sometimes,few hours a day,3,18,0,female,city
+5,1,5,1,1,4,5,5,Sometimes,few hours a day,1,18,2,female,village
+5,1,5,1,2,5,1,3,Sometimes,few hours a day,3,19,1,female,city
+5,2,5,2,3,5,2,4,Sometimes,few hours a day,2,18,6,female,city
+5,4,5,3,4,1,2,4,Sometimes,few hours a day,4,19,1,female,city
+4,4,5,1,3,2,4,3,Sometimes,few hours a day,2,19,1,male,city
+5,3,5,3,4,4,3,2,Sometimes,few hours a day,2,19,1,female,village
+5,1,5,2,3,NaN,4,3,Sometimes,few hours a day,5,19,1,female,village
+5,1,5,3,2,5,1,3,Sometimes,few hours a day,1,22,1,male,village
+5,1,5,2,2,3,4,3,Sometimes,few hours a day,5,19,1,female,village
+5,1,5,4,1,5,1,2,Sometimes,few hours a day,1,22,2,male,city
+5,3,5,3,2,1,1,2,Sometimes,most of the day,5,22,3,male,city
+5,2,4,3,4,1,5,4,Sometimes,few hours a day,5,21,1,female,city
+5,2,5,3,1,4,3,3,Sometimes,most of the day,3,25,1,female,city
+5,1,5,5,1,1,4,5,Sometimes,most of the day,1,26,2,male,city
+5,3,5,3,3,5,3,3,Sometimes,few hours a day,3,21,0,male,city
+5,2,5,4,2,2,4,3,Sometimes,most of the day,2,29,1,NaN,city
+5,4,4,2,1,2,2,3,Sometimes,less than an hour a day,3,NaN,1,female,village
+5,1,5,3,3,5,5,5,Sometimes,few hours a day,1,17,3,female,village
+3,3,4,2,3,5,5,3,Sometimes,few hours a day,2,18,1,female,village
+4,3,4,2,5,3,2,3,Sometimes,few hours a day,3,19,0,male,village
+5,1,5,1,1,2,1,5,Sometimes,most of the day,3,20,1,female,village
+5,1,5,3,1,3,1,3,Sometimes,less than an hour a day,3,18,0,male,village
+5,3,5,1,2,2,5,5,Sometimes,few hours a day,3,16,2,female,city
+5,2,5,4,3,5,2,3,Sometimes,few hours a day,3,20,1,female,city
+5,1,5,4,1,3,1,3,Sometimes,few hours a day,3,23,4,male,village
+4,4,5,3,1,4,5,1,Sometimes,most of the day,1,17,3,male,city
+5,5,5,3,1,4,1,3,Sometimes,less than an hour a day,3,20,1,female,village
+5,3,5,3,3,4,4,2,Sometimes,few hours a day,1,21,3,male,city
+5,3,5,4,1,5,5,1,Sometimes,few hours a day,4,20,1,female,village
+5,2,5,4,2,1,2,2,Sometimes,few hours a day,3,25,3,male,city
+5,5,5,3,1,5,5,1,Sometimes,few hours a day,1,19,1,female,city
+5,4,5,3,3,5,1,3,Sometimes,few hours a day,1,17,2,male,village
+5,1,5,2,3,1,1,2,Sometimes,few hours a day,2,20,3,male,village
+5,1,4,3,2,3,5,4,Sometimes,few hours a day,3,21,1,female,village
+5,2,4,3,3,5,1,2,Sometimes,less than an hour a day,3,22,1,male,village
+5,3,4,2,5,4,1,3,Sometimes,most of the day,4,20,0,male,village
+5,1,5,3,1,2,4,3,Sometimes,few hours a day,4,22,0,male,city
+5,4,4,4,2,2,1,2,Sometimes,few hours a day,1,19,1,male,city
+5,2,5,4,3,3,5,3,Sometimes,less than an hour a day,3,23,1,female,city
+5,3,5,3,2,NaN,1,1,Sometimes,few hours a day,5,21,0,male,city
+5,3,5,3,1,4,1,4,Sometimes,few hours a day,1,20,0,female,city
+5,3,5,2,NaN,4,1,3,Sometimes,few hours a day,1,19,3,male,village
+3,1,4,3,3,4,1,4,Sometimes,few hours a day,3,28,2,female,village
+4,2,4,2,5,5,3,1,Sometimes,few hours a day,4,23,1,female,city
+5,3,5,2,5,1,1,4,Sometimes,most of the day,3,20,2,male,city
+5,1,4,5,1,3,1,3,Sometimes,few hours a day,3,20,1,male,city
+5,3,5,3,3,1,1,4,Sometimes,few hours a day,3,21,3,male,city
+5,2,5,3,1,5,5,4,Sometimes,few hours a day,3,21,1,female,city
+5,4,5,2,1,5,2,1,Sometimes,few hours a day,3,18,2,female,city
+5,2,4,4,3,1,2,3,Sometimes,no time at all,3,25,1,male,city
+5,3,5,5,5,5,5,3,Sometimes,few hours a day,1,18,1,female,village
+5,1,4,3,1,5,2,5,Sometimes,few hours a day,2,20,2,female,city
+4,4,5,3,2,2,2,2,Sometimes,few hours a day,3,21,0,male,city
+5,4,5,1,1,5,1,3,Sometimes,few hours a day,1,20,2,female,village
+5,3,5,2,5,4,2,4,Sometimes,few hours a day,5,19,1,male,city
+4,5,5,2,4,5,1,2,Sometimes,less than an hour a day,2,23,0,male,city
+5,4,5,3,4,5,5,4,Sometimes,few hours a day,1,19,1,female,city
+4,3,2,2,3,3,3,3,Sometimes,less than an hour a day,4,19,1,male,city
+5,4,5,1,4,3,2,3,Sometimes,few hours a day,3,20,1,male,city
+5,3,5,4,2,4,3,3,Sometimes,few hours a day,3,21,2,male,village
+5,1,5,3,4,2,3,2,Sometimes,few hours a day,3,19,1,male,city
+5,3,2,2,3,2,2,3,Sometimes,less than an hour a day,4,17,0,female,village
+4,3,4,2,1,4,3,3,Sometimes,few hours a day,3,16,1,male,village
+5,1,5,4,1,3,2,2,Sometimes,few hours a day,4,22,1,male,village
+5,2,4,2,4,3,2,2,Sometimes,few hours a day,2,23,2,male,city
+5,1,5,4,1,3,2,2,Sometimes,less than an hour a day,3,28,2,female,village
+5,1,3,4,3,5,1,3,Sometimes,few hours a day,2,20,2,male,city
+5,4,5,2,1,2,2,3,Sometimes,few hours a day,3,20,1,male,village
+5,4,5,2,3,2,4,1,Sometimes,few hours a day,4,25,1,female,city
+5,3,5,4,3,3,4,4,Sometimes,few hours a day,2,20,1,male,village
+5,5,5,3,1,5,2,3,Sometimes,few hours a day,3,21,1,male,village
+5,2,4,3,3,5,2,1,Sometimes,less than an hour a day,4,17,0,female,city
+5,1,5,5,1,5,3,4,Sometimes,few hours a day,1,17,1,male,city
+5,1,5,5,1,5,1,1,Sometimes,most of the day,4,29,1,female,city
+4,1,5,2,2,5,2,3,Sometimes,few hours a day,2,21,1,female,city
+5,1,5,4,1,1,4,3,Sometimes,few hours a day,1,20,1,female,village
+1,4,5,2,3,2,2,2,Sometimes,few hours a day,4,19,1,male,village
+5,1,3,3,1,2,5,2,Sometimes,few hours a day,1,20,1,female,village
+5,2,5,4,3,3,4,2,Sometimes,few hours a day,2,NaN,NaN,male,city
+3,2,5,3,2,1,2,3,Sometimes,few hours a day,4,19,1,male,city
+4,1,5,2,1,5,2,2,Sometimes,few hours a day,2,23,1,female,city
+5,3,5,5,1,5,5,3,Sometimes,few hours a day,4,20,1,female,city
+4,1,5,5,2,4,3,3,Sometimes,most of the day,1,20,1,female,city
+5,3,5,4,4,5,4,2,Sometimes,few hours a day,2,17,1,female,city
+3,1,5,5,2,1,1,5,Sometimes,few hours a day,4,20,2,male,village
+5,4,5,3,2,5,2,3,Sometimes,few hours a day,2,20,1,male,city
+5,5,5,3,1,4,3,1,Sometimes,few hours a day,2,20,2,male,city
+4,1,5,4,4,1,3,3,Sometimes,few hours a day,3,19,0,male,city
+5,3,5,5,1,2,1,1,Sometimes,few hours a day,4,23,1,male,city
+5,3,5,4,3,2,5,4,Sometimes,few hours a day,4,21,1,female,city
+4,1,5,4,1,4,1,4,Sometimes,few hours a day,1,21,1,male,city
+5,1,5,5,3,1,3,1,Sometimes,few hours a day,3,NaN,NaN,female,city
+5,4,5,5,5,5,1,3,Sometimes,few hours a day,5,20,3,male,village
+5,2,3,3,2,4,3,3,Sometimes,few hours a day,4,21,3,male,city
+5,4,5,5,1,1,5,5,Sometimes,few hours a day,3,17,2,female,city
+5,3,5,2,5,4,1,2,Sometimes,few hours a day,3,19,2,male,city
+5,1,5,2,4,3,2,5,Sometimes,few hours a day,1,22,1,male,city
+5,1,4,2,1,4,2,2,Sometimes,most of the day,4,20,2,female,city
+5,1,5,3,2,4,1,4,Sometimes,most of the day,3,20,2,male,city
+5,2,5,5,3,4,4,2,Sometimes,few hours a day,3,19,0,male,city
+4,4,4,5,5,1,1,3,Sometimes,few hours a day,1,19,3,female,city
+5,NaN,5,5,4,1,1,5,Sometimes,few hours a day,1,19,0,male,city
+5,5,3,5,1,1,1,5,Sometimes,most of the day,3,30,2,female,village
+4,5,4,5,5,1,5,3,Sometimes,most of the day,1,30,1,male,city
+5,2,5,1,1,2,3,4,Sometimes,few hours a day,4,21,0,female,city
+5,5,5,3,5,1,1,2,Sometimes,few hours a day,4,28,1,male,city
+5,5,4,4,5,1,2,3,Sometimes,few hours a day,3,19,1,male,city
+5,2,5,2,1,4,5,2,Sometimes,few hours a day,2,22,2,female,village
+4,4,3,4,1,4,1,2,Sometimes,few hours a day,2,24,2,male,village
+5,1,4,5,5,5,2,2,Sometimes,few hours a day,3,19,1,female,city
+5,3,5,4,1,5,5,5,Sometimes,most of the day,5,15,0,male,village
+4,1,5,5,2,4,1,4,Sometimes,most of the day,4,21,1,female,village
+4,1,3,3,1,1,3,1,Sometimes,few hours a day,3,20,2,female,city
+5,4,5,2,3,5,5,3,Sometimes,few hours a day,3,20,1,female,city
+5,1,5,2,3,1,1,2,Sometimes,few hours a day,4,22,1,male,city
+3,3,3,4,3,3,2,1,Sometimes,few hours a day,3,27,1,female,city
+5,3,5,3,1,1,5,5,Sometimes,few hours a day,3,18,5,female,city
+5,1,5,4,2,5,5,4,Sometimes,few hours a day,3,17,3,female,city
+5,1,5,4,3,4,5,3,Sometimes,few hours a day,4,20,1,female,city
+5,4,5,2,2,4,4,2,Sometimes,few hours a day,2,19,0,NaN,city
+4,3,4,2,2,2,5,4,Sometimes,few hours a day,2,21,0,female,city
+5,5,5,4,1,5,1,5,Sometimes,most of the day,4,24,0,male,village
+4,2,5,3,4,5,2,2,Sometimes,less than an hour a day,2,22,2,female,city
+5,1,3,4,5,5,1,1,Sometimes,few hours a day,1,22,1,male,city
+5,2,5,3,1,1,4,4,Sometimes,few hours a day,1,22,0,male,city
+5,1,4,2,1,3,3,4,Sometimes,few hours a day,3,16,1,female,village
+5,2,5,1,2,5,1,3,Sometimes,most of the day,3,18,3,female,city
+5,1,5,3,1,5,5,3,Sometimes,few hours a day,3,16,1,female,city
+5,4,5,4,1,5,3,3,Sometimes,few hours a day,3,20,1,female,city
+5,2,5,4,4,5,1,1,Sometimes,few hours a day,3,20,1,male,city
+5,3,5,2,1,1,2,2,Sometimes,few hours a day,2,20,1,male,city
+5,1,5,2,4,1,5,4,Sometimes,most of the day,2,20,1,female,city
+5,2,5,2,1,1,2,3,Sometimes,few hours a day,2,20,1,female,city
+5,1,5,3,1,5,2,2,Sometimes,few hours a day,4,26,3,female,village
+5,1,4,5,5,2,4,5,Sometimes,most of the day,3,19,2,male,city
+4,1,5,3,1,5,1,1,Sometimes,few hours a day,1,23,1,male,city
+5,2,5,2,1,4,5,3,Sometimes,less than an hour a day,3,21,2,female,village
+5,3,4,2,1,1,1,2,Sometimes,few hours a day,1,18,2,male,city
+5,2,5,2,1,3,1,3,Sometimes,less than an hour a day,2,17,0,female,city
+4,1,3,3,1,5,2,4,Sometimes,few hours a day,4,22,1,female,village
+5,2,3,5,1,3,5,3,Sometimes,most of the day,1,19,2,female,village
+4,1,5,4,2,5,2,2,Sometimes,few hours a day,3,29,1,male,village
+5,1,5,3,3,5,3,3,Sometimes,few hours a day,3,17,1,female,city
+5,NaN,5,3,1,4,5,4,Sometimes,less than an hour a day,3,17,1,female,city
+4,3,5,3,4,3,2,1,Sometimes,few hours a day,2,19,2,male,city
+4,2,5,2,2,2,5,3,Sometimes,few hours a day,3,19,1,female,city
+5,3,5,3,2,3,1,4,Sometimes,less than an hour a day,3,18,1,female,city
+5,3,4,4,2,5,5,3,Sometimes,few hours a day,3,23,0,female,city
+5,4,5,5,5,1,3,5,Sometimes,few hours a day,3,21,4,male,city
+5,4,4,2,1,3,2,5,Sometimes,few hours a day,3,18,1,female,village
+5,1,3,5,2,4,2,2,Sometimes,few hours a day,4,23,1,male,city
+4,4,4,4,2,3,2,3,Sometimes,few hours a day,4,21,1,male,village
+5,2,3,3,2,4,1,3,Sometimes,few hours a day,3,23,1,female,city
+3,1,4,3,1,5,5,3,Sometimes,few hours a day,4,28,1,female,city
+4,1,4,3,1,5,4,4,Sometimes,less than an hour a day,4,22,2,female,city
+5,2,5,3,1,3,3,2,Sometimes,few hours a day,3,20,2,female,city
+4,1,5,5,4,5,1,1,Sometimes,few hours a day,2,28,1,female,city
+5,3,5,5,1,3,1,2,Sometimes,few hours a day,1,19,0,male,village
+5,5,5,4,3,5,5,3,Sometimes,few hours a day,3,25,1,female,city
+4,5,5,3,4,5,2,3,Sometimes,few hours a day,1,19,4,male,village
+5,1,5,2,3,3,3,2,Sometimes,few hours a day,2,28,1,female,village
+2,3,3,3,3,3,3,3,Sometimes,less than an hour a day,3,21,1,male,city
+5,3,5,5,3,5,1,3,Sometimes,few hours a day,4,18,1,male,city
+5,3,5,4,3,2,4,3,Sometimes,few hours a day,3,18,1,male,city
+5,2,5,3,1,3,5,4,Sometimes,less than an hour a day,2,17,0,female,city
+5,2,5,5,3,3,1,1,Sometimes,few hours a day,3,21,1,male,city
+5,4,4,3,2,3,5,3,Sometimes,few hours a day,3,28,1,female,city
+5,4,5,2,1,5,3,5,Sometimes,less than an hour a day,2,20,2,male,city
+5,5,3,1,3,1,3,1,Sometimes,less than an hour a day,3,19,1,male,village
+5,2,4,2,1,5,2,2,Sometimes,few hours a day,5,24,1,female,village
+5,2,5,3,3,4,5,4,Sometimes,less than an hour a day,3,17,0,female,city
+5,3,5,2,1,1,1,5,Sometimes,few hours a day,3,19,1,male,city
+5,1,5,2,2,5,5,2,Sometimes,few hours a day,2,18,0,female,city
+5,3,5,5,2,5,5,1,Sometimes,less than an hour a day,2,17,0,female,village
+5,4,5,5,4,5,1,3,Sometimes,few hours a day,3,18,1,male,city
+4,2,4,5,1,5,1,3,Sometimes,less than an hour a day,2,20,1,female,city
+5,4,5,5,2,5,1,3,Sometimes,few hours a day,4,21,1,male,village
+5,1,5,3,1,4,4,2,Sometimes,few hours a day,3,20,1,female,city
+5,1,4,2,1,1,1,3,Sometimes,less than an hour a day,4,18,2,female,city
+4,1,5,2,1,5,1,1,Sometimes,less than an hour a day,5,23,1,male,city
+5,3,5,2,2,1,1,5,Sometimes,few hours a day,3,19,1,male,city
+5,2,5,5,2,1,3,3,Sometimes,few hours a day,3,18,2,female,city
+5,2,5,4,4,5,3,4,Sometimes,few hours a day,4,18,2,male,city
+5,1,5,1,4,1,3,2,Sometimes,few hours a day,5,17,2,male,city
+5,4,5,3,1,4,5,1,Sometimes,few hours a day,4,19,0,female,city
+1,1,5,5,1,5,1,2,Sometimes,few hours a day,3,20,1,male,city
+5,3,5,3,1,1,2,3,Sometimes,few hours a day,1,19,1,female,city
+5,1,5,4,1,5,5,2,Sometimes,few hours a day,1,20,1,male,city
+5,1,5,3,3,1,1,3,Sometimes,few hours a day,4,18,0,male,city
+1,2,4,3,3,3,3,1,Sometimes,few hours a day,3,22,2,male,city
+5,2,4,5,3,1,2,2,Sometimes,few hours a day,3,19,0,female,village
+4,1,5,5,5,5,2,3,Sometimes,most of the day,3,24,2,female,village
+4,2,5,5,2,4,3,3,Sometimes,few hours a day,2,20,1,female,city
+5,3,5,4,1,5,3,4,Sometimes,most of the day,3,21,0,female,city
+5,NaN,5,1,4,4,1,2,Sometimes,few hours a day,2,23,2,male,city
+5,3,5,5,5,4,2,1,Sometimes,few hours a day,4,23,0,male,city
+5,5,4,4,4,4,3,2,Sometimes,most of the day,3,25,2,male,village
+3,3,5,4,4,4,2,3,Sometimes,less than an hour a day,4,19,0,female,city
+5,3,5,3,2,5,5,3,Sometimes,less than an hour a day,3,15,2,female,city
+5,1,4,4,4,1,1,2,Sometimes,less than an hour a day,4,22,6,female,city
+5,1,5,4,1,5,2,2,Sometimes,few hours a day,2,19,3,female,village
+5,1,5,3,4,5,1,3,Sometimes,few hours a day,3,26,1,female,city
+5,5,5,2,1,4,2,3,Sometimes,few hours a day,4,19,3,female,village
+5,5,5,2,3,4,2,3,Sometimes,few hours a day,3,20,1,male,village
+5,3,5,4,3,1,3,2,Sometimes,few hours a day,4,25,1,female,city
+5,2,5,2,3,3,1,4,Sometimes,few hours a day,4,18,1,male,village
+5,1,5,4,1,4,3,3,Sometimes,few hours a day,3,17,0,male,city
+5,2,5,5,4,5,2,3,Sometimes,few hours a day,5,18,1,female,village
+5,3,5,2,2,5,1,3,Sometimes,few hours a day,5,21,1,male,village
+5,1,5,4,3,1,3,4,Sometimes,few hours a day,4,17,1,female,city
+5,3,5,4,1,5,5,2,Sometimes,few hours a day,3,22,0,female,city
+5,3,5,3,2,4,2,5,Sometimes,few hours a day,2,17,1,female,city
+5,2,5,1,1,5,5,2,Sometimes,most of the day,3,20,0,female,city
+5,1,5,1,5,1,1,3,Sometimes,few hours a day,5,18,0,male,city
+5,1,5,3,1,5,1,3,Sometimes,less than an hour a day,1,19,1,female,city
+5,1,5,3,2,5,5,3,Sometimes,few hours a day,5,20,1,female,city
+5,2,5,4,2,3,3,3,Sometimes,few hours a day,4,20,1,male,city
+5,1,5,5,5,5,4,2,Sometimes,few hours a day,4,27,0,male,city
+5,3,5,5,1,5,3,3,Sometimes,few hours a day,3,19,1,female,city
+5,3,5,3,1,2,1,3,Sometimes,few hours a day,3,22,1,male,city
+5,1,5,2,3,1,5,2,Sometimes,few hours a day,3,22,1,female,city
+5,1,3,2,3,5,4,4,Sometimes,few hours a day,4,20,1,male,village
+5,1,5,4,1,5,3,5,Sometimes,few hours a day,3,18,1,female,city
+5,2,5,3,1,1,2,3,Sometimes,few hours a day,3,22,2,female,city
+2,1,3,2,5,1,1,3,Sometimes,few hours a day,3,19,5,male,city
+5,2,5,5,NaN,3,3,1,Sometimes,few hours a day,2,18,3,female,village
+5,2,5,3,3,5,5,3,Sometimes,less than an hour a day,3,16,0,female,city
+4,1,4,1,1,3,5,3,Sometimes,most of the day,1,19,3,female,village
+1,3,4,2,1,2,5,3,Sometimes,few hours a day,2,19,1,female,village
+5,3,NaN,NaN,1,5,5,3,Sometimes,most of the day,2,20,1,female,city
+5,4,4,3,2,5,3,2,Sometimes,less than an hour a day,3,20,1,female,city
+5,1,4,5,2,4,1,2,Sometimes,few hours a day,3,20,1,male,village
+5,5,5,2,1,5,1,2,Sometimes,few hours a day,3,19,2,female,village
+5,2,5,4,1,4,5,2,Sometimes,less than an hour a day,3,21,1,female,city
+5,1,5,5,1,3,2,3,Sometimes,few hours a day,3,16,0,female,city
+5,1,5,1,1,2,3,4,Sometimes,few hours a day,3,19,1,male,city
+5,2,5,3,4,3,4,3,Sometimes,few hours a day,3,20,1,male,village
+2,2,5,2,2,3,1,2,Sometimes,most of the day,3,20,2,male,city
+5,2,5,3,3,4,5,3,Sometimes,few hours a day,2,16,1,male,city
+5,2,5,2,2,1,2,4,Sometimes,most of the day,1,18,1,male,city
+5,2,5,5,2,1,5,4,Sometimes,few hours a day,4,19,0,male,city
+4,3,4,3,3,4,1,3,Sometimes,less than an hour a day,4,18,0,female,city
+5,5,5,4,NaN,3,NaN,2,Sometimes,few hours a day,3,22,2,male,city
+5,3,5,2,1,5,4,5,Sometimes,few hours a day,3,20,2,female,city
+5,1,4,5,1,1,5,2,Sometimes,few hours a day,4,18,2,female,village
+4,4,5,5,2,3,1,3,Sometimes,few hours a day,1,17,1,male,city
+4,5,4,3,5,1,1,3,Sometimes,less than an hour a day,3,20,1,male,village
+5,3,5,4,3,5,2,2,Sometimes,few hours a day,3,20,1,male,city
+5,5,5,1,3,5,5,5,Sometimes,few hours a day,2,15,2,female,village
+4,3,4,5,2,5,3,3,Sometimes,few hours a day,4,20,1,male,city
+5,1,5,3,1,2,5,5,Sometimes,few hours a day,3,28,1,female,city
+5,2,5,2,3,1,2,4,Sometimes,few hours a day,1,15,3,female,city
+5,3,5,1,4,1,2,5,Sometimes,few hours a day,4,19,2,female,village
+4,4,5,1,1,5,4,2,Sometimes,few hours a day,4,18,1,female,city
+5,1,5,5,1,4,1,5,Sometimes,few hours a day,4,25,1,male,city
+5,1,4,5,3,3,5,2,Sometimes,few hours a day,4,24,1,male,city
+5,4,5,2,3,5,3,3,Sometimes,few hours a day,3,17,1,male,village
+5,2,5,3,1,5,4,5,Sometimes,few hours a day,5,20,0,female,village
+5,2,5,3,4,5,2,5,Sometimes,most of the day,2,19,1,male,village
+3,2,3,3,5,5,1,3,Sometimes,few hours a day,1,19,1,female,city
+5,1,4,1,5,5,5,2,Sometimes,few hours a day,4,19,2,female,city
+5,2,5,3,1,5,5,3,Sometimes,few hours a day,2,23,1,female,city
+4,2,4,4,2,3,2,2,Sometimes,few hours a day,3,20,1,male,village
+5,1,5,3,4,4,2,3,Sometimes,few hours a day,4,23,1,male,city
+5,5,4,2,1,3,3,3,Sometimes,few hours a day,3,22,2,male,city
+5,1,5,4,2,5,2,2,Sometimes,less than an hour a day,4,24,0,male,village
+5,3,5,4,1,4,5,3,Sometimes,few hours a day,3,19,1,female,city
+5,1,5,2,2,5,5,2,Sometimes,few hours a day,4,20,2,female,city
+5,1,4,5,1,4,2,2,Sometimes,few hours a day,4,23,0,female,city
+1,1,5,2,4,4,3,1,Sometimes,most of the day,5,20,2,male,city
+5,1,3,2,1,4,1,3,Sometimes,few hours a day,4,20,0,female,village
+4,1,4,4,1,4,1,2,Sometimes,few hours a day,3,20,4,male,city
+5,3,5,2,5,1,1,1,Sometimes,few hours a day,3,22,1,male,city
+5,1,3,1,1,5,5,3,Sometimes,less than an hour a day,4,20,2,female,city
+5,3,4,2,1,5,2,4,Sometimes,few hours a day,2,19,1,male,city
+5,5,4,3,1,4,5,5,Sometimes,few hours a day,3,18,1,female,city
+5,1,5,3,3,5,2,3,Sometimes,less than an hour a day,4,19,1,female,city
+3,1,3,5,2,1,1,4,Sometimes,few hours a day,4,20,2,female,village
+5,5,5,4,3,5,1,5,Sometimes,few hours a day,5,15,3,female,city
+5,2,4,3,1,5,2,4,Sometimes,few hours a day,3,20,1,female,city
+5,1,5,4,1,5,2,2,Sometimes,less than an hour a day,3,20,1,female,village
+5,3,5,2,1,3,5,5,Sometimes,few hours a day,3,17,0,female,city
+5,5,5,4,4,4,1,1,Sometimes,few hours a day,1,23,1,male,city
+5,4,5,1,3,3,1,4,Sometimes,few hours a day,2,19,0,male,village
+5,1,4,5,3,5,5,3,Sometimes,few hours a day,4,18,1,male,village
+5,3,5,2,2,5,5,5,Sometimes,few hours a day,3,23,2,female,village
+2,2,5,2,2,3,2,3,Sometimes,few hours a day,2,15,1,male,city
+5,2,4,2,3,1,1,2,Sometimes,few hours a day,3,16,0,female,village
+5,1,4,5,1,3,5,3,Sometimes,few hours a day,2,18,1,male,village
+5,1,5,5,4,1,1,3,Sometimes,few hours a day,3,20,0,female,city
+5,1,3,3,1,1,5,1,Sometimes,few hours a day,1,20,1,female,city
+5,5,5,4,5,1,2,2,Sometimes,few hours a day,4,19,2,male,city
+2,1,3,5,1,1,1,3,Sometimes,few hours a day,4,19,4,male,village
+5,1,5,5,4,5,2,3,Sometimes,few hours a day,2,20,0,female,city
+5,1,4,4,1,4,1,2,Sometimes,few hours a day,4,24,1,male,village
+5,1,5,4,4,1,2,4,Sometimes,most of the day,5,23,1,male,city
+5,3,5,4,3,1,2,4,Sometimes,few hours a day,4,19,1,male,city
+3,3,3,3,1,3,3,3,Sometimes,few hours a day,3,19,0,male,city
+5,4,4,3,2,3,4,3,Sometimes,few hours a day,4,21,1,male,city
+5,4,4,3,1,1,5,5,Sometimes,most of the day,2,22,1,female,village
+5,4,5,2,2,3,4,3,Sometimes,less than an hour a day,4,20,1,female,city
+5,1,5,3,4,5,3,4,Sometimes,few hours a day,2,18,1,female,city
+5,1,3,3,3,2,1,2,Sometimes,most of the day,4,18,1,female,city
+5,3,5,1,3,3,4,1,Sometimes,few hours a day,1,15,3,female,city
+3,3,5,2,2,5,4,3,Sometimes,few hours a day,3,19,1,female,village
+5,2,5,3,1,5,3,3,Sometimes,less than an hour a day,4,19,0,female,city
+5,1,5,1,2,5,4,3,Sometimes,most of the day,5,15,1,female,city
+5,1,5,3,2,1,1,4,Sometimes,few hours a day,4,18,0,male,city
+5,4,5,4,1,1,2,3,Sometimes,few hours a day,1,22,1,male,city
+5,4,5,5,1,5,1,2,Sometimes,few hours a day,1,17,1,male,city
+5,2,4,1,1,5,3,3,Sometimes,few hours a day,5,17,2,female,city
+5,4,5,1,1,5,5,2,Sometimes,few hours a day,3,19,2,female,city
+5,4,5,3,5,4,1,4,Sometimes,few hours a day,4,18,2,male,city
+5,3,5,5,2,3,2,2,Sometimes,few hours a day,2,20,1,male,city
+5,1,5,4,3,5,1,4,Sometimes,few hours a day,2,24,1,male,city
+5,3,5,2,3,3,2,3,Sometimes,few hours a day,3,19,1,female,city
+5,1,5,5,1,3,1,3,Sometimes,few hours a day,4,21,1,male,city
+5,3,5,3,1,5,5,3,Sometimes,few hours a day,5,22,1,female,city
+5,2,5,3,3,1,3,4,Sometimes,less than an hour a day,4,30,2,female,city
+5,1,5,1,4,3,4,3,Sometimes,few hours a day,3,24,1,female,city
+4,4,4,5,2,4,5,2,Sometimes,few hours a day,5,22,1,male,city
+5,1,5,2,1,5,3,2,Sometimes,few hours a day,3,19,1,female,city
+4,1,3,4,3,3,2,3,Sometimes,few hours a day,4,20,1,female,city
+5,3,5,5,1,3,4,3,Sometimes,few hours a day,3,20,2,male,village
+5,1,3,3,1,5,5,3,Sometimes,less than an hour a day,1,19,2,female,village
+5,3,5,3,4,5,5,2,Sometimes,few hours a day,3,25,1,female,city
+5,2,5,2,2,5,1,3,Sometimes,few hours a day,4,25,2,female,city
+4,2,4,5,5,3,1,1,Sometimes,few hours a day,3,18,1,male,city
+5,4,4,2,3,2,2,3,Sometimes,few hours a day,4,19,0,female,city
+5,1,2,2,5,1,5,4,Sometimes,few hours a day,2,19,1,female,city
+5,3,5,5,2,2,5,3,Sometimes,few hours a day,4,19,2,female,village
+5,2,5,1,5,1,2,2,Sometimes,most of the day,3,22,1,male,city
+4,3,5,2,1,3,5,2,Sometimes,few hours a day,2,25,1,male,city
+5,1,5,3,1,5,1,3,Sometimes,few hours a day,3,26,2,male,city
+5,4,5,5,5,1,2,2,Sometimes,most of the day,3,19,1,male,village
+5,3,5,4,1,1,4,2,Sometimes,few hours a day,4,20,0,female,city
+5,1,5,3,3,2,3,2,Sometimes,few hours a day,4,19,3,female,city
+5,3,3,3,1,2,1,2,Sometimes,less than an hour a day,3,23,0,female,village
+5,1,5,1,1,5,5,2,Sometimes,less than an hour a day,3,18,1,female,village
+5,1,5,4,5,5,4,5,Sometimes,most of the day,2,18,1,male,village
+5,3,5,1,1,1,5,5,Sometimes,few hours a day,1,19,1,female,village
+5,5,4,5,1,2,1,5,Sometimes,few hours a day,2,22,1,female,city
+5,2,5,4,3,3,4,1,Sometimes,few hours a day,3,18,2,male,city
+5,3,5,4,3,4,3,3,Sometimes,few hours a day,3,21,2,male,village
+5,4,5,3,1,5,5,5,Sometimes,few hours a day,5,18,2,female,city
+5,5,2,4,1,5,1,5,Sometimes,less than an hour a day,3,21,1,female,city
+5,1,5,1,5,5,1,5,Sometimes,few hours a day,2,20,2,female,city
+5,1,5,3,1,5,1,3,Sometimes,few hours a day,3,26,2,male,city
+5,2,5,3,2,1,1,3,Sometimes,few hours a day,4,20,1,female,village
+5,1,5,3,4,5,1,2,Sometimes,few hours a day,3,20,1,male,village
+5,1,5,5,2,2,1,2,Sometimes,few hours a day,2,20,1,male,city
+5,2,5,4,2,5,4,2,Sometimes,less than an hour a day,3,19,1,female,city
+4,2,4,3,1,4,5,2,Sometimes,less than an hour a day,3,29,2,female,city
+5,3,5,5,1,5,1,2,Sometimes,few hours a day,3,19,1,male,city
+5,4,5,1,1,1,1,1,Sometimes,less than an hour a day,4,21,1,female,village
+3,3,5,2,5,5,3,2,Sometimes,less than an hour a day,3,19,2,female,city
+5,5,5,2,2,5,2,4,Sometimes,few hours a day,5,20,2,female,village
+5,1,4,3,1,1,5,3,Sometimes,few hours a day,2,19,1,male,city
+2,1,4,2,2,4,1,4,Sometimes,less than an hour a day,2,23,2,male,village
+5,1,5,3,1,2,2,5,Sometimes,few hours a day,2,21,0,female,city
+4,1,4,4,2,1,2,2,Sometimes,less than an hour a day,4,22,1,female,city
+5,1,5,5,1,3,5,3,Sometimes,few hours a day,3,26,0,male,city
+5,1,5,4,3,1,3,4,Sometimes,few hours a day,1,21,2,female,village
+5,5,5,3,2,4,2,2,Sometimes,most of the day,4,20,1,female,city
+5,1,5,4,1,5,1,1,Sometimes,less than an hour a day,4,19,1,female,village
+5,1,5,4,2,5,5,2,Sometimes,few hours a day,3,19,2,female,village
+5,5,4,4,4,5,2,2,Sometimes,less than an hour a day,4,17,1,male,village
+5,2,4,4,1,5,5,4,Sometimes,few hours a day,3,21,1,female,city
+5,5,3,5,5,3,1,1,Sometimes,few hours a day,3,20,3,male,city
+5,1,5,3,1,1,1,5,Sometimes,most of the day,3,20,0,female,city
+4,1,5,3,4,5,2,3,Sometimes,few hours a day,4,19,2,female,city
+5,2,5,2,5,3,2,1,Sometimes,few hours a day,3,19,4,female,village
+5,3,5,2,1,5,5,3,Sometimes,most of the day,3,20,1,female,city
+5,2,5,2,1,5,5,4,Sometimes,few hours a day,4,20,1,female,city
+5,1,5,4,1,4,5,4,Sometimes,few hours a day,5,19,2,female,village
+4,4,5,4,3,5,5,4,Sometimes,few hours a day,4,25,1,female,village
+5,2,5,5,1,1,1,2,Sometimes,few hours a day,3,24,5,male,village
+1,1,4,3,1,1,1,2,Sometimes,few hours a day,1,27,2,male,city
+5,2,5,2,2,5,1,2,Sometimes,few hours a day,3,19,1,female,city
+5,2,4,3,3,1,4,3,Sometimes,few hours a day,3,17,0,female,city
+5,1,5,5,2,5,2,1,Sometimes,few hours a day,2,21,1,female,city
+5,1,5,4,1,1,1,4,Sometimes,few hours a day,3,20,0,male,city
+5,2,5,5,3,3,5,3,Sometimes,few hours a day,1,21,2,female,village
+5,NaN,5,2,3,1,5,2,Sometimes,few hours a day,4,20,2,female,city
+5,3,5,4,1,5,5,1,Sometimes,few hours a day,1,20,4,female,city
+5,1,5,3,4,3,3,5,Sometimes,few hours a day,3,20,2,female,city
+5,1,5,3,5,4,1,4,Sometimes,few hours a day,3,17,0,female,village
+5,1,5,1,1,5,4,3,Sometimes,few hours a day,3,19,1,female,village
+5,2,5,5,5,1,4,2,Sometimes,most of the day,3,20,1,male,city
+5,1,4,3,3,3,NaN,3,Sometimes,few hours a day,3,21,1,male,city
+5,4,5,5,1,1,3,3,Sometimes,few hours a day,3,21,2,female,city
+5,2,5,5,1,5,5,3,Sometimes,few hours a day,1,20,2,female,city
+5,2,3,2,2,2,2,5,Sometimes,few hours a day,4,20,1,female,village
+5,1,5,5,1,1,2,4,Sometimes,most of the day,4,20,0,male,city
+4,1,5,4,3,3,5,4,Sometimes,less than an hour a day,3,18,3,female,city
+5,2,5,4,5,5,5,3,Often,most of the day,2,21,1,female,city
+4,4,5,4,2,1,2,3,Often,few hours a day,2,19,1,male,city
+4,3,5,5,2,1,4,1,Often,few hours a day,4,19,1,female,village
+5,4,5,3,1,5,3,1,Often,most of the day,2,19,3,male,village
+5,2,5,5,4,5,2,4,Often,few hours a day,4,18,0,male,village
+3,2,3,3,4,4,5,2,Often,less than an hour a day,4,27,3,male,city
+5,4,5,5,3,5,1,2,Often,few hours a day,4,25,2,male,city
+5,3,5,4,3,3,3,3,Often,few hours a day,3,17,2,female,village
+5,1,4,4,4,5,5,3,Often,most of the day,5,30,0,female,city
+5,1,4,2,1,2,2,2,Often,few hours a day,1,20,1,female,city
+5,3,5,3,1,4,2,3,Often,most of the day,2,20,1,male,village
+5,5,4,5,1,1,4,4,Often,most of the day,3,22,1,male,city
+5,2,5,2,3,5,2,3,Often,most of the day,4,17,3,female,village
+5,3,4,4,2,1,1,2,Often,few hours a day,3,19,0,male,city
+5,1,4,2,2,1,4,3,Often,few hours a day,5,21,1,female,city
+5,3,3,4,1,3,1,2,Often,less than an hour a day,3,21,1,male,village
+5,3,5,1,2,5,3,4,Often,few hours a day,2,19,1,female,village
+5,1,5,3,2,2,2,2,Often,most of the day,4,26,2,male,village
+3,1,4,4,2,1,2,2,Often,most of the day,2,20,0,female,city
+5,1,4,4,2,5,3,4,Often,few hours a day,4,20,1,male,city
+4,3,4,3,4,1,2,2,Often,few hours a day,4,20,3,male,village
+5,1,5,4,5,3,2,4,Often,most of the day,4,18,2,male,city
+5,2,5,5,2,4,2,5,Often,few hours a day,2,25,2,male,city
+5,5,5,3,4,5,2,4,Often,most of the day,3,21,1,male,city
+5,3,5,5,3,5,5,1,Often,few hours a day,2,21,0,male,city
+2,3,3,5,1,1,5,4,Often,few hours a day,3,21,0,female,city
+5,2,5,1,5,4,1,2,Often,less than an hour a day,4,22,2,male,village
+5,3,5,5,2,5,2,3,Often,few hours a day,3,19,3,female,city
+5,1,5,4,1,4,4,2,Often,less than an hour a day,2,20,2,female,city
+5,1,5,2,3,1,4,2,Often,few hours a day,2,18,1,female,city
+5,2,5,1,1,5,5,2,Often,most of the day,1,21,1,female,village
+5,3,4,4,2,2,1,2,Often,few hours a day,3,23,0,male,city
+5,1,3,5,3,3,1,5,Often,most of the day,4,22,1,male,village
+5,1,5,3,1,3,5,3,Often,most of the day,3,27,5,female,village
+4,1,3,5,5,4,3,4,Often,few hours a day,5,19,1,male,city
+5,1,5,3,2,5,5,2,Often,few hours a day,2,19,0,female,city
+5,1,5,3,2,2,5,2,Often,less than an hour a day,4,19,2,female,village
+5,3,5,5,1,5,3,3,Often,few hours a day,3,20,3,male,village
+5,1,5,4,2,3,5,4,Often,few hours a day,3,21,1,male,village
+5,3,5,5,3,5,1,1,Often,less than an hour a day,2,24,1,male,city
+5,3,2,5,1,4,5,3,Often,few hours a day,3,17,3,female,city
+5,3,5,5,3,2,1,2,Often,few hours a day,2,16,1,male,city
+5,5,5,4,1,5,5,3,Often,few hours a day,4,28,1,female,city
+5,2,5,4,2,5,4,3,Often,few hours a day,3,20,1,female,city
+5,4,5,3,3,5,5,4,Often,few hours a day,5,23,1,female,village
+4,1,4,4,3,4,5,4,Often,few hours a day,2,24,1,female,city
+5,4,4,3,1,5,5,3,Often,few hours a day,2,22,2,female,city
+5,2,4,3,1,1,3,3,Often,few hours a day,3,20,5,male,city
+5,4,4,2,4,4,3,2,Often,few hours a day,3,20,0,female,city
+5,4,4,3,5,2,2,2,Often,few hours a day,5,19,1,male,city
+5,2,5,4,2,4,1,2,Often,few hours a day,3,21,1,female,city
+5,2,5,4,5,5,4,2,Often,few hours a day,4,18,1,female,village
+5,2,5,4,2,5,5,2,Often,few hours a day,3,19,1,female,village
+5,3,5,2,5,4,5,2,Often,less than an hour a day,5,19,1,female,city
+5,2,5,3,1,1,5,3,Often,less than an hour a day,3,18,4,female,city
+5,5,NaN,4,3,4,3,2,Often,few hours a day,2,16,4,male,city
+4,4,5,2,3,4,5,2,Often,few hours a day,3,20,0,female,city
+5,3,5,3,3,3,1,5,Often,few hours a day,5,19,1,male,village
+5,4,5,1,3,2,5,2,Often,few hours a day,5,20,1,female,city
+5,2,5,1,2,3,1,4,Often,most of the day,4,18,2,male,city
+5,4,5,3,3,5,3,4,Often,few hours a day,2,23,1,male,city
+5,5,5,5,4,1,5,1,Often,few hours a day,3,23,2,male,city
+5,3,5,1,1,5,1,3,Often,few hours a day,4,19,1,female,city
+5,1,5,3,1,5,1,1,Often,few hours a day,4,19,0,female,city
+5,3,5,3,1,3,4,4,Often,few hours a day,2,23,3,female,city
+5,1,3,5,3,1,1,4,Often,less than an hour a day,5,21,1,female,village
+5,1,4,5,2,5,4,3,Often,few hours a day,2,27,1,female,city
+5,2,5,5,5,4,1,2,Often,few hours a day,4,18,1,male,city
+5,3,4,3,3,3,3,2,Often,few hours a day,4,18,1,male,city
+4,1,4,2,3,5,2,4,Often,most of the day,1,18,0,female,city
+4,4,5,4,5,5,1,1,Often,less than an hour a day,3,27,5,male,village
+5,3,5,4,1,4,2,4,Often,few hours a day,3,20,1,female,city
+4,4,5,3,1,5,4,3,Often,few hours a day,3,20,1,female,city
+5,5,4,3,1,5,1,3,Often,less than an hour a day,4,20,1,female,village
+5,1,5,3,1,1,5,4,Often,few hours a day,2,18,1,female,city
+5,1,3,4,1,2,2,2,Often,few hours a day,3,20,0,male,NaN
+5,5,5,3,4,5,1,4,Often,few hours a day,4,18,0,female,city
+5,1,5,5,1,5,4,3,Often,few hours a day,3,20,0,female,city
+5,4,5,3,2,5,2,2,Often,less than an hour a day,2,19,2,female,city
+5,2,5,1,1,5,5,1,Often,most of the day,1,18,0,female,city
+5,1,5,2,1,1,5,4,Often,few hours a day,2,17,1,female,city
+5,1,4,2,1,5,2,2,Often,most of the day,5,22,1,female,city
+1,1,5,5,3,1,1,4,Often,few hours a day,3,18,0,male,city
+5,1,4,1,3,4,1,3,Often,few hours a day,2,18,2,male,city
+5,1,5,5,1,3,5,2,Often,less than an hour a day,1,18,2,female,city
+5,3,5,4,2,3,5,4,Often,few hours a day,3,19,1,female,city
+5,1,5,5,2,4,4,4,Often,few hours a day,2,21,2,female,city
+5,2,5,2,3,3,5,2,Often,few hours a day,2,20,1,female,city
+5,2,5,2,4,2,4,2,Often,few hours a day,4,19,1,female,city
+4,4,5,2,1,5,5,3,Often,few hours a day,3,19,1,female,city
+5,2,5,3,3,5,5,2,Often,less than an hour a day,3,19,0,female,city
+5,1,5,4,1,2,1,5,Often,few hours a day,4,24,10,female,city
+5,1,5,5,2,1,2,3,Often,few hours a day,2,21,1,female,city
+5,1,5,2,1,4,1,3,Often,most of the day,1,20,3,female,city
+4,4,5,1,2,5,4,3,Often,few hours a day,5,18,1,female,city
+4,4,5,2,4,4,2,2,Often,less than an hour a day,4,26,3,male,city
+5,1,3,3,5,4,5,3,Often,less than an hour a day,4,18,1,female,city
+5,2,5,3,2,2,4,3,Often,few hours a day,4,21,1,female,city
+5,3,5,3,1,4,2,2,Often,few hours a day,4,18,1,female,city
+4,3,4,5,2,2,1,1,Often,few hours a day,2,21,1,male,village
+5,2,4,2,2,4,1,2,Often,few hours a day,4,18,0,male,village
+5,1,5,4,3,5,5,2,Often,few hours a day,4,25,1,female,city
+5,4,5,3,4,5,1,2,Often,few hours a day,2,21,2,male,city
+3,5,4,2,1,5,3,2,Often,few hours a day,2,21,1,female,village
+5,5,5,2,1,5,2,2,Often,most of the day,4,20,1,male,village
+5,4,5,3,1,4,2,2,Often,few hours a day,4,18,1,female,city
+5,1,5,5,1,5,5,2,Often,less than an hour a day,4,19,1,female,city
+5,1,4,2,3,3,5,3,Often,few hours a day,2,27,0,male,city
+5,3,5,4,3,5,2,1,Often,few hours a day,4,19,2,male,village
+4,1,5,2,1,5,5,2,Often,few hours a day,5,17,0,female,city
+5,1,4,2,1,4,5,5,Often,few hours a day,3,21,1,female,city
+5,1,4,2,5,5,3,4,Often,few hours a day,3,18,3,female,village
+5,5,5,2,2,5,5,4,Often,few hours a day,4,23,4,female,city
+5,4,5,5,5,4,1,2,Often,few hours a day,2,30,2,male,city
+4,3,3,4,4,3,2,2,Often,few hours a day,5,16,1,female,village
+5,1,4,1,3,3,2,2,Often,most of the day,4,24,1,female,city
+5,1,4,3,4,3,2,1,Often,few hours a day,2,20,3,male,city
+5,4,5,4,4,3,4,3,Often,few hours a day,3,19,1,male,city
+4,2,5,2,1,3,4,2,Often,less than an hour a day,2,21,1,male,city
+5,1,5,4,3,3,1,4,Often,few hours a day,4,19,0,female,city
+5,3,5,4,1,1,1,4,Often,few hours a day,4,19,2,female,village
+5,3,5,4,1,5,3,3,Often,few hours a day,3,21,1,male,city
+5,3,4,4,3,4,NaN,3,Often,less than an hour a day,4,22,1,female,village
+5,1,4,5,5,5,1,4,Often,few hours a day,4,23,1,female,village
+5,1,5,5,4,1,1,2,Often,few hours a day,4,18,0,female,city
+5,3,5,2,2,2,3,4,Often,few hours a day,3,18,1,male,city
+5,2,5,4,1,3,3,3,Often,few hours a day,5,22,1,male,city
+5,5,5,5,1,1,3,3,Often,less than an hour a day,2,21,2,female,city
+3,1,5,3,2,1,1,2,Often,few hours a day,3,24,1,female,city
+5,1,3,5,5,3,1,2,Often,few hours a day,4,19,1,male,city
+4,1,4,2,1,3,1,2,Often,few hours a day,2,18,1,male,city
+3,1,2,4,1,NaN,2,2,Often,less than an hour a day,5,19,2,female,village
+4,1,5,4,1,5,5,2,Often,less than an hour a day,4,22,1,female,city
+5,5,5,4,1,1,5,1,Often,few hours a day,1,21,1,female,city
+4,4,5,2,3,3,3,2,Often,few hours a day,4,24,1,female,village
+5,4,5,4,2,5,5,3,Often,few hours a day,4,21,2,female,city
+5,1,5,2,1,4,3,2,Often,few hours a day,4,19,2,female,city
+5,1,5,5,1,5,3,3,Often,few hours a day,1,19,0,female,city
+4,3,5,5,4,2,2,4,Often,few hours a day,2,24,3,male,city
+5,2,5,4,1,5,3,2,Often,less than an hour a day,2,20,1,female,city
+5,1,5,3,1,2,2,3,Often,few hours a day,4,22,2,female,village
+3,3,4,3,2,5,1,2,Often,few hours a day,2,23,0,female,city
+5,1,5,1,1,1,5,2,Often,few hours a day,5,18,4,female,village
+5,1,4,2,2,3,2,3,Often,few hours a day,3,21,1,male,city
+5,4,5,3,1,1,1,3,Often,few hours a day,2,16,1,female,city
+5,1,5,1,3,4,1,3,Often,few hours a day,3,20,1,female,village
+5,4,4,3,3,1,2,2,Often,few hours a day,1,21,3,female,village
+5,2,3,1,1,5,1,4,Often,less than an hour a day,4,16,2,female,village
+NaN,2,3,3,2,4,5,2,Often,few hours a day,2,19,2,female,city
+5,1,5,5,1,5,5,3,Often,few hours a day,4,20,2,female,city
+5,2,5,2,1,2,5,2,Often,few hours a day,3,16,0,female,city
+4,1,5,3,4,5,3,5,Often,few hours a day,5,22,2,female,village
+5,1,5,4,1,2,4,5,Often,few hours a day,4,24,1,female,city
+5,1,3,4,3,1,5,2,Often,less than an hour a day,2,16,NaN,female,village
+5,4,5,1,5,4,5,2,Often,few hours a day,5,17,1,male,city
+4,1,4,2,1,3,1,1,Often,less than an hour a day,4,20,1,female,city
+5,1,5,5,1,4,1,1,Often,few hours a day,3,21,2,male,village
+5,1,5,3,4,2,1,3,Often,few hours a day,4,27,3,male,village
+5,4,4,4,2,3,2,3,Often,less than an hour a day,5,20,1,male,city
+5,1,5,3,1,5,1,5,Often,few hours a day,1,21,2,male,city
+5,1,5,5,1,5,2,3,Often,few hours a day,2,18,2,female,city
+5,1,5,2,1,3,3,1,Often,few hours a day,2,20,2,female,city
+5,3,3,2,4,5,5,2,Often,most of the day,3,20,1,female,city
+5,1,4,2,1,5,3,3,Often,less than an hour a day,3,29,2,female,city
+5,1,4,1,1,1,3,2,Often,few hours a day,5,24,3,female,village
+5,4,5,5,1,1,2,2,Often,few hours a day,2,19,0,female,city
+5,4,5,3,2,5,5,2,Often,few hours a day,3,17,2,female,city
+5,1,5,3,5,5,5,3,Often,few hours a day,4,16,1,female,village
+5,1,5,4,2,3,3,4,Often,few hours a day,3,18,1,female,city
+5,1,5,4,5,5,1,2,Often,few hours a day,4,21,1,male,village
+5,1,5,3,3,5,2,3,Often,less than an hour a day,4,19,4,female,city
+5,4,5,3,2,2,4,3,Often,most of the day,3,25,1,male,city
+5,3,4,1,3,5,5,3,Often,few hours a day,2,21,0,male,city
+5,2,5,5,1,4,4,1,Often,few hours a day,1,20,1,male,village
+5,2,5,4,3,4,3,3,Often,less than an hour a day,3,19,1,female,village
+5,4,4,3,2,3,3,3,Often,few hours a day,3,19,2,female,city
+5,3,5,2,2,2,1,2,Often,less than an hour a day,3,19,1,male,city
+5,5,3,1,2,5,3,4,Often,few hours a day,3,19,1,male,city
+5,2,5,5,3,2,5,3,Often,few hours a day,3,18,0,female,city
+5,4,4,3,1,5,1,3,Often,few hours a day,3,19,0,female,city
+5,2,5,3,1,3,5,2,Often,few hours a day,3,20,1,female,city
+5,1,5,4,5,4,1,3,Often,few hours a day,2,28,1,male,city
+5,2,5,5,1,4,5,3,Often,few hours a day,1,17,1,female,village
+4,2,4,3,5,2,5,4,Often,few hours a day,4,16,1,female,city
+5,1,4,4,1,1,5,3,Often,few hours a day,1,20,1,male,city
+5,4,4,2,1,3,3,3,Often,less than an hour a day,3,21,1,male,city
+5,2,5,3,2,3,5,2,Often,less than an hour a day,4,20,2,male,village
+5,4,4,3,2,5,3,4,Often,most of the day,2,28,1,female,city
+5,4,5,1,3,5,1,3,Often,few hours a day,3,19,2,male,city
+5,5,4,1,3,5,5,3,Often,few hours a day,4,22,1,female,city
+5,1,5,2,1,5,4,3,Often,few hours a day,3,20,0,female,village
+5,4,5,5,3,3,1,3,Often,few hours a day,5,20,0,male,village
+5,3,5,4,1,5,5,3,Often,few hours a day,2,16,0,female,city
+5,1,4,5,1,5,2,2,Often,few hours a day,2,18,1,female,city
+5,2,5,1,2,3,2,3,Often,few hours a day,3,18,1,female,city
+5,1,4,2,3,5,2,2,Often,few hours a day,5,22,3,female,city
+5,4,4,5,1,5,2,3,Often,less than an hour a day,4,19,1,male,village
+5,3,5,4,4,4,1,1,Often,few hours a day,3,19,0,female,city
+5,3,5,1,1,1,3,4,Often,most of the day,3,23,1,female,city
+5,1,5,5,2,4,1,3,Often,most of the day,3,22,1,male,city
+4,2,5,5,2,5,4,3,Often,less than an hour a day,4,19,2,male,city
+5,4,4,3,1,5,2,4,Often,less than an hour a day,4,18,1,female,city
+5,4,5,4,2,2,1,1,Often,few hours a day,3,17,1,female,village
+5,2,3,3,4,4,2,2,Often,few hours a day,3,18,1,female,village
+4,2,5,1,3,1,5,2,Often,few hours a day,4,20,1,female,village
+4,1,4,4,4,2,3,3,Often,few hours a day,3,24,2,female,city
+5,2,5,5,2,1,1,1,Often,less than an hour a day,4,17,1,female,city
+4,3,4,3,3,2,3,4,Often,few hours a day,4,NaN,2,female,village
+5,2,2,2,4,1,4,4,Often,few hours a day,3,16,0,female,city
+4,3,5,2,1,2,2,3,Often,less than an hour a day,4,19,0,female,city
+5,1,5,1,4,5,2,3,Often,most of the day,3,21,1,female,village
+4,1,5,3,3,5,5,2,Often,few hours a day,4,21,0,female,city
+5,3,5,1,3,5,5,1,Often,less than an hour a day,3,28,2,female,city
+5,3,4,3,2,3,2,1,Often,less than an hour a day,4,20,1,male,village
+4,3,5,5,3,2,2,1,Often,few hours a day,4,20,2,male,city
+5,1,4,2,1,1,1,2,Often,few hours a day,4,20,1,female,village
+5,1,5,4,1,5,5,2,Often,few hours a day,3,20,1,female,city
+4,3,4,5,3,1,1,4,Often,few hours a day,3,18,3,female,village
+4,2,4,5,2,3,3,3,Often,few hours a day,3,20,1,female,city
+5,4,5,4,3,1,1,1,Often,few hours a day,4,19,1,male,city
+5,1,4,3,1,1,3,2,Often,few hours a day,2,21,1,female,city
+5,1,4,2,1,5,5,3,Often,few hours a day,2,18,1,female,city
+5,4,5,5,1,4,3,4,Often,few hours a day,2,18,1,male,city
+5,2,5,5,1,3,5,2,Often,few hours a day,2,18,0,female,city
+4,5,5,2,5,3,3,3,Often,few hours a day,5,19,2,male,village
+5,3,5,2,2,5,4,4,Often,few hours a day,4,18,2,female,city
+5,2,5,3,1,5,5,5,Often,less than an hour a day,4,21,3,female,village
+5,3,5,5,1,5,1,4,Often,most of the day,3,25,1,male,city
+4,1,4,4,2,2,1,3,Often,few hours a day,5,19,1,female,village
+5,5,5,3,5,5,3,2,Often,few hours a day,3,19,1,male,village
+5,1,5,2,4,4,2,4,Often,most of the day,3,18,3,female,city
+5,1,5,4,5,2,2,4,Often,few hours a day,3,23,1,female,city
+5,2,5,5,1,3,5,3,Often,few hours a day,5,19,2,female,city
+5,4,4,1,1,1,5,1,Often,few hours a day,5,22,1,female,village
+5,1,5,2,4,4,2,3,Often,few hours a day,4,19,2,male,city
+5,1,5,5,1,3,5,3,Often,few hours a day,5,19,2,female,city
+5,1,5,3,1,3,4,2,Often,few hours a day,4,20,0,male,village
+2,2,5,3,2,1,4,4,Often,few hours a day,4,20,2,male,city
+5,2,5,2,2,4,2,1,Often,few hours a day,2,19,1,male,city
+5,1,5,3,5,5,1,1,Often,few hours a day,2,21,1,female,village
+5,3,5,2,3,1,3,2,Often,most of the day,2,22,6,male,village
+5,3,5,5,1,3,1,3,Often,few hours a day,5,20,2,male,village
+5,4,5,4,3,5,2,4,Often,few hours a day,3,19,2,female,city
+5,NaN,5,3,1,5,1,3,Often,few hours a day,4,18,1,female,NaN
+5,2,5,2,2,4,4,3,Often,most of the day,4,20,2,female,city
+5,1,5,2,4,1,1,3,Often,few hours a day,3,19,1,female,city
+5,2,5,5,3,5,4,5,Often,few hours a day,2,20,2,female,city
+5,3,5,2,1,5,5,4,Often,few hours a day,1,21,1,female,city
+4,4,1,1,1,1,5,3,Often,less than an hour a day,3,16,1,female,city
+5,1,5,5,3,3,1,3,Often,few hours a day,2,22,1,male,city
+5,1,5,2,1,5,5,2,Often,few hours a day,1,20,1,female,city
+5,3,5,4,5,5,2,2,Often,few hours a day,2,20,2,female,city
+5,2,5,3,3,3,2,3,Often,few hours a day,3,25,2,male,city
+5,5,5,5,1,1,1,3,Often,few hours a day,3,22,1,male,city
+5,4,5,3,3,5,2,3,Often,few hours a day,3,21,2,female,city
+5,4,5,4,1,5,5,2,Often,few hours a day,2,21,0,female,village
+5,3,5,4,4,2,2,2,Often,few hours a day,2,19,1,male,city
+5,1,5,2,5,1,5,5,Often,few hours a day,4,19,2,female,city
+5,5,5,5,5,5,2,2,Often,few hours a day,3,20,2,male,village
+5,4,NaN,3,2,3,3,3,Often,few hours a day,3,21,1,female,city
+5,3,5,3,2,5,4,4,Often,few hours a day,3,19,0,female,village
+5,1,5,4,1,5,NaN,3,Often,less than an hour a day,3,30,1,female,village
+5,4,5,3,4,5,5,4,Often,few hours a day,4,15,1,female,city
+5,3,5,5,2,3,3,3,Often,few hours a day,3,19,2,female,city
+5,2,5,4,1,5,5,3,Often,no time at all,3,19,3,female,village
+5,4,5,1,1,4,5,3,Often,few hours a day,2,21,1,female,village
+5,2,5,1,1,1,1,3,Often,few hours a day,4,20,0,female,city
+5,3,5,3,1,5,1,3,Often,few hours a day,4,21,0,female,city
+5,1,3,5,2,5,3,4,Often,few hours a day,3,23,1,female,city
+5,3,5,3,2,2,4,3,Often,most of the day,3,25,1,female,city
+5,1,4,1,3,3,1,2,Often,less than an hour a day,3,18,1,male,city
+5,1,5,2,2,3,3,3,Often,few hours a day,5,20,2,female,city
+5,3,NaN,4,4,5,2,3,Often,few hours a day,3,18,1,male,city
+5,4,4,3,3,5,2,3,Often,few hours a day,3,22,2,female,city
+5,3,4,3,3,3,4,5,Often,few hours a day,3,19,1,female,city
+5,1,5,3,1,2,2,2,Often,few hours a day,4,28,1,female,village
+5,1,5,5,1,2,3,2,Often,few hours a day,3,20,1,female,village
+5,2,5,4,4,1,1,4,Often,few hours a day,4,18,1,female,city
+5,1,5,3,4,4,3,4,Often,few hours a day,2,19,1,female,city
+5,1,5,3,3,1,5,4,Often,few hours a day,4,18,2,female,city
+5,4,5,1,3,1,4,4,Often,few hours a day,3,19,1,female,village
+NaN,1,5,4,4,1,1,5,Often,few hours a day,5,17,0,female,city
+5,5,5,3,3,4,3,4,Often,few hours a day,5,20,1,female,village
+5,3,5,3,3,5,4,2,Often,less than an hour a day,5,25,0,female,village
+5,1,5,3,1,5,2,2,Often,few hours a day,2,18,2,male,village
+5,1,5,1,1,3,5,1,Often,few hours a day,3,20,1,female,village
+5,3,5,2,2,5,1,4,Often,few hours a day,2,18,2,male,village
+5,1,5,2,2,1,2,5,Often,few hours a day,4,24,1,female,city
+4,1,5,3,5,2,2,1,Often,few hours a day,4,20,1,female,city
+5,3,5,2,1,5,1,5,Often,few hours a day,3,25,1,NaN,village
+5,2,3,2,3,2,1,5,Often,few hours a day,4,21,1,female,village
+4,2,5,5,2,1,1,3,Often,few hours a day,4,18,2,female,city
+4,2,5,3,3,5,1,3,Often,few hours a day,5,20,2,female,village
+5,3,5,4,4,5,1,1,Often,few hours a day,3,22,1,female,village
+4,3,3,2,4,1,1,2,Often,few hours a day,1,21,5,male,village
+5,2,4,4,3,4,5,2,Often,few hours a day,3,19,1,female,village
+5,1,5,2,2,5,1,3,Often,few hours a day,5,19,0,female,village
+5,5,5,5,3,5,3,3,Often,few hours a day,4,21,1,female,city
+5,2,5,3,2,1,2,3,Often,few hours a day,3,21,0,female,city
+4,1,3,1,5,5,4,4,Often,few hours a day,5,18,1,female,village
+1,1,5,5,3,5,1,2,Often,less than an hour a day,3,19,0,female,city
+5,1,5,5,3,1,5,3,Often,few hours a day,NaN,18,1,female,city
+3,1,5,3,1,2,NaN,3,Often,less than an hour a day,5,21,0,female,city
+5,1,5,3,1,5,2,3,Often,few hours a day,5,22,0,female,village
+5,1,5,5,2,1,2,5,Often,less than an hour a day,5,20,1,female,city
+4,1,5,3,4,1,4,5,Often,few hours a day,4,21,0,male,city
+5,1,5,5,1,5,5,4,Often,few hours a day,4,20,1,female,city
+5,4,5,2,1,5,2,2,Often,few hours a day,3,18,1,female,city
+4,5,5,1,1,3,5,5,Often,most of the day,3,20,3,NaN,city
+5,1,5,2,1,4,4,3,Often,few hours a day,3,22,0,female,city
+5,1,5,5,1,1,3,5,Often,most of the day,3,23,0,female,city
+4,2,5,4,3,4,3,2,Often,less than an hour a day,3,17,1,male,city
+2,1,1,1,3,2,1,3,Often,few hours a day,1,22,0,male,city
+5,3,5,2,2,2,1,3,Often,few hours a day,1,20,0,male,city
+5,1,5,3,1,4,5,2,Often,few hours a day,3,22,1,female,city
+5,3,5,4,1,5,5,4,Often,most of the day,2,18,1,female,city
+5,5,3,4,3,2,3,1,Often,most of the day,3,23,2,male,village
+4,1,5,5,2,3,1,2,Often,few hours a day,4,20,1,male,city
+4,4,3,5,5,3,1,3,Often,few hours a day,4,18,2,male,city
+5,1,5,2,1,1,3,3,Often,few hours a day,3,19,1,male,city
+5,1,5,3,1,1,1,3,Often,less than an hour a day,3,19,1,female,village
+5,2,5,1,5,4,5,3,Often,few hours a day,3,21,1,female,city
+4,1,5,2,2,4,1,4,Often,few hours a day,4,22,1,male,village
+5,1,5,3,2,5,5,1,Often,less than an hour a day,3,21,1,male,village
+5,3,5,5,1,1,1,2,Often,few hours a day,4,18,2,female,city
+5,2,5,2,1,1,1,3,Often,few hours a day,4,21,1,female,city
+4,1,5,4,5,5,4,4,Often,few hours a day,4,25,1,female,city
+5,1,5,3,1,5,3,2,Often,few hours a day,3,18,1,female,village
+5,2,5,3,1,5,4,3,Often,few hours a day,4,21,1,female,city
+5,3,4,5,5,2,3,3,Often,less than an hour a day,5,29,2,male,village
+4,2,5,2,4,4,1,4,Often,few hours a day,3,19,0,male,city
+5,4,5,3,2,1,4,3,Often,few hours a day,3,19,2,female,city
+5,1,5,5,1,2,1,3,Often,few hours a day,5,19,1,female,city
+5,3,5,4,3,5,1,3,Often,few hours a day,3,19,2,male,village
+5,5,4,5,3,5,1,3,Often,few hours a day,4,23,1,male,village
+5,2,5,4,2,5,2,2,Often,few hours a day,4,18,2,female,village
+4,3,4,3,4,5,1,5,Often,most of the day,4,22,0,male,city
+4,1,5,4,1,2,1,4,Often,few hours a day,1,20,1,female,city
+4,1,4,4,1,2,3,3,Often,less than an hour a day,3,25,1,female,city
+5,3,5,5,1,4,3,1,Often,few hours a day,1,24,2,male,village
+5,2,5,4,1,5,1,3,Often,few hours a day,2,18,0,NaN,village
+5,4,4,4,3,4,1,3,Often,few hours a day,2,17,1,male,village
+5,3,5,2,1,5,3,3,Often,few hours a day,1,20,0,female,city
+5,2,4,3,2,2,4,2,Often,few hours a day,3,19,1,female,village
+5,1,5,5,5,1,1,4,Always,few hours a day,3,18,3,female,city
+5,3,3,2,1,1,4,2,Always,few hours a day,3,22,1,female,city
+5,1,4,3,1,2,1,2,Always,less than an hour a day,1,29,2,female,village
+5,5,5,3,4,1,3,2,Always,few hours a day,3,20,1,female,village
+5,1,4,3,5,1,1,1,Always,less than an hour a day,5,19,3,female,city
+5,1,5,2,2,3,2,3,Always,few hours a day,4,21,0,female,city
+5,5,5,3,2,5,3,5,Always,few hours a day,1,19,3,female,city
+5,1,5,5,5,5,1,1,Always,few hours a day,5,22,2,male,city
+2,1,3,4,3,3,3,2,Always,no time at all,5,NaN,1,female,village
+5,5,5,5,4,5,5,3,Always,few hours a day,3,23,2,male,village
+3,1,4,5,3,4,4,4,Always,less than an hour a day,5,26,3,female,village
+5,4,5,4,1,3,5,3,Always,few hours a day,3,19,1,female,city
+5,5,1,5,1,1,1,1,Always,few hours a day,3,18,1,female,village
+5,1,4,1,3,1,3,3,Always,less than an hour a day,4,20,3,female,city
+5,2,5,3,2,5,1,4,Always,few hours a day,5,22,1,female,city
+5,4,5,4,3,4,4,2,Always,most of the day,4,25,2,female,city
+5,4,5,1,2,3,4,4,Always,less than an hour a day,3,19,1,female,village
+5,5,5,5,1,3,1,5,Always,few hours a day,4,25,1,male,village
+5,5,5,4,5,5,3,5,Always,few hours a day,1,19,0,female,city
+5,1,5,4,3,5,5,2,Always,few hours a day,5,18,1,female,city
+5,2,3,3,2,3,2,5,Always,less than an hour a day,4,28,2,female,city
+4,1,5,3,4,5,4,2,Always,few hours a day,4,18,3,female,village
+5,1,5,4,3,4,5,3,Always,few hours a day,2,21,3,female,city
+5,5,3,3,1,1,4,5,Always,few hours a day,1,19,3,male,city
+3,4,4,1,4,4,3,4,Always,few hours a day,5,19,2,male,village
+5,5,5,5,1,5,5,5,Always,few hours a day,1,21,0,female,city
+5,3,5,3,1,3,5,1,Always,few hours a day,3,18,1,female,city
+5,5,5,4,5,3,1,3,Always,few hours a day,1,20,2,male,city
+5,1,4,3,1,1,1,3,Always,most of the day,3,19,1,female,city
+5,1,5,3,3,5,1,3,Always,few hours a day,4,30,4,female,village
+5,1,5,4,3,2,1,3,Always,few hours a day,4,22,2,male,city
+3,1,4,4,1,5,2,2,Always,less than an hour a day,3,19,1,female,city
+5,1,3,1,1,4,1,1,Always,less than an hour a day,1,18,1,female,city
+5,3,5,5,5,5,5,5,Always,most of the day,1,21,1,male,village
+5,4,5,5,2,1,4,2,Always,few hours a day,4,22,0,male,city
+5,2,4,5,3,5,3,3,Always,few hours a day,3,16,1,female,city
+5,2,5,3,2,2,4,1,Always,few hours a day,3,20,1,female,city
+5,1,5,3,2,2,4,5,Always,few hours a day,3,20,0,female,city
+5,3,5,3,1,1,3,4,Always,most of the day,3,20,3,male,village
+2,4,5,3,4,2,1,3,Always,few hours a day,4,24,2,male,city
+5,3,5,1,5,1,1,3,Always,most of the day,4,19,1,male,city
+5,2,5,3,1,2,2,5,Always,most of the day,1,19,0,female,city
+5,2,4,4,3,4,2,5,Always,few hours a day,5,19,1,female,city
+4,4,4,5,1,4,1,1,Always,few hours a day,4,16,1,female,village
+5,1,5,3,4,5,5,2,Always,few hours a day,5,18,1,female,city
+5,1,5,3,1,2,5,3,Always,few hours a day,3,19,1,male,city
+5,4,5,5,1,5,5,3,Always,few hours a day,3,22,2,male,city
+5,1,5,5,1,5,5,2,Always,few hours a day,5,21,1,female,city
+5,2,5,4,4,1,5,3,Always,few hours a day,4,19,1,male,city
+5,3,5,3,4,4,3,1,Always,few hours a day,4,20,1,female,city
+3,1,3,1,1,2,1,5,Always,most of the day,3,23,0,male,city
+5,2,5,3,1,5,4,2,Always,few hours a day,5,20,0,female,city
+5,1,5,2,1,3,1,4,Always,few hours a day,4,20,4,female,village
+5,2,2,4,3,1,3,5,Always,few hours a day,4,NaN,NaN,NaN,village
+5,3,5,2,1,2,4,3,Always,few hours a day,3,17,1,male,city
+5,5,5,5,1,NaN,1,2,Always,less than an hour a day,NaN,26,1,male,city
+5,1,5,5,5,5,5,3,NaN,few hours a day,3,18,1,female,city
+5,1,4,1,2,5,4,2,NaN,less than an hour a day,3,19,1,female,NaN
