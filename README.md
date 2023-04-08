@@ -9,7 +9,7 @@
 1. The GitHub History of the Scala Language
 1. [Introduction to Data Visualization with Matplotlib](introduction-to-data-visualization-with-matplotlib)
 1. [Introduction to Data Visualization with Seaborn](introduction-to-data-visualization-with-seaborn)
-1. Introduction to NumPy
+1. [Introduction to NumPy](introduction-to-numpy)
 1. Python Data Science Toolbox (Part 1)
 1. The Android App Market on Google Play
 1. Python Data Science Toolbox (Part 2)
