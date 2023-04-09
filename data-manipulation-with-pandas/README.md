@@ -1,21 +1,25 @@
 # Data Manipulation with pandas
 
-## [View the notebook](data-manipulation-with-pandas.ipynb)
+View [the notebook](data-manipulation-with-pandas.ipynb) or execute [the script](data-manipulation-with-pandas.py) by running these commands in the terminal:
 
-## Run the codes
+- On MacOS and Linux:
 
-* Remove the `datacamp` directory if exists
-* Clone this repository from Github
-* Switch to this directory
-* Create & activate the virtualenv
-* Install requirements
-* Execute the Python script
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/data-manipulation-with-pandas
+    python3 -m venv datacamp && source datacamp/bin/activate
+    pip install -r requirements.txt
+    python3 data-manipulation-with-pandas.py
+    ```
 
-``` bash
-rm -rf datacamp
-git clone https://github.com/datttrian/datacamp
-cd datacamp/data-manipulation-with-pandas
-python3 -m venv ./venv --prompt datacamp && source venv/bin/activate
-pip install -r requirements.txt
-python data-manipulation-with-pandas.py
-```
+- On Windows:
+
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/data-manipulation-with-pandas
+    python3 -m venv datacamp && datacamp\Scripts\activate.bat
+    pip install -r requirements.txt
+    python3 data-manipulation-with-pandas.py
+    ```

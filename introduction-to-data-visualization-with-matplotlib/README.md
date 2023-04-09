@@ -1,21 +1,25 @@
-# Introduction to Statistics in Python
+# Introduction to Data Visualization with Matplotlib
 
-## [View the notebook](introduction-to-statistics-in-python.ipynb)
+View [the notebook](introduction-to-data-visualization-with-matplotlib.ipynb) or execute [the script](introduction-to-data-visualization-with-matplotlib.py) by running these commands in the terminal:
 
-## Run the codes
+- On MacOS and Linux:
 
-* Remove the `datacamp` directory if exists
-* Clone this repository from Github
-* Switch to this directory
-* Create & activate the virtualenv
-* Install requirements
-* Execute the Python script
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/introduction-to-data-visualization-with-matplotlib
+    python3 -m venv datacamp && source datacamp/bin/activate
+    pip install -r requirements.txt
+    python3 introduction-to-data-visualization-with-matplotlib.py
+    ```
 
-``` bash
-rm -rf datacamp
-git clone https://github.com/datttrian/datacamp
-cd datacamp/introduction-to-statistics-in-python
-python3 -m venv ./venv --prompt datacamp && source venv/bin/activate
-pip install -r requirements.txt
-python introduction-to-statistics-in-python.py
-```
+- On Windows:
+
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/introduction-to-data-visualization-with-matplotlib
+    python3 -m venv datacamp && datacamp\Scripts\activate.bat
+    pip install -r requirements.txt
+    python3 introduction-to-data-visualization-with-matplotlib.py
+    ```

@@ -1,4 +1,23 @@
-# Data Scientist with Python Career Track
+[<img src="datacamp.png" align="right" width=150;>](https://www.datacamp.com)
+
+**Table of Contents**
+
+- [Career Tracks](#career-tracks)
+    * [Data Scientist with Python](#data-scientist-with-python)
+    * [Data Scientist with R](#data-scientist-with-r)
+    * Data Analyst in SQL
+- [Skill Tracks](#skill-tracks)
+    * [Python Fundamentals](#python-fundamentals)
+    * [Data Manipulation with Python](#data-manipulation-with-python)
+    * [Data Visualization with Python](#data-visualization-with-python)
+    * [R Programming](#r-programming)
+    * [Data Manipulation with R](#data-manipulation-with-r)
+    * [Data Visualization with R](#data-visualization-with-r)
+    * SQL Fundamentals
+
+# Career Tracks
+
+## Data Scientist with Python
 
 1. [Introduction to Python](introduction-to-python)
 1. [Intermediate Python](intermediate-python)
@@ -35,7 +54,7 @@
 1. Unsupervised Learning in Python
 1. Machine Learning with Tree-Based Models in Python
 
-# Data Scientist with R Career Track
+## Data Scientist with R
 
 1. [Introduction to R](introduction-to-r)
 1. [Intermediate R](intermediate-r)
@@ -59,3 +78,47 @@
 1. Supervised Learning in R: Classification
 1. Supervised Learning in R: Regression
 1. Unsupervised Learning in R
+
+# Skill Tracks
+
+## Python Fundamentals
+
+1. [Introduction to Python](introduction1.to1.python)
+1. [Intermediate Python](intermediate1.python)
+1. Python Data Science Toolbox (Part 1)
+1. Python Data Science Toolbox (Part 2)
+
+## Data Manipulation with Python
+
+1. [Data Manipulation with pandas](data-manipulation-with-pandas)
+1. Reshaping Data with pandas
+1. Joining Data with pandas
+1. Introduction to NumPy
+
+## Data Visualization with Python
+
+1. [Introduction to Data Visualization with Matplotlib](introduction-to-data-visualization-with-matplotlib)
+1. [Introduction to Data Visualization with Seaborn](introduction-to-data-visualization-with-seaborn)
+1. Improving Your Data Visualizations in Python
+1. Visualizing Geospatial Data in Python
+
+## R Programming
+
+1. [Introduction to R](introduction-to-r)
+1. [Intermediate R](intermediate-r)
+1. Writing Efficient R Code
+1. Introduction to Writing Functions in R
+1. Object-Oriented Programming with S3 and R6 in R
+
+## Data Manipulation with R
+
+1. [Data Manipulation with dplyr](data-manipulation-with-dplyr)
+1. Reshaping Data with tidyr
+1. Joining Data with dplyr
+1. Case Study: Exploratory Data Analysis in R
+
+## Data Visualization with R
+
+1. [Introduction to Data Visualization with ggplot2](introduction-to-data-visualization-with-ggplot2)
+1. Intermediate Data Visualization with ggplot2
+1. Visualization Best Practices in R

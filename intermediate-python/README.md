@@ -1,21 +1,25 @@
 # Intermediate Python
 
-## [View the notebook](intermediate-python.ipynb)
+View [the notebook](intermediate-python.ipynb) or execute [the script](intermediate-python.py) by running these commands in the terminal:
 
-## Run the codes
+- On MacOS and Linux:
 
-* Remove the `datacamp` directory if exists
-* Clone this repository from Github
-* Switch to this directory
-* Create & activate the virtualenv
-* Install requirements
-* Execute the Python script
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/intermediate-python
+    python3 -m venv datacamp && source datacamp/bin/activate
+    pip install -r requirements.txt
+    python3 intermediate-python.py
+    ```
 
-``` bash
-rm -rf datacamp
-git clone https://github.com/datttrian/datacamp
-cd datacamp/intermediate-python
-python3 -m venv ./venv --prompt datacamp && source venv/bin/activate
-pip install -r requirements.txt
-python intermediate-python.py
-```
+- On Windows:
+
+    ``` bash
+    rm -rf datacamp
+    git clone https://github.com/datttrian/datacamp
+    cd datacamp/intermediate-python
+    python3 -m venv datacamp && datacamp\Scripts\activate.bat
+    pip install -r requirements.txt
+    python3 intermediate-python.py
+    ```
