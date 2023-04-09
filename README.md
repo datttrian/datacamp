@@ -63,7 +63,7 @@
 1. [Joining Data with dplyr](joining-data-with-dplyr)
 1. [Introduction to Statistics in R](introduction-to-statistics-in-r)
 1. [Introduction to Data Visualization with ggplot2](introduction-to-data-visualization-with-ggplot2)
-1. Intermediate Data Visualization with ggplot2
+1. [Intermediate Data Visualization with ggplot2](intermediate-data-visualization-with-ggplot2)
 1. Data Communication Concepts
 1. Introduction to Importing Data in R
 1. Cleaning Data in R
@@ -120,5 +120,5 @@
 ## Data Visualization with R
 
 1. [Introduction to Data Visualization with ggplot2](introduction-to-data-visualization-with-ggplot2)
-1. Intermediate Data Visualization with ggplot2
+1. [Intermediate Data Visualization with ggplot2](intermediate-data-visualization-with-ggplot2)
 1. Visualization Best Practices in R
