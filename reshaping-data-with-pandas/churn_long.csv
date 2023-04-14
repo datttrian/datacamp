@@ -1,0 +1,17 @@
+state,city,period,metric,value
+California,Los Angeles,night,total calls,116
+California,San Francisco,night,total calls,109
+New York,New York,night,total calls,84
+Ohio,Cleveland,night,total calls,67
+California,Los Angeles,night,total minutes,204
+California,San Francisco,night,total minutes,287
+New York,New York,night,total minutes,84
+Ohio,Cleveland,night,total minutes,50
+California,Los Angeles,day,total calls,85
+California,San Francisco,day,total calls,90
+New York,New York,day,total calls,75
+Ohio,Cleveland,day,total calls,67
+California,Los Angeles,day,total minutes,107
+California,San Francisco,day,total minutes,167
+New York,New York,day,total minutes,90
+Ohio,Cleveland,day,total minutes,110

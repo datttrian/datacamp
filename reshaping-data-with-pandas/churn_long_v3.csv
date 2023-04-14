@@ -1,0 +1,25 @@
+year,exited,state,city,plan,value
+2019,churn,California,Los Angeles,minutes,0
+2019,churn,California,Los Angeles,voicemail,1
+2019,churn,California,Los Angeles,data,2
+2019,no_churn,California,Los Angeles,minutes,0
+2019,no_churn,California,Los Angeles,voicemail,1
+2019,no_churn,California,Los Angeles,data,3
+2019,churn,New York,New York,minutes,1
+2019,churn,New York,New York,voicemail,0
+2019,churn,New York,New York,data,5
+2019,no_churn,New York,New York,minutes,1
+2019,no_churn,New York,New York,voicemail,0
+2019,no_churn,New York,New York,data,4
+2020,churn,California,Los Angeles,minutes,1
+2020,churn,California,Los Angeles,voicemail,1
+2020,churn,California,Los Angeles,data,5
+2020,no_churn,California,Los Angeles,minutes,1
+2020,no_churn,California,Los Angeles,voicemail,0
+2020,no_churn,California,Los Angeles,data,2
+2020,churn,New York,New York,minutes,0
+2020,churn,New York,New York,voicemail,1
+2020,churn,New York,New York,data,2
+2020,no_churn,New York,New York,minutes,1
+2020,no_churn,New York,New York,voicemail,0
+2020,no_churn,New York,New York,data,6

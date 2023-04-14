@@ -1,0 +1,19 @@
+time,type,exited,metric,value
+day,International,churn,minutes,184.5
+day,National,churn,minutes,129.1
+night,International,churn,minutes,332.9
+night,National,no churn,minutes,110.4
+eve,International,no churn,minutes,119.3
+eve,National,no churn,minutes,137.1
+day,International,churn,calls,97
+day,National,churn,calls,137
+night,International,churn,calls,67
+night,National,no churn,calls,103
+eve,International,no churn,calls,117
+eve,National,no churn,calls,88
+day,International,churn,charge,31.37
+day,National,churn,charge,21.95
+night,International,churn,charge,56.59
+night,National,no churn,charge,18.77
+eve,International,no churn,charge,20.28
+eve,National,no churn,charge,23.31

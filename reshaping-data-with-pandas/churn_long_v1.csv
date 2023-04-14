@@ -1,0 +1,17 @@
+state,city,value,time,feature
+California,Los Angeles,30,night,text_messages
+California,San Francisco,100,night,text_messages
+New York,New York,20,night,text_messages
+Ohio,Cleveland,40,night,text_messages
+California,Los Angeles,10,night,total_GB
+California,San Francisco,5,night,total_GB
+New York,New York,9,night,total_GB
+Ohio,Cleveland,6,night,total_GB
+California,Los Angeles,20,day,text_messages
+California,San Francisco,40,day,text_messages
+New York,New York,50,day,text_messages
+Ohio,Cleveland,100,day,text_messages
+California,Los Angeles,5,day,total_GB
+California,San Francisco,5,day,total_GB
+New York,New York,2,day,total_GB
+Ohio,Cleveland,3,day,total_GB

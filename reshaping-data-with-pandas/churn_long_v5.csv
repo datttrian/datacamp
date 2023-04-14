@@ -1,0 +1,9 @@
+location,scope,type,value
+LA,International,Total Day Calls,23
+LA,International,Total Night Calls,30
+NY,International,Total Day Calls,8
+NY,International,Total Night Calls,34
+NY,National,Total Night Calls,24
+CA,International,Total Day Calls,8
+CA,International,Total Night Calls,34
+CA,National,Total Night Calls,24
