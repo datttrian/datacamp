@@ -23,3 +23,5 @@ View [the notebook](intermediate-python.ipynb) or execute [the script](intermedi
     pip install -r requirements.txt
     python3 intermediate-python.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/intermediate-python

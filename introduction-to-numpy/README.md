@@ -24,3 +24,5 @@ View [the notebook](introduction-to-numpy.ipynb) or execute [the script](introdu
     pip install -r requirements.txt
     python3 introduction-to-numpy.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-numpy

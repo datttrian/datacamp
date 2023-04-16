@@ -9,3 +9,5 @@ cd datacamp/introduction-to-the-tidyverse
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript introduction-to-the-tidyverse.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-the-tidyverse

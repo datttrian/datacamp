@@ -9,3 +9,5 @@ cd datacamp/intermediate-r
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript intermediate-r.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/intermediate-r

@@ -9,3 +9,5 @@ cd datacamp/intermediate-data-visualization-with-ggplot2
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript intermediate-data-visualization-with-ggplot2.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/intermediate-data-visualization-with-ggplot2

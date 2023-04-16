@@ -23,3 +23,5 @@ View [the notebook](data-manipulation-with-pandas.ipynb) or execute [the script]
     pip install -r requirements.txt
     python3 data-manipulation-with-pandas.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/data-manipulation-with-pandas

@@ -9,3 +9,5 @@ cd datacamp/introduction-to-statistics-in-r
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript introduction-to-statistics-in-r.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-statistics-in-r

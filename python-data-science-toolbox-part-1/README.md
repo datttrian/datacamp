@@ -23,3 +23,5 @@ View [the notebook](python-data-science-toolbox-part-1.ipynb) or execute [the sc
     pip install -r requirements.txt
     python3 python-data-science-toolbox-part-1.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/python-data-science-toolbox-part-1

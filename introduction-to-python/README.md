@@ -23,3 +23,5 @@ View [the notebook](introduction-to-python.ipynb) or execute [the script](introd
     pip install -r requirements.txt
     python3 introduction-to-python.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/intro-to-python-for-data-science

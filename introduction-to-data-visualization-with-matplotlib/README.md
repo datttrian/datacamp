@@ -23,3 +23,5 @@ View [the notebook](introduction-to-data-visualization-with-matplotlib.ipynb) or
     pip install -r requirements.txt
     python3 introduction-to-data-visualization-with-matplotlib.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-data-visualization-with-matplotlib

@@ -9,3 +9,5 @@ cd datacamp/introduction-to-r
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript introduction-to-r.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-r

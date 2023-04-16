@@ -23,3 +23,5 @@ View [the notebook](https://nbviewer.org/github/datttrian/datacamp/blob/main/int
     pip install -r requirements.txt
     python3 introduction-to-statistics-in-python.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-statistics-in-python

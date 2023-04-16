@@ -23,3 +23,5 @@ View [the notebook](object-oriented-programming-in-python.ipynb) or execute [the
     pip install -r requirements.txt
     python3 object-oriented-programming-in-python.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/object-oriented-programming-in-python

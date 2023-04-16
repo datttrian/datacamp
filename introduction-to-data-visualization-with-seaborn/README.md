@@ -23,3 +23,5 @@ View [the notebook](introduction-to-data-visualization-with-seaborn.ipynb) or ex
     pip install -r requirements.txt
     python3 introduction-to-data-visualization-with-seaborn.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn

@@ -23,3 +23,5 @@ View [the notebook](writing-functions-in-python.ipynb) or execute [the script](w
     pip install -r requirements.txt
     python3 writing-functions-in-python.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/writing-functions-in-python

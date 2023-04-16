@@ -9,3 +9,5 @@ cd datacamp/data-manipulation-with-dplyr
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript data-manipulation-with-dplyr.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/data-manipulation-with-dplyr

@@ -9,3 +9,5 @@ cd datacamp/joining-data-with-dplyr
 Rscript -e 'install.packages(readLines("requirements.txt"))'
 Rscript joining-data-with-dplyr.R
 ```
+
+**Reference**: https://www.datacamp.com/courses/joining-data-with-dplyr

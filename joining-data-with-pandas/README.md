@@ -25,3 +25,5 @@ View [the notebook](joining-data-with-pandas.ipynb) or execute [the script](join
     pip install -r requirements.txt
     python3 joining-data-with-pandas.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/joining-data-with-pandas

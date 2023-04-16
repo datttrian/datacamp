@@ -23,3 +23,5 @@ View [the notebook](reshaping-data-with-pandas.ipynb) or execute [the script](re
     pip install -r requirements.txt
     python3 reshaping-data-with-pandas.py
     ```
+
+**Reference**: https://www.datacamp.com/courses/reshaping-data-with-pandas
