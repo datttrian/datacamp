@@ -1,6 +1,6 @@
 # Introduction to Python
 
-View [the notebook](introduction-to-python.ipynb) or execute [the script](introduction-to-python.py) by running these commands in the terminal:
+View [the notebook](notebook.ipynb) or execute [the script](script.py) by running these commands in the command line:
 
 - On MacOS and Linux:
 
@@ -10,7 +10,7 @@ View [the notebook](introduction-to-python.ipynb) or execute [the script](introd
     cd datacamp/introduction-to-python
     python3 -m venv datacamp && source datacamp/bin/activate
     pip install -r requirements.txt
-    python3 introduction-to-python.py
+    python3 script.py
     ```
 
 - On Windows:
@@ -21,7 +21,7 @@ View [the notebook](introduction-to-python.ipynb) or execute [the script](introd
     cd datacamp/introduction-to-python
     python3 -m venv datacamp && datacamp\Scripts\activate.bat
     pip install -r requirements.txt
-    python3 introduction-to-python.py
+    python3 script.py
     ```
 
 **Reference**: https://www.datacamp.com/courses/intro-to-python-for-data-science

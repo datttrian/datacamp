@@ -1,3 +1,26 @@
+"""
+This module provides the script for the course Introduction to Python:
+https://www.datacamp.com/courses/intro-to-python-for-data-science
+
+Dependencies:
+- pandas
+
+This script uses pylint to ensure that the code follows best practices
+and is free from common mistakes and errors.
+"""
+
+# Import the math package
+import math
+
+# Import radians function of math package
+from math import radians
+
+# Import the numpy package as np
+import numpy as np
+
+# Import the pandas package as pd
+import pandas as pd
+
 # Example, do not modify!
 print(5 / 8)
 
@@ -23,98 +46,98 @@ print(4 ** 2)
 # Calculate two to the power of five
 print(2 ** 5)
 
-# Create a variable savings
-savings = 100
+# Create a variable SAVINGS
+SAVINGS = 100
 
-# Print out savings
-print(savings)
+# Print out SAVINGS
+print(SAVINGS)
 
-# Create a variable savings
-savings = 100
+# Create a variable SAVINGS
+SAVINGS = 100
 
-# Create a variable growth_multiplier
-growth_multiplier = 1.1
+# Create a variable GROWTH_MULTIPLIER
+GROWTH_MULTIPLIER = 1.1
 
-# Calculate result
-result = savings * growth_multiplier ** 7
+# Calculate RESULT
+RESULT = SAVINGS * GROWTH_MULTIPLIER ** 7
 
-# Print out result
-print(result)
+# Print out RESULT
+print(RESULT)
 
-# Create a variable desc
-desc = "compound interest"
+# Create a variable DESC
+DESC = "compound interest"
 
-# Create a variable profitable
-profitable = True
+# Create a variable PROFITABLE
+PROFITABLE = True
 
-savings = 100
-growth_multiplier = 1.1
-desc = "compound interest"
+SAVINGS = 100
+GROWTH_MULTIPLIER = 1.1
+DESC = "compound interest"
 
-# Assign product of savings and growth_multiplier to year1
-year1 = savings * growth_multiplier
+# Assign product of SAVINGS and GROWTH_MULTIPLIER to YEAR1
+YEAR1 = SAVINGS * GROWTH_MULTIPLIER
 
-# Print the type of year1
-print(type(year1))
+# Print the type of YEAR1
+print(type(YEAR1))
 
-# Assign sum of desc and desc to doubledesc
-doubledesc = desc + desc
+# Assign sum of DESC and DESC to DOUBLEDESC
+DOUBLEDESC = DESC + DESC
 
-# Print out doubledesc
-print(doubledesc)
+# Print out DOUBLEDESC
+print(DOUBLEDESC)
 
-# Definition of savings and result
-savings = 100
-result = 100 * 1.10 ** 7
+# Definition of SAVINGS and RESULT
+SAVINGS = 100
+RESULT = 100 * 1.10 ** 7
 
 # Fix the printout
-print("I started with $" + str(savings) + " and now have $" + str(result) + ". Awesome!")
+print("I started with $" + str(SAVINGS) + " and now have $" + str(RESULT) + ". Awesome!")
 
-# Definition of pi_string
-pi_string = "3.1415926"
+# Definition of PI_STRING
+PI_STRING = "3.1415926"
 
-# Convert pi_string into float: pi_float
-pi_float = float(pi_string)
+# Convert PI_STRING into float: pi_float
+pi_float = float(PI_STRING)
 
 # Area variables (in square meters)
-hall = 11.25
-kit = 18.0
-liv = 20.0
-bed = 10.75
-bath = 9.50
+HALL = 11.25
+KIT = 18.0
+LIV = 20.0
+BED = 10.75
+BATH = 9.50
 
 # Create list areas
-areas = [hall, kit, liv, bed, bath]
+areas = [HALL, KIT, LIV, BED, BATH]
 
 # Print areas
 print(areas)
 
 # area variables (in square meters)
-hall = 11.25
-kit = 18.0
-liv = 20.0
-bed = 10.75
-bath = 9.50
+HALL = 11.25
+KIT = 18.0
+LIV = 20.0
+BED = 10.75
+BATH = 9.50
 
 # Adapt list areas
-areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom", bed, "bathroom", bath]
+areas = ["hallway", HALL, "kitchen", KIT, "living room", LIV, "bedroom", BED, "bathroom", BATH]
 
 # Print areas
 print(areas)
 
 # area variables (in square meters)
-hall = 11.25
-kit = 18.0
-liv = 20.0
-bed = 10.75
-bath = 9.50
+HALL = 11.25
+KIT = 18.0
+LIV = 20.0
+BED = 10.75
+BATH = 9.50
 
 # house information as list of lists
-house = [["hallway", hall],
-         ["kitchen", kit],
-         ["living room", liv],
-         ["bedroom", bed],
-         ["bathroom", bath]]
+house = [["hallway", HALL],
+         ["kitchen", KIT],
+         ["living room", LIV],
+         ["bedroom", BED],
+         ["bathroom", BATH]]
 
 # Print out house
 print(house)
@@ -137,11 +160,11 @@ print(areas[5])
 # Create the areas list
 areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
 
-# Sum of kitchen and bedroom area: eat_sleep_area
-eat_sleep_area = areas[3] + areas[-3]
+# Sum of kitchen and bedroom area: EAT_SLEEP_AREA
+EAT_SLEEP_AREA = areas[3] + areas[-3]
 
-# Print the variable eat_sleep_area
-print(eat_sleep_area)
+# Print the variable EAT_SLEEP_AREA
+print(EAT_SLEEP_AREA)
 
 # Create the areas list
 areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
@@ -196,18 +219,18 @@ areas_copy[0] = 5.0
 # Print areas
 print(areas)
 
-# Create variables var1 and var2
-var1 = [1, 2, 3, 4]
-var2 = True
+# Create variables VAR1 and VAR2
+VAR1 = [1, 2, 3, 4]
+VAR2 = True
 
-# Print out type of var1
-print(type(var1))
+# Print out type of VAR1
+print(type(VAR1))
 
-# Print out length of var1
-print(len(var1))
+# Print out length of VAR1
+print(len(VAR1))
 
-# Convert var2 to an integer: out2
-out2 = int(var2)
+# Convert VAR2 to an integer: OUT2
+OUT2 = int(VAR2)
 
 # Create lists first and second
 first = [11.25, 18.0, 20.0]
@@ -216,24 +239,24 @@ second = [10.75, 9.50]
 # Paste together first and second: full
 full = first + second
 
-# Sort full in descending order: full_sorted
+# Sort full in DESCending order: full_sorted
 full_sorted = sorted(full, reverse=True)
 
 # Print out full_sorted
 print(full_sorted)
 
-# string to experiment with: place
-place = "poolhouse"
+# string to experiment with: PLACE
+PLACE = "poolhouse"
 
-# Use upper() on place: place_up
-place_up = place.upper()
+# Use upper() on PLACE: PLACE_UP
+PLACE_UP = PLACE.upper()
 
-# Print out place and place_up
-print(place)
-print(place_up)
+# Print out PLACE and PLACE_UP
+print(PLACE)
+print(PLACE_UP)
 
-# Print out the number of o's in place
-print(place.count('o'))
+# Print out the number of o's in PLACE
+print(PLACE.count('o'))
 
 # Create list areas
 areas = [11.25, 18.0, 20.0, 10.75, 9.50]
@@ -261,38 +284,29 @@ areas.reverse()
 print(areas)
 
 # Definition of radius
-r = 0.43
-
-# Import the math package
-import math
+R = 0.43
 
 # Calculate C
-C = 2 * r * math.pi
+C = 2 * R * math.pi
 
 # Calculate A
-A = math.pi * r ** 2
+A = math.pi * R ** 2
 
 # Build printout
 print("Circumference: " + str(C))
 print("Area: " + str(A))
 
 # Definition of radius
-r = 192500
-
-# Import radians function of math package
-from math import radians
+R = 192500
 
 # Travel distance of Moon over 12 degrees. Store in dist.
-dist = r * radians(12)
+dist = R * radians(12)
 
 # Print out dist
 print(dist)
 
 # Create list baseball
 baseball = [180, 215, 210, 210, 188, 176, 209, 200]
-
-# Import the numpy package as np
-import numpy as np
 
 # Create a NumPy array from baseball: np_baseball
 np_baseball = np.array(baseball)
@@ -301,16 +315,12 @@ np_baseball = np.array(baseball)
 print(type(np_baseball))
 
 # edited/added
-import pandas as pd
 mlb = pd.read_csv('baseball.csv')
 
 # height_in is available as a regular list
 height_in = mlb['Height'].tolist()
 
 # height_in is available as a regular list
-
-# Import numpy
-import numpy as np
 
 # Create a numpy array from height_in: np_height_in
 np_height_in = np.array(height_in)
@@ -329,9 +339,6 @@ weight_lb = mlb['Weight'].tolist()
 
 # height_in and weight_lb are available as regular lists
 
-# Import numpy
-import numpy as np
-
 # Create array from height_in with metric units: np_height_m
 np_height_m = np.array(height_in) * 0.0254
 
@@ -345,9 +352,6 @@ bmi = np_weight_kg / np_height_m ** 2
 print(bmi)
 
 # height_in and weight_lb are available as a regular lists
-
-# Import numpy
-import numpy as np
 
 # Calculate the BMI: bmi
 np_height_m = np.array(height_in) * 0.0254
@@ -365,9 +369,6 @@ print(bmi[light])
 
 # height_in and weight_lb are available as a regular lists
 
-# Import numpy
-import numpy as np
-
 # Store weight and height lists as numpy arrays
 np_weight_lb = np.array(weight_lb)
 np_height_in = np.array(height_in)
@@ -384,9 +385,6 @@ baseball = [[180, 78.4],
             [210, 98.5],
             [188, 75.2]]
 
-# Import numpy
-import numpy as np
-
 # Create a 2D numpy array from baseball: np_baseball
 np_baseball = np.array(baseball)
 
@@ -398,9 +396,6 @@ print(np_baseball.shape)
 
 # baseball is available as a regular list of lists
 
-# Import numpy package
-import numpy as np
-
 # Create a 2D numpy array from baseball: np_baseball
 np_baseball = np.array(baseball)
 
@@ -411,9 +406,6 @@ print(np_baseball.shape)
 baseball = pd.read_csv('baseball.csv')[['Height', 'Weight']]
 
 # baseball is available as a regular list of lists
-
-# Import numpy package
-import numpy as np
 
 # Create np_baseball (2 cols)
 np_baseball = np.array(baseball)
@@ -435,9 +427,6 @@ updated = np.array(pd.read_csv('update.csv', header = None))
 # baseball is available as a regular list of lists
 # updated is available as 2D numpy array
 
-# Import numpy package
-import numpy as np
-
 # Create np_baseball (3 cols)
 np_baseball = np.array(baseball)
 
@@ -452,9 +441,6 @@ print(np_baseball * conversion)
 
 # np_baseball is available
 
-# Import numpy
-import numpy as np
-
 # Create np_height_in from np_baseball
 np_height_in = np_baseball[:,0]
 
@@ -466,22 +452,19 @@ print(np.median(np_height_in))
 
 # np_baseball is available
 
-# Import numpy
-import numpy as np
-
 # Print mean height (first column)
 avg = np.mean(np_baseball[:,0])
 print("Average: " + str(avg))
 
-# Print median height. Replace 'None'
+# Print median height. RePLACE 'None'
 med = np.median(np_baseball[:,0])
 print("Median: " + str(med))
 
-# Print out the standard deviation on height. Replace 'None'
+# Print out the standard deviation on height. RePLACE 'None'
 stddev = np.std(np_baseball[:,0])
 print("Standard Deviation: " + str(stddev))
 
-# Print out correlation between first and second column. Replace 'None'
+# Print out correlation between first and second column. RePLACE 'None'
 corr = np.corrcoef(np_baseball[:,0], np_baseball[:,1])
 print("Correlation: " + str(corr))
 
@@ -491,9 +474,6 @@ positions = list(fifa.position)
 heights = list(fifa.height)
 
 # heights and positions are available as lists
-
-# Import numpy
-import numpy as np
 
 # Convert positions and heights to numpy arrays: np_positions, np_heights
 np_positions = np.array(positions)
@@ -505,8 +485,8 @@ gk_heights = np_heights[np_positions == 'GK']
 # Heights of the other players: other_heights
 other_heights = np_heights[np_positions != 'GK']
 
-# Print out the median height of goalkeepers. Replace 'None'
+# Print out the median height of goalkeepers. RePLACE 'None'
 print("Median height of goalkeepers: " + str(np.median(gk_heights)))
 
-# Print out the median height of other players. Replace 'None'
+# Print out the median height of other players. RePLACE 'None'
 print("Median height of other players: " + str(np.median(other_heights)))
