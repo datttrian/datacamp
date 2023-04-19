@@ -19,8 +19,8 @@
 
 ## Python Fundamentals
 
-1. [Introduction to Python](introduction1.to1.python)
-1. [Intermediate Python](intermediate1.python)
+1. [Introduction to Python](introduction-to-python)
+1. [Intermediate Python](intermediate-python)
 1. [Python Data Science Toolbox (Part 1)](python-data-science-toolbox-part-1)
 1. [Python Data Science Toolbox (Part 2)](python-data-science-toolbox-part-2)
 
