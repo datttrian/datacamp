@@ -1,23 +1,22 @@
 """
-This module provides the script for the course Introduction to Python:
-https://www.datacamp.com/courses/intro-to-python-for-data-science
+This module provides the script for the course Introduction to Python.
+
+Reference: https://www.datacamp.com/courses/intro-to-python-for-data-science
 
 Dependencies:
 - pandas
 
-This script uses pylint to ensure that the code follows best practices
+This script uses flake8 & pylint to ensure that the code follows best practices
 and is free from common mistakes and errors.
 """
 
 # Import the math package
 import math
-
 # Import radians function of math package
 from math import radians
 
 # Import the numpy package as np
 import numpy as np
-
 # Import the pandas package as pd
 import pandas as pd
 
@@ -65,14 +64,14 @@ RESULT = SAVINGS * GROWTH_MULTIPLIER ** 7
 print(RESULT)
 
 # Create a variable DESC
-DESC = "compound interest"
+DESC = 'compound interest'
 
 # Create a variable PROFITABLE
 PROFITABLE = True
 
 SAVINGS = 100
 GROWTH_MULTIPLIER = 1.1
-DESC = "compound interest"
+DESC = 'compound interest'
 
 # Assign product of SAVINGS and GROWTH_MULTIPLIER to YEAR1
 YEAR1 = SAVINGS * GROWTH_MULTIPLIER
@@ -91,10 +90,14 @@ SAVINGS = 100
 RESULT = 100 * 1.10 ** 7
 
 # Fix the printout
-print("I started with $" + str(SAVINGS) + " and now have $" + str(RESULT) + ". Awesome!")
+print('I started with $' +
+      str(SAVINGS) +
+      ' and now have $' +
+      str(RESULT) +
+      '. Awesome!')
 
 # Definition of PI_STRING
-PI_STRING = "3.1415926"
+PI_STRING = '3.1415926'
 
 # Convert PI_STRING into float: pi_float
 pi_float = float(PI_STRING)
@@ -120,7 +123,11 @@ BED = 10.75
 BATH = 9.50
 
 # Adapt list areas
-areas = ["hallway", HALL, "kitchen", KIT, "living room", LIV, "bedroom", BED, "bathroom", BATH]
+areas = ['hallway', HALL,
+         'kitchen', KIT,
+         'living room', LIV,
+         'bedroom', BED,
+         'bathroom', BATH]
 
 # Print areas
 print(areas)
@@ -133,11 +140,11 @@ BED = 10.75
 BATH = 9.50
 
 # house information as list of lists
-house = [["hallway", HALL],
-         ["kitchen", KIT],
-         ["living room", LIV],
-         ["bedroom", BED],
-         ["bathroom", BATH]]
+house = [['hallway', HALL],
+         ['kitchen', KIT],
+         ['living room', LIV],
+         ['bedroom', BED],
+         ['bathroom', BATH]]
 
 # Print out house
 print(house)
@@ -146,7 +153,11 @@ print(house)
 print(type(house))
 
 # Create the areas list
-areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+areas = ['hallway', 11.25,
+         'kitchen', 18.0,
+         'living room', 20.0,
+         'bedroom', 10.75,
+         'bathroom', 9.50]
 
 # Print out second element from areas
 print(areas[1])
@@ -158,7 +169,11 @@ print(areas[-1])
 print(areas[5])
 
 # Create the areas list
-areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+areas = ['hallway', 11.25,
+         'kitchen', 18.0,
+         'living room', 20.0,
+         'bedroom', 10.75,
+         'bathroom', 9.50]
 
 # Sum of kitchen and bedroom area: EAT_SLEEP_AREA
 EAT_SLEEP_AREA = areas[3] + areas[-3]
@@ -167,7 +182,11 @@ EAT_SLEEP_AREA = areas[3] + areas[-3]
 print(EAT_SLEEP_AREA)
 
 # Create the areas list
-areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+areas = ['hallway', 11.25,
+         'kitchen', 18.0,
+         'living room', 20.0,
+         'bedroom', 10.75,
+         'bathroom', 9.50]
 
 # Use slicing to create downstairs
 downstairs = areas[0:6]
@@ -180,7 +199,11 @@ print(downstairs)
 print(upstairs)
 
 # Create the areas list
-areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+areas = ['hallway', 11.25,
+         'kitchen', 18.0,
+         'living room', 20.0,
+         'bedroom', 10.75,
+         'bathroom', 9.50]
 
 # Alternative slicing to create downstairs
 downstairs = areas[:6]
@@ -189,23 +212,27 @@ downstairs = areas[:6]
 upstairs = areas[6:]
 
 # Create the areas list
-areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+areas = ['hallway', 11.25,
+         'kitchen', 18.0,
+         'living room', 20.0,
+         'bedroom', 10.75,
+         'bathroom', 9.50]
 
 # Correct the bathroom area
 areas[-1] = 10.50
 
-# Change "living room" to "chill zone"
-areas[4] = "chill zone"
+# Change 'living room' to 'chill zone'
+areas[4] = 'chill zone'
 
 # Create the areas list (updated version)
-areas = ["hallway", 11.25, "kitchen", 18.0, "chill zone", 20.0,
-         "bedroom", 10.75, "bathroom", 10.50]
+areas = ['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0,
+         'bedroom', 10.75, 'bathroom', 10.50]
 
 # Add poolhouse data to areas, new list is areas_1
-areas_1 = areas + ["poolhouse", 24.5]
+areas_1 = areas + ['poolhouse', 24.5]
 
 # Add garage data to areas_1, new list is areas_2
-areas_2 = areas_1 + ["garage", 15.45]
+areas_2 = areas_1 + ['garage', 15.45]
 
 # Create list areas
 areas = [11.25, 18.0, 20.0, 10.75, 9.50]
@@ -246,7 +273,7 @@ full_sorted = sorted(full, reverse=True)
 print(full_sorted)
 
 # string to experiment with: PLACE
-PLACE = "poolhouse"
+PLACE = 'poolhouse'
 
 # Use upper() on PLACE: PLACE_UP
 PLACE_UP = PLACE.upper()
@@ -293,8 +320,8 @@ C = 2 * R * math.pi
 A = math.pi * R ** 2
 
 # Build printout
-print("Circumference: " + str(C))
-print("Area: " + str(A))
+print('Circumference: ' + str(C))
+print('Area: ' + str(A))
 
 # Definition of radius
 R = 192500
@@ -411,10 +438,10 @@ baseball = pd.read_csv('baseball.csv')[['Height', 'Weight']]
 np_baseball = np.array(baseball)
 
 # Print out the 50th row of np_baseball
-print(np_baseball[49,:])
+print(np_baseball[49, :])
 
 # Select the entire second column of np_baseball: np_weight_lb
-np_weight_lb = np_baseball[:,1]
+np_weight_lb = np_baseball[:, 1]
 
 # Print out height of 124th player
 print(np_baseball[123, 0])
@@ -422,7 +449,7 @@ print(np_baseball[123, 0])
 # edited/added
 baseball = pd.read_csv('baseball.csv')[['Height', 'Weight', 'Age']]
 n = len(baseball)
-updated = np.array(pd.read_csv('update.csv', header = None))
+updated = np.array(pd.read_csv('update.csv', header=None))
 
 # baseball is available as a regular list of lists
 # updated is available as 2D numpy array
@@ -442,7 +469,7 @@ print(np_baseball * conversion)
 # np_baseball is available
 
 # Create np_height_in from np_baseball
-np_height_in = np_baseball[:,0]
+np_height_in = np_baseball[:, 0]
 
 # Print out the mean of np_height_in
 print(np.mean(np_height_in))
@@ -453,23 +480,25 @@ print(np.median(np_height_in))
 # np_baseball is available
 
 # Print mean height (first column)
-avg = np.mean(np_baseball[:,0])
-print("Average: " + str(avg))
+avg = np.mean(np_baseball[:, 0])
+print('Average: ' + str(avg))
 
 # Print median height. RePLACE 'None'
-med = np.median(np_baseball[:,0])
-print("Median: " + str(med))
+med = np.median(np_baseball[:, 0])
+print('Median: ' + str(med))
 
 # Print out the standard deviation on height. RePLACE 'None'
-stddev = np.std(np_baseball[:,0])
-print("Standard Deviation: " + str(stddev))
+stddev = np.std(np_baseball[:, 0])
+print('Standard Deviation: ' + str(stddev))
 
 # Print out correlation between first and second column. RePLACE 'None'
-corr = np.corrcoef(np_baseball[:,0], np_baseball[:,1])
-print("Correlation: " + str(corr))
+corr = np.corrcoef(np_baseball[:, 0], np_baseball[:, 1])
+print('Correlation: ' + str(corr))
 
 # edited/added
-fifa =  pd.read_csv('fifa.csv', skipinitialspace=True, usecols=['position', 'height'])
+fifa = pd.read_csv('fifa.csv',
+                   skipinitialspace=True,
+                   usecols=['position', 'height'])
 positions = list(fifa.position)
 heights = list(fifa.height)
 
@@ -486,7 +515,7 @@ gk_heights = np_heights[np_positions == 'GK']
 other_heights = np_heights[np_positions != 'GK']
 
 # Print out the median height of goalkeepers. RePLACE 'None'
-print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+print('Median height of goalkeepers: ' + str(np.median(gk_heights)))
 
 # Print out the median height of other players. RePLACE 'None'
-print("Median height of other players: " + str(np.median(other_heights)))
+print('Median height of other players: ' + str(np.median(other_heights)))

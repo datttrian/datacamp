@@ -1,14 +1,31 @@
-# edited/added
+"""
+This module provides the script for the course Intermediate Python:
+https://www.datacamp.com/courses/intermediate-python
+
+Dependencies:
+- matplotlib
+- pandas
+
+This script uses pylint to ensure that the code follows best practices
+and is free from common mistakes and errors.
+"""
+
+# Import matplotlib.pyplot as plt
 import numpy as np
+
+# Import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+# Import pandas as pd
+import pandas as pd
+
+# edited/added
 year=list(range(1950,2100+1))
 pop=list(np.loadtxt('pop1.txt', dtype=float))
 
 # Print the last item from year and pop
 print(year[-1])
 print(pop[-1])
-
-# Import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 
 # Make a line plot: year on the x-axis, pop on the y-axis
 plt.plot(year, pop)
@@ -41,9 +58,6 @@ plt.show()
 
 # edited/added
 pop=list(np.loadtxt('pop2.txt', dtype=float))
-
-# Import package
-import matplotlib.pyplot as plt
 
 # Build Scatter plot
 plt.scatter(pop, life_exp)
@@ -90,19 +104,19 @@ plt.clf()
 
 # Basic scatter plot, log scale
 plt.scatter(gdp_cap, life_exp)
-plt.xscale('log') 
+plt.xscale('log')
 
 # Strings
-xlab = 'GDP per Capita [in USD]'
-ylab = 'Life Expectancy [in years]'
-title = 'World Development in 2007'
+XLAB = 'GDP per Capita [in USD]'
+YLAB = 'Life Expectancy [in years]'
+TITLE = 'World Development in 2007'
 
 # Add axis labels
-plt.xlabel(xlab)
-plt.ylabel(ylab)
+plt.xlabel(XLAB)
+plt.ylabel(YLAB)
 
 # Add title
-plt.title(title)
+plt.title(TITLE)
 
 # After customizing, display the plot
 plt.show()
@@ -111,7 +125,7 @@ plt.show()
 plt.scatter(gdp_cap, life_exp)
 
 # Previous customizations
-plt.xscale('log') 
+plt.xscale('log')
 plt.xlabel('GDP per Capita [in USD]')
 plt.ylabel('Life Expectancy [in years]')
 plt.title('World Development in 2007')
@@ -126,9 +140,6 @@ plt.xticks(tick_val, tick_lab)
 # After customizing, display the plot
 plt.show()
 
-# Import numpy as np
-import numpy as np
-
 # Store pop as a numpy array: np_pop
 np_pop = np.array(pop)
 
@@ -139,7 +150,7 @@ np_pop = np_pop * 2
 plt.scatter(gdp_cap, life_exp, s = np_pop)
 
 # Previous customizations
-plt.xscale('log') 
+plt.xscale('log')
 plt.xlabel('GDP per Capita [in USD]')
 plt.ylabel('Life Expectancy [in years]')
 plt.title('World Development in 2007')
@@ -155,7 +166,7 @@ col=list(np.loadtxt('col.txt', dtype=str))
 plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col, alpha = 0.8)
 
 # Previous customizations
-plt.xscale('log') 
+plt.xscale('log')
 plt.xlabel('GDP per Capita [in USD]')
 plt.ylabel('Life Expectancy [in years]')
 plt.title('World Development in 2007')
@@ -168,7 +179,7 @@ plt.show()
 plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col, alpha = 0.8)
 
 # Previous customizations
-plt.xscale('log') 
+plt.xscale('log')
 plt.xlabel('GDP per Capita [in USD]')
 plt.ylabel('Life Expectancy [in years]')
 plt.title('World Development in 2007')
@@ -237,7 +248,7 @@ europe = {'spain':'madrid', 'france':'paris', 'germany':'bonn',
 europe['germany'] = 'berlin'
 
 # Remove australia
-del(europe['australia'])
+del europe['australia']
 
 # Print europe
 print(europe)
@@ -266,9 +277,6 @@ names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'E
 dr =  [True, False, False, False, True, True, True]
 cpc = [809, 731, 588, 18, 200, 70, 45]
 
-# Import pandas as pd
-import pandas as pd
-
 # Create dictionary my_dict with three key:value pairs: my_dict
 my_dict = { 'country':names, 'drives_right':dr, 'cars_per_cap':cpc }
 
@@ -277,8 +285,6 @@ cars = pd.DataFrame(my_dict)
 
 # Print cars
 print(cars)
-
-import pandas as pd
 
 # Build cars DataFrame
 names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
@@ -297,17 +303,11 @@ cars.index = row_labels
 # Print cars again
 print(cars)
 
-# Import pandas as pd
-import pandas as pd
-
 # Import the cars.csv data: cars
 cars = pd.read_csv('cars.csv')
 
 # Print out cars
 print(cars)
-
-# Import pandas as pd
-import pandas as pd
 
 # Fix import by including index_col
 cars = pd.read_csv('cars.csv', index_col = 0)
@@ -316,7 +316,6 @@ cars = pd.read_csv('cars.csv', index_col = 0)
 print(cars)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out country column as Pandas Series
@@ -329,7 +328,6 @@ print(cars[['country']])
 print(cars[['country', 'drives_right']])
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out first 3 observations
@@ -339,7 +337,6 @@ print(cars[0:3])
 print(cars[3:6])
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out observation for Japan
@@ -349,7 +346,6 @@ print(cars.iloc[2])
 print(cars.loc[['AUS', 'EG']])
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out drives_right value of Morocco
@@ -359,7 +355,6 @@ print(cars.iloc[5, 2])
 print(cars.loc[['RU', 'MOR'], ['country', 'drives_right']])
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out drives_right column as Series
@@ -372,30 +367,29 @@ print(cars.iloc[:, [2]])
 print(cars.loc[:, ['cars_per_cap', 'drives_right']])
 
 # Comparison of booleans
-print(True == False)
+print(True is False)  # pylint: disable=R0133
 
 # Comparison of integers
 print(-5 * 15 != 75)
 
 # Comparison of strings
-print("pyscript" == "PyScript")
+print("pyscript" == "PyScript")  # pylint: disable=R0133
 
 # Compare a boolean with a numeric
-print(True == 1)
+print(True == 1)  # pylint: disable=R0133, R0124, C0121
 
 # Comparison of integers
-x = -3 * 6
-print(x >= -10)
+X = -3 * 6
+print(X >= -10)
 
 # Comparison of strings
-y = "test"
-print("test" <= y)
+Y = "test"
+print("test" <= Y)
 
 # Comparison of booleans
-print(True > False)
+print(True > False)  # pylint: disable=R0133
 
 # Create arrays
-import numpy as np
 my_house = np.array([18.0, 20.0, 10.75, 9.50])
 your_house = np.array([14.0, 24.0, 14.25, 9.0])
 
@@ -406,20 +400,19 @@ print(my_house >= 18)
 print(my_house < your_house)
 
 # Define variables
-my_kitchen = 18.0
-your_kitchen = 14.0
+MY_KITCHEN = 18.0
+YOUR_KITCHEN = 14.0
 
-# my_kitchen bigger than 10 and smaller than 18?
-print(my_kitchen > 10 and my_kitchen < 18)
+# MY_KITCHEN bigger than 10 and smaller than 18?
+print(10 < MY_KITCHEN < 18)
 
-# my_kitchen smaller than 14 or bigger than 17?
-print(my_kitchen < 14 or my_kitchen > 17)
+# MY_KITCHEN smaller than 14 or bigger than 17?
+print(MY_KITCHEN < 14 or MY_KITCHEN > 17)
 
-# Double my_kitchen smaller than triple your_kitchen?
-print(my_kitchen * 2 < your_kitchen * 3)
+# Double MY_KITCHEN smaller than triple YOUR_KITCHEN?
+print(MY_KITCHEN * 2 < YOUR_KITCHEN * 3)
 
 # Create arrays
-import numpy as np
 my_house = np.array([18.0, 20.0, 10.75, 9.50])
 your_house = np.array([14.0, 24.0, 14.25, 9.0])
 
@@ -430,55 +423,54 @@ print(np.logical_or(my_house > 18.5, my_house < 10))
 print(np.logical_and(my_house < 11, your_house < 11))
 
 # Define variables
-room = "kit"
-area = 14.0
+ROOM = "kit"
+AREA = 14.0
 
-# if statement for room
-if room == "kit" :
+# if statement for ROOM
+if ROOM == "kit" :
     print("looking around in the kitchen.")
 
-# if statement for area
-if area > 15 :
+# if statement for AREA
+if AREA > 15 :
     print("big place!")
 
 # Define variables
-room = "kit"
-area = 14.0
+ROOM = "kit"
+AREA = 14.0
 
-# if-else construct for room
-if room == "kit" :
+# if-else construct for ROOM
+if ROOM == "kit" :
     print("looking around in the kitchen.")
 else :
     print("looking around elsewhere.")
 
-# if-else construct for area :
-if area > 15 :
+# if-else construct for AREA :
+if AREA > 15 :
     print("big place!")
 else :
     print("pretty small.")
 
 # Define variables
-room = "bed"
-area = 14.0
+ROOM = "bed"
+AREA = 14.0
 
-# if-elif-else construct for room
-if room == "kit" :
+# if-elif-else construct for ROOM
+if ROOM == "kit" :
     print("looking around in the kitchen.")
-elif room == "bed":
+elif ROOM == "bed":
     print("looking around in the bedroom.")
 else :
     print("looking around elsewhere.")
 
-# if-elif-else construct for area
-if area > 15 :
+# if-elif-else construct for AREA
+if AREA > 15 :
     print("big place!")
-elif area > 10 :
+elif AREA > 10 :
     print("medium size, nice!")
 else :
     print("pretty small.")
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Extract drives_right column as Series: dr
@@ -491,7 +483,6 @@ sel = cars[dr]
 print(sel)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Convert code to a one-liner
@@ -501,7 +492,6 @@ sel = cars[cars['drives_right']]
 print(sel)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Create car_maniac: observations that have a cars_per_cap over 500
@@ -513,11 +503,7 @@ car_maniac = cars[many_cars]
 print(car_maniac)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
-
-# Import numpy, you'll need this
-import numpy as np
 
 # Create medium: observations with cars_per_cap between 100 and 500
 cpc = cars['cars_per_cap']
@@ -527,55 +513,55 @@ medium = cars[between]
 # Print medium
 print(medium)
 
-# Initialize offset
-offset = 8
+# Initialize OFFSET
+OFFSET = 8
 
 # Code the while loop
-while offset != 0 :
+while OFFSET != 0 :
     print("correcting...")
-    offset = offset - 1
-    print(offset)
+    OFFSET = OFFSET - 1
+    print(OFFSET)
 
-# Initialize offset
-offset = -6
+# Initialize OFFSET
+OFFSET = -6
 
 # Code the while loop
-while offset != 0 :
+while OFFSET != 0 :
     print("correcting...")
-    if offset > 0 :
-        offset = offset - 1
+    if OFFSET > 0 :
+        OFFSET = OFFSET - 1
     else :
-        offset = offset + 1
-    print(offset)
+        OFFSET = OFFSET + 1
+    print(OFFSET)
 
 # areas list
 areas = [11.25, 18.0, 20.0, 10.75, 9.50]
 
 # Code the for loop
-for area in areas :
-    print(area)
+for AREA in areas :
+    print(AREA)
 
 # areas list
 areas = [11.25, 18.0, 20.0, 10.75, 9.50]
 
 # Change for loop to use enumerate() and update print()
-for index, area in enumerate(areas) :
-    print("room " + str(index) + ": " + str(area))
+for index, AREA in enumerate(areas) :
+    print("ROOM " + str(index) + ": " + str(AREA))
 
 # areas list
 areas = [11.25, 18.0, 20.0, 10.75, 9.50]
 
 # Adapt the printout
-for index, area in enumerate(areas) :
-    print("room " + str(index + 1) + ": " + str(area))
+for index, AREA in enumerate(areas) :
+    print("ROOM " + str(index + 1) + ": " + str(AREA))
 
 # house list of lists
-house = [["hallway", 11.25], 
-         ["kitchen", 18.0], 
-         ["living room", 20.0], 
-         ["bedroom", 10.75], 
+house = [["hallway", 11.25],
+         ["kitchen", 18.0],
+         ["living room", 20.0],
+         ["bedroom", 10.75],
          ["bathroom", 9.50]]
-         
+
 # Build a for loop from scratch
 for x in house :
     print("the " + x[0] + " is " + str(x[1]) + " sqm")
@@ -583,13 +569,12 @@ for x in house :
 # Definition of dictionary
 europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin',
           'norway':'oslo', 'italy':'rome', 'poland':'warsaw', 'austria':'vienna' }
-          
+
 # Iterate over europe
 for key, value in europe.items() :
-     print("the capital of " + str(key) + " is " + str(value))
+    print("the capital of " + str(key) + " is " + str(value))
 
 # edited/added
-import pandas as pd
 mlb = pd.read_csv('baseball.csv')
 np_height = np.array(mlb['Height'])
 np_weight = np.array(mlb['Weight'])
@@ -598,9 +583,6 @@ baseball = [[180, 78.4],
             [210, 98.5],
             [188, 75.2]]
 np_baseball = np.array(baseball)
-
-# Import numpy as np
-import numpy as np
 
 # For loop over np_height
 for x in np_height[:5]: # edited/added
@@ -611,7 +593,6 @@ for x in np.nditer(np_baseball) :
     print(x)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Iterate over rows of cars
@@ -620,7 +601,6 @@ for lab, row in cars.iterrows() :
     print(row)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Adapt for loop
@@ -628,25 +608,20 @@ for lab, row in cars.iterrows() :
     print(lab + ": " + str(row['cars_per_cap']))
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Code for loop that adds COUNTRY column
 for lab, row in cars.iterrows() :
     cars.loc[lab, "COUNTRY"] = row["country"].upper()
-    
+
 # Print cars
 print(cars)
 
 # Import cars data
-import pandas as pd
 cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Use .apply(str.upper)
 cars["COUNTRY"] = cars["country"].apply(str.upper)
-
-# Import numpy as np
-import numpy as np
 
 # Set the seed
 np.random.seed(123)
@@ -654,8 +629,7 @@ np.random.seed(123)
 # Generate and print random float
 print(np.random.rand())
 
-# Import numpy and set seed
-import numpy as np
+# Set seed
 np.random.seed(123)
 
 # Use randint() to simulate a dice
@@ -666,23 +640,23 @@ print(np.random.randint(1,7))
 
 # NumPy is imported, seed is set
 
-# Starting step
-step = 50
+# Starting STEP
+STEP = 50
 
 # Roll the dice
 dice = np.random.randint(1,7)
 
 # Finish the control construct
 if dice <= 2 :
-    step = step - 1
+    STEP = STEP - 1
 elif dice <= 5 :
-    step = step + 1
+    STEP = STEP + 1
 else :
-    step = step + np.random.randint(1,7)
+    STEP = STEP + np.random.randint(1,7)
 
-# Print out dice and step
+# Print out dice and STEP
 print(dice)
-print(step)
+print(STEP)
 
 # NumPy is imported, seed is set
 
@@ -691,22 +665,22 @@ random_walk = [0]
 
 # Complete the ___
 for x in range(100) :
-    # Set step: last element in random_walk
-    step = random_walk[-1]
+    # Set STEP: last element in random_walk
+    STEP = random_walk[-1]
 
     # Roll the dice
     dice = np.random.randint(1,7)
 
-    # Determine next step
+    # Determine next STEP
     if dice <= 2:
-        step = step - 1
+        STEP = STEP - 1
     elif dice <= 5:
-        step = step + 1
+        STEP = STEP + 1
     else:
-        step = step + np.random.randint(1,7)
+        STEP = STEP + np.random.randint(1,7)
 
-    # append next_step to random_walk
-    random_walk.append(step)
+    # append next_STEP to random_walk
+    random_walk.append(STEP)
 
 # Print random_walk
 print(random_walk)
@@ -717,18 +691,18 @@ print(random_walk)
 random_walk = [0]
 
 for x in range(100) :
-    step = random_walk[-1]
+    STEP = random_walk[-1]
     dice = np.random.randint(1,7)
 
     if dice <= 2:
-        # Replace below: use max to make sure step can't go below 0
-        step = max(0, step - 1)
+        # Replace below: use max to make sure STEP can't go below 0
+        STEP = max(0, STEP - 1)
     elif dice <= 5:
-        step = step + 1
+        STEP = STEP + 1
     else:
-        step = step + np.random.randint(1,7)
+        STEP = STEP + np.random.randint(1,7)
 
-    random_walk.append(step)
+    random_walk.append(STEP)
 
 print(random_walk)
 
@@ -738,20 +712,17 @@ print(random_walk)
 random_walk = [0]
 
 for x in range(100) :
-    step = random_walk[-1]
+    STEP = random_walk[-1]
     dice = np.random.randint(1,7)
 
     if dice <= 2:
-        step = max(0, step - 1)
+        STEP = max(0, STEP - 1)
     elif dice <= 5:
-        step = step + 1
+        STEP = STEP + 1
     else:
-        step = step + np.random.randint(1,7)
+        STEP = STEP + np.random.randint(1,7)
 
-    random_walk.append(step)
-
-# Import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
+    random_walk.append(STEP)
 
 # Plot random_walk
 plt.plot(random_walk)
@@ -770,16 +741,16 @@ for i in range(10) :
     # Code from before
     random_walk = [0]
     for x in range(100) :
-        step = random_walk[-1]
+        STEP = random_walk[-1]
         dice = np.random.randint(1,7)
 
         if dice <= 2:
-            step = max(0, step - 1)
+            STEP = max(0, STEP - 1)
         elif dice <= 5:
-            step = step + 1
+            STEP = STEP + 1
         else:
-            step = step + np.random.randint(1,7)
-        random_walk.append(step)
+            STEP = STEP + np.random.randint(1,7)
+        random_walk.append(STEP)
 
     # Append random_walk to all_walks
     all_walks.append(random_walk)
@@ -794,15 +765,15 @@ all_walks = []
 for i in range(10) :
     random_walk = [0]
     for x in range(100) :
-        step = random_walk[-1]
+        STEP = random_walk[-1]
         dice = np.random.randint(1,7)
         if dice <= 2:
-            step = max(0, step - 1)
+            STEP = max(0, STEP - 1)
         elif dice <= 5:
-            step = step + 1
+            STEP = STEP + 1
         else:
-            step = step + np.random.randint(1,7)
-        random_walk.append(step)
+            STEP = STEP + np.random.randint(1,7)
+        random_walk.append(STEP)
     all_walks.append(random_walk)
 
 # Convert all_walks to NumPy array: np_aw
@@ -829,20 +800,20 @@ all_walks = []
 for i in range(250) :
     random_walk = [0]
     for x in range(100) :
-        step = random_walk[-1]
+        STEP = random_walk[-1]
         dice = np.random.randint(1,7)
         if dice <= 2:
-            step = max(0, step - 1)
+            STEP = max(0, STEP - 1)
         elif dice <= 5:
-            step = step + 1
+            STEP = STEP + 1
         else:
-            step = step + np.random.randint(1,7)
+            STEP = STEP + np.random.randint(1,7)
 
         # Implement clumsiness
         if np.random.rand() <= 0.001 :
-            step = 0
+            STEP = 0
 
-        random_walk.append(step)
+        random_walk.append(STEP)
     all_walks.append(random_walk)
 
 # Create and plot np_aw_t
@@ -857,17 +828,17 @@ all_walks = []
 for i in range(500) :
     random_walk = [0]
     for x in range(100) :
-        step = random_walk[-1]
+        STEP = random_walk[-1]
         dice = np.random.randint(1,7)
         if dice <= 2:
-            step = max(0, step - 1)
+            STEP = max(0, STEP - 1)
         elif dice <= 5:
-            step = step + 1
+            STEP = STEP + 1
         else:
-            step = step + np.random.randint(1,7)
+            STEP = STEP + np.random.randint(1,7)
         if np.random.rand() <= 0.001 :
-            step = 0
-        random_walk.append(step)
+            STEP = 0
+        random_walk.append(STEP)
     all_walks.append(random_walk)
 
 # Create and plot np_aw_t
