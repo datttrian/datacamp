@@ -83,7 +83,6 @@ print(fifa_pivot)
 fifa_pivot_table = fifa_players.pivot_table(index='name',
                                             columns='movement',
                                             aggfunc='mean')
-
 # Print fifa_pivot_table
 print(fifa_pivot_table)
 
@@ -697,7 +696,7 @@ print(obesity_split)
 
 # edited/added
 movies = [
-      {'director': 'Woody Allen',
+  {'director': 'Woody Allen',
   'producer': 'Letty Aronson',
   'features': {'title': 'Magic in the Moonlight', 'year': 2014}},
   {'director': 'Niki Caro',
@@ -721,7 +720,7 @@ print(movies_long)
 
 # edited/added
 movies = [
-      {'director': 'Woody Allen',
+  {'director': 'Woody Allen',
   'producer': 'Letty Aronson',
   'features': [{'title': 'Magic in the Moonlight', 'year': 2014},
   {'title': 'Vicky Cristina Barcelona', 'year': 2008},
@@ -756,7 +755,7 @@ print(normalize_movies)
 import json
 names = ['Killdeer', 'Chipping Sparrow', 'Cedar Waxwing']
 bird_facts = [
-      '{"Size":"Large", "Color": "Golden brown", "Behavior": "Runs swiftly along ground", "Habitat": "Rocky areas"}',
+  '{"Size":"Large", "Color": "Golden brown", "Behavior": "Runs swiftly along ground", "Habitat": "Rocky areas"}',
   '{"Size":"Small", "Color": "Gray-white", "Behavior": "Often in flocks", "Habitat": "Open woodlands"}',
   '{"Size":"Small", "Color": "Gray-brown", "Behavior": "Catch insects over open water", "Habitat": "Parks"}'
 ]

@@ -74,7 +74,7 @@ mountain_reg = homelessness[homelessness["region"] == "Mountain"]
 # See the result
 print(mountain_reg)
 
-# Filter for rows where family_members is less than 1000 
+# Filter for rows where family_members is less than 1000
 # and region is Pacific
 fam_lt_1k_pac = homelessness[(homelessness["family_members"] < 1000) & (homelessness["region"] == "Pacific")]
 
@@ -106,7 +106,7 @@ homelessness["p_individuals"] = homelessness["individuals"] / homelessness["tota
 print(homelessness)
 
 # Create indiv_per_10k col as homeless individuals per 10k state pop
-homelessness["indiv_per_10k"] = 10000 * homelessness["individuals"] / homelessness["state_pop"] 
+homelessness["indiv_per_10k"] = 10000 * homelessness["individuals"] / homelessness["state_pop"]
 
 # Subset rows for indiv_per_10k greater than 20
 high_homelessness = homelessness[homelessness["indiv_per_10k"] > 20]
@@ -144,7 +144,7 @@ print(sales["date"].min())
 # A custom IQR function
 def iqr(column):
     return column.quantile(0.75) - column.quantile(0.25)
-    
+
 # Print IQR of the temperature_c column
 print(sales["temperature_c"].agg(iqr))
 
@@ -265,7 +265,7 @@ mean_med_sales_by_type = sales.pivot_table("weekly_sales", "type", aggfunc = [np
 # Print mean_med_sales_by_type
 print(mean_med_sales_by_type)
 
-# Pivot for mean weekly_sales by store type and holiday 
+# Pivot for mean weekly_sales by store type and holiday
 mean_sales_by_type_holiday = sales.pivot_table("weekly_sales", "type", "is_holiday")
 
 # Print mean_sales_by_type_holiday
@@ -437,7 +437,7 @@ avocados.plot(x="nb_sold", y="avg_price", kind="scatter", title="Number of avoca
 # Show the plot
 plt.show()
 
-# Histogram of conventional avg_price 
+# Histogram of conventional avg_price
 avocados[avocados["type"] == "conventional"]["avg_price"].hist()
 
 # Histogram of organic avg_price
@@ -449,7 +449,7 @@ plt.legend(["conventional", "organic"])
 # Show the plot
 plt.show()
 
-# Modify histogram transparency to 0.5 
+# Modify histogram transparency to 0.5
 avocados[avocados["type"] == "conventional"]["avg_price"].hist(alpha=0.5)
 
 # Modify histogram transparency to 0.5

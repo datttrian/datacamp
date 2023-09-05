@@ -10,29 +10,24 @@ class Employee:
 
 mystery = Employee(name = "Natasha Ting", salary = 73500)
 
-
 # Print the mystery employee's name
 print(mystery.name)
-
 
 # Print the mystery employee's salary
 print(mystery.salary)
 
-
 # Print the mystery employee's name
 print(mystery.name)
 
-
 # Print the mystery employee's salary
 print(mystery.salary)
-
 
 # Give the mystery employee a raise of $2500
 mystery.give_raise(2500)
 
-
 # Print the salary again
 print(mystery.salary)
+
 class MyCounter:
     def set_count(self, n):
         self.count = n
@@ -45,10 +40,8 @@ print(mc.count)
 class Employee:
     pass
 
-
 # Create an object emp of class Employee
 emp = Employee()
-
 
 # Include a set_name method
 class Employee:
@@ -56,14 +49,11 @@ class Employee:
   def set_name(self, new_name):
     self.name = new_name
 
-
 # Create an object emp of class Employee
 emp = Employee()
 
-
 # Use set_name() on emp to set the name of emp to 'Korel Rossi'
 emp.set_name('Korel Rossi')
-
 
 # Print the name of emp
 print(emp.name)
@@ -78,17 +68,15 @@ class Employee:
     self.salary = new_salary
 
 
-
 # Create an object emp of class Employee
 emp = Employee()
-
 
 # Use set_name to set the name of emp to 'Korel Rossi'
 emp.set_name('Korel Rossi')
 
-
 # Set the salary of emp to 50000
 emp.set_salary(50000)
+
 class Employee:
     def set_name(self, new_name):
         self.name = new_name
@@ -100,14 +88,11 @@ emp = Employee()
 emp.set_name('Korel Rossi')
 emp.set_salary(50000)
 
-
 # Print the salary attribute of emp
 print(emp.salary)
 
-
 # Increase salary of emp by 1500
 emp.salary = emp.salary + 1500
-
 
 # Print the salary attribute of emp again
 print(emp.salary)
@@ -149,13 +134,12 @@ emp = Employee()
 emp.set_name('Korel Rossi')
 emp.set_salary(50000)
 
-
 # Get monthly salary of emp and assign to mon_sal
 mon_sal = emp.monthly_salary()
 
-
 # Print mon_sal
 print(mon_sal)
+
 class Employee:
     # Create __init__() method
     def __init__(self, name, salary=0):
@@ -191,7 +175,6 @@ class Employee:
 emp = Employee("Korel Rossi", -1000)
 print(emp.name)
 print(emp.salary)
-
 
 # Import datetime from datetime
 from datetime import datetime
@@ -250,10 +233,8 @@ class Player:
     def __init__(self):
       self.position = 0
 
-
 # Print Player.MAX_POSITION
 print(Player.MAX_POSITION)
-
 
 # Create a player p and print its MAX_POSITITON
 p = Player()
@@ -300,55 +281,46 @@ class Player:
         drawing = "-" * self.position + "|" +"-"*(Player.MAX_POSITION - self.position)
         print(drawing)
 
-
 # Create Players p1 and p2
 p1, p2 = Player(), Player()
 
 print("MAX_SPEED of p1 and p2 before assignment:")
-
 # Print p1.MAX_SPEED and p2.MAX_SPEED
 print(p1.MAX_SPEED)
 print(p2.MAX_SPEED)
-
 
 # Assign 7 to p1.MAX_SPEED
 p1.MAX_SPEED = 7
 
 print("MAX_SPEED of p1 and p2 after assignment:")
-
 # Print p1.MAX_SPEED and p2.MAX_SPEED
 print(p1.MAX_SPEED)
 print(p2.MAX_SPEED)
 
 print("MAX_SPEED of Player:")
-
 # Print Player.MAX_SPEED
 print(Player.MAX_SPEED)
-
 
 # Create Players p1 and p2
 p1, p2 = Player(), Player()
 
 print("MAX_SPEED of p1 and p2 before assignment:")
-
 # Print p1.MAX_SPEED and p2.MAX_SPEED
 print(p1.MAX_SPEED)
 print(p2.MAX_SPEED)
-
 
 # ---MODIFY THIS LINE---
 Player.MAX_SPEED = 7
 
 print("MAX_SPEED of p1 and p2 after assignment:")
-
 # Print p1.MAX_SPEED and p2.MAX_SPEED
 print(p1.MAX_SPEED)
 print(p2.MAX_SPEED)
 
 print("MAX_SPEED of Player:")
-
 # Print Player.MAX_SPEED
 print(Player.MAX_SPEED)
+
 class BetterDate:
     # Constructor
     def __init__(self, year, month, day):
@@ -369,7 +341,6 @@ print(bd.year)
 print(bd.month)
 print(bd.day)
 
-
 # import datetime from datetime
 from datetime import datetime
 
@@ -389,13 +360,13 @@ class BetterDate:
       return cls(year, month, day)
 
 
-
 # You should be able to run the code below with no errors:
 today = datetime.today()
 bd = BetterDate.from_datetime(today)
 print(bd.year)
 print(bd.month)
 print(bd.day)
+
 class Employee:
   MIN_SALARY = 30000
 
@@ -409,15 +380,12 @@ class Employee:
   def give_raise(self, amount):
       self.salary += amount
 
-
 # Define a new class Manager inheriting from Employee
 class Manager(Employee):
   pass
 
-
 # Define a Manager object
 mng = Manager("Debbie Lashko", 86500)
-
 
 # Print mng's name
 print(mng.name)
@@ -436,7 +404,6 @@ class Employee:
     self.salary += amount
 
 
-
 # MODIFY Manager class and add a display method
 class Manager(Employee):
   def display(self):
@@ -446,9 +413,9 @@ class Manager(Employee):
 mng = Manager("Debbie Lashko", 86500)
 print(mng.name)
 
-
 # Call mng.display()
 mng.display()
+
 class Employee:
     def __init__(self, name, salary=30000):
         self.name = name
@@ -498,6 +465,7 @@ mngr.give_raise(1000)
 print(mngr.salary)
 mngr.give_raise(2000, bonus=1.03)
 print(mngr.salary)
+
 class Racer(Player):
     MAX_SPEED = 5
 
@@ -513,7 +481,6 @@ print("r.MAX_POSITION = ", r.MAX_POSITION)
 # Import pandas as pd
 import pandas as pd
 
-
 # Define LoggedDF inherited from pd.DataFrame and add the constructor
 class LoggedDF(pd.DataFrame):
 
@@ -526,10 +493,8 @@ ldf = LoggedDF({"col1": [1,2], "col2": [3,4]})
 print(ldf.values)
 print(ldf.created_at)
 
-
 # Import pandas as pd
 import pandas as pd
-
 
 # Define LoggedDF inherited from pd.DataFrame and add the constructor
 class LoggedDF(pd.DataFrame):
@@ -547,6 +512,7 @@ class LoggedDF(pd.DataFrame):
 
     # Call pd.DataFrame.to_csv on temp, passing in *args and **kwargs
     pd.DataFrame.to_csv(temp, *args, **kwargs)
+
 class BankAccount:
      # MODIFY to initialize a number attribute
     def __init__(self, number, balance=0):
@@ -592,6 +558,7 @@ class BankAccount:
 acct = BankAccount(873555333)
 pn = Phone(873555333)
 print(acct == pn)
+
 class Employee:
     def __init__(self, name, salary=30000):
         self.name, self.salary = name, salary
@@ -636,21 +603,17 @@ def invert_at_index(x, ind):
 
 a = [5,6,0,7]
 
-
 # Works okay
 print(invert_at_index(a, 1))
 
-
 # Potential ZeroDivisionError
 print(invert_at_index(a, 2))
-
 
 # Potential IndexError
 print(invert_at_index(a, 5))
 
 # Define SalaryError inherited from ValueError
 class SalaryError(ValueError): pass
-
 
 # Define BonusError inherited from SalaryError
 class BonusError(SalaryError): pass
@@ -700,7 +663,6 @@ class Rectangle:
     def __init__(self, h, w):
       self.h, self.w = h, w
 
-
 # Define a Square class
 class Square(Rectangle):
     def __init__(self, w):
@@ -710,11 +672,9 @@ class Rectangle:
     def __init__(self, w,h):
       self.w, self.h = w,h
 
-
 # Define set_h to set h
     def set_h(self, h):
       self.h = h
-
 
 # Define set_w to set w
     def set_w(self, w):
@@ -724,12 +684,10 @@ class Square(Rectangle):
     def __init__(self, w):
       self.w, self.h = w, w
 
-
 # Define set_h to set w and h
     def set_h(self, h):
       self.h = h
       self.w = h
-
 
 # Define set_w to set w and h
     def set_w(self, w):
@@ -825,21 +783,17 @@ class Customer:
         self._balance = new_bal
         print("Setter method called")
 
-
 # Create a Customer
 cust = Customer("Belinda Lutz", 2000)
-
 
 # Assign 3000 to the balance property
 cust.balance = 3000
 
-
 # Print the balance property
-
 # print(cust.balance)
+
 import pandas as pd
 from datetime import datetime
-
 
 # LoggedDF class definition from Chapter 2
 class LoggedDF(pd.DataFrame):
@@ -852,10 +806,8 @@ class LoggedDF(pd.DataFrame):
         temp["created_at"] = self.created_at
         pd.DataFrame.to_csv(temp, *args, **kwargs)
 
-
 # Instantiate a LoggedDF called ldf
 ldf = LoggedDF({"col1": [1,2], "col2":[3,4]})
-
 
 # Assign a new value to ldf's created_at attribute and print
 ldf.created_at = '2035-07-13'
@@ -863,7 +815,6 @@ print(ldf.created_at)
 
 import pandas as pd
 from datetime import datetime
-
 
 # MODIFY the class to use _created_at instead of created_at
 class LoggedDF(pd.DataFrame):
@@ -880,7 +831,6 @@ class LoggedDF(pd.DataFrame):
     @property
     def created_at(self):
         return self._created_at
-
 
 # Instantiate a LoggedDF called ldf
 ldf = LoggedDF({"col1": [1,2], "col2":[3,4]})

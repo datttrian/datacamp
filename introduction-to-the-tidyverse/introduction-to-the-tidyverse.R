@@ -7,12 +7,14 @@ library(dplyr)
 # Look at the gapminder dataset
 gapminder
 
+
 library(gapminder)
 library(dplyr)
 
 # Filter the gapminder dataset for the year 1957
 gapminder %>%
   filter(year == 1957)
+
 
 library(gapminder)
 library(dplyr)
@@ -21,16 +23,18 @@ library(dplyr)
 gapminder %>%
   filter(country == "China", year == 2002)
 
+
 library(gapminder)
 library(dplyr)
 
 # Sort in ascending order of lifeExp
 gapminder %>%
   arrange(lifeExp)
-
+  
 # Sort in descending order of lifeExp
 gapminder %>%
   arrange(desc(lifeExp))
+
 
 library(gapminder)
 library(dplyr)
@@ -39,6 +43,7 @@ library(dplyr)
 gapminder %>%
   filter(year == 1957) %>%
   arrange(desc(pop))
+
 
 library(gapminder)
 library(dplyr)
@@ -51,6 +56,7 @@ gapminder %>%
 gapminder %>%
   mutate(lifeExpMonths = lifeExp * 12)
 
+
 library(gapminder)
 library(dplyr)
 
@@ -60,6 +66,7 @@ gapminder %>%
   mutate(lifeExpMonths = 12 * lifeExp) %>%
   arrange(desc(lifeExpMonths))
 
+
 # Load the ggplot2 package as well
 library(gapminder)
 library(dplyr)
@@ -68,6 +75,7 @@ library(ggplot2)
 # Create gapminder_1952
 gapminder_1952 <- gapminder %>%
   filter(year == 1952)
+
 
 library(gapminder)
 library(dplyr)
@@ -80,6 +88,7 @@ gapminder_1952 <- gapminder %>%
 ggplot(gapminder_1952, aes(x = pop, y = gdpPercap)) +
   geom_point()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -90,6 +99,7 @@ gapminder_1952 <- gapminder %>%
 # Create a scatter plot with pop on the x-axis and lifeExp on the y-axis
 ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   geom_point()
+
 
 library(gapminder)
 library(dplyr)
@@ -102,6 +112,7 @@ gapminder_1952 <- gapminder %>%
 ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   geom_point() +
   scale_x_log10()
+
 
 library(gapminder)
 library(dplyr)
@@ -116,6 +127,7 @@ ggplot(gapminder_1952, aes(x = pop, y = gdpPercap)) +
   scale_x_log10() +
   scale_y_log10()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -128,6 +140,7 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp, color = continent)) +
   geom_point() +
   scale_x_log10()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -139,6 +152,7 @@ gapminder_1952 <- gapminder %>%
 ggplot(gapminder_1952, aes(x = pop, y = lifeExp, color = continent, size = gdpPercap)) +
   geom_point() +
   scale_x_log10()
+
 
 library(gapminder)
 library(dplyr)
@@ -153,6 +167,7 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   scale_x_log10() +
   facet_wrap(~ continent)
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -164,12 +179,14 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)
   scale_x_log10() +
   facet_wrap(~ year)
 
+
 library(gapminder)
 library(dplyr)
 
 # Summarize to find the median life expectancy
 gapminder %>%
   summarize(medianLifeExp = median(lifeExp))
+
 
 library(gapminder)
 library(dplyr)
@@ -178,6 +195,7 @@ library(dplyr)
 gapminder %>%
   filter(year == 1957) %>%
   summarize(medianLifeExp = median(lifeExp))
+
 
 library(gapminder)
 library(dplyr)
@@ -188,6 +206,7 @@ gapminder %>%
   summarize(medianLifeExp = median(lifeExp),
             maxGdpPercap = max(gdpPercap))
 
+
 library(gapminder)
 library(dplyr)
 
@@ -196,6 +215,7 @@ gapminder %>%
   group_by(year) %>%
   summarize(medianLifeExp = median(lifeExp),
             maxGdpPercap = max(gdpPercap))
+
 
 library(gapminder)
 library(dplyr)
@@ -207,6 +227,7 @@ gapminder %>%
   summarize(medianLifeExp = median(lifeExp),
             maxGdpPercap = max(gdpPercap))
 
+
 library(gapminder)
 library(dplyr)
 
@@ -215,6 +236,7 @@ gapminder %>%
   group_by(continent, year) %>%
   summarize(medianLifeExp = median(lifeExp),
             maxGdpPercap = max(gdpPercap))
+
 
 library(gapminder)
 library(dplyr)
@@ -230,6 +252,7 @@ ggplot(by_year, aes(x = year, y = medianLifeExp)) +
   geom_point() +
   expand_limits(y = 0)
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -243,6 +266,7 @@ by_year_continent <- gapminder %>%
 ggplot(by_year_continent, aes(x = year, y = medianGdpPercap, color = continent)) +
   geom_point() +
   expand_limits(y = 0)
+
 
 library(gapminder)
 library(dplyr)
@@ -259,6 +283,7 @@ by_continent_2007 <- gapminder %>%
 ggplot(by_continent_2007, aes(x = medianGdpPercap, y = medianLifeExp, color = continent)) +
   geom_point()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -272,6 +297,7 @@ by_year <- gapminder %>%
 ggplot(by_year, aes(x = year, y = medianGdpPercap)) +
   geom_line() +
   expand_limits(y = 0)
+
 
 library(gapminder)
 library(dplyr)
@@ -287,6 +313,7 @@ ggplot(by_year_continent, aes(x = year, y = medianGdpPercap, color = continent))
   geom_line() +
   expand_limits(y = 0)
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -301,6 +328,7 @@ by_continent <- gapminder %>%
 ggplot(by_continent, aes(x = continent, y = medianGdpPercap)) +
   geom_col()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -312,6 +340,7 @@ oceania_1952 <- gapminder %>%
 # Create a bar plot of gdpPercap by country
 ggplot(oceania_1952, aes(x = country, y = gdpPercap)) +
   geom_col()
+
 
 library(gapminder)
 library(dplyr)
@@ -325,6 +354,7 @@ gapminder_1952 <- gapminder %>%
 ggplot(gapminder_1952, aes(x = pop_by_mil)) +
   geom_histogram(bins = 50)
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -336,6 +366,7 @@ gapminder_1952 <- gapminder %>%
 ggplot(gapminder_1952, aes(x = pop)) +
   geom_histogram() +
   scale_x_log10()
+
 
 library(gapminder)
 library(dplyr)
@@ -349,6 +380,7 @@ ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
   geom_boxplot() +
   scale_y_log10()
 
+
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -361,3 +393,4 @@ ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
   geom_boxplot() +
   scale_y_log10() +
   ggtitle("Comparing GDP per capita across continents")
+

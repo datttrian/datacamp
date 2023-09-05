@@ -1,0 +1,28 @@
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Import the openai package.
+from openai import OpenAI
+
+client = OpenAI()
+
+# Load the lines of the text file.
+with open('reddit_comments.txt', 'r') as data:
+    comments = data.readlines()
+
+# Optionally print the comments.
+comments
+
+# Pick a comment.
+comment = comments[0]
+
+# Send the comment to the Moderation API.
+moderation_output = client.moderations.create(input=comment)
+
+# Optionally print the comment.
+print(comment)
+
+# Print the output.
+moderation_output

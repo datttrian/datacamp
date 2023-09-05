@@ -11,6 +11,7 @@ parts %>%
 parts %>%
   inner_join(part_categories, by = c("part_cat_id" = "id"), suffix = c("_part", "_category"))
 
+
 # edited/added
 inventory_parts = readRDS('inventory_parts.rds')
 
@@ -18,9 +19,11 @@ inventory_parts = readRDS('inventory_parts.rds')
 parts %>%
   inner_join(inventory_parts, by = "part_num")
 
+
 # Combine the parts and inventory_parts tables
 inventory_parts %>%
   inner_join(parts, by = "part_num")
+
 
 # edited/added
 sets <- readRDS('sets.rds')
@@ -31,6 +34,7 @@ sets %>%
   inner_join(inventories, by = "set_num") %>%
   # Add inventory_parts using an inner join
   inner_join(inventory_parts, by = c("id" = "inventory_id"))
+
 
 # edited/added
 colors = readRDS('colors.rds')
@@ -48,6 +52,7 @@ sets %>%
   inner_join(colors, by = c("color_id" = "id"), suffix = c("_set", "_color")) %>%
   count(name_color, sort = TRUE)
 
+
 # edited/added
 inventory_parts_joined <- sets %>%
   inner_join(inventories, by = "set_num") %>%
@@ -60,6 +65,7 @@ star_destroyer <- inventory_parts_joined %>%
 # Combine the star_destroyer and millennium_falcon tables
 millennium_falcon %>%
   left_join(star_destroyer, by = c("part_num", "color_id"), suffix = c("_falcon", "_star_destroyer"))
+
 
 # Aggregate Millennium Falcon for the total quantity in each part
 millennium_falcon_colors <- millennium_falcon %>%
@@ -90,14 +96,16 @@ star_destroyer_colors <- star_destroyer %>%
 millennium_falcon_colors %>%
   left_join(star_destroyer_colors, by = "color_id", suffix = c("_falcon", "_star_destroyer"))
 
+
 inventory_version_1 <- inventories %>%
-  filter(version == 1)
+	filter(version == 1)
 
 # Join versions to sets
 sets %>%
   left_join(inventory_version_1, by = "set_num") %>%
   # Filter for where version is na
   filter(is.na(version))
+
 
 parts %>%
   # Count the part_cat_id
@@ -111,11 +119,13 @@ parts %>%
   # Filter for NA
   filter(is.na(n))
 
+
 parts %>%
   count(part_cat_id) %>%
   right_join(part_categories, by = c("part_cat_id" = "id")) %>%
   # Use replace_na to replace missing values in the n column
   replace_na(list(n = 0))
+
 
 # edited/added
 themes <- readRDS('themes.rds')
@@ -126,16 +136,19 @@ themes %>%
   # Filter for the "Harry Potter" parent name
   filter(name_parent == "Harry Potter")
 
+
 # Join themes to itself again to find the grandchild relationships
 themes %>%
   inner_join(themes, by = c("id" = "parent_id"), suffix = c("_parent", "_child")) %>%
   inner_join(themes, by = c("id_child" = "parent_id"), suffix = c("_parent", "_grandchild"))
+
 
 themes %>%
   # Left join the themes table to its own children
   left_join(themes, by = c("id" = "parent_id"), suffix = c("_parent", "_child")) %>%
   # Filter for themes that have no child themes
   filter(is.na(name_child))
+
 
 # edited/added
 inventory_parts_joined <- inventories %>%
@@ -149,6 +162,7 @@ inventory_parts_joined %>%
   inner_join(sets, by = "set_num") %>%
   # Combine with the themes table
   inner_join(themes, by = c("theme_id" = "id"), suffix = c("_set", "_theme"))
+
 
 # edited/added
 inventory_sets_themes <- inventory_parts_joined %>%
@@ -166,6 +180,7 @@ batman %>%
 star_wars %>%
   count(part_num, color_id, wt = quantity)
 
+
 # edited/added
 batman_parts <- batman %>%
   count(part_num, color_id, wt = quantity)
@@ -177,6 +192,7 @@ batman_parts %>%
   full_join(star_wars_parts, by = c("part_num", "color_id"), suffix = c("_batman", "_star_wars")) %>%
   # Replace NAs with 0s in the n_batman and n_star_wars columns
   replace_na(list(n_batman = 0, n_star_wars = 0))
+
 
 # edited/added
 parts_joined <- batman_parts %>%
@@ -190,6 +206,7 @@ parts_joined %>%
   inner_join(colors, by = c("color_id" = "id")) %>%
   # Join the parts table to the previous join
   inner_join(parts, by = "part_num", suffix = c("_color", "_part"))
+
 
 # edited/added
 batmobile <- inventory_parts_joined %>%
@@ -207,9 +224,11 @@ batwing %>%
 batwing %>%
   anti_join(batmobile, by = c("part_num"))
 
+
 # Use inventory_parts to find colors included in at least one set
 colors %>%
   semi_join(inventory_parts, by = c("id" = "color_id"))
+
 
 # Use filter() to extract version 1
 version_1_inventories <- inventories %>%
@@ -218,6 +237,7 @@ version_1_inventories <- inventories %>%
 # Use anti_join() to find which set is missing a version 1
 sets %>%
   anti_join(version_1_inventories, by = "set_num")
+
 
 # edited/added
 inventory_parts_themes <- inventories %>%
@@ -242,6 +262,7 @@ star_wars_colors <- inventory_parts_themes %>%
   summarize(total = sum(quantity)) %>%
   mutate(fraction = total / sum(total))
 
+
 batman_colors %>%
   # Join the Batman and Star Wars colors
   full_join(star_wars_colors, by = "color_id", suffix = c("_batman", "_star_wars")) %>%
@@ -258,6 +279,7 @@ batman_colors %>%
          total = total_batman + total_star_wars) %>%
   # Filter for totals greater than 200
   filter(total >= 200)
+
 
 # edited/added
 colors_joined <- batman_colors %>%
@@ -277,6 +299,7 @@ ggplot(colors_joined, aes(name, difference, fill = name)) +
   coord_flip() +
   scale_fill_manual(values = color_palette, guide = "none") +
   labs(y = "Difference: Batman - Star Wars")
+
 
 # edited/added
 questions <- readRDS("questions.rds")
@@ -298,6 +321,7 @@ questions %>%
   left_join(tags, by = c("tag_id" = "id")) %>%
   replace_na(list(tag_name = "only-r"))
 
+
 # edited/added
 questions_with_tags <- questions %>%
   left_join(question_tags, by = c("id" = "question_id")) %>%
@@ -309,13 +333,15 @@ questions_with_tags %>%
   group_by(tag_name) %>%
   # Get mean score and num_questions
   summarize(score = mean(score),
-            num_questions = n()) %>%
+          	num_questions = n()) %>%
   # Sort num_questions in descending order
   arrange(desc(num_questions))
+
 
 # Using a join, filter for tags that are never on an R question
 tags %>%
   anti_join(question_tags, by = c("id" = "tag_id"))
+
 
 # edited/added
 answers <- readRDS("answers.rds")
@@ -326,6 +352,7 @@ questions %>%
   # Subtract creation_date_question from creation_date_answer to create gap
   mutate(gap = as.integer(creation_date_answer - creation_date_question))
 
+
 # Count and sort the question id column in the answers table
 answer_counts <- answers %>%
   count(question_id, sort = TRUE)
@@ -335,6 +362,7 @@ questions %>%
   left_join(answer_counts, by = c("id" = "question_id")) %>%
   # Replace the NAs in the n column
   replace_na(list(n = 0))
+
 
 # edited/added
 answer_counts <- answers %>%
@@ -348,6 +376,7 @@ question_answer_counts %>%
   inner_join(question_tags, by = c("id" = "question_id")) %>%
   # Join the tags table
   inner_join(tags, by = c("tag_id" = "id"))
+
 
 # edited/added
 tagged_answers <- question_answer_counts %>%
@@ -363,6 +392,7 @@ tagged_answers %>%
   # Sort the questions in descending order
   arrange(desc(questions))
 
+
 # Inner join the question_tags and tags tables with the questions table
 questions %>%
   inner_join(question_tags, by = c("id" = "question_id")) %>%
@@ -372,6 +402,7 @@ questions %>%
 answers %>%
   inner_join(question_tags, by = "question_id") %>%
   inner_join(tags, by = c("tag_id" = "id"))
+
 
 # edited/added
 questions_with_tags <- questions %>%
@@ -383,12 +414,13 @@ answers_with_tags <- answers %>%
 
 # Combine the two tables into posts_with_tags
 posts_with_tags <- bind_rows(questions_with_tags %>% mutate(type = "question"),
-                             answers_with_tags %>% mutate(type = "answer"))
+                              answers_with_tags %>% mutate(type = "answer"))
 
 # Add a year column, then count by type, year, and tag_name
 posts_with_tags %>%
   mutate(year = year(creation_date)) %>%
   count(type, year, tag_name)
+
 
 # edited/added
 by_type_year_tag <- posts_with_tags %>%
@@ -403,3 +435,4 @@ by_type_year_tag_filtered <- by_type_year_tag %>%
 ggplot(by_type_year_tag_filtered, aes(year, n, color = type)) +
   geom_line() +
   facet_wrap(~ tag_name)
+

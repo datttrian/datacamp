@@ -1,0 +1,14 @@
+{
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "vsls-contrib.gitdoc",
+        "ms-toolsai.jupyter",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}

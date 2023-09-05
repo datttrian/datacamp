@@ -61,18 +61,17 @@ import matplotlib.pyplot as plt
 
 # Create histogram of co2_emission for food_category 'beef'
 food_consumption[food_consumption['food_category'] == 'beef']['co2_emission'].hist()
-
 # Show plot
 plt.show()
 
 # Create histogram of co2_emission for food_category 'eggs'
 food_consumption[food_consumption['food_category'] == 'eggs']['co2_emission'].hist()
-
 # Show plot
 plt.show()
 
 # Calculate total co2_emission per country: emissions_by_country
 emissions_by_country = food_consumption.groupby('country')['co2_emission'].sum()
+
 print(emissions_by_country)
 
 # Calculate total co2_emission per country: emissions_by_country
@@ -152,11 +151,11 @@ size_dist = restaurant_groups['group_size'].value_counts() / restaurant_groups.s
 # Reset index and rename columns
 size_dist = size_dist.reset_index()
 size_dist.columns = ['group_size', 'prob']
+
 print(size_dist)
 
 # Create probability distribution
 size_dist = restaurant_groups['group_size'].value_counts() / restaurant_groups.shape[0]
-
 # Reset index and rename columns
 size_dist = size_dist.reset_index()
 size_dist.columns = ['group_size', 'prob']
@@ -167,7 +166,6 @@ print(expected_value)
 
 # Create probability distribution
 size_dist = restaurant_groups['group_size'].value_counts() / restaurant_groups.shape[0]
-
 # Reset index and rename columns
 size_dist = size_dist.reset_index()
 size_dist.columns = ['group_size', 'prob']
@@ -236,6 +234,7 @@ from scipy.stats import uniform
 
 # Generate 1000 wait times between 0 and 30 mins
 wait_times = uniform.rvs(0, 30, size=1000)
+
 print(wait_times)
 
 # Set random seed to 334
@@ -289,14 +288,17 @@ print(np.mean(deals))
 
 # Probability of closing 3 out of 3 deals
 prob_3 = binom.pmf(3, 3, 0.3)
+
 print(prob_3)
 
 # Probability of closing <= 1 deal out of 3 deals
 prob_less_than_or_equal_1 = binom.cdf(1, 3, 0.3)
+
 print(prob_less_than_or_equal_1)
 
 # Probability of closing > 1 deal out of 3 deals
 prob_greater_than_1 = 1 - binom.cdf(1, 3, 0.3)
+
 print(prob_greater_than_1)
 
 # Expected number won with 30% win rate
@@ -320,18 +322,22 @@ from scipy.stats import norm
 
 # Probability of deal < 7500
 prob_less_7500 = norm.cdf(7500, 5000, 2000)
+
 print(prob_less_7500)
 
 # Probability of deal > 1000
 prob_over_1000 = 1 - norm.cdf(1000, 5000, 2000)
+
 print(prob_over_1000)
 
 # Probability of deal between 3000 and 7000
 prob_3000_to_7000 = norm.cdf(7000, 5000, 2000) - norm.cdf(3000, 5000, 2000)
+
 print(prob_3000_to_7000)
 
 # Calculate amount that 25% of deals will be less than
 pct_25 = norm.ppf(0.25, 5000, 2000)
+
 print(pct_25)
 
 # Calculate new average amount
@@ -366,41 +372,35 @@ np.random.seed(104)
 # Sample 20 num_users with replacement from amir_deals and take mean
 samp_20 = amir_deals['num_users'].sample(20, replace=True)
 np.mean(samp_20)
-sample_means = []
 
+sample_means = []
 # Loop 100 times
 for i in range(100):
-  
   # Take sample of 20 num_users
   samp_20 = amir_deals['num_users'].sample(20, replace=True)
-  
   # Calculate mean of samp_20
   samp_20_mean = np.mean(samp_20)
-  
   # Append samp_20_mean to sample_means
   sample_means.append(samp_20_mean)
+
 print(sample_means)
 
 # Set seed to 104
 np.random.seed(104)
-sample_means = []
 
+sample_means = []
 # Loop 100 times
 for i in range(100):
-  
   # Take sample of 20 num_users
   samp_20 = amir_deals['num_users'].sample(20, replace=True)
-  
   # Calculate mean of samp_20
   samp_20_mean = np.mean(samp_20)
-  
   # Append samp_20_mean to sample_means
   sample_means.append(samp_20_mean)
 
 # Convert to Series and plot histogram
 sample_means_series = pd.Series(sample_means)
 sample_means_series.hist()
-
 # Show plot
 plt.show()
 
@@ -409,17 +409,14 @@ all_deals = pd.read_csv("all_deals.csv")
 
 # Set seed to 321
 np.random.seed(321)
-sample_means = []
 
+sample_means = []
 # Loop 30 times to take 30 means
 for i in range(30):
-  
   # Take sample of size 20 from num_users col of all_deals with replacement
   cur_sample = all_deals['num_users'].sample(20, replace=True)
-  
   # Take mean of cur_sample
   cur_mean = np.mean(cur_sample)
-  
   # Append cur_mean to sample_means
   sample_means.append(cur_mean)
 
@@ -434,6 +431,7 @@ from scipy.stats import poisson
 
 # Probability of 5 responses
 prob_5 = poisson.pmf(5, 4)
+
 print(prob_5)
 
 # Import poisson from scipy.stats
@@ -441,6 +439,7 @@ from scipy.stats import poisson
 
 # Probability of 5 responses
 prob_coworker = poisson.pmf(5, 5.5)
+
 print(prob_coworker)
 
 # Import poisson from scipy.stats
@@ -448,6 +447,7 @@ from scipy.stats import poisson
 
 # Probability of 2 or fewer responses
 prob_2_or_less = poisson.cdf(2, 4)
+
 print(prob_2_or_less)
 
 # Import poisson from scipy.stats
@@ -455,6 +455,7 @@ from scipy.stats import poisson
 
 # Probability of > 10 responses
 prob_over_10 = 1 - poisson.cdf(10, 4)
+
 print(prob_over_10)
 
 # Import expon from scipy.stats
@@ -499,6 +500,7 @@ plt.show()
 
 # Correlation between life_exp and happiness_score
 cor = world_happiness['life_exp'].corr(world_happiness['happiness_score'])
+
 print(cor)
 
 # Scatterplot of gdp_per_cap and life_exp
@@ -515,6 +517,7 @@ plt.show()
 
 # Correlation between gdp_per_cap and life_exp
 cor = world_happiness['gdp_per_cap'].corr(world_happiness['life_exp'])
+
 print(cor)
 
 # Scatterplot of happiness_score vs. gdp_per_cap

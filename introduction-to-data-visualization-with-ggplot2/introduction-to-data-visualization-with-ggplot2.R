@@ -8,12 +8,14 @@ str(mtcars)
 ggplot(mtcars, aes(cyl, mpg)) +
   geom_point()
 
+
 # Load the ggplot2 package
 library(ggplot2)
 
 # Change the command below so that cyl is treated as factor
 ggplot(mtcars, aes(factor(cyl), mpg)) +
   geom_point()
+
 
 # Edit to add a color aesthetic mapped to disp
 ggplot(mtcars, aes(wt, mpg, color = disp)) +
@@ -22,6 +24,7 @@ ggplot(mtcars, aes(wt, mpg, color = disp)) +
 # Change the color aesthetic to a size aesthetic
 ggplot(mtcars, aes(wt, mpg, size = disp)) +
   geom_point()
+
 
 # Explore the diamonds data frame with str()
 str(diamonds)
@@ -35,6 +38,7 @@ ggplot(diamonds, aes(carat, price)) +
   geom_point() +
   geom_smooth()
 
+
 # Map the color aesthetic to clarity
 ggplot(diamonds, aes(carat, price, color = clarity)) +
   geom_point() +
@@ -44,6 +48,7 @@ ggplot(diamonds, aes(carat, price, color = clarity)) +
 ggplot(diamonds, aes(carat, price, color = clarity)) +
   geom_point(alpha = 0.4) +
   geom_smooth()
+
 
 # Draw a ggplot
 plt_price_vs_carat <- ggplot(
@@ -75,6 +80,7 @@ plt_price_vs_carat_by_clarity <- plt_price_vs_carat + geom_point(aes(color = cla
 # See the plot
 plt_price_vs_carat_by_clarity
 
+
 # edited/added
 library(tidyverse)
 mtcars <- mtcars %>%
@@ -82,7 +88,7 @@ mtcars <- mtcars %>%
          fam = as.factor(am)) %>%
   mutate(fam = fct_recode(fam,
                           "manual" = "1",
-                          "automatic" = "0"))
+                         "automatic" = "0"))
 
 # Map x to mpg and y to fcyl
 ggplot(mtcars, aes(mpg, fcyl)) +
@@ -100,6 +106,7 @@ ggplot(mtcars, aes(wt, mpg, color = fcyl)) +
   # Set the shape and size of the points
   geom_point(shape = 1, size = 4)
 
+
 # Map fcyl to fill
 ggplot(mtcars, aes(wt, mpg, fill = fcyl)) +
   geom_point(shape = 1, size = 4)
@@ -111,6 +118,7 @@ ggplot(mtcars, aes(wt, mpg, fill = fcyl)) +
 # Map color to fam
 ggplot(mtcars, aes(wt, mpg, fill = fcyl, color = fam)) +
   geom_point(shape = 21, size = 4, alpha = 0.6)
+
 
 # Establish the base layer
 plt_mpg_vs_wt <- ggplot(mtcars, aes(wt, mpg))
@@ -140,6 +148,7 @@ plt_mpg_vs_wt <- ggplot(mtcars, aes(wt, mpg))
 plt_mpg_vs_wt +
   geom_text(aes(label = fcyl))
 
+
 # A hexadecimal color
 my_blue <- "#4ABEFF"
 
@@ -155,6 +164,7 @@ ggplot(mtcars, aes(wt, mpg, fill = fcyl)) +
   # Set point size to 10; shape to 1
   geom_point(color = my_blue, size = 10, shape = 1)
 
+
 ggplot(mtcars, aes(wt, mpg, color = fcyl)) +
   # Add point layer with alpha 0.5
   geom_point(alpha = 0.5)
@@ -166,6 +176,7 @@ ggplot(mtcars, aes(wt, mpg, color = fcyl)) +
 ggplot(mtcars, aes(wt, mpg, color = fcyl)) +
   # Add points layer with shape 24 and color yellow
   geom_point(shape = 24, color = 'yellow')
+
 
 # 3 aesthetics: qsec vs. mpg, colored by fcyl
 ggplot(mtcars, aes(mpg, qsec, color = fcyl)) +
@@ -179,6 +190,7 @@ ggplot(mtcars, aes(mpg, qsec, color = fcyl, shape = fam)) +
 ggplot(mtcars, aes(mpg, qsec, color = fcyl, shape = fam, size = hp / wt)) +
   geom_point()
 
+
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   geom_bar() +
   # Set the axis labels
@@ -189,16 +201,17 @@ palette <- c(automatic = "#377EB8", manual = "#E41A1C")
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   geom_bar() +
   labs(x = "Number of Cylinders", y = "Count")
-# Set the fill color scale
-scale_fill_manual("Transmission", values = palette)
+  # Set the fill color scale
+  scale_fill_manual("Transmission", values = palette)
 
-palette <- c(automatic = "#377EB8", manual = "#E41A1C")
+  palette <- c(automatic = "#377EB8", manual = "#E41A1C")
 
 # Set the position
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   geom_bar(position = 'dodge') +
   labs(x = "Number of Cylinders", y = "Count")
-scale_fill_manual("Transmission", values = palette)
+  scale_fill_manual("Transmission", values = palette)
+
 
 # Plot 0 vs. mpg
 ggplot(mtcars, aes(mpg, 0)) +
@@ -209,6 +222,7 @@ ggplot(mtcars, aes(mpg, 0)) +
   geom_jitter() +
   # Set the y-axis limits from -2 to 2
   ylim(-2, 2)
+
 
 # Plot price vs. carat, colored by clarity
 plt_price_vs_carat_by_clarity <- ggplot(diamonds, aes(carat, price, color = clarity))
@@ -221,6 +235,7 @@ plt_price_vs_carat_by_clarity <- ggplot(diamonds, aes(carat, price, color = clar
 
 # Set transparency to 0.5
 plt_price_vs_carat_by_clarity + geom_point(alpha = 0.5, shape = 16)
+
 
 # Plot base
 plt_mpg_vs_fcyl_by_fam <- ggplot(mtcars, aes(fcyl, mpg, color = fam))
@@ -246,6 +261,7 @@ plt_mpg_vs_fcyl_by_fam + geom_point()
 # Now jitter and dodge the point positions
 plt_mpg_vs_fcyl_by_fam + geom_point(position = position_jitterdodge(jitter.width = 0.3, dodge.width = 0.3))
 
+
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   # Swap for jitter layer with width 0.1
   geom_jitter(alpha = 0.5, width = 0.1)
@@ -257,6 +273,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   # Use a jitter position function with width 0.1
   geom_point(alpha = 0.5, position = position_jitter(width = 0.1))
+
 
 # edited/added
 library(carData)
@@ -281,6 +298,7 @@ ggplot(Vocab, aes(education, vocabulary)) +
   # Set the shape to 1
   geom_jitter(alpha = 0.2, shape = 1)
 
+
 # Plot mpg
 ggplot(mtcars, aes(mpg)) +
   # Add a histogram layer
@@ -300,6 +318,7 @@ ggplot(mtcars, aes(mpg, ..density..)) +
   # Set the fill color to datacamp_light_blue
   geom_histogram(binwidth = 1, fill = datacamp_light_blue)
 
+
 # Update the aesthetics so the fill color is by fam
 ggplot(mtcars, aes(mpg, fill = fam)) +
   geom_histogram(binwidth = 1)
@@ -316,6 +335,7 @@ ggplot(mtcars, aes(mpg, fill = fam)) +
   # Change the position to identity, with transparency 0.4
   geom_histogram(binwidth = 1, position = "identity", alpha = 0.4)
 
+
 # Plot fcyl, filled by fam
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   # Add a bar layer
@@ -329,6 +349,7 @@ ggplot(mtcars, aes(fcyl, fill = fam)) +
   # Change the position to "dodge"
   geom_bar(position = "dodge")
 
+
 ggplot(mtcars, aes(cyl, fill = fam)) +
   # Change position to use the functional form, with width 0.2
   geom_bar(position = position_dodge(width = 0.2))
@@ -336,6 +357,7 @@ ggplot(mtcars, aes(cyl, fill = fam)) +
 ggplot(mtcars, aes(cyl, fill = fam)) +
   # Set the transparency to 0.6
   geom_bar(position = position_dodge(width = 0.2), alpha = 0.6)
+
 
 # Plot education, filled by vocabulary
 ggplot(Vocab, aes(education, fill = vocabulary))
@@ -352,6 +374,7 @@ ggplot(Vocab, aes(education, fill = vocabulary)) +
   # Add a brewer fill scale with default palette
   scale_fill_brewer()
 
+
 # Print the head of economics
 head(economics)
 
@@ -363,6 +386,7 @@ ggplot(economics, aes(date, unemploy)) +
 # Change the y-axis to the proportion of the population that is unemployed
 ggplot(economics, aes(date, unemploy / pop)) +
   geom_line()
+
 
 # edited/added
 load("fish.RData")
@@ -408,6 +432,7 @@ ggplot(fish.tidy, aes(Year, Capture)) +
 ggplot(fish.tidy, aes(Year, Capture, color = Species)) +
   geom_line()
 
+
 # edited/added
 library(lubridate)
 recess <- read.csv('recess.csv') %>%
@@ -419,7 +444,7 @@ plt_prop_unemployed_over_time <- ggplot(economics, aes(x = date, y = unemploy/po
             aes(xmin = begin, xmax = end, ymin = -Inf, ymax = +Inf, fill = "Recession"),
             inherit.aes = FALSE, alpha = 0.2) +
   geom_label(data = recess, aes(x = end, y = y, label=event), size = 3) +
-  scale_fill_manual(name = "", values="red", label="Recessions")
+    scale_fill_manual(name = "", values="red", label="Recessions")
 
 # View the default plot
 plt_prop_unemployed_over_time
@@ -435,6 +460,7 @@ plt_prop_unemployed_over_time +
 # Position the legend inside the plot at (0.6, 0.1)
 plt_prop_unemployed_over_time +
   theme(legend.position = c(0.6, 0.1))
+
 
 plt_prop_unemployed_over_time +
   theme(
@@ -488,6 +514,7 @@ plt_prop_unemployed_over_time +
     plot.title = element_text(face = "italic", size = 16)
   )
 
+
 # edited/added
 plt_mpg_vs_wt_by_cyl <- ggplot(mtcars, aes(wt, mpg, color = fcyl)) +
   ylab("Miels per gallon") +
@@ -521,6 +548,7 @@ plt_mpg_vs_wt_by_cyl +
     plot.margin = margin(10, 30, 50, 70, "mm")
   )
 
+
 # Add a black and white theme
 plt_prop_unemployed_over_time +
   theme_bw()
@@ -532,6 +560,7 @@ plt_prop_unemployed_over_time +
 # Add a void theme
 plt_prop_unemployed_over_time +
   theme_void()
+
 
 # edited/added
 library(ggthemes)
@@ -547,6 +576,7 @@ plt_prop_unemployed_over_time +
 # Use the Wall Street Journal theme
 plt_prop_unemployed_over_time +
   theme_wsj()
+
 
 # Theme layer saved as an object, theme_recession
 theme_recession <- theme(
@@ -583,6 +613,7 @@ theme_set(theme_tufte_recession)
 
 # Draw the plot (without explicitly adding a theme)
 plt_prop_unemployed_over_time
+
 
 plt_prop_unemployed_over_time +
   # Add Tufte's theme
@@ -627,6 +658,7 @@ plt_prop_unemployed_over_time +
     )
   )
 
+
 # edited/added
 library(gapminder)
 library(RColorBrewer)
@@ -669,6 +701,7 @@ ggplot(gm2007, aes(x = lifeExp, y = country, color = lifeExp)) +
   scale_x_continuous("", expand = c(0,0), limits = c(30,90), position = "top") +
   scale_color_gradientn(colors = palette) +
   labs(title = "Highest and lowest life expectancies, 2007", caption = "Source: gapminder")
+
 
 # edited/added
 gm2007_full <- gapminder %>%
@@ -744,3 +777,4 @@ plt_country_vs_lifeExp +
     arrow = arrow(length = unit(0.2, "cm"), type = "closed"),
     color = "grey40"
   )
+

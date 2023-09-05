@@ -354,6 +354,7 @@ print(projected_sales)
 # Load the mystery_image.npy file
 with open("mystery_image.npy", "rb") as f:
     rgb_array = np.load(f)
+
 plt.imshow(rgb_array)
 plt.show()
 

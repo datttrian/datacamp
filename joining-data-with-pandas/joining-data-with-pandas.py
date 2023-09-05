@@ -236,7 +236,7 @@ orig_seq['diff'] = orig_seq['revenue_seq'] - orig_seq['revenue_org']
 
 # Select the title_org, title_seq, and diff
 titles_diff = orig_seq[['title_org','title_seq','diff']]
- 
+
  # edited/added
 employees = pd.read_csv('employees.csv')
 top_cust = pd.read_csv('top_cust.csv')
@@ -299,7 +299,7 @@ avg_inv_by_month = inv_jul_thr_sep.groupby(level=0).agg({'total':'mean'})
 # Bar plot of avg_inv_by_month
 avg_inv_by_month.plot(kind='bar')
 plt.show()
- 
+
  # edited/added
 classic_18 = pd.read_csv('classic_18.csv')
 classic_19 = pd.read_csv('classic_19.csv')
@@ -326,7 +326,7 @@ popular_classic = classic_18_19[classic_18_19['tid'].isin(classic_pop['tid'])]
 
 # Print popular chart
 print(popular_classic)
- 
+
  # edited/added
 gdp = pd.read_csv('gdp1.csv')
 gdp.columns = gdp.columns.str.lower()
@@ -368,7 +368,7 @@ print(inflation_unemploy)
 # Plot a scatter plot of unemployment_rate vs cpi of inflation_unemploy
 inflation_unemploy.plot(kind='scatter', x='unemployment_rate', y='cpi')
 plt.show()
- 
+
  # edited/added
 gdp = pd.read_csv('gdp2.csv')
 pop = pd.read_csv('pop1.csv')
@@ -423,7 +423,7 @@ is_recession = ['r' if s=='recession' else 'g' for s in gdp_recession['econ_stat
 # Plot a bar chart of gdp_recession
 gdp_recession.plot(kind='bar', y='gdp', x='date', color=is_recession, rot=90)
 plt.show()
- 
+
  # edited/added
 gdp = pd.read_csv('gdp4.csv')
 gdp["date"] = pd.to_datetime(gdp["date"])

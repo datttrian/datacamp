@@ -27,6 +27,7 @@ food_consumption %>%
   summarize(mean_consumption = mean(consumption),
            median_consumption = median(consumption))
 
+
 food_consumption %>%
   # Filter for rice food category
   filter(food_category == "rice") %>%
@@ -48,6 +49,7 @@ food_consumption %>%
   summarize(mean_co2 = mean(co2_emission),
             median_co2 = median(co2_emission))
 
+
 # Calculate the quartiles of co2_emission
 quantile(food_consumption$co2_emission)
 
@@ -56,6 +58,7 @@ quantile(food_consumption$co2_emission, probs = c(0, 0.2, 0.4, 0.6, 0.8, 1))
 
 # Calculate the deciles of co2_emission
 quantile(food_consumption$co2_emission, probs = seq(0, 1, 0.1))
+
 
 # Calculate variance and sd of co2_emission for each food_category
 food_consumption %>%
@@ -69,6 +72,7 @@ ggplot(food_consumption, aes(co2_emission)) +
   geom_histogram() +
   # Create a separate sub-graph for each food_category
   facet_wrap(~ food_category)
+
 
 # Calculate total co2_emission per country: emissions_by_country
 emissions_by_country <- food_consumption %>%
@@ -115,6 +119,7 @@ iqr <- q3 - q1
 lower <- q1 - 1.5 * iqr
 upper <- q3 + 1.5 * iqr
 
+
 # edited/added
 amir_deals <- readRDS('seller_1.rds') %>%
   select(product, client, status, amount, num_users)
@@ -127,6 +132,7 @@ amir_deals %>%
 amir_deals %>%
   count(product) %>%
   mutate(prob = n/sum(n))
+
 
 # Set random seed to 31
 set.seed(31)
@@ -141,6 +147,7 @@ set.seed(31)
 # Sample 5 deals with replacement
 amir_deals %>%
   sample_n(5, replace = TRUE)
+
 
 # edited/added
 restaurant_groups <- read.csv('restaurant_groups.csv')
@@ -180,6 +187,7 @@ size_distribution %>%
   # Calculate prob_4_or_more by taking sum of probabilities
   summarize(prob_4_or_more = sum(probability))
 
+
 # Min and max wait times for back-up that happens every 30 min
 min <- 0
 max <- 30
@@ -208,6 +216,7 @@ max <- 30
 prob_between_10_and_20 <- punif(20, min, max) - punif(10, min, max)
 prob_between_10_and_20
 
+
 # edited/added
 wait_times <- data.frame(simulation_nb = 1:1000)
 
@@ -231,6 +240,7 @@ wait_times %>%
   ggplot(aes(time)) +
   geom_histogram(bins = 30)
 
+
 # Set random seed to 10
 set.seed(10)
 
@@ -252,6 +262,7 @@ deals <- rbinom(52, 3, 0.3)
 # Calculate mean deals won per week
 mean(deals)
 
+
 # Probability of closing 3 out of 3 deals
 dbinom(3, 3, 0.3)
 
@@ -260,6 +271,7 @@ pbinom(1, 3, 0.3)
 
 # Probability of closing > 1 deal out of 3 deals
 pbinom(1, 3, 0.3, lower.tail = FALSE)
+
 
 # Expected number won with 30% win rate
 won_30pct <- 3 * 0.3
@@ -273,9 +285,11 @@ won_25pct
 won_35pct <- 3 * 0.35
 won_35pct
 
+
 # Histogram of amount with 10 bins
 ggplot(amir_deals, aes(amount)) +
   geom_histogram(bins = 10)
+
 
 # Probability of deal < 7500
 pnorm(7500, mean = 5000, sd = 2000)
@@ -288,6 +302,7 @@ pnorm(7000, mean = 5000, sd = 2000) - pnorm(3000, mean = 5000, sd = 2000)
 
 # Calculate amount that 75% of deals will be more than
 qnorm(0.75, mean = 5000, sd = 2000, lower.tail = FALSE)
+
 
 # edited/added
 new_sales <- data.frame(sale_num = 1:36)
@@ -305,6 +320,7 @@ new_sales <- new_sales %>%
 # Create histogram with 10 bins
 ggplot(new_sales, aes(amount)) +
   geom_histogram(bins = 10)
+
 
 # Create a histogram of num_users
 ggplot(amir_deals, aes(num_users)) +
@@ -345,6 +361,7 @@ samples <- data.frame(mean = sample_means)
 ggplot(samples, aes(mean)) +
   geom_histogram(bins = 10)
 
+
 # edited/added
 all_deals <- read.csv('all_deals.csv')
 
@@ -360,6 +377,7 @@ mean(sample_means)
 # Calculate mean of num_users in amir_deals
 mean(amir_deals$num_users)
 
+
 # Probability of 5 responses
 dpois(5, lambda = 4)
 
@@ -372,6 +390,7 @@ ppois(2, lambda = 4)
 # Probability of > 10 responses
 ppois(10, lambda = 4, lower.tail = FALSE)
 
+
 # Probability response takes < 1 hour
 pexp(1, rate = 1/2.5)
 
@@ -380,6 +399,7 @@ pexp(4, rate = 1/2.5, lower.tail = FALSE)
 
 # Probability response takes 3-4 hours
 pexp(4, rate = 1/2.5) - pexp(3, rate = 1/2.5)
+
 
 # edited/added
 world_happiness <- readRDS('world_happiness_sugar.rds')
@@ -401,6 +421,7 @@ ggplot(world_happiness, aes(life_exp, happiness_score)) +
 # Correlation between life_exp and happiness_score
 cor(world_happiness$life_exp, world_happiness$happiness_score)
 
+
 # Scatterplot of gdp_per_cap and life_exp
 ggplot(world_happiness, aes(gdp_per_cap, life_exp)) +
   geom_point()
@@ -411,6 +432,7 @@ ggplot(world_happiness, aes(gdp_per_cap, life_exp)) +
 
 # Correlation between gdp_per_cap and life_exp
 cor(world_happiness$gdp_per_cap, world_happiness$life_exp)
+
 
 # Scatterplot of happiness_score vs. gdp_per_cap
 ggplot(world_happiness, aes(gdp_per_cap, happiness_score)) +
@@ -430,9 +452,11 @@ ggplot(world_happiness, aes(log_gdp_per_cap, happiness_score)) +
 # Calculate correlation
 cor(world_happiness$log_gdp_per_cap, world_happiness$happiness_score)
 
+
 # Scatterplot of grams_sugar_per_day and happiness_score
 ggplot(world_happiness, aes(grams_sugar_per_day, happiness_score)) +
   geom_point()
 
 # Correlation between grams_sugar_per_day and happiness_score
 cor(world_happiness$grams_sugar_per_day, world_happiness$happiness_score)
+

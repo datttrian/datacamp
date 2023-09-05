@@ -1,15 +1,12 @@
 # Create a list of strings: flash
 flash = ['jay garrick', 'barry allen', 'wally west', 'bart allen']
 
-
 # Print each list item in flash using a for loop
 for person in flash:
     print(person)
 
-
 # Create an iterator for flash: superhero
 superhero = iter(flash)
-
 
 # Print each item from the iterator
 print(next(superhero))
@@ -20,21 +17,17 @@ print(next(superhero))
 # Create an iterator for range(3): small_value
 small_value = iter(range(3))
 
-
 # Print the values in small_value
 print(next(small_value))
 print(next(small_value))
 print(next(small_value))
 
-
 # Loop over range(3) and print the values
 for num in range(3):
     print(num)
 
-
 # Create an iterator for range(10 ** 100): googol
 googol = iter(range(10 ** 100))
-
 
 # Print the first 5 values from googol
 print(next(googol))
@@ -47,22 +40,17 @@ print(next(googol))
 # Create a range object: values
 values = range(10, 21)
 
-
 # Print the range object
 print(values)
-
 
 # Create a list of integers: values_list
 values_list = list(values)
 
-
 # Print values_list
 print(values_list)
 
-
 # Get the sum of values: values_sum
 values_sum = sum(values)
-
 
 # Print values_sum
 print(values_sum)
@@ -75,19 +63,15 @@ mutants = ['charles xavier',
             'max eisenhardt',
             'kitty pryde']
 
-
 # Create a list of tuples: mutant_list
 mutant_list = list(enumerate(mutants))
-
 
 # Print the list of tuples
 print(mutant_list)
 
-
 # Unpack and print the tuple pairs
 for index1, value1 in enumerate(mutants):
     print(index1, value1)
-
 
 # Change the start index
 for index2, value2 in enumerate(mutants, start=1):
@@ -98,22 +82,17 @@ for index2, value2 in enumerate(mutants, start=1):
 aliases = ['prof x', 'iceman', 'nightcrawler', 'magneto', 'shadowcat']
 powers = ['telepathy', 'thermokinesis', 'teleportation', 'magnetokinesis', 'intangibility']
 
-
 # Create a list of tuples: mutant_data
 mutant_data = list(zip(mutants, aliases, powers))
-
 
 # Print the list of tuples
 print(mutant_data)
 
-
 # Create a zip object using the three lists: mutant_zip
 mutant_zip = zip(mutants, aliases, powers)
 
-
 # Print the zip object
 print(mutant_zip)
-
 
 # Unpack the zip object and print the tuple values
 for value1, value2, value3 in mutant_zip:
@@ -122,18 +101,14 @@ for value1, value2, value3 in mutant_zip:
 # Create a zip object from mutants and powers: z1
 z1 = zip(mutants, powers)
 
-
 # Print the tuples in z1 by unpacking with *
 print(*z1)
-
 
 # Re-create a zip object from mutants and powers: z1
 z1 = zip(mutants, powers)
 
-
 # 'Unzip' the tuples in z1 by unpacking with * and zip(): result1, result2
 result1, result2 = zip(*z1)
-
 
 # Check if unpacked tuples are equivalent to original tuples
 print(result1 == mutants)
@@ -143,10 +118,8 @@ print(result2 == powers)
 # edited/added
 import pandas as pd
 
-
 # Initialize an empty dictionary: counts_dict
 counts_dict = {}
-
 
 # Iterate over the file chunk by chunk
 for chunk in pd.read_csv('tweets.csv', chunksize=10):
@@ -157,7 +130,6 @@ for chunk in pd.read_csv('tweets.csv', chunksize=10):
             counts_dict[entry] += 1
         else:
             counts_dict[entry] = 1
-
 
 # Print the populated dictionary
 print(counts_dict)
@@ -184,10 +156,8 @@ def count_entries(csv_file, c_size, colname):
     # Return counts_dict
     return counts_dict
 
-
 # Call count_entries(): result_counts
 result_counts = count_entries('tweets.csv', 10, 'lang')
-
 
 # Print result_counts
 print(result_counts)
@@ -200,7 +170,6 @@ squares = [i**2 for i in range(0,10)]
 # Create a 5 x 5 matrix using a list of lists: matrix
 matrix = [[col for col in range(5)] for row in range(5)]
 
-
 # Print the matrix
 for row in matrix:
     print(row)
@@ -209,10 +178,8 @@ for row in matrix:
 # Create a list of strings: fellowship
 fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli']
 
-
 # Create list comprehension: new_fellowship
 new_fellowship = [member for member in fellowship if len(member) >= 7]
-
 
 # Print the new list
 print(new_fellowship)
@@ -220,12 +187,10 @@ print(new_fellowship)
 
 # Create a list of strings: fellowship
 fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli']
-
 
 # Create list comprehension: new_fellowship
 new_fellowship = [member if len(member) >= 7 else '' for member in fellowship]
 
-
 # Print the new list
 print(new_fellowship)
 
@@ -233,10 +198,8 @@ print(new_fellowship)
 # Create a list of strings: fellowship
 fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli']
 
-
 # Create dict comprehension: new_fellowship
 new_fellowship = { member:len(member) for member in fellowship }
-
 
 # Print the new dictionary
 print(new_fellowship)
@@ -245,14 +208,12 @@ print(new_fellowship)
 # Create generator object: result
 result = (num for num in range(31))
 
-
 # Print the first 5 values
 print(next(result))
 print(next(result))
 print(next(result))
 print(next(result))
 print(next(result))
-
 
 # Print the rest of the values
 for value in result:
@@ -262,10 +223,8 @@ for value in result:
 # Create a list of strings: lannister
 lannister = ['cersei', 'jaime', 'tywin', 'tyrion', 'joffrey']
 
-
 # Create a generator object: lengths
 lengths = (len(person) for person in lannister)
-
 
 # Iterate over and print the values in lengths
 for value in lengths:
@@ -274,7 +233,6 @@ for value in lengths:
 
 # Create a list of strings
 lannister = ['cersei', 'jaime', 'tywin', 'tyrion', 'joffrey']
-
 
 # Define generator function get_lengths
 def get_lengths(input_list):
@@ -285,7 +243,6 @@ def get_lengths(input_list):
     for person in input_list:
         yield len(person)
 
-
 # Print the values generated by get_lengths()
 for value in get_lengths(lannister):
     print(value)
@@ -293,14 +250,11 @@ for value in get_lengths(lannister):
 # edited/added
 df = pd.read_csv('tweets.csv')
 
-
 # Extract the created_at column from df: tweet_time
 tweet_time = df['created_at']
 
-
 # Extract the clock time: tweet_clock_time
 tweet_clock_time = [entry[11:19] for entry in tweet_time]
-
 
 # Print the extracted times
 print(tweet_clock_time)
@@ -309,10 +263,8 @@ print(tweet_clock_time)
 # Extract the created_at column from df: tweet_time
 tweet_time = df['created_at']
 
-
 # Extract the clock time: tweet_clock_time
 tweet_clock_time = [entry[11:19] for entry in tweet_time if entry[17:19] == '19']
-
 
 # Print the extracted times
 print(tweet_clock_time)
@@ -322,14 +274,11 @@ print(tweet_clock_time)
 feature_names = ['CountryName', 'CountryCode', 'IndicatorName', 'IndicatorCode', 'Year', 'Value']
 row_vals = ['Arab World', 'ARB', 'Adolescent fertility rate (births per 1,000 women ages 15-19)', 'SP.ADO.TFRT', '1960', '133.56090740552298']
 
-
 # Zip lists: zipped_lists
 zipped_lists = zip(feature_names, row_vals)
 
-
 # Create a dictionary: rs_dict
 rs_dict = dict(zipped_lists)
-
 
 # Print the dictionary
 print(rs_dict)
@@ -349,10 +298,8 @@ def lists2dict(list1, list2):
     # Return the dictionary
     return rs_dict
 
-
 # Call lists2dict: rs_fxn
 rs_fxn = lists2dict(feature_names, row_vals)
-
 
 # Print rs_fxn
 print(rs_fxn)
@@ -363,15 +310,12 @@ with open('row_lists.csv', 'r', newline='') as csvfile:
     reader = csv.reader(csvfile)
     row_lists = [row for row in reader]
 
-
 # Print the first two lists in row_lists
 print(row_lists[0])
 print(row_lists[1])
 
-
 # Turn list of lists into list of dicts: list_of_dicts
 list_of_dicts = [lists2dict(feature_names, sublist) for sublist in row_lists]
-
 
 # Print the first two dictionaries in list_of_dicts
 print(list_of_dicts[0])
@@ -380,14 +324,11 @@ print(list_of_dicts[1])
 # Import the pandas package
 import pandas as pd
 
-
 # Turn list of lists into list of dicts: list_of_dicts
 list_of_dicts = [lists2dict(feature_names, sublist) for sublist in row_lists]
 
-
 # Turn list of dicts into a DataFrame: df
 df = pd.DataFrame(list_of_dicts)
-
 
 # Print the head of the DataFrame
 print(df.head())
@@ -419,7 +360,6 @@ with open('world_dev_ind.csv') as file:
         else:
             counts_dict[first_col] = 1
 
-
 # Print the resulting dictionary
 print(counts_dict)
 
@@ -440,7 +380,6 @@ def read_large_file(file_object):
         # Yield the line of data
         yield data
 
-
 # Open a connection to the file
 with open('world_dev_ind.csv') as file:
 
@@ -454,7 +393,6 @@ with open('world_dev_ind.csv') as file:
 
 # Initialize an empty dictionary: counts_dict
 counts_dict = {}
-
 
 # Open a connection to the file
 with open('world_dev_ind.csv') as file:
@@ -470,17 +408,14 @@ with open('world_dev_ind.csv') as file:
         else:
             counts_dict[first_col] = 1
 
-
 # Print
 print(counts_dict)
 
 # Import the pandas package
 import pandas as pd
 
-
 # Initialize reader object: df_reader
 df_reader = pd.read_csv('ind_pop.csv', chunksize=10)
-
 
 # Print two chunks
 print(next(df_reader))
@@ -489,34 +424,27 @@ print(next(df_reader))
 # Initialize reader object: urb_pop_reader
 urb_pop_reader = pd.read_csv('ind_pop_data.csv', chunksize=1000)
 
-
 # Get the first DataFrame chunk: df_urb_pop
 df_urb_pop = next(urb_pop_reader)
-
 
 # Check out the head of the DataFrame
 print(df_urb_pop.head())
 
-
 # Check out specific country: df_pop_ceb
 df_pop_ceb = df_urb_pop[df_urb_pop['CountryCode'] == 'CEB']
-
 
 # Zip DataFrame columns of interest: pops
 pops = zip(df_pop_ceb['Total Population'],
            df_pop_ceb['Urban population (% of total)'])
 
-
 # Turn zip object into list: pops_list
 pops_list = list(pops)
-
 
 # Print pops_list
 print(pops_list)
 
 # edited/added
 import matplotlib.pyplot as plt
-
 
 # Code from previous exercise
 urb_pop_reader = pd.read_csv('ind_pop_data.csv', chunksize=1000)
@@ -526,10 +454,8 @@ pops = zip(df_pop_ceb['Total Population'],
            df_pop_ceb['Urban population (% of total)'])
 pops_list = list(pops)
 
-
 # Use list comprehension to create new DataFrame column 'Total Urban Population'
 df_pop_ceb['Total Urban Population'] = [int(tup[0] * tup[1] * 0.01) for tup in pops_list]
-
 
 # Plot urban population data
 df_pop_ceb.plot(kind='scatter', x='Year', y='Total Urban Population')
@@ -538,10 +464,8 @@ plt.show()
 # Initialize reader object: urb_pop_reader
 urb_pop_reader = pd.read_csv('ind_pop_data.csv', chunksize=1000)
 
-
 # Initialize empty DataFrame: data
 data = pd.DataFrame()
-
 
 # Iterate over each DataFrame chunk
 for df_urb_pop in urb_pop_reader:
@@ -561,7 +485,6 @@ for df_urb_pop in urb_pop_reader:
 
     # Concatenate DataFrame chunk to the end of data: data
     data = pd.concat([data, df_pop_ceb])
-
 
 # Plot urban population data
 data.plot(kind='scatter', x='Year', y='Total Urban Population')
@@ -598,14 +521,11 @@ def plot_pop(filename, country_code):
     data.plot(kind='scatter', x='Year', y='Total Urban Population')
     plt.show()
 
-
 # Set the filename: fn
 fn = 'ind_pop_data.csv'
 
-
 # Call plot_pop for country code 'CEB'
 plot_pop(fn, 'CEB')
-
 
 # Call plot_pop for country code 'ARB'
 plot_pop(fn, 'ARB')

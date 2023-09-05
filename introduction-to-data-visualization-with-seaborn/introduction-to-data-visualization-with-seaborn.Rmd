@@ -1,0 +1,1422 @@
+---
+title: "Introduction to Data Visualization with Seaborn"
+author: "DataCamp Content Creator"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<a href="https://github.com/datttrian/datacamp" target="_blank">![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-blue?logo=github)</a>
+
+**Course Description**
+
+Seaborn is a powerful Python library that makes it easy to create informative and attractive data visualizations. This 4-hour course provides an introduction to how you can use Seaborn to create a variety of plots, including scatter plots, count plots, bar plots, and box plots, and how you can customize your visualizations.
+
+You’ll explore this library and create Seaborn plots based on a variety of real-world data sets, including exploring how air pollution in a city changes through the day and looking at what young people like to do in their free time. This data will give you the opportunity to find out about Seaborn’s advantages first hand, including how you can easily create subplots in a single figure and how to automatically calculate confidence intervals.
+
+By the end of this course, you’ll be able to use Seaborn in various situations to explore your data and effectively communicate the results of your data analysis to others. These skills are highly sought-after for data analysts, data scientists, and any other job that may involve creating data visualizations. If you’d like to continue your learning, this course is part of several tracks, including the Data Visualization track, where you can add more libraries and techniques to your skillset.
+
+# Introduction to Seaborn
+
+What is Seaborn, and when should you use it? In this chapter, you will find out! Plus, you will learn how to create scatter plots and count plots with both lists of data and pandas DataFrames. You will also be introduced to one of the big advantages of using Seaborn - the ability to easily add a third variable to your plots by using color to represent different subgroups.
+
+## Introduction to Seaborn
+
+### Making a scatter plot with lists
+
+In this exercise, we'll use a dataset that contains information about
+227 countries. This dataset has lots of interesting information on each
+country, such as the country's birth rates, death rates, and its gross
+domestic product (GDP). GDP is the value of all the goods and services
+produced in a year, expressed as dollars per person.
+
+We've created three lists of data from this dataset to get you started.
+`gdp` is a list that contains the value of GDP per country, expressed as
+dollars per person. `phones` is a list of the number of mobile phones
+per 1,000 people in that country. Finally, `percent_literate` is a list
+that contains the percent of each country's population that can read and
+write.
+
+-   Import Matplotlib and Seaborn using the standard naming convention.
+-   Create a scatter plot of GDP (`gdp`) vs. number of phones per 1000 people (`phones`).
+-   Display the plot.
+-   Change the scatter plot so it displays the percent of the population that can read and write (`percent_literate`) on the y-axis.
+
+```{python, eval=F}
+# edited/added
+import pandas as pd
+countries = pd.read_csv('countries-of-the-world.csv')
+gdp = list(map(float,[word.replace(',','.') for word in countries['GDP ($ per capita)'].astype(str)]))
+phones = list(map(float,[word.replace(',','.') for word in countries['Phones (per 1000)'].astype(str)]))
+percent_literate = list(map(float,[word.replace(',','.') for word in countries['Literacy (%)'].astype(str)]))
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create scatter plot with GDP on the x-axis and number of phones on the y-axis
+sns.scatterplot(x=gdp, y=percent_literate)
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create scatter plot with GDP on the x-axis and number of phones on the y-axis
+sns.scatterplot(x=gdp, y=phones)
+
+# Show plot
+plt.show()
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Change this scatter plot to have percent literate on the y-axis
+sns.scatterplot(x=gdp, y=percent_literate)
+
+# Show plot
+plt.show()
+```
+
+### Making a count plot with a list
+
+In the last exercise, we explored a dataset that contains information
+about 227 countries. Let's do more exploration of this data -
+specifically, how many countries are in each region of the world?
+
+To do this, we'll need to use a count plot. Count plots take in a
+categorical list and return bars that represent the number of list
+entries per category. You can create one here using a list of regions
+for each country, which is a variable named `region`.
+
+-   Import Matplotlib and Seaborn using the standard naming conventions.
+-   Use Seaborn to create a count plot with `region` on the y-axis.
+-   Display the plot.
+
+```{python, eval=F}
+# edited/added
+region = countries['Region']
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create count plot with region on the y-axis
+sns.countplot(y=region)
+
+# Show plot
+plt.show()
+```
+
+## Using pandas with Seaborn
+
+### "Tidy" vs. "untidy" data
+
+Here, we have a sample dataset from a survey of children about their
+favorite animals. But can we use this dataset as-is with Seaborn? Let's
+use pandas to import the csv file with the data collected from the
+survey and determine whether it is tidy, which is essential to having it
+work well with Seaborn.
+
+To get you started, the filepath to the csv file has been assigned to
+the variable `csv_filepath`.
+
+Note that because `csv_filepath` is a Python variable, you will not need
+to put quotation marks around it when you read the csv.
+
+-   Read the csv file located at `csv_filepath` into a DataFrame named
+    `df`.
+-   Print the head of `df` to show the first five rows.
+
+View the first five rows of the DataFrame `df`. Is it tidy? Why or why not?
+
+- [ ] Yes, because there are no typos or missing values.
+- [ ] Yes, because it is well organized and easy to read.
+- [x] No, because a single column contains different types of information.
+
+```{python, eval=F}
+# edited/added
+csv_filepath = '1.2.1_example_csv.csv'
+
+# Import pandas
+import pandas as pd
+
+# Create a DataFrame from csv file
+df = pd.read_csv(csv_filepath)
+
+# Print the head of df
+print(df.head())
+```
+
+### Making a count plot with a DataFrame
+
+In this exercise, we'll look at the responses to a survey sent out to
+young people. Our primary question here is: how many young people
+surveyed report being scared of spiders? Survey participants were asked
+to agree or disagree with the statement "I am afraid of spiders".
+Responses vary from 1 to 5, where 1 is "Strongly disagree" and 5 is
+"Strongly agree".
+
+To get you started, the filepath to the csv file with the survey data
+has been assigned to the variable `csv_filepath`.
+
+Note that because `csv_filepath` is a Python variable, you will not need
+to put quotation marks around it when you read the csv.
+
+-   Import Matplotlib, pandas, and Seaborn using the standard names.
+-   Create a DataFrame named `df` from the csv file located at
+    `csv_filepath`.
+-   Use the `countplot()` function with the `x=` and `data=` arguments
+    to create a count plot with the `"Spiders"` column values on the
+    x-axis.
+-   Display the plot.
+
+```{python, eval=F}
+# edited/added
+csv_filepath = 'young-people-survey-responses.csv'
+
+# Import Matplotlib, pandas, and Seaborn
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+# Create a DataFrame from csv file
+df = pd.read_csv(csv_filepath)
+
+# Create a count plot with "Spiders" on the x-axis
+sns.countplot(x="Spiders", data=df)
+
+# Display the plot
+plt.show()
+```
+
+## Adding a third variable with hue
+
+### Hue and scatter plots
+
+In the prior video, we learned how `hue` allows us to easily make
+subgroups within Seaborn plots. Let's try it out by exploring data from
+students in secondary school. We have a lot of information about each
+student like their age, where they live, their study habits and their
+extracurricular activities.
+
+For now, we'll look at the relationship between the number of absences
+they have in school and their final grade in the course, segmented by
+where the student lives (rural vs. urban area).
+
+-   Create a scatter plot with `"absences"` on the x-axis and final
+    grade (`"G3"`) on the y-axis using the DataFrame `student_data`.
+    Color the plot points based on `"location"` (urban vs. rural).
+-   Make `"Rural"` appear before `"Urban"` in the plot legend.
+
+```{python, eval=F}
+# edited/added
+student_data = pd.read_csv('student-alcohol-consumption.csv')
+
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a scatter plot of absences vs. final grade
+sns.scatterplot(x="absences", y="G3", 
+                data=student_data, 
+                hue="location")
+
+# Show plot
+plt.show()
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Change the legend order in the scatter plot
+sns.scatterplot(x="absences", y="G3", 
+                data=student_data, 
+                hue="location",
+                hue_order=["Rural", "Urban"])
+
+# Show plot
+plt.show()
+```
+
+### Hue and count plots
+
+Let's continue exploring our dataset from students in secondary school
+by looking at a new variable. The `"school"` column indicates the
+initials of which school the student attended - either "GP" or "MS".
+
+In the last exercise, we created a scatter plot where the plot points
+were colored based on whether the student lived in an urban or rural
+area. How many students live in urban vs. rural areas, and does this
+vary based on what school the student attends? Let's make a count plot
+with subgroups to find out.
+
+-   Fill in the `palette_colors` dictionary to map the `"Rural"`
+    location value to the color `"green"` and the `"Urban"` location
+    value to the color `"blue"`.
+-   Create a count plot with `"school"` on the x-axis using the
+    `student_data` DataFrame.
+    -   Add subgroups to the plot using `"location"` variable and use
+        the `palette_colors` dictionary to make the location subgroups
+        green and blue.
+
+```{python, eval=F}
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a dictionary mapping subgroup values to colors
+palette_colors = {"Rural": "green", "Urban": "blue"}
+
+# Create a count plot of school with location subgroups
+sns.countplot(x="school", data=student_data,
+              hue="location",
+              palette=palette_colors)
+
+# Display plot
+plt.show()
+```
+
+# Visualizing Two Quantitative Variables
+
+In this chapter, you will create and customize plots that visualize the relationship between two quantitative variables. To do this, you will use scatter plots and line plots to explore how the level of air pollution in a city changes over the course of a day and how horsepower relates to fuel efficiency in cars. You will also see another big advantage of using Seaborn - the ability to easily create subplots in a single figure!
+
+## Introduction to relational plots and subplots
+
+### Creating subplots with col and row
+
+We've seen in prior exercises that students with more absences
+(`"absences"`) tend to have lower final grades (`"G3"`). Does this
+relationship hold regardless of how much time students study each week?
+
+To answer this, we'll look at the relationship between the number of
+absences that a student has in school and their final grade in the
+course, creating separate subplots based on each student's weekly study
+time (`"study_time"`).
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+Modify the code to use `relplot()` instead of `scatterplot()`.
+
+Modify the code to create one scatter plot for each level of the
+variable `"study_time"`, arranged in columns.
+
+Adapt your code to create one scatter plot for each level of a student's
+weekly study time, this time arranged in rows.
+
+```{python, eval=F}
+# Change to use relplot() instead of scatterplot()
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter")
+
+# Show plot
+plt.show()
+
+# Change to make subplots based on study time
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter",
+            col="study_time")
+
+# Show plot
+plt.show()
+
+# Change this scatter plot to arrange the plots in rows instead of columns
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            row="study_time")
+
+# Show plot
+plt.show()
+```
+
+### Creating two-factor subplots
+
+Let's continue looking at the `student_data` dataset of students in
+secondary school. Here, we want to answer the following question: does a
+student's first semester grade (`"G1"`) tend to correlate with their
+final grade (`"G3"`)?
+
+There are many aspects of a student's life that could result in a higher
+or lower final grade in the class. For example, some students receive
+extra educational support from their school (`"schoolsup"`) or from
+their family (`"famsup"`), which could result in higher grades. Let's
+try to control for these two factors by creating subplots based on
+whether the student received extra educational support from their school
+or family.
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+-   Use `relplot()` to create a scatter plot with `"G1"` on the x-axis
+    and `"G3"` on the y-axis, using the `student_data` DataFrame.
+-   Create **column** subplots based on whether the student received support from the school (`"schoolsup"`), ordered so that "yes" comes before "no".
+-   Add **row** subplots based on whether the student received support from the family (`"famsup"`), ordered so that "yes" comes before "no". This will result in subplots based on two factors.
+
+```{python, eval=F}
+# Create a scatter plot of G1 vs. G3
+sns.relplot(x="G1", y="G3", 
+            data=student_data,
+            kind="scatter")
+
+# Show plot
+plt.show()
+
+# Adjust to add subplots based on school support
+sns.relplot(x="G1", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="schoolsup",
+            col_order=["yes", "no"])
+
+# Show plot
+plt.show()
+
+# Adjust further to add subplots based on family support
+sns.relplot(x="G1", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="schoolsup",
+            col_order=["yes", "no"],
+            row="famsup",
+            row_order=["yes", "no"])
+
+# Show plot
+plt.show()
+```
+
+## Customizing scatter plots
+
+### Changing the size of scatter plot points
+
+In this exercise, we'll explore Seaborn's `mpg` dataset, which contains
+one row per car model and includes information such as the year the car
+was made, the number of miles per gallon ("M.P.G.") it achieves, the
+power of its engine (measured in "horsepower"), and its country of
+origin.
+
+What is the relationship between the power of a car's engine
+(`"horsepower"`) and its fuel efficiency (`"mpg"`)? And how does this
+relationship vary by the number of cylinders (`"cylinders"`) the car
+has? Let's find out.
+
+Let's continue to use `relplot()` instead of `scatterplot()` since it
+offers more flexibility.
+
+-   Use `relplot()` and the `mpg` DataFrame to create a scatter plot
+    with `"horsepower"` on the x-axis and `"mpg"` on the y-axis. Vary
+    the size of the points by the number of cylinders in the car
+    (`"cylinders"`).
+-   To make this plot easier to read, use `hue` to vary the color of the points by the number of cylinders in the car (`"cylinders"`).
+
+```{python, eval=F}
+# edited/added
+mpg = pd.read_csv('mpg.csv')
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create scatter plot of horsepower vs. mpg
+sns.relplot(x="horsepower", y="mpg", 
+            data=mpg, kind="scatter", 
+            size="cylinders")
+
+# Show plot
+plt.show()
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create scatter plot of horsepower vs. mpg
+sns.relplot(x="horsepower", y="mpg", 
+            data=mpg, kind="scatter", 
+            size="cylinders", hue="cylinders")
+
+# Show plot
+plt.show()
+```
+
+### Changing the style of scatter plot points
+
+Let's continue exploring Seaborn's `mpg` dataset by looking at the
+relationship between how fast a car can accelerate (`"acceleration"`)
+and its fuel efficiency (`"mpg"`). Do these properties vary by country
+of origin (`"origin"`)?
+
+Note that the `"acceleration"` variable is the time to accelerate from 0
+to 60 miles per hour, in seconds. Higher values indicate slower
+acceleration.
+
+-   Use `relplot()` and the `mpg` DataFrame to create a scatter plot
+    with `"acceleration"` on the x-axis and `"mpg"` on the y-axis. Vary
+    the style and color of the plot points by country of origin
+    (`"origin"`).
+
+```{python, eval=F}
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a scatter plot of acceleration vs. mpg
+sns.relplot(x="acceleration", y="mpg", 
+            data=mpg, kind="scatter", 
+            style="origin", hue="origin")
+
+# Show plot
+plt.show()
+```
+
+## Introduction to line plots
+
+### Interpreting line plots
+
+In this exercise, we'll continue to explore Seaborn's `mpg` dataset,
+which contains one row per car model and includes information such as
+the year the car was made, its fuel efficiency (measured in "miles per
+gallon" or "M.P.G"), and its country of origin (USA, Europe, or Japan).
+
+How has the average miles per gallon achieved by these cars changed over
+time? Let's use line plots to find out!
+
+-   Use `relplot()` and the `mpg` DataFrame to create a line plot with
+    `"model_year"` on the x-axis and `"mpg"` on the y-axis.
+
+Which of the following is NOT a correct interpretation of this line plot?
+
+- [ ] The average miles per gallon has generally increased over time.
+- [x] The distribution of miles per gallon is smaller in 1973 compared to 1977.
+- [ ] The 95% confidence interval for average miles per gallon in 1970 is approximately 16 - 19.5 miles per gallon.
+- [ ] This plot assumes that our data is a random sample of all cars in the US, Europe, and Japan.
+
+```{python, eval=F}
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create line plot
+sns.relplot(x="model_year", y="mpg",
+            data=mpg, kind="line")
+
+# Show plot
+plt.show()
+```
+
+### Visualizing standard deviation with line plots
+
+In the last exercise, we looked at how the average miles per gallon
+achieved by cars has changed over time. Now let's use a line plot to
+visualize how the *distribution* of miles per gallon has changed over
+time.
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+-   Change the plot so the shaded area shows the standard deviation
+    instead of the confidence interval for the mean.
+
+```{python, eval=F}
+# Make the shaded area show the standard deviation
+sns.relplot(x="model_year", y="mpg",
+            data=mpg, kind="line",
+            ci="sd")
+
+
+# Show plot
+plt.show()
+```
+
+### Plotting subgroups in line plots
+
+Let's continue to look at the `mpg` dataset. We've seen that the average
+miles per gallon for cars has increased over time, but how has the
+average horsepower for cars changed over time? And does this trend
+differ by country of origin?
+
+-   Use `relplot()` and the `mpg` DataFrame to create a line plot with
+    `"model_year"` on the x-axis and `"horsepower"` on the y-axis. Turn
+    off the confidence intervals on the plot.
+-   Create different lines for each country of origin (`"origin"`) that vary in both line style and color.
+-   Add markers for each data point to the lines.
+-   Use the `dashes` parameter to use solid lines for all countries, while still allowing for different marker styles for each line.
+
+```{python, eval=F}
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create line plot of model year vs. horsepower
+sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            ci=None)
+
+# Show plot
+plt.show()
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Change to create subgroups for country of origin
+sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            ci=None, style="origin", 
+            hue="origin")
+
+# Show plot
+plt.show()
+
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Add markers and make each line have the same style
+sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            ci=None, style="origin", 
+            hue="origin", markers=True,
+            dashes=False)
+
+# Show plot
+plt.show()
+```
+
+# Visualizing a Categorical and a Quantitative Variable
+
+Categorical variables are present in nearly every dataset, but they are especially prominent in survey data. In this chapter, you will learn how to create and customize categorical plots such as box plots, bar plots, count plots, and point plots. Along the way, you will explore survey data from young people about their interests, students about their study habits, and adult men about their feelings about masculinity.
+
+## Count plots and bar plots
+
+### Count plots
+
+In this exercise, we'll return to exploring our dataset that contains
+the responses to a survey sent out to young people. We might suspect
+that young people spend a lot of time on the internet, but how much do
+they report using the internet each day? Let's use a count plot to break
+down the number of survey responses in each category and then explore
+whether it changes based on age.
+
+As a reminder, to create a count plot, we'll use the `catplot()`
+function and specify the name of the categorical variable to count
+(`x=____`), the pandas DataFrame to use (`data=____`), and the type of
+plot (`kind="count"`).
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+-   Use `sns.catplot()` to create a count plot using the `survey_data`
+    DataFrame with `"Internet usage"` on the x-axis.
+-   Make the bars horizontal instead of vertical.
+-   Separate this plot into two side-by-side column subplots based on `"Age Category"`, which separates respondents into those that are younger than 21 vs. 21 and older.
+
+```{python, eval=F}
+# edited/added
+import numpy as np
+survey_data = pd.read_csv('young-people-survey-responses.csv')
+survey_data['Age Category'] = np.where(survey_data['Age']<21, 'Less than 21', '21+')
+
+# Create count plot of internet usage
+sns.catplot(x="Internet usage", data=survey_data,
+            kind="count")
+
+# Show plot
+plt.show()
+
+# Change the orientation of the plot
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count")
+
+# Show plot
+plt.show()
+
+# Separate into column subplots based on age category
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count", col="Age Category")
+
+# Show plot
+plt.show()
+```
+
+### Bar plots with percentages
+
+Let's continue exploring the responses to a survey sent out to young
+people. The variable `"Interested in Math"` is `True` if the person
+reported being interested or very interested in mathematics, and `False`
+otherwise. What percentage of young people report being interested in
+math, and does this vary based on gender? Let's use a bar plot to find
+out.
+
+As a reminder, we'll create a bar plot using the `catplot()` function,
+providing the name of categorical variable to put on the x-axis
+(`x=____`), the name of the quantitative variable to summarize on the
+y-axis (`y=____`), the pandas DataFrame to use (`data=____`), and the
+type of categorical plot (`kind="bar"`).
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+-   Use the `survey_data` DataFrame and `sns.catplot()` to create a bar
+    plot with `"Gender"` on the x-axis and `"Interested in Math"` on the
+    y-axis.
+
+```{python, eval=F}
+# edited/added
+survey_data = pd.read_csv('survey_data.csv')
+
+# Create a bar plot of interest in math, separated by gender
+sns.catplot(x="Gender", y="Interested in Math",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+```
+
+### Customizing bar plots
+
+In this exercise, we'll explore data from students in secondary school.
+The `"study_time"` variable records each student's reported weekly study
+time as one of the following categories: `"<2 hours"`, `"2 to 5 hours"`,
+`"5 to 10 hours"`, or `">10 hours"`. Do students who report higher
+amounts of studying tend to get better final grades? Let's compare the
+average final grade among students in each category using a bar plot.
+
+Seaborn has been imported as `sns` and `matplotlib.pyplot` has been
+imported as `plt`.
+
+-   Use `sns.catplot()` to create a bar plot with `"study_time"` on the
+    x-axis and final grade (`"G3"`) on the y-axis, using the
+    `student_data` DataFrame.
+-   Using the order parameter and the `category_order` list that is provided, rearrange the bars so that they are in order from lowest study time to highest.
+-   Update the plot so that it no longer displays confidence intervals.
+
+```{python, eval=F}
+# Create bar plot of average final grade in each study category
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar")
+
+# Show plot
+plt.show()
+
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
+
+# Rearrange the categories
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order)
+
+# Show plot
+plt.show()
+
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
+
+# Turn off the confidence intervals
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order,
+            ci=None)
+
+# Show plot
+plt.show()
+```
+
+## Box plots
+
+### Create and interpret a box plot
+
+Let's continue using the `student_data` dataset. In an earlier exercise,
+we explored the relationship between studying and final grade by using a
+bar plot to compare the average final grade (`"G3"`) among students in
+different categories of `"study_time"`.
+
+In this exercise, we'll try using a box plot look at this relationship
+instead. As a reminder, to create a box plot you'll need to use the
+`catplot()` function and specify the name of the categorical variable to
+put on the x-axis (`x=____`), the name of the quantitative variable to
+summarize on the y-axis (`y=____`), the pandas DataFrame to use
+(`data=____`), and the type of plot (`kind="box"`).
+
+We have already imported `matplotlib.pyplot` as `plt` and `seaborn` as
+`sns`.
+
+-   Use `sns.catplot()` and the `student_data` DataFrame to create a box
+    plot with `"study_time"` on the x-axis and `"G3"` on the y-axis. Set
+    the ordering of the categories to `study_time_order`.
+
+Which of the following is a correct interpretation of this box plot?
+
+- [ ] The 75th percentile of grades is highest among students who study more than 10 hours a week.
+- [ ] There are no outliers plotted for these box plots.
+- [ ] The 5th percentile of grades among students studying less than 2 hours is 5.0.
+- [x] The median grade among students studying less than 2 hours is 10.0.
+
+```{python, eval=F}
+# Specify the category ordering
+study_time_order = ["<2 hours", "2 to 5 hours", 
+                    "5 to 10 hours", ">10 hours"]
+
+# Create a box plot and set the order of the categories
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="box",
+            order=study_time_order)
+
+# Show plot
+plt.show()
+```
+
+### Omitting outliers
+
+Now let's use the `student_data` dataset to compare the distribution of
+final grades (`"G3"`) between students who have internet access at home
+and those who don't. To do this, we'll use the `"internet"` variable,
+which is a binary (yes/no) indicator of whether the student has internet
+access at home.
+
+Since internet may be less accessible in rural areas, we'll add
+subgroups based on where the student lives. For this, we can use the
+`"location"` variable, which is an indicator of whether a student lives
+in an urban ("Urban") or rural ("Rural") location.
+
+Seaborn has already been imported as `sns` and `matplotlib.pyplot` has
+been imported as `plt`. As a reminder, you can omit outliers in box
+plots by setting the `sym` parameter equal to an empty string (`""`).
+
+-   Use `sns.catplot()` to create a box plot with the `student_data`
+    DataFrame, putting `"internet"` on the x-axis and `"G3"` on the
+    y-axis.
+-   Add subgroups so each box plot is colored based on `"location"`.
+-   Do not display the outliers.
+
+```{python, eval=F}
+# Create a box plot with subgroups and omit the outliers
+sns.catplot(x="internet", y="G3",
+            data=student_data,
+            kind="box",
+            hue="location",
+            sym="")
+
+# Show plot
+plt.show()
+```
+
+### Adjusting the whiskers
+
+In the lesson we saw that there are multiple ways to define the whiskers
+in a box plot. In this set of exercises, we'll continue to use the
+`student_data` dataset to compare the distribution of final grades
+(`"G3"`) between students who are in a romantic relationship and those
+that are not. We'll use the `"romantic"` variable, which is a yes/no
+indicator of whether the student is in a romantic relationship.
+
+Let's create a box plot to look at this relationship and try different
+ways to define the whiskers.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+Adjust the code to make the box plot whiskers to extend to 0.5 \* IQR.
+Recall: the IQR is the interquartile range.
+
+Change the code to set the whiskers to extend to the 5th and 95th
+percentiles.
+
+Change the code to set the whiskers to extend to the min and max values.
+
+```{python, eval=F}
+# Set the whiskers to 0.5 * IQR
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=0.5)
+
+# Show plot
+plt.show()
+
+# Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[5, 95])
+
+# Show plot
+plt.show()
+
+# Set the whiskers at the min and max values
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[0, 100])
+
+# Show plot
+plt.show()
+```
+
+## Point plots
+
+### Customizing point plots
+
+Let's continue to look at data from students in secondary school, this
+time using a point plot to answer the question: does the quality of the
+student's family relationship influence the number of absences the
+student has in school? Here, we'll use the `"famrel"` variable, which
+describes the quality of a student's family relationship from 1 (very
+bad) to 5 (very good).
+
+As a reminder, to create a point plot, use the `catplot()` function and
+specify the name of the categorical variable to put on the x-axis
+(`x=____`), the name of the quantitative variable to summarize on the
+y-axis (`y=____`), the pandas DataFrame to use (`data=____`), and the
+type of categorical plot (`kind="point"`).
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Use `sns.catplot()` and the `student_data` DataFrame to create a
+    point plot with `"famrel"` on the x-axis and number of absences
+    (`"absences"`) on the y-axis.
+-   Add "caps" to the end of the confidence intervals with size `0.2`.
+-   Remove the lines joining the points in each category.
+
+```{python, eval=F}
+# Create a point plot of family relationship vs. absences
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point")
+            
+# Show plot
+plt.show()
+
+# Add caps to the confidence interval
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2)
+            
+# Show plot
+plt.show()
+
+# Remove the lines joining the points
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2,
+            join=False)
+            
+# Show plot
+plt.show()
+```
+
+### Point plots with subgroups
+
+Let's continue exploring the dataset of students in secondary school.
+This time, we'll ask the question: is being in a romantic relationship
+associated with higher or lower school attendance? And does this
+association differ by which school the students attend? Let's find out
+using a point plot.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Use `sns.catplot()` and the `student_data` DataFrame to create a
+    point plot with relationship status (`"romantic"`) on the x-axis and
+    number of absences (`"absences"`) on the y-axis. Color the points
+    based on the school that they attend (`"school"`).
+-   Turn off the confidence intervals for the plot.
+-   Since there may be outliers of students with many absences, use the `median` function that we've imported from `numpy` to display the median number of absences instead of the average.
+
+```{python, eval=F}
+# Create a point plot that uses color to create subgroups
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school")
+
+# Show plot
+plt.show()
+
+# Turn off the confidence intervals for this plot
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None)
+
+# Show plot
+plt.show()
+
+# Import median function from numpy
+from numpy import median
+
+# Plot the median number of absences instead of the mean
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None,
+            estimator=median)
+
+# Show plot
+plt.show()
+```
+
+# Customizing Seaborn Plots
+
+In this final chapter, you will learn how to add informative plot titles and axis labels, which are one of the most important parts of any data visualization! You will also learn how to customize the style of your visualizations in order to more quickly orient your audience to the key takeaways. Then, you will put everything you have learned together for the final exercises of the course!
+
+## Changing plot style and color
+
+### Changing style and palette
+
+Let's return to our dataset containing the results of a survey given to
+young people about their habits and preferences. We've provided the code
+to create a count plot of their responses to the question "How often do
+you listen to your parents' advice?". Now let's change the style and
+palette to make this plot easier to interpret.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Set the style to `"whitegrid"` to help the audience determine the
+    number of responses in each category.
+-   Set the color palette to the sequential palette named `"Purples"`.
+-   Change the color palette to the diverging palette named `"RdBu"`.
+
+```{python, eval=F}
+# edited/added
+survey_data = pd.read_csv('survey_data1.csv')
+
+# Set the style to "whitegrid"
+sns.set_style("whitegrid")
+
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
+
+# Set the color palette to "Purples"
+sns.set_style("whitegrid")
+sns.set_palette("Purples")
+
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
+
+# Change the color palette to "RdBu"
+sns.set_style("whitegrid")
+sns.set_palette("RdBu")
+
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
+```
+
+### Changing the scale
+
+In this exercise, we'll continue to look at the dataset containing
+responses from a survey of young people. Does the percentage of people
+reporting that they feel lonely vary depending on how many siblings they
+have? Let's find out using a bar plot, while also exploring Seaborn's
+four different plot scales ("contexts").
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+Set the scale ("context") to `"paper"`, which is the smallest of the
+scale options.
+
+Change the context to `"notebook"` to increase the scale.
+
+Change the context to `"talk"` to increase the scale.
+
+Change the context to `"poster"`, which is the largest scale available.
+
+```{python, eval=F}
+# edited/added
+survey_data = pd.read_csv('survey_data2.csv')
+
+# Set the context to "paper"
+sns.set_context("paper")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+
+# Change the context to "notebook"
+sns.set_context("notebook")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+
+# Change the context to "talk"
+sns.set_context("talk")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+
+# Change the context to "poster"
+sns.set_context("poster")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+```
+
+### Using a custom palette
+
+So far, we've looked at several things in the dataset of survey
+responses from young people, including their internet usage, how often
+they listen to their parents, and how many of them report feeling
+lonely. However, one thing we haven't done is a basic summary of the
+type of people answering this survey, including their age and gender.
+Providing these basic summaries is always a good practice when dealing
+with an unfamiliar dataset.
+
+The code provided will create a box plot showing the distribution of
+ages for male versus female respondents. Let's adjust the code to
+customize the appearance, this time using a custom color palette.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Set the style to `"darkgrid"`.
+-   Set a custom color palette with the hex color codes `"#39A7D0"` and
+    `"#36ADA4"`.
+
+```{python, eval=F}
+# Set the style to "darkgrid"
+sns.set_style("darkgrid")
+
+# Set a custom color palette
+sns.set_palette(["#39A7D0", "#36ADA4"])
+
+# Create the box plot of age distribution by gender
+sns.catplot(x="Gender", y="Age", 
+            data=survey_data, kind="box")
+
+# Show plot
+plt.show()
+```
+
+## Adding titles and labels: Part 1
+
+### FacetGrids vs. AxesSubplots
+
+In the recent lesson, we learned that Seaborn plot functions create two
+different types of objects: `FacetGrid` objects and `AxesSubplot`
+objects. The method for adding a title to your plot will differ
+depending on the type of object it is.
+
+In the code provided, we've used `relplot()` with the miles per gallon
+dataset to create a scatter plot showing the relationship between a
+car's weight and its horsepower. This scatter plot is assigned to the
+variable name `g`. Let's identify which type of object it is.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Identify what type of object plot `g` is and assign it to the
+    variable `type_of_g`.
+
+We've just seen that `sns.relplot()` creates FacetGrid objects. Which other Seaborn function creates a FacetGrid object instead of an AxesSubplot object?
+
+
+- [x] `sns.catplot()`
+- [ ] `sns.scatterplot()`
+- [ ] `sns.boxplot()`
+- [ ] `sns.countplot()`
+
+```{python, eval=F}
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
+
+# Identify plot type
+type_of_g = type(g)
+
+# Print type
+print(type_of_g)
+```
+
+### Adding a title to a FacetGrid object
+
+In the previous exercise, we used `relplot()` with the miles per gallon
+dataset to create a scatter plot showing the relationship between a
+car's weight and its horsepower. This created a `FacetGrid` object. Now
+that we know what type of object it is, let's add a title to this plot.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Add the following title to this plot: `"Car Weight vs. Horsepower"`.
+
+```{python, eval=F}
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
+
+# Add a title "Car Weight vs. Horsepower"
+g.fig.suptitle("Car Weight vs. Horsepower")
+
+# Show plot
+plt.show()
+```
+
+## Adding titles and labels: Part 2
+
+### Adding a title and axis labels
+
+Let's continue to look at the miles per gallon dataset. This time we'll
+create a line plot to answer the question: How does the average miles
+per gallon achieved by cars change over time for each of the three
+places of origin? To improve the readability of this plot, we'll add a
+title and more informative axis labels.
+
+In the code provided, we create the line plot using the `lineplot()`
+function. Note that `lineplot()` does not support the creation of
+subplots, so it returns an `AxesSubplot` object instead of an
+`FacetGrid` object.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Add the following title to the plot: `"Average MPG Over Time"`.
+-   Label the x-axis as `"Car Model Year"` and the y-axis as `"Average MPG"`.
+
+```{python, eval=F}
+# edited/added
+mpg_mean = mpg.groupby(["model_year", "origin"]).agg(mpg_mean=('mpg', 'mean')).reset_index()
+
+
+# Create line plot
+g = sns.lineplot(x="model_year", y="mpg_mean", 
+                 data=mpg_mean,
+                 hue="origin")
+
+# Add a title "Average MPG Over Time"
+g.set_title("Average MPG Over Time")
+
+# Show plot
+plt.show()
+
+# Create line plot
+g = sns.lineplot(x="model_year", y="mpg_mean", 
+                 data=mpg_mean,
+                 hue="origin")
+
+# Add a title "Average MPG Over Time"
+g.set_title("Average MPG Over Time")
+
+# Add x-axis and y-axis labels
+g.set(xlabel="Car Model Year", 
+      ylabel="Average MPG")
+
+# Show plot
+plt.show()
+```
+
+### Rotating x-tick labels
+
+In this exercise, we'll continue looking at the miles per gallon
+dataset. In the code provided, we create a point plot that displays the
+average acceleration for cars in each of the three places of origin.
+Note that the `"acceleration"` variable is the time to accelerate from 0
+to 60 miles per hour, in seconds. Higher values indicate slower
+acceleration.
+
+Let's use this plot to practice rotating the x-tick labels. Recall that
+the function to rotate x-tick labels is a standalone Matplotlib function
+and not a function applied to the plot object itself.
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Rotate the x-tick labels 90 degrees.
+
+```{python, eval=F}
+# Create point plot
+sns.catplot(x="origin", 
+            y="acceleration", 
+            data=mpg, 
+            kind="point", 
+            join=False, 
+            capsize=0.1)
+
+# Rotate x-tick labels
+plt.xticks(rotation=90)
+
+# Show plot
+plt.show()
+```
+
+## Putting it all together
+
+### Box plot with subgroups
+
+In this exercise, we'll look at the dataset containing responses from a
+survey given to young people. One of the questions asked of the young
+people was: "Are you interested in having pets?" Let's explore whether
+the distribution of ages of those answering "yes" tends to be higher or
+lower than those answering "no", controlling for gender.
+
+-   Set the color palette to `"Blues"`.
+-   Add subgroups to color the box plots based on
+    `"Interested in Pets"`.
+-   Set the title of the `FacetGrid` object `g` to
+    `"Age of Those Interested in Pets vs. Not"`.
+-   Make the plot display using a Matplotlib function.
+
+```{python, eval=F}
+# edited/added
+survey_data = pd.read_csv('survey_data.csv')
+
+# Set palette to "Blues"
+sns.set_palette("Blues")
+
+# Adjust to add subgroups based on "Interested in Pets"
+g = sns.catplot(x="Gender",
+                y="Age", data=survey_data, 
+                kind="box", hue="Interested in Pets")
+
+# Set title to "Age of Those Interested in Pets vs. Not"
+g.fig.suptitle("Age of Those Interested in Pets vs. Not")
+
+# Show plot
+plt.show()
+```
+
+### Bar plot with subgroups and subplots
+
+In this exercise, we'll return to our young people survey dataset and
+investigate whether the proportion of people who like techno music
+(`"Likes Techno"`) varies by their gender (`"Gender"`) or where they
+live (`"Village - town"`). This exercise will give us an opportunity to
+practice the many things we've learned throughout this course!
+
+We've already imported Seaborn as `sns` and `matplotlib.pyplot` as
+`plt`.
+
+-   Set the figure style to `"dark"`.
+-   Adjust the bar plot code to add subplots based on `"Gender"`,
+    arranged in columns.
+-   Add the title `"Percentage of Young People Who Like Techno"` to this
+    `FacetGrid` plot.
+-   Label the x-axis `"Location of Residence"` and y-axis
+    `"% Who Like Techno"`.
+
+```{python, eval=F}
+# edited/added
+survey_data = pd.read_csv('survey_data.csv')
+
+# Set the figure style to "dark"
+sns.set_style("dark")
+
+# Adjust to add subplots per gender
+g = sns.catplot(x="Village - town", y="Likes Techno", 
+                data=survey_data, kind="bar",
+                col="Gender")
+
+# Add title and axis labels
+g.fig.suptitle("Percentage of Young People Who Like Techno", y=1.02)
+g.set(xlabel="Location of Residence", 
+      ylabel="% Who Like Techno")
+
+# Show plot
+plt.show()
+```
+
+## Well done! What's next?
+
+### Well done! What's next?
+
+Congratulations on completing this introduction to Seaborn! Let's discuss the next steps you can take to build upon the skills that you've learned in this course.
+
+### Where does Seaborn fit in?
+
+Seaborn is a powerful data visualization tool that allows you to create attractive and informative visualizations with just a few lines of code. Let's return to this diagram of the data analysis workflow to see where Seaborn fits in.
+
+### Where does Seaborn fit in?
+
+As we've seen in our examples, Seaborn is great for both the initial exploration of your data and communicating the results at the end of your data analysis.
+
+### Next Steps: Explore and communicate results
+
+In this course, we've covered the most common data visualizations used for data exploration. DataCamp has other visualization courses if you want to learn even more. For example, Seaborn also supports more advanced visualizations and analyses like linear regressions. We also learned that Seaborn was built on top of Matplotlib and practiced how to use some Matplotlib functions to customize Seaborn plots. Here, too, there are many more customizations that Matplotlib supports if you wish to learn more.
+
+### Next steps: Gather data
+
+You can also learn more about the other steps of the data analysis workflow. If you wish to learn more about how to gather your data, explore courses on importing data in Python and SQL.
+
+### Next steps: Transform and clean
+
+In this course, we learned that Seaborn works extremely well with tidy pandas DataFrames. There is more to learn here about how to get your data into pandas DataFrames, clean it, and transform it into a tidy format.
+
+### Next steps: Analyze and build models
+
+Finally, I encourage you to learn more about statistical analysis. For example, for bar plots, Seaborn automatically calculates confidence intervals for each bar value. There is a lot to learn here about how these confidence intervals are calculated and how to interpret them.
+
+### Congratulations!
+
+Though there is always more to learn, we've covered a great deal in this introduction to Seaborn. Congratulations on completing the course! I hope you enjoyed it and feel confident using Seaborn in the future for your data visualization needs.

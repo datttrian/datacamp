@@ -23,6 +23,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
   stat_smooth(method = "lm", se = FALSE)
 
+
 # edited/added
 mtcars <- mtcars %>%
   mutate(fcyl = as.factor(cyl),
@@ -40,6 +41,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = fcyl)) +
   geom_point() +
   stat_smooth(method = "lm", se = FALSE) +
   stat_smooth(aes(group = 1), method = "lm", se = FALSE)
+
 
 ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
@@ -63,6 +65,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = fcyl)) +
   stat_smooth(aes(color = "All"), se = FALSE) +
   stat_smooth(method = "lm", se = FALSE)
 
+
 # edited/added
 library(carData)
 Vocab <- Vocab %>%
@@ -81,6 +84,7 @@ ggplot(Vocab, aes(x = education, y = vocabulary, color = year_group)) +
   # Map the fill color to year_group, set the line size to 2
   stat_smooth(aes(fill = year_group), method = "lm", size = 2)
 
+
 ggplot(Vocab, aes(x = education, y = vocabulary)) +
   geom_jitter(alpha = 0.25) +
   # Add a quantile stat, at 0.05, 0.5, and 0.95
@@ -90,6 +94,7 @@ ggplot(Vocab, aes(x = education, y = vocabulary)) +
 ggplot(Vocab, aes(x = education, y = vocabulary, color = year_group)) +
   geom_jitter(alpha = 0.25) +
   stat_quantile(quantiles = c(0.05, 0.5, 0.95))
+
 
 # Run this, look at the plot, then update it
 ggplot(Vocab, aes(x = education, y = vocabulary)) +
@@ -108,6 +113,7 @@ ggplot(Vocab, aes(x = education, y = vocabulary)) +
 # Amend the plot to group by education
 ggplot(Vocab, aes(x = education, y = vocabulary, group = education)) +
   stat_sum(aes(size = ..prop..))
+
 
 # Define position objects
 # 1. Jitter with width 0.2
@@ -131,6 +137,7 @@ p_wt_vs_fcyl_by_fam <- ggplot(mtcars, aes(x = fcyl, y = wt, color = fam))
 p_wt_vs_fcyl_by_fam +
   geom_point()
 
+
 # Add jittering only
 p_wt_vs_fcyl_by_fam +
   geom_point(position = posn_j)
@@ -138,6 +145,8 @@ p_wt_vs_fcyl_by_fam +
 # Add dodging only
 p_wt_vs_fcyl_by_fam +
   geom_point(position = posn_d)
+
+
 
 
 
@@ -154,11 +163,13 @@ ggplot(mtcars, aes(x = wt, y = hp, color = fam)) +
   # Add Cartesian coordinates with x limits from 3 to 6
   coord_cartesian(xlim = c(3, 6))
 
+
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE) +
   # Fix the coordinate ratio
   coord_fixed()
+
 
 # edited/added
 library(reshape2)
@@ -176,6 +187,7 @@ sun_plot +
 sun_plot +
   coord_fixed(ratio = 20)
 
+
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point(size = 2) +
   theme_classic() +
@@ -189,6 +201,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   theme_classic() +
   # Remove axis lines
   theme(axis.line = element_blank())
+
 
 # Produce a scatter plot of brainwt vs. bodywt
 ggplot(msleep, aes(bodywt, brainwt)) +
@@ -207,6 +220,7 @@ ggplot(msleep, aes(bodywt, brainwt)) +
   geom_point() +
   coord_trans(x = "log10", y = "log10")
 
+
 # Plot with a scale_*_*() function:
 ggplot(msleep, aes(bodywt, brainwt)) +
   geom_point() +
@@ -223,6 +237,7 @@ ggplot(msleep, aes(bodywt, brainwt)) +
   geom_smooth(method = "lm", se = FALSE) +
   # Add a log10 coordinate transformation for x and y axes
   coord_trans(x = "log10", y = "log10")
+
 
 # edited/added
 library(lubridate)
@@ -271,6 +286,7 @@ ggplot(airquality, aes(x = Date, y = Temp)) +
   scale_y_continuous(sec.axis = secondary_y_axis) +
   labs(x = "Date (1973)", y = "Fahrenheit")
 
+
 # Plot fcyl bars, filled by fam
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   # Place bars side by side
@@ -285,6 +301,7 @@ ggplot(mtcars, aes(fcyl, fill = fam)) +
   # Set a dodge width of 0.5 for partially overlapping bars
   geom_bar(position = position_dodge(0.5)) +
   coord_flip()
+
 
 # edited/added
 mtcars <- read.csv('mtcars.csv', stringsAsFactors=FALSE)
@@ -303,6 +320,7 @@ ggplot(mtcars, aes(car, wt)) +
   labs(x = "car", y = "weight") +
   coord_flip()
 
+
 # Run the code, view the plot, then update it
 ggplot(mtcars, aes(x = 1, fill = fcyl)) +
   geom_bar() +
@@ -315,6 +333,7 @@ ggplot(mtcars, aes(x = 1, fill = fcyl)) +
   coord_polar(theta = "y") +
   # Add a continuous x scale from 0.5 to 1.5
   scale_x_continuous(limits = c(0.5, 1.5))
+
 
 # edited/added
 wind <- read.csv('wind.csv')
@@ -334,6 +353,7 @@ ggplot(wind, aes(wd, fill = ws)) +
   geom_bar(width = 1) +
   coord_polar(start = -pi/16)
 
+
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   # Facet rows by am
@@ -348,6 +368,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   # Facet rows by am and columns by cyl
   facet_grid(rows = vars(am), cols = vars(cyl))
+
 
 # edited/added
 mtcars <- mtcars %>%
@@ -374,6 +395,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = fcyl_fam, size = disp)) +
   # Grid facet on gear and vs
   facet_grid(rows = vars(gear), cols = vars(vs))
 
+
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   # Facet rows by am using formula notation
@@ -388,6 +410,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   # Facet rows by am and columns by cyl using formula notation
   facet_grid(am ~ cyl)
+
 
 # Plot wt by mpg
 ggplot(mtcars, aes(wt, mpg)) +
@@ -413,6 +436,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   # Two variables
   facet_grid(cols = vars(vs, cyl), labeller = label_context)
 
+
 # Make factor, set proper labels explictly
 mtcars$fam <- factor(mtcars$am,
                      labels = c(`0` = "automatic",
@@ -434,6 +458,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   facet_grid(cols = vars(fam))
 
+
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   # Facet columns by cyl
@@ -449,6 +474,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   # Update the faceting to free the y-axis scales
   facet_grid(rows = vars(cyl), scales = "free_y")
 
+
 ggplot(mtcars, aes(x = mpg, y = car, color = fam)) +
   geom_point() +
   # Facet rows by gear
@@ -458,6 +484,7 @@ ggplot(mtcars, aes(x = mpg, y = car, color = fam)) +
   geom_point() +
   # Free the y scales and space
   facet_grid(rows = vars(gear), scales = "free_y", space = "free_y")
+
 
 ggplot(Vocab, aes(x = education, y = vocabulary)) +
   stat_smooth(method = "lm", se = FALSE) +
@@ -473,6 +500,7 @@ ggplot(Vocab, aes(x = education, y = vocabulary)) +
   stat_smooth(method = "lm", se = FALSE) +
   # Update the facet layout, using 11 columns
   facet_wrap(~ year, ncol = 11)
+
 
 ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
@@ -494,12 +522,14 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   # Update the facets to only show margins on gear and fvs
   facet_grid(rows = vars(fvs, fam), cols = vars(gear), margins = c("gear", "fvs"))
 
+
 # Plot wt vs. fcyl
 ggplot(mtcars, aes(x = fcyl, y = wt)) +
   # Add a bar summary stat of means, colored skyblue
   stat_summary(fun = mean, geom = "bar", fill = "skyblue") +
   # Add an errorbar summary stat std deviation limits
   stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1), geom = "errorbar", width = 0.1)
+
 
 # Update the aesthetics to color and fill by fam
 ggplot(mtcars, aes(x = fcyl, y = wt, color = fam, fill = fam)) +
@@ -519,13 +549,14 @@ ggplot(mtcars, aes(x = fcyl, y = wt, color = fam, fill = fam)) +
   stat_summary(fun = mean, geom = "bar", position = posn_d, alpha = 0.5) +
   stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1), geom = "errorbar", position = posn_d, width = 0.1)
 
+
 # edited/added
 mtcars_by_cyl <- mtcars %>%
   group_by(cyl) %>%
   summarize(mean_wt = mean(wt),
-            sd_wt = sd(wt),
-            n_wt = n()) %>%
-  mutate( prop = n_wt/sum(n_wt))
+          sd_wt = sd(wt),
+          n_wt = n()) %>%
+          mutate( prop = n_wt/sum(n_wt))
 
 # Using mtcars_cyl, plot mean_wt vs. cyl
 ggplot(mtcars_by_cyl, aes(x = cyl, y = mean_wt)) +
@@ -549,6 +580,7 @@ ggplot(mtcars_by_cyl, aes(x = cyl, y = mean_wt)) +
     # with width 0.1
     width = 0.1
   )
+
 
 # edited/added
 library(lattice)
@@ -577,6 +609,7 @@ ggplot(barley, aes(x = year, y = variety, fill = yield)) +
   # Update scale to use n-colors from red_brewer_palette
   scale_fill_gradientn(colors = red_brewer_palette)
 
+
 # The heat map we want to replace
 # Don't remove, it's here to help you!
 ggplot(barley, aes(x = year, y = variety, fill = yield)) +
@@ -590,6 +623,7 @@ ggplot(barley, aes(x = year, y = yield, color = variety, group = variety)) +
   geom_line() +
   # Facet, wrapping by site, with 1 row
   facet_wrap(~ site, nrow = 1)
+
 
 # edited/added
 library(datasets)
@@ -654,3 +688,4 @@ growth_by_dose <- ggplot(TG, aes(dose, len, color = supp)) +
 
 # View plot
 growth_by_dose
+

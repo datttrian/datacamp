@@ -1,0 +1,51 @@
+from dotenv import load_dotenv
+import openai
+# Load environment variables from .env file
+load_dotenv()
+
+# Import the os package.
+import os
+
+# Set openai.api_key to the OPENAI_API_KEY environment variable.
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+# Import OpenAI.
+# from langchain.llms import OpenAI
+
+
+# Import the LLMChain class.
+from langchain.chains import LLMChain
+# Import the PromptTemplate class.
+from langchain.prompts import PromptTemplate
+
+# Create a dynamic template to analyze a single headline.
+prompt_template = PromptTemplate.from_template(
+    template="Analyze the following financial headline for sentiment: {headline}",
+)
+
+# Open the text file and read its lines.
+with open('financial_headlines.txt', 'r') as data:
+    headlines = data.readlines()
+
+# Print all headlines.
+headlines
+
+# Strip the new line character from all headlines.
+headlines = [line.strip("\n") for line in headlines]
+
+# Print all headlines.
+headlines
+
+# Format the prompt template on the first headline of the dataset.
+formatted_prompt = prompt_template.format(headline=headlines[0])
+
+# Print the formatted template.
+formatted_prompt
+
+from langchain_openai import OpenAI
+
+# Create the LLMChain by combining a completion model and a prompt.
+completion_chain = LLMChain(llm=OpenAI(), prompt=prompt_template)
+
+# Run the LLMChain.
+completion_chain.invoke(input=headlines[0])

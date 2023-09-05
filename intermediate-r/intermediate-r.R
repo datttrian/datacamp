@@ -10,6 +10,7 @@ TRUE == FALSE
 # Compare a logical with a numeric
 TRUE == 1
 
+
 # Comparison of numerics
 -6 * 5 + 2 >= -10 + 1
 
@@ -18,6 +19,7 @@ TRUE == 1
 
 # Comparison of logicals
 TRUE > FALSE
+
 
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
@@ -32,6 +34,7 @@ linkedin <= 5
 # LinkedIn more popular than Facebook
 linkedin > facebook
 
+
 # The social data has been created for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
 facebook <- c(17, 7, 5, 16, 8, 13, 14)
@@ -43,6 +46,7 @@ views == 13
 # When is views less than or equal to 14?
 views <= 14
 
+
 # The linkedin and last variable are already defined for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
 last <- tail(linkedin, 1)
@@ -52,6 +56,7 @@ last < 5 | last > 10
 
 # Is last between 15 (exclusive) and 20 (inclusive)?
 last > 15 & last <= 20
+
 
 # The social data (linkedin, facebook, views) has been created for you
 
@@ -63,6 +68,7 @@ linkedin >= 12 | facebook >= 12
 
 # When is views between 11 (exclusive) and 14 (inclusive)?
 views > 11 & views <= 14
+
 
 # edited/added
 li_df=read.csv("li_df.csv")
@@ -78,6 +84,7 @@ extremes <- second > 25 | second < 5
 # Count the number of TRUEs in extremes
 sum(extremes)
 
+
 # Variables related to your last day of recordings
 medium <- "LinkedIn"
 num_views <- 14
@@ -91,6 +98,7 @@ if (medium == "LinkedIn") {
 if (num_views > 15) {
   print("You are popular!")
 }
+
 
 # Variables related to your last day of recordings
 medium <- "LinkedIn"
@@ -109,6 +117,7 @@ if (num_views > 15) {
 } else {
   print("Try to be more visible!")
 }
+
 
 # Variables related to your last day of recordings
 medium <- "LinkedIn"
@@ -134,6 +143,7 @@ if (num_views > 15) {
   print("Try to be more visible!")
 }
 
+
 # Variables related to your last day of recordings
 li <- 15
 fb <- 9
@@ -150,6 +160,7 @@ if (li >= 15 & fb >= 15) {
 # Print the resulting sms to the console
 sms
 
+
 # Initialize the speed variable
 speed <- 64
 
@@ -161,6 +172,7 @@ while (speed > 30) {
 
 # Print out the speed variable
 speed
+
 
 # Initialize the speed variable
 speed <- 64
@@ -177,17 +189,18 @@ while (speed > 30) {
   }
 }
 
+
 # Initialize the speed variable
 speed <- 88
 
 while (speed > 30) {
   print(paste("Your speed is", speed))
-  
+
   # Break the while loop when speed exceeds 80
   if (speed > 80) {
     break
   }
-  
+
   if (speed > 48) {
     print("Slow down big time!")
     speed <- speed - 11
@@ -196,6 +209,7 @@ while (speed > 30) {
     speed <- speed - 6
   }
 }
+
 
 # Initialize i as 1
 i <- 1
@@ -209,6 +223,7 @@ while (i <= 10) {
   i <- i + 1
 }
 
+
 # The linkedin vector has already been defined for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
 
@@ -221,6 +236,7 @@ for (li in linkedin) {
 for (i in 1:length(linkedin)) {
   print(linkedin[i])
 }
+
 
 # The nyc list is already specified
 nyc <- list(pop = 8405837,
@@ -237,6 +253,7 @@ for (i in 1:length(nyc)) {
   print(nyc[[i]])
 }
 
+
 # edited/added
 ttt=matrix(c("O",NA,"X",NA,"O","O","X",NA,"X"),3,3)
 
@@ -248,6 +265,7 @@ for (i in 1:nrow(ttt)) {
     print(paste("On row", i, "and column", j, "the board contains", ttt[i,j]))
   }
 }
+
 
 # The linkedin vector has already been defined for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
@@ -262,6 +280,7 @@ for (li in linkedin) {
   print(li)
 }
 
+
 # The linkedin vector has already been defined for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
 
@@ -272,21 +291,22 @@ for (li in linkedin) {
   } else {
     print("Be more visible!")
   }
-  
+
   # Add if statement with break
   if (li > 16) {
     print("This is ridiculous, I'm outta here!")
     break
   }
-  
+
   # Add if statement with next
   if (li < 5) {
     print("This is too embarrassing!")
     next
   }
-  
+
   print(li)
 }
+
 
 # Pre-defined variables
 rquote <- "r's internals are irrefutably intriguing"
@@ -308,12 +328,14 @@ for (char in chars) {
 # Print out rcount
 rcount
 
+
 # Consult the documentation on the mean() function
 ?mean
 help(mean)
 
 # Inspect the arguments of the mean() function
 args(mean)
+
 
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
@@ -326,6 +348,7 @@ avg_fb <- mean(facebook)
 # Inspect avg_li and avg_fb
 avg_li
 avg_fb
+
 
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
@@ -341,6 +364,7 @@ avg_sum_trimmed <- mean(linkedin + facebook, trim = 0.2)
 avg_sum
 avg_sum_trimmed
 
+
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, NA, 17, 14)
 facebook <- c(17, NA, 5, 16, 8, 13, 14)
@@ -351,12 +375,14 @@ mean(linkedin)
 # Advanced average of linkedin
 mean(linkedin, na.rm = TRUE)
 
+
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, NA, 17, 14)
 facebook <- c(17, NA, 5, 16, 8, 13, 14)
 
 # Calculate the mean absolute deviation
 mean(abs(linkedin - facebook), na.rm = TRUE)
+
 
 # Create a function pow_two()
 pow_two <- function(x) {
@@ -374,6 +400,7 @@ sum_abs <- function(x, y) {
 # Use the function
 sum_abs(-2, 3)
 
+
 # Define the function hello()
 hello <- function() {
   print("Hi there!")
@@ -382,6 +409,7 @@ hello <- function() {
 
 # Call the function hello()
 hello()
+
 
 # Finish the pow_two() function
 pow_two <- function(x, print_info = TRUE) {
@@ -396,6 +424,7 @@ pow_two <- function(x, print_info = TRUE) {
 pow_two(5)
 pow_two(5, FALSE)
 pow_two(5, TRUE)
+
 
 # edited/added
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
@@ -418,6 +447,7 @@ interpret <- function(num_views) {
 interpret(linkedin[1])
 interpret(facebook[2])
 
+
 # The linkedin and facebook vectors have already been created for you
 linkedin <- c(16, 9, 13, 5, 2, 17, 14)
 facebook <- c(17, 7, 5, 16, 8, 13, 14)
@@ -438,11 +468,11 @@ interpret <- function(num_views) {
 # return_sum: return total number of views on popular days?
 interpret_all <- function(views, return_sum = TRUE) {
   count <- 0
-  
+
   for (v in views) {
     count <- count + interpret(v)
   }
-  
+
   if (return_sum) {
     return(count)
   } else {
@@ -454,6 +484,7 @@ interpret_all <- function(views, return_sum = TRUE) {
 interpret_all(linkedin)
 interpret_all(facebook)
 
+
 # Load the ggplot2 package
 library("ggplot2")
 
@@ -462,6 +493,7 @@ qplot(mtcars$wt, mtcars$hp)
 
 # Check out the currently attached packages again
 search()
+
 
 # The vector pioneers has already been created for you
 pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
@@ -474,6 +506,7 @@ split_low <- lapply(split_math, tolower)
 
 # Take a look at the structure of split_low
 str(split_low)
+
 
 # Code from previous exercise:
 pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
@@ -496,6 +529,7 @@ select_second <- function(x) {
 # Apply select_second() over split_low: years
 years <- lapply(split_low, select_second)
 
+
 # split_low has been created for you
 split_low
 
@@ -507,6 +541,7 @@ names <- lapply(split_low, function(x) { x[1] })
 
 # Transform: use anonymous function inside lapply
 years <- lapply(split_low, function(x) { x[2] })
+
 
 # Definition of split_low
 pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
@@ -521,6 +556,7 @@ select_el <- function(x, index) {
 # Use lapply() twice on split_low: names and years
 names <- lapply(split_low, select_el, index = 1)
 years <- lapply(split_low, select_el, index = 2)
+
 
 # edited/added
 temp=list(c(3,7,9,6,-1), c(6,9,12,13,5), c(4,8,3,-1,-3), c(1,4,7,2,-2), c(5,7,9,4,2), c(-3,5,8,9,4), c(3,6,9,4,1))
@@ -539,6 +575,7 @@ lapply(temp, max)
 # Use sapply() to find each day's maximum temperature
 sapply(temp, max)
 
+
 # temp is already defined in the workspace
 
 # Finish function definition of extremes_avg
@@ -552,6 +589,7 @@ sapply(temp, extremes_avg)
 # Apply extremes_avg() over temp using lapply()
 lapply(temp, extremes_avg)
 
+
 # temp is already available in the workspace
 
 # Create a function that returns min and max of a vector: extremes
@@ -564,6 +602,7 @@ sapply(temp, extremes)
 
 # Apply extremes() over temp with lapply()
 lapply(temp, extremes)
+
 
 # temp is already prepared for you in the workspace
 
@@ -581,6 +620,7 @@ freezing_l <- lapply(temp, below_zero)
 # Are freezing_s and freezing_l identical?
 identical(freezing_s, freezing_l)
 
+
 # temp is already available in the workspace
 
 # Definition of print_info()
@@ -594,6 +634,7 @@ sapply(temp, print_info)
 # Apply print_info() over temp using lapply()
 lapply(temp, print_info)
 
+
 # temp is already available in the workspace
 
 # Definition of basics()
@@ -603,6 +644,7 @@ basics <- function(x) {
 
 # Apply basics() over temp using vapply()
 vapply(temp, basics, numeric(3))
+
 
 # temp is already available in the workspace
 
@@ -614,6 +656,7 @@ basics <- function(x) {
 # Fix the error:
 vapply(temp, basics, numeric(4))
 
+
 # temp is already defined in the workspace
 
 # Convert to vapply() expression
@@ -622,11 +665,13 @@ vapply(temp, max, numeric(1))
 # Convert to vapply() expression
 vapply(temp, function(x, y) { mean(x) > y }, logical(1), y = 5)
 
+
 # The errors vector has already been defined for you
 errors <- c(1.9, -2.6, 4.0, -9.5, -3.4, 7.3)
 
 # Sum of absolute rounded values of errors
 sum(abs(round(errors)))
+
 
 # Don't edit these two lines
 vec1 <- c(1.5, 2.5, 8.4, 3.7, 6.3)
@@ -634,6 +679,7 @@ vec2 <- rev(vec1)
 
 # Fix the error
 mean(c(abs(vec1), abs(vec2)))
+
 
 # The linkedin and facebook lists have already been created for you
 linkedin <- list(16, 9, 13, 5, 2, 17, 14)
@@ -649,8 +695,10 @@ social_vec <- append(li_vec, fb_vec)
 # Sort social_vec
 sort(social_vec, decreasing = TRUE)
 
+
 # Fix me
 rep(seq(1, 7, by = 2), times = 7)
+
 
 # Create first sequence: seq1
 seq1 <- seq(1, 500, by = 3)
@@ -660,6 +708,7 @@ seq2 <- seq(1200, 900, by = -7)
 
 # Calculate total sum of the sequences
 sum(seq1) + sum(seq2)
+
 
 # The emails vector has already been defined for you
 emails <- c("john.doe@ivyleague.edu", "education@world.gov", "dalai.lama@peace.org",
@@ -674,6 +723,7 @@ hits <- grep("edu", emails)
 # Subset emails using hits
 emails[hits]
 
+
 # The emails vector has already been defined for you
 emails <- c("john.doe@ivyleague.edu", "education@world.gov", "dalai.lama@peace.org",
             "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
@@ -687,12 +737,14 @@ hits <- grep("@.*\\.edu$", emails)
 # Subset emails using hits
 emails[hits]
 
+
 # The emails vector has already been defined for you
 emails <- c("john.doe@ivyleague.edu", "education@world.gov", "global@peace.org",
             "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
 
 # Use sub() to convert the email domains to datacamp.edu
 sub("@.*\\.edu$", "@datacamp.edu", emails)
+
 
 # Get the current date: today
 today <- Sys.Date()
@@ -705,6 +757,7 @@ now <- Sys.time()
 
 # See what now looks like under the hood
 unclass(now)
+
 
 # Definition of character strings representing dates
 str1 <- "May 23, '96"
@@ -721,6 +774,7 @@ format(date1, "%A")
 format(date2, "%d")
 format(date3, "%b %Y")
 
+
 # Definition of character strings representing times
 str1 <- "May 23, '96 hours:23 minutes:01 seconds:45"
 str2 <- "2012-3-12 14:23:08"
@@ -732,6 +786,7 @@ time2 <- as.POSIXct(str2)
 # Convert times to formatted strings
 format(time1, "%M")
 format(time2, "%I:%M %p")
+
 
 # edited/added
 day1=as.Date("2022-02-11")
@@ -754,12 +809,13 @@ day_diff <- diff(pizza)
 # Average period between two consecutive pizza days
 mean(day_diff)
 
+
 # edited/added
 login <- c(as.POSIXct("2017-03-16 10:18:04 UTC"),
-           as.POSIXct("2017-03-21 09:14:18 UTC"),
-           as.POSIXct("2017-03-21 12:21:51 UTC"),
-           as.POSIXct("2017-03-21 12:37:24 UTC"),
-           as.POSIXct("2017-03-23 21:37:55 UTC"))
+            as.POSIXct("2017-03-21 09:14:18 UTC"),
+            as.POSIXct("2017-03-21 12:21:51 UTC"),
+            as.POSIXct("2017-03-21 12:37:24 UTC"),
+            as.POSIXct("2017-03-23 21:37:55 UTC"))
 logout <- c(as.POSIXct("2017-03-16 10:56:29 UTC"),
             as.POSIXct("2017-03-21 09:14:52 UTC"),
             as.POSIXct("2017-03-21 12:35:48 UTC"),
@@ -779,6 +835,7 @@ sum(time_online)
 # Calculate the average time online
 mean(time_online)
 
+
 # edited/added
 astro <- c("20-Mar-2015", "25-Jun-2015", "23-Sep-2015", "22-Dec-2015")
 names(astro) <- c("spring", "summer","fall","winter")
@@ -793,3 +850,4 @@ meteo_dates <- as.Date(meteo, format = "%B %d, %y")
 
 # Calculate the maximum absolute difference between astro_dates and meteo_dates
 max(abs(meteo_dates - astro_dates))
+

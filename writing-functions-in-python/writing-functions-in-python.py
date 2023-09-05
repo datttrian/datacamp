@@ -58,7 +58,6 @@ print('{}\n{}\n{}'.format(border, docstring, border))
 
 import inspect
 
-
 # Inspect the count_letter() function to get its docstring
 docstring = inspect.getdoc(count_letter)
 
@@ -103,12 +102,12 @@ def standardize(column):
   z_score = (column - column.mean()) / column.std()
   return z_score
 
-
 # Use the standardize() function to calculate the z-scores
 df['y1_z'] = standardize(df.y1_gpa)
 df['y2_z'] = standardize(df.y2_gpa)
 df['y3_z'] = standardize(df.y3_gpa)
 df['y4_z'] = standardize(df.y4_gpa)
+
 def mean(values):
   """Get the mean of a sorted list of values
 
@@ -199,12 +198,10 @@ def timer():
 
 image = get_image_from_instagram()
 
-
 # Time how long process_with_numpy(image) takes to run
 with timer():
   print('Numpy version')
   process_with_numpy(image)
-
 
 # Time how long process_with_pytorch(image) takes to run
 with timer():
@@ -228,6 +225,7 @@ def timer():
 with timer():
   print('This should take approximately 0.25 seconds')
   time.sleep(0.25)
+
 @contextlib.contextmanager
 def open_read_only(filename):
   """Open a file in read-only mode.
@@ -278,6 +276,7 @@ with stock('NVDA') as nvda:
       value = nvda.price()
       print('Logging ${:.2f} for NVDA'.format(value))
       f_out.write('{:.2f}\n'.format(value))
+
 def in_dir(directory):
   """Change current working directory to `directory`,
   allow the user to run some code, and change back.
@@ -317,10 +316,9 @@ def load_data():
     df['weight'] = [198, 204, 164, 238]
     return df
 
-
 # Add the missing function references to the function map
 function_map = {
-      'mean': mean,
+  'mean': mean,
   'std': std,
   'minimum': minimum,
   'maximum': maximum
@@ -330,7 +328,6 @@ data = load_data()
 print(data)
 
 func_name = get_user_input()
-
 
 # Call the chosen function and pass "data" as an argument
 function_map[func_name](data)
@@ -361,7 +358,6 @@ def as_2D(arr):
 def log_product(arr):
     return np.exp(np.sum(np.log(arr)))
 
-
 # Call has_docstring() on the load_and_plot_data() function
 ok = has_docstring(load_and_plot_data)
 
@@ -378,7 +374,6 @@ if not ok:
 else:
   print("as_2D() looks ok")
 
-
 # Call has_docstring() on the log_product() function
 ok = has_docstring(log_product)
 
@@ -386,6 +381,7 @@ if not ok:
   print("log_product() doesn't have a docstring!")
 else:
   print("log_product() looks ok")
+
 def create_math_function(func_name):
   if func_name == 'add':
     def add(a, b):
@@ -404,6 +400,7 @@ print('5 + 2 = {}'.format(add(5, 2)))
 
 subtract = create_math_function('subtract')
 print('5 - 2 = {}'.format(subtract(5, 2)))
+
 call_count = 0
 
 def my_function():
@@ -412,7 +409,7 @@ def my_function():
   call_count += 1
 
   print("You've called my_function() {} times!".format(
-        call_count
+    call_count
   ))
 
 for _ in range(20):
@@ -451,6 +448,7 @@ done = False
 wait_until_done()
 
 print('Work done? {}'.format(done))
+
 def return_a_func(arg1, arg2):
   def new_func():
     print('arg1 was {}'.format(arg1))
@@ -458,7 +456,6 @@ def return_a_func(arg1, arg2):
   return new_func
 
 my_func = return_a_func(2, 17)
-
 
 # Show that my_func()'s closure is not None
 print(my_func.__closure__ is not None)
@@ -472,7 +469,6 @@ def return_a_func(arg1, arg2):
 my_func = return_a_func(2, 17)
 
 print(my_func.__closure__ is not None)
-
 
 # Show that there are two variables in the closure
 print(len(my_func.__closure__) == 2)
@@ -488,12 +484,12 @@ my_func = return_a_func(2, 17)
 print(my_func.__closure__ is not None)
 print(len(my_func.__closure__) == 2)
 
-
 # Get the values of the variables in the closure
 closure_values = [
-      my_func.__closure__[i].cell_contents for i in range(2)
+  my_func.__closure__[i].cell_contents for i in range(2)
 ]
 print(closure_values == [2, 17])
+
 def my_special_function():
   print('You are running my_special_function()')
 
@@ -503,7 +499,6 @@ def get_new_func(func):
   return call_func
 
 new_func = get_new_func(my_special_function)
-
 
 # Redefine my_special_function() to just print "hello"
 def my_special_function():
@@ -521,7 +516,6 @@ def get_new_func(func):
 
 new_func = get_new_func(my_special_function)
 
-
 # Delete my_special_function()
 del(my_special_function)
 
@@ -534,7 +528,6 @@ def get_new_func(func):
   def call_func():
     func()
   return call_func
-
 
 # Overwrite `my_special_function` with the new function
 my_special_function = get_new_func(my_special_function)
@@ -554,12 +547,10 @@ def print_args(func):
 def my_function(a, b, c):
   print(a + b + c)
 
-
 # Decorate my_function() with the print_args() decorator
 my_function = print_args(my_function)
 
 my_function(1, 2, 3)
-
 
 # Decorate my_function() with the print_args() decorator
 @print_args
@@ -567,6 +558,7 @@ def my_function(a, b, c):
   print(a + b + c)
 
 my_function(1, 2, 3)
+
 def print_before_and_after(func):
   def wrapper(*args):
     print('Before {}'.format(func.__name__))
@@ -581,13 +573,14 @@ def multiply(a, b):
   print(a * b)
 
 multiply(5, 10)
+
 def print_return_type(func):
   # Define wrapper(), the decorated function
   def wrapper(*args, **kwargs):
     # Call the function being decorated
     result = func(*args, **kwargs)
     print('{}() returned type {}'.format(
-          func.__name__, type(result)
+      func.__name__, type(result)
     ))
     return result
   # Return the decorated function
@@ -600,6 +593,7 @@ def foo(value):
 print(foo(42))
 print(foo([1, 2, 3]))
 print(foo({'a': 42}))
+
 def counter(func):
   def wrapper(*args, **kwargs):
     wrapper.count += 1
@@ -608,7 +602,6 @@ def counter(func):
   wrapper.count = 0
   # Return the new decorated function
   return wrapper
-
 
 # Decorate foo() with the counter() decorator
 @counter
@@ -619,12 +612,12 @@ foo()
 foo()
 
 print('foo() was called {} times.'.format(foo.count))
+
 def add_hello(func):
   def wrapper(*args, **kwargs):
     print('Hello')
     return func(*args, **kwargs)
   return wrapper
-
 
 # Decorate print_sum() with the add_hello() decorator
 @add_hello
@@ -652,7 +645,6 @@ def print_sum(a, b):
 print_sum(10, 20)
 print_sum_docstring = print_sum.__doc__
 print(print_sum_docstring)
-
 
 # Import the function you need to fix the problem
 from functools import wraps
@@ -722,7 +714,6 @@ t_end = time.time()
 decorated_time = t_end - t_start
 
 t_start = time.time()
-
 # Call the original function instead of the decorated one
 duplicated_list = duplicate.__wrapped__(list(range(50)))
 t_end = time.time()
@@ -741,14 +732,12 @@ def run_n_times(n):
     return wrapper
   return decorator
 
-
 # Make print_sum() run 10 times with the run_n_times() decorator
 @run_n_times(10)
 def print_sum(a, b):
   print(a + b)
 
 print_sum(15, 20)
-
 
 # Use run_n_times() to create the run_five_times() decorator
 run_five_times = run_n_times(5)
@@ -759,11 +748,11 @@ def print_sum(a, b):
 
 print_sum(4, 100)
 
-
 # Modify the print() function to always run 20 times
 print = run_n_times(20)(print)
 
 print('What is happening?!?!')
+
 def html(open_tag, close_tag):
   def decorator(func):
     @wraps(func)
@@ -775,14 +764,12 @@ def html(open_tag, close_tag):
   # Return the decorator
   return decorator
 
-
 # Make hello() return bolded text
 @html('<b>', '</b>')
 def hello(name):
   return 'Hello {}!'.format(name)
 
 print(hello('Alice'))
-
 
 # Make goodbye() return italicized text
 @html('<i>', '</i>')
@@ -791,13 +778,13 @@ def goodbye(name):
 
 print(goodbye('Alice'))
 
-
 # Wrap the result of hello_goodbye() in <div> and </div>
 @html('<div>', '</div>')
 def hello_goodbye(name):
   return '\n{}\n{}\n'.format(hello(name), goodbye(name))
 
 print(hello_goodbye('Alice'))
+
 def tag(*tags):
   # Define a new decorator, named "decorator", to return
   def decorator(func):
@@ -816,6 +803,7 @@ def foo():
   pass
 
 print(foo.tags)
+
 def returns_dict(func):
   # Complete the returns_dict() decorator
   def wrapper(*args, **kwargs):

@@ -1,0 +1,1 @@
+https://colab.research.google.com/github/datttrian/datacamp/blob/main/prompt_engineering_with_gpt_and_langchain/notebook.ipynb

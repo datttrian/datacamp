@@ -1,0 +1,1913 @@
+---
+title: "Reshaping Data with pandas"
+author: "Maria Eugenia Inzaugarat"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<a href="https://github.com/datttrian/datacamp" target="_blank">![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-blue?logo=github)</a>
+
+**Course Description**
+
+Often data is in a human-readable format, but it’s not suitable for data analysis. This is where pandas can help—it’s a powerful tool for reshaping DataFrames into different formats. In this course, you’ll grow your data scientist and analyst skills as you learn how to wrangle string columns and nested data contained in a DataFrame. You’ll work with real-world data, including FIFA player ratings, book reviews, and churn analysis data, as you learn how to reshape a DataFrame from wide to long format, stack and unstack rows and columns, and get descriptive statistics of a multi-index DataFrame.
+
+# Introduction to Data Reshaping
+
+Let's start by understanding the concept of wide and long formats and the advantages of using each of them. You’ll then learn how to pivot data from long to a wide format, and get summary statistics from a large DataFrame.
+
+## Wide and long data formats
+
+### The long and the wide
+
+As part of a data scientist job interview, you need to answer some technical questions. One of the challenges is to show the differences between long and wide data formats.
+
+In this exercise, you will classify a list of different characteristics, saying if they describe a DataFrame in wide format or a DataFrame in long format.
+
+-   Select the descriptions that are most appropriate for the different data formats: **wide format**, or **long format**.
+
+##### Long format
+
+- Each row represents one feature
+- There are multiple records for each observation
+- Needs a column to identify records of the same observation
+
+##### Wide format
+
+- Each feature is presented in a separate column
+- Each row shows many features of the same observation
+- Can contain large number of missing data
+- Does not contain repeated records
+
+### Flipping players
+
+Congratulations! You got the data scientist job! In your first project,
+you will work with the `fifa_players` dataset. It contains data of the
+players included in the last version of the video game. Before you start
+to do any analysis, you need to clean and format your dataset.
+
+As a first step, you need to explore your dataset and reshape it using
+basic steps, such as setting different indices, filtering columns and
+flipping the DataFrame. You would like to see if that is enough for
+further analysis.
+
+The `fifa_players` dataset is available for you. The `pandas` module
+will be preloaded as `pd` in your session throughout all the exercises
+of the course.
+
+-   Set the index of `fifa_players` to be the `name` column and assign
+    it to `fifa_transpose`.
+-   Modify the code to select only the columns `height` and `weight`
+    from the `fifa_players` DataFrame.
+-   Finally, transpose the `fifa_players` DataFrame so that the rows
+    become columns and the columns become rows.
+
+
+```{python, eval=F}
+# edited/added
+import pandas as pd
+fifa_players = pd.read_csv('fifa_players.csv')
+
+# Set name as index
+fifa_transpose = fifa_players.set_index('name')
+
+# Print fifa_transpose
+print(fifa_transpose)
+
+# Filter the DataFrame to keep only height and weight columns
+fifa_transpose = fifa_players.set_index('name')[['height', 'weight']]
+
+# Print fifa_transpose
+print(fifa_transpose)
+
+# Change the DataFrame so rows become columns and vice versa
+fifa_transpose = fifa_players.set_index('name')[['height', 'weight']].transpose()
+
+# Print fifa_transpose
+print(fifa_transpose)
+```
+
+## Reshaping using pivot method
+
+### Dribbling the pivot method
+
+It's time to keep working with the `fifa_players` dataset. After you
+explored the dataset, you realized the dataset contains player scores on
+different movements: shooting, dribbling, and passing. There are
+attacking scores as well as overall scores.
+
+The goal of the project is to analyze the scores to create an optimized
+team, so you decide to explore which score is better. But the current
+data is in a long format. You'll need to to pivot your DataFrame in
+different ways to discover a pattern.
+
+The `fifa_players` dataset is available for you. *Make sure to examine
+it in the console*!
+
+Pivot `fifa_players` to get a DataFrame with `overall` scores indexed by
+`name`, and identified by `movement` in the columns.
+
+Pivot `fifa_players` to get a DataFrame with `attacking` scores indexed
+by `name`, and identified by `movement` in the columns.
+
+Use `.pivot()` on `fifa_players` to get `overall` scores indexed by
+`movement`, and identified by `name` in the columns.
+
+```{python, eval=F}
+# edited/added
+fifa_players = pd.read_csv('fifa_players_v1.csv')
+
+# Pivot fifa_players to get overall scores indexed by name and identified by movement
+fifa_overall = fifa_players.pivot(index='name', columns='movement', values='overall')
+
+# Print fifa_overall
+print(fifa_overall)
+
+# Pivot fifa_players to get attacking scores indexed by name and identified by movement
+fifa_attacking = fifa_players.pivot(index='name', columns='movement', values='attacking')
+
+# Print fifa_attacking
+print(fifa_attacking)
+
+# Use the pivot method to get overall scores indexed by movement and identified by name
+fifa_names = fifa_players.pivot(index='movement', columns='name', values='overall')
+
+# Print fifa_names
+print(fifa_names)
+```
+
+### Offensive or defensive player?
+
+You're not convinced with your previous exploration - you've discovered
+patterns in the `attacking` and `overall` scores in `fifa_players`. You
+would like to compare both scores, so you would like to see both in the
+same DataFrame.
+
+To do this, you'll need a way to pivot more than one column. You
+remember you can achieve this goal in two different ways: you could
+pivot the DataFrame using the list with the two columns, or you could
+extend the `.pivot()` method to all the columns present in the dataset.
+
+The `fifa_players` dataset is available for you. *Make sure to examine
+it in the console*!
+
+Pivot `fifa_players` to get `overall` and `attacking` scores indexed by
+`name`, and identified by `movement` in the columns.
+
+Use the `.pivot()` method on `fifa_players` to get all the scores
+indexed by `name`,and identified by `movement` in the columns.
+
+```{python, eval=F}
+# Pivot fifa_players to get overall and attacking scores indexed by name and identified by movement
+fifa_over_attack = fifa_players.pivot(index='name', 
+                                      columns='movement', 
+                                      values=['overall', 'attacking'])
+
+# Print fifa_over_attack
+print(fifa_over_attack)
+
+# Use pivot method to get all the scores index by name and identified by movement
+fifa_all = fifa_players.pivot(index='name', columns='movement')
+
+# Print fifa_all
+print(fifa_all)
+```
+
+### Replay that last move!
+
+Amazing! You were able to pivot all columns of `fifa_players`. You saw
+that the overall and attacking scores are different and decided to
+extend your analysis to more players. However, you found an error.
+
+You suspect that there are different scores for the same index and
+column values. You remember that using the `.pivot()` method for all the
+columns does not work in that case.
+
+First, you decide to delete the problematic row so you can reshape the
+DataFrame afterwards.
+
+The `fifa_players` dataset is available for you. *Make sure you examine
+the dataset into the console and notice the repeated rows*.
+
+-   Drop the fifth row of the `fifa_players` DataFrame.
+
+<!-- -->
+
+-   Pivot `fifa_no_rep` to get all the scores indexed by `name`, and
+    identified by `movement` in the columns.
+
+
+```{python, eval=F}
+# Drop the fifth row to delete all repeated rows
+fifa_no_rep = fifa_players.drop(4, axis=0)
+
+# Print fifa_pivot
+print(fifa_no_rep)
+
+# Drop the fifth row to delete all repeated rows
+fifa_no_rep = fifa_players.drop(4, axis=0)
+
+# Pivot fifa players to get all scores by name and movement
+fifa_pivot = fifa_no_rep.pivot(index='name', columns='movement') 
+
+# Print fifa_pivot
+print(fifa_pivot)  
+```
+
+## Pivot tables
+
+### Reviewing the moves
+
+Wow! You have now learned about pivot tables. In the last analysis that
+you did, you encountered a DataFrame that had non-unique index/column
+pairs. In order to pivot your DataFrame, you wrote code to drop the last
+row, and then reshaped it.
+
+In this exercise, you will modify the code using pivot tables and
+compare it with your strategy of using the pivot method.
+
+The `fifa_players` dataset is available for you.
+
+-   Discard the fifth row of the `fifa_players` DataFrame.
+-   Use `.pivot()` on `fifa_players` to get all the scores indexed by
+    `name`, and identified by `movement` in the columns.
+-   Use a pivot table to show the mean of all scores by `name` and
+    `movement`, setting `name` as index.
+
+```{python, eval=F}
+# Discard the fifth row to delete all repeated rows
+fifa_drop = fifa_players.drop(4, axis=0)
+
+# Use pivot method to get all scores by name and movement
+fifa_pivot = fifa_drop.pivot(index='name', columns='movement') 
+
+# Print fifa_pivot
+print(fifa_pivot)  
+
+# Use pivot table to get all scores by name and movement
+fifa_pivot_table = fifa_players.pivot_table(index='name', 
+                                            columns='movement', 
+                                            aggfunc='mean')
+# Print fifa_pivot_table
+print(fifa_pivot_table)
+```
+
+### Exploring the big match
+
+Now, it's time to continue working on the `fifa_players` exploration.
+Your next task is to examine the characteristics of players belonging to
+different teams.
+
+Particularly, you are interested in players from two big rival teams:
+Barcelona and Real Madrid.
+
+You decide that `.pivot_table()` is the best tool to get your results
+since it's an easy way to generate a report. Also, it allows you to
+define aggregation functions and work with multiple indices.
+
+The `fifa_players` dataset is available for you. \_Make sure you explore
+it. Check which data it contains from the players playing for each team.
+
+Use a pivot table to show the mean age of players in `fifa_players` by
+`club` and `nationality`. Set `nationality` as the index.
+
+Use a pivot table to show the maximum height of any player by `club` and
+`nationality`, setting `nationality` as the index.
+
+Define the DataFrame `players_country` that shows the player count by
+`club` and `nationality` and get the total count.
+
+```{python, eval=F}
+# edited/added
+fifa_players = pd.read_csv('fifa_players_v2.csv')
+
+# Use pivot table to display mean age of players by club and nationality
+mean_age_fifa = fifa_players.pivot_table(index='nationality', 
+                                         columns='club', 
+                                         values='age', 
+                                         aggfunc='mean')
+
+# Print mean_age_fifa
+print(mean_age_fifa)
+
+# Use pivot table to display max height of any player by club and nationality
+tall_players_fifa = fifa_players.pivot_table(index='nationality', 
+                                             columns='club', 
+                                             values='height', 
+                                             aggfunc='max')
+
+# Print tall_players_fifa
+print(tall_players_fifa)
+
+# Use pivot table to show the count of players by club and nationality and the total count
+players_country = fifa_players.pivot_table(index='nationality', 
+                                           columns='club', 
+                                           values='name', 
+                                           aggfunc='count', 
+                                           margins=True)
+
+# Print players_country
+print(players_country)
+```
+
+### The tallest and the heaviest
+
+You will continue your exploration of characteristics of players in
+`fifa_players` belonging to two teams: FC Barcelona and Real Madrid. As
+your last task, you are interested in exploring the maximum height and
+weight separated by teams and nationality. You will also compare two
+years, 2000 and 2010.
+
+You have two columns that you want to set as an index, so you will need
+to use `pivot_table()`.
+
+The `fifa_players` dataset is available for you. It contains data about
+the `club`, `nationality`, `height`, `weight`, and `year` of the players
+playing for each team.
+
+-   Use a pivot table to get all the values in the `year` column of the
+    `fifa_players` DataFrame, setting `nationality` and `club` as index.
+
+<!-- -->
+
+-   Pass the appropriate function to `.pivot_table()` to show the
+    maximum values of the `year` columns.
+
+<!-- -->
+
+-   Set the appropriate argument in `.pivot_table()` to get the maximum
+    for each row and column.
+
+
+```{python, eval=F}
+# edited/added
+fifa_players = pd.read_csv('fifa_players_v3.csv')
+
+# Define a pivot table to get the characteristic by nationality and club
+fifa_mean = fifa_players.pivot_table(index=['nationality', 'club'], 
+                                     columns='year')
+
+# Print fifa_mean
+print(fifa_mean)
+
+# Set the appropriate argument to show the maximum values
+fifa_mean = fifa_players.pivot_table(index=['nationality', 'club'], 
+                                     columns='year', 
+                                     aggfunc='max')
+
+# Print fifa_mean
+print(fifa_mean)
+
+# Set the argument to get the maximum for each row and column
+fifa_mean = fifa_players.pivot_table(index=['nationality', 'club'], 
+                                     columns='year', 
+                                     aggfunc='max', 
+                                     margins=True)
+
+# Print fifa_mean
+print(fifa_mean)
+```
+
+# Converting Between Wide and Long Format
+
+Master the technique of reshaping DataFrames from wide to long format. In this chapter, you'll learn how to use the melting method and wide to long function before discovering how to handle string columns by concatenating or splitting them.
+
+## Reshaping with melt
+
+### Gothic times
+
+You have a new project! Your boss has asked you to perform an analysis
+with a dataset of books. You have several tasks to complete. Your first
+task is to analyze Gothic fiction books.
+
+The dataset `books_gothic` is in a wide format. Any analysis will
+require you to reshape the data into a long format. To that aim, you
+will melt your dataset. You will reshape the dataset using several
+variables as identifiers to decide which is the best format.
+
+The `books_gothic` dataset is available for you. *Make sure to examine
+it in the console*!
+
+Define a `gothic_melted` DataFrame by melting the `books_gothic`
+DataFrame, using only the `title` as an identifier variable.
+
+Melt the `books_gothic` DataFrame, now using the `title`, `authors`, and
+`publisher` columns as identifier variables.
+
+```{python, eval=F}
+# edited/added
+books_gothic = pd.read_csv('books_gothic.csv')
+
+# Melt books_gothic using the title column as identifier
+gothic_melted = books_gothic.melt(id_vars='title')
+
+# Print gothic_melted
+print(gothic_melted)
+
+# Melt books_gothic using the title, authors, and publisher columns as identifier
+gothic_melted_new = books_gothic.melt(id_vars=['title', 'authors', 'publisher'])
+
+# Print gothic_melted_new
+print(gothic_melted_new)
+```
+
+### Rating is not everything
+
+Your first exploration of the `books_gothic` dataset was successful.
+Now, your next task is to perform a more detailed analysis. You need to
+reshape your DataFrame again. This time, you don't want to use all of
+your variables.
+
+To that aim, you will melt your DataFrame, taking several approaches
+using different columns as identifiers and value variables.
+
+The same `books_gothic` dataset you used before is available for you. It
+contains data about the `title`, `author`, `number_pages`, `rating`,
+`rating_count`, and `publisher` of each book. *Make sure to examine it
+in the console*!
+
+Define a new DataFrame by melting the `publisher` column using the
+`title` and `authors` columns as identifier variables.
+
+Melt the `rating` and `rating_count` columns of `books_gothic` DataFrame
+using the `title` column as an identifier variable.
+
+Melt the `rating` and `rating_count` columns of `book_gothic` using the
+`title` and `authors` columns as identifier variables.
+
+```{python, eval=F}
+# Melt publisher column using title and authors as identifiers
+publisher_melted = books_gothic.melt(id_vars=['title', 'authors'], 
+                                     value_vars='publisher')
+
+# Print publisher_melted
+print(publisher_melted)
+
+# Melt rating and rating_count columns using the title as identifier
+rating_melted = books_gothic.melt(id_vars='title', 
+                                  value_vars=['rating', 'rating_count'])
+
+# Print rating_melted
+print(rating_melted)
+
+# Melt rating and rating_count columns using title and authors as identifier
+books_melted = books_gothic.melt(id_vars=['title', 'authors'], 
+                                 value_vars=['rating', 'rating_count'])
+
+# Print books_melted
+print(books_melted)
+```
+
+### How is Frankenstein, Dorian Gray?
+
+You are satisfied with the way you reshaped the `books_gothic`
+DataFrame, however, you would like to finish your work by naming the
+newly-created columns. This will help you clarify what the variables and
+values are.
+
+You remember that `.melt()` allows you to do that. In order to achieve
+your goal, you will reshape your DataFrame in three steps.
+
+The same `books_gothic` dataset you used before is available for you. It
+contains data about the `title`, `author`, `number_pages`, `rating`,
+`rating_count`, and `publisher` of each book. *Make sure to examine it
+in the console*!
+
+-   Define a new `books_ratings` DataFrame by melting the `rating` and
+    `rating_count` columns using the `title`, `authors`, and `publisher`
+    as identifier variables.
+
+<!-- -->
+
+-   Inside the `.melt()` call, assign the name `'feature'` to the column
+    that contains the variable names.
+
+<!-- -->
+
+-   Inside the `.melt()` call, assign the name `'number'` to the
+    resulting value column.
+
+```{python, eval=F}
+# Melt the rating and rating_count using title, authors and publisher as identifiers
+books_ratings = books_gothic.melt(id_vars=['title', 'authors', 'publisher'], 
+                                  value_vars=['rating', 'rating_count'])
+
+# Print books_ratings
+print(books_ratings)
+
+# Assign the name feature to the new variable column
+books_ratings = books_gothic.melt(id_vars=['title', 'authors', 'publisher'], 
+                                  value_vars=['rating', 'rating_count'], 
+                                  var_name='feature')
+
+# Print books_ratings
+print(books_ratings)
+
+# Assign the name number to the new column containing the values
+books_ratings = books_gothic.melt(id_vars=['title', 'authors', 'publisher'], 
+                                  value_vars=['rating', 'rating_count'], 
+                                  var_name='feature', 
+                                  value_name='number')
+
+# Print books_ratings
+print(books_ratings)
+```
+
+## Wide to long function
+
+### The golden age
+
+In this exercise, you'll continue working on the book project. Now,
+you'll analyze books from the Golden Age.
+
+Upon inspection, you discovered that the dataset `golden_age` needs
+reshaping. You noticed that some column names start with the same prefix
+(stub names) and identified other columns to use as unique IDs.
+
+For that reason, you'll reshape your DataFrame in several ways. Use the
+function `wide_to_long()` along with each instruction.
+
+The `golden_age` dataset is available for you. It contains the `title`,
+`authors`, and data about the universal identifier ISBN and prefix for
+countries of each book.
+
+Set `title` as the unique index. Extract the prefix from `isbn10` and
+`isbn13`. Name the new variable created `version`.
+
+Set `title` and `authors` as the index. Get the prefix from `prefix10`
+and `prefix13`. Name the new variable `version`.
+
+Set `title` and `authors` as unique indexes. Extract the prefixes `isbn`
+and `prefix`. Name the new variable `version`.
+
+```{python, eval=F}
+# edited/added
+golden_age = pd.read_csv('golden_age.csv')
+
+# Reshape wide to long using title as index and version as new name, and extracting isbn prefix 
+isbn_long = pd.wide_to_long(golden_age, 
+                            stubnames='isbn', 
+                            i='title', 
+                            j='version')
+
+# Print isbn_long
+print(isbn_long)
+
+# Reshape wide to long using title and authors as index and version as new name, and prefix as stubnames 
+prefix_long = pd.wide_to_long(golden_age, 
+                              stubnames='prefix', 
+                              i=['title', 'authors'], 
+                              j='version')
+
+# Print prefix_long
+print(prefix_long)
+
+# Reshape wide to long using title and authors as index and version as new name, and prefix and isbn as wide column prefixes 
+all_long = pd.wide_to_long(golden_age, 
+                           stubnames=['isbn', 'prefix'], 
+                           i=['title', 'authors'], 
+                           j='version')
+
+# Print all_long
+print(all_long)
+```
+
+### Decrypting the code
+
+You are doing a great job on the book project! Your boss encouraged you
+to do an analysis using books written by Dan Brown.
+
+You explored the dataset `books_brown` and it needs reshaping. Again,
+you identified several columns to use as unique IDs and realized
+something different about the columns to group. Their name starts with a
+prefix, but this time, you identified a suffix and a separation element.
+
+The `books_brown` dataset is available for you. It contains the `title`,
+`author`, and data about `language_code`, `language_name`,
+`publisher_code`, and `publisher_name` of each book. *Make sure to
+examine it in the console*!
+
+-   Reshape `books_brown` from wide to long format, using the columns
+    `author` and `title` as unique indexes. Name `'code'` the new column
+    created from the columns starting with `language` and `publisher`.
+    Don't forget to examine the printed output.
+
+<!-- -->
+
+-   Inside the `wide_to_long()` call, specify an underscore as the
+    separator between the variable names in the wide columns. Don't
+    forget to examine the printed output.
+
+<!-- -->
+
+-   Inside the `wide_to_long()` call, specify that the wide column names
+    end in a word.
+
+```{python, eval=F}
+# edited/added
+books_brown = pd.read_csv('books_brown.csv')
+
+# Reshape using author and title as index, code as new name and getting the prefix language and publisher
+the_code_long = pd.wide_to_long(books_brown, 
+                                stubnames=['language', 'publisher'], 
+                                i=['author', 'title'], 
+                                j='code')
+
+# Print the_code_long
+print(the_code_long)
+
+# Specify underscore as the character that separates the variable names
+the_code_long = pd.wide_to_long(books_brown, 
+                                stubnames=['language', 'publisher'], 
+                                i=['author', 'title'], 
+                                j='code', 
+                                sep='_')
+
+# Print the_code_long
+print(the_code_long)
+
+# Specify that wide columns have a suffix containing words
+the_code_long = pd.wide_to_long(books_brown, 
+                                stubnames=['language', 'publisher'], 
+                                i=['author', 'title'], 
+                                j='code', 
+                                sep='_', 
+                                suffix='\w+')
+
+# Print the_code_long
+print(the_code_long)
+```
+
+### Time to read, Katniss!
+
+It's almost time to finish working for the day. But first, you would
+like to do an analysis for fun. You will analyze another book dataset,
+this time with the *Hunger Games* series.
+
+You explored the dataset `books_hunger` before reshaping it, but
+something was not right. The index of the DataFrame contains the title
+of the books. You know that you cannot reshape it in this format. If you
+do, you will lose valuable data, the title, so you'll need to make some
+changes before transforming the DataFrame.
+
+The `books_hunger` dataset is available for you. It contains the
+`title`, and data about `language`, `publication date`,
+`publication number`, and `page number` of each book.
+
+-   Modify the `books_hunger` DataFrame by resetting the index without
+    dropping it.
+-   Reshape `books_hunger` from wide to long format. Use the columns
+    `title` and `language` as unique indexes. Name `feature` the new
+    variable created from the columns that starts with `publication` and
+    `page`. Those columns are separated by a blank space and end in a
+    word.
+
+
+```{python, eval=F}
+# edited/added
+books_hunger = pd.read_csv('books_hunger.csv', index_col = 'title')
+
+# Modify books_hunger by resetting the index without dropping it
+books_hunger.reset_index(drop=False, inplace=True)
+
+# Reshape using title and language as index, feature as new name, publication and page as prefix separated by space and ending in a word
+publication_features = pd.wide_to_long(books_hunger, 
+                                       stubnames=['publication', 'page'], 
+                                       i=['title', 'language'], 
+                                       j='feature', 
+                                       sep=' ', 
+                                       suffix='\w+')
+
+# Print publication_features
+print(publication_features)
+```
+
+## Working with string columns
+
+### Did you say dystopia?
+
+Another day at work, another day working with your book project! You are
+very excited because you have been making a lot of progress. You plan to
+work on a dataset about dystopian fiction books.
+
+But first, you need to do some string manipulations. You realize that
+the DataFrame index contains data about the title and the release year.
+You can't find a column with the author of the book, so you decide to
+pre-define a list of the writers. Then, you want to delete the year and
+replace it with the author.
+
+You decide that splitting the index and then concatenating it with the
+list is the best way to do it.
+
+The `books_dys` dataset and `author_list` are available for you. *Make
+sure to examine it in the console*!
+
+-   Split the string separated by a hyphen contained in the index of
+    `books_dys`. Assign it to the index.
+
+<!-- -->
+
+-   Now that you've split the index, get the first element and assign it
+    to the index of `books_dys`.
+
+<!-- -->
+
+-   Concatenate the current index of `books_dys` with the pre-defined
+    `author_list`, using a hyphen as a separating element. Assign it to
+    the index.
+
+
+```{python, eval=F}
+# edited/added
+books_dys = pd.read_csv('books_dys.csv', index_col = 'title')
+
+# Split the index of books_dys by the hyphen 
+books_dys.index = books_dys.index.str.split('-')
+
+# Print books_dys
+print(books_dys)
+
+# edited/added
+books_dys = pd.read_csv('books_dys.csv', index_col = 'title')
+
+# Get the first element after splitting the index of books_dys
+books_dys.index = books_dys.index.str.split('-').str.get(0)
+
+# Print books_dys
+print(books_dys)
+
+# edited/added
+books_dys = pd.read_csv('books_dys.csv', index_col = 'title')
+author_list = ['Ray Bradbury', 'George Orwell', 'Aldous Huxley']
+
+# Split by the hyphen the index of books_dys
+books_dys.index = books_dys.index.str.split('-').str.get(0)
+
+# Concatenate the index with the list author_list separated by a hyphen
+books_dys.index = books_dys.index.str.cat(author_list, sep='-')
+
+# Print books_dys
+print(books_dys)
+```
+
+### What's your rating, Harry?
+
+You fix yourself a coffee and keep working on your book project. For
+your next task, you need to get an appropriate dataset containing
+ratings for all the Harry Potter books. You gathered data from Goodreads
+as well as from Amazon.
+
+You realized that you need a long format, but the dataset `hp_books` is
+in a wide format. You want to melt the data, but first, you need to
+manipulate some of the string columns.
+
+The full title is divided into two columns. The `authors` column
+contains info about the writer and the illustrator.
+
+Ratings for the Harry Potter books are in the DataFrame `hp_books`.
+*Make sure to examine it in the console*!
+
+-   Concatenate the `title` and `subtitle` columns into a column named
+    `full_title`. Use the word `'and'` separated by spaces as a
+    separating element.
+
+<!-- -->
+
+-   Split the `authors` column into two columns called `writer` and
+    `illustrator`. Use the slash character `/` as the delimiter.
+
+<!-- -->
+
+-   Define a DataFrame `hp_melt` by melting the `goodreads` and `amazon`
+    columns into a single column named `source`. Assign the name
+    `rating` to the resulting value column. Use only the full title and
+    the writer as identifier variables.
+
+```{python, eval=F}
+# edited/added
+hp_books = pd.read_csv('hp_books.csv')
+
+# Concatenate the title and subtitle separated by "and" surrounded by spaces
+hp_books['full_title'] = hp_books['title'].str.cat(hp_books['subtitle'], sep =" and ") 
+
+# Print hp_books
+print(hp_books)
+
+# Concatenate the title and subtitle separated by "and" surrounded by spaces
+hp_books['full_title'] = hp_books['title'].str.cat(hp_books['subtitle'], sep =" and ") 
+
+# Split the authors into writer and illustrator columns
+hp_books[['writer', 'illustrator']] = hp_books['authors'].str.split('/', expand=True) 
+
+# Print hp_books
+print(hp_books)
+
+# Concatenate the title and subtitle separated by "and" surrounded by spaces
+hp_books['full_title'] = hp_books['title'].str.cat(hp_books['subtitle'], sep =" and ") 
+
+# Split the authors into writer and illustrator columns
+hp_books[['writer', 'illustrator']] = hp_books['authors'].str.split('/', expand=True)
+
+# Melt goodreads and amazon columns into a single column 
+hp_melt = hp_books.melt(id_vars=['full_title', 'writer'], 
+                        var_name='source', 
+                        value_vars=['goodreads', 'amazon'], 
+                        value_name='rating')
+
+# Print hp_melt
+print(hp_melt)
+```
+
+### Elementary, dear Watson!
+
+It's Friday, and you are about to finish working on your book project.
+For your last task, you will analyze data about Arthur Conan Doyle's
+books.
+
+You realize your dataset, `books_sh`, needs reshaping. You notice there
+are columns that can be grouped using a prefix. You identify the columns
+to use as unique IDs. However, some of these columns contain strings.
+They need some manipulation before applying a wide to long
+transformation. You decide some of the strings need splitting to make
+the DataFrame cleaner.
+
+The `books_sh` dataset is available for you. It contains the *title*,
+and data about `version`, `number_pages`, and `number_ratings` of each
+book.
+
+-   Split the `main_title` column into two columns called `title` and
+    `subtitle`. Use a colon as the delimiter.
+
+<!-- -->
+
+-   Split the string separated by a blank space contained in the
+    `version` column. Assign the second element to a new column called
+    `volume`.
+
+<!-- -->
+
+-   Drop the columns named `main_title` and `version`, modifying the
+    `books_sh` DataFrame.
+
+```{python, eval=F}
+# edited/added
+books_sh = pd.read_csv('books_sh.csv')
+
+# Split main_title by a colon and assign it to two columns named title and subtitle 
+books_sh[['title', 'subtitle']] = books_sh['main_title'].str.split(':', expand=True)
+
+# Print books_sh
+print(books_sh)
+
+# Split main_title by a colon and assign it to two columns named title and subtitle 
+books_sh[['title', 'subtitle']] = books_sh['main_title'].str.split(':', expand=True)
+
+# Split version by a space and assign the second element to the column named volume
+books_sh['volume'] = books_sh['version'].str.split(' ').str.get(1)
+
+# Print books_sh
+print(books_sh)
+
+# Split main_title by a colon and assign it to two columns named title and subtitle 
+books_sh[['title', 'subtitle']] = books_sh['main_title'].str.split(':', expand=True)
+
+# Split version by a space and assign the second element to the column named volume
+books_sh['volume'] = books_sh['version'].str.split(' ').str.get(1)
+
+# Drop the main_title and version columns modifying books_sh
+books_sh.drop(['main_title', 'version'], axis=1, inplace=True)
+
+# Print books_sh
+print(books_sh)
+```
+
+# Stacking and Unstacking DataFrames
+
+In this chapter, you’ll level-up your data manipulation skills using multi-level indexing. You'll learn how to reshape DataFrames by rearranging levels of the row indexes to the column axis, or vice versa. You'll also gain the skills you need to handle missing data generated in the stacking and unstacking processes.
+
+## Stacking DataFrames
+
+### Stack the calls!
+
+New week, new project! One of your clients, a telecommunication company,
+wants to know why its customers are leaving. You will perform an
+analysis to figure it out. First, you explored the dataset `churn` and
+realized some information is missing. The dataset contains data about
+the total number of calls and the minutes spent on the phone by
+different customers. However, the state and city they live in are not
+listed.
+
+You predefined an array with that data. You'd like to add it as an index
+in your DataFrame.
+
+The DataFrame `churn` is available for you. It contains data about
+`area code`, `total_day_calls` and `total_day_minutes`. *Make sure to
+examine it in the console*!
+
+-   Create a new multi-level index using the `new_index` list and the
+    appropriate `pandas` method. Name the levels `state` and `city`
+    respectively.
+
+<!-- -->
+
+-   Assign the multi-level index contained in `churn_new` as the index
+    of the `churn` DataFrame.
+
+<!-- -->
+
+-   Reshape the `churn` DataFrame by stacking and assign it to
+    `churn_stack`.
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn.csv')
+
+# Predefined list to use as index
+new_index = [['California', 'California', 'New York', 'Ohio'], 
+             ['Los Angeles', 'San Francisco', 'New York', 'Cleveland']]
+
+# Create a multi-level index using predefined new_index
+churn_new = pd.MultiIndex.from_arrays(new_index, names=['state', 'city'])
+
+# Print churn_new
+print(churn_new)
+
+# Predefined list to use as index
+new_index = [['California', 'California', 'New York', 'Ohio'], 
+             ['Los Angeles', 'San Francisco', 'New York', 'Cleveland']]
+
+# Create a multi-level index using predefined new_index
+churn_new = pd.MultiIndex.from_arrays(new_index, names=['state', 'city'])
+
+# Assign the new index to the churn index
+churn.index = churn_new
+
+# Print churn
+print(churn)
+
+# Predefined list to use as index
+new_index = [['California', 'California', 'New York', 'Ohio'], 
+             ['Los Angeles', 'San Francisco', 'New York', 'Cleveland']]
+
+# Create a multi-level index using predefined new_index
+churn_new = pd.MultiIndex.from_arrays(new_index, names=['state', 'city'])
+
+# Assign the new index to the churn index
+churn.index = churn_new
+
+# Reshape by stacking churn DataFrame
+churn_stack = churn.stack()
+
+# Print churn_stack
+print(churn_stack)
+```
+
+### Phone directory index
+
+After reshaping the dataset, you sent it to your colleagues and asked
+them to fill in some data. Now, they sent the new `churn` dataset back
+and you realized that its shape has changed.
+
+Before you go on, you need to do some reshaping again. The dataset
+contains a multi-level index in the columns. You'd like to have some
+columns set as the row index. Also, this time you will only stack some
+levels. You believe it will help you discover some patterns in the data.
+
+The DataFrame `churn` is available for you. It contains data about
+`state`, `city`, `total_day_calls` and `total_day_minutes` during `day`
+and `night` time. *Make sure to examine it in the console*!
+
+-   Set the columns `state` and `city` as the index of `churn`,
+    modifying the DataFrame in-place.
+-   Create a new `churn_stack` DataFrame by stacking the second column
+    level of the `churn` DataFrame.
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long.csv')
+churn = pd.pivot_table(churn, index=['state', 'city'], columns=['period', 'metric'], values='value')
+churn = churn.reset_index()
+churn.columns.names = (None, None)
+
+# Set state and city as index modifying the DataFrame
+churn.set_index(['state', 'city'], inplace=True)
+
+# Print churn
+print(churn)
+
+# edited/added
+churn = pd.read_csv('churn_long.csv')
+churn = pd.pivot_table(churn, index=['state', 'city'], columns=['period', 'metric'], values='value')
+churn = churn.reset_index()
+churn.columns.names = (None, None)
+
+# Set state and city as index modifying the DataFrame
+churn.set_index(['state', 'city'], inplace=True)
+
+# Reshape by stacking the second level
+churn_stack = churn.stack(level=1)
+
+# Print churn_stack
+print(churn_stack)
+```
+
+### Text me!
+
+You are making progress in your customer's project. Now, you need to
+analyze a new dataset to find differences in the messages and gigabytes
+(GB) of data the customers use during the daytime and nighttime.
+
+To that aim, you will reshape your dataset `churn` using different
+levels. The advantage of your new dataset is that the column indices
+have names.
+
+The DataFrame `churn` is available for you. It contains data about
+`state`, `city`, `text messages` and `total GB` during `day` and `night`
+time.
+
+Reshape the `churn` DataFrame by stacking the `time` column level.
+Assign the reshaped DataFrame to `churn_time`.
+
+Now, define a reshaped DataFrame called `churn_feature` by stacking the
+`feature` column level of the `churn` DataFrame.
+
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long_v1.csv')
+churn = pd.pivot_table(churn, index=['state', 'city'], columns=['time', 'feature'], values='value')
+
+# Stack churn by the time column level
+churn_time = churn.stack(level='time')
+
+# Print churn_time
+print(churn_time)
+
+# Stack churn by the feature column level
+churn_feature = churn.stack(level='feature')
+
+# Print churn_feature
+print(churn_feature)
+```
+
+## Unstacking DataFrames
+
+### International caller
+
+You have a new task. You will analyze the pattern of customers on
+international and domestic calls.
+
+You explore the `churn` dataset, which contains a multi-level row index.
+Again, you will reshape the data, as you expect it will help you to do
+further analysis.
+
+The DataFrame `churn` is available for you. It contains data about
+`minutes`, `calls`, and `charge` for different times of the day, types
+of calls, and exited status. *Make sure to examine it in the console*!
+
+Reshape the `churn` DataFrame by unstacking the last row level. Assign
+it to `churn_unstack`.
+
+Create a reshaped DataFrame called `churn_first` by unstacking the first
+row level of `churn`.
+
+Define a new DataFrame called `churn_second` by unstacking the second
+row level of `churn`.
+
+```{python, eval=F}
+# Reshape the churn DataFrame by unstacking
+churn_unstack = churn.unstack()
+
+# Print churn_unstack
+print(churn_unstack)
+
+# Reshape churn by unstacking the first row level
+churn_first = churn.unstack(level=0)
+
+# Print churn_zero
+print(churn_first)
+
+# Reshape churn by unstacking the second row level
+churn_second = churn.unstack(level=1)
+
+# Print churn_second
+print(churn_second)
+```
+
+### Call another time
+
+You discover some patterns when you reshaped the DataFrame. Now, you
+want to unstack the DataFrame again. This time you will choose which
+level to unstack and reorganize your indices.
+
+The same `churn` DataFrame is available for you. It contains data about
+`minutes`, `calls`, and `charge` for different times of the day, types
+of calls, and exited status.
+
+-   Reshape the `churn` DataFrame by unstacking the `time` level. Assign
+    it to `churn_time`.
+-   Now, sort the index of the resulting reshaped `churn` in descending
+    order.
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long_v2.csv')
+churn = pd.pivot_table(churn, index=['time', 'type', 'exited'], columns=['metric'], values='value')
+churn.columns.names = [None]
+
+# Unstack the time level from churn
+churn_time = churn.unstack(level='time')
+
+# Print churn_time
+print(churn_time)
+
+# Sort the index in descending order
+churn_time = churn.unstack(level='time').sort_index(ascending=False)
+
+# Print churn_time
+print(churn_time)
+```
+
+### Organizing your voicemail
+
+You will perform one final task before moving to a new project. You will
+reshape the DataFrame `churn` again. This time, you'll reorganize a row
+index as a column index. After that, you will move a column index to a
+row index. To do this, you will first unstack the DataFrame, and then
+stack it.
+
+The same `churn` DataFrame is available for you. It contains data about
+`minutes`, `calls`, and `charge` for different times of the day, types
+of calls, and exited status. *Make sure to examine it in the console*!
+
+-   Reshape `churn` by unstacking the `type` level. Assign it to
+    `churn_type`.
+-   Stack the resulting DataFrame using the first column level.
+
+
+```{python, eval=F}
+# Unstack churn by type level
+churn_type = churn.unstack(level='type')
+
+# Stack churn_final using the first column level
+churn_final = churn_type.stack(level=0)
+
+# Print churn_final
+print(churn_final)
+```
+
+## Working with multiple levels
+
+### Swap your SIM card
+
+Great job so far! You were able to reshape your dataset in several ways.
+Now it's time to go a step further and analyze the data to discover if a
+customer's cell phone plan is related to the customer leaving.
+
+You explore the `churn` dataset and notice that the row levels are not
+well organized. First, you want to rearrange your row indicesso it's
+easier to reshape your DataFrame.
+
+The `churn` DataFrame is available for you. It contains data about
+`minutes`, `voicemail`, and `data` plans for different years. The data
+is indexed by `state`, `city`, and `exited` status. *Make sure to
+examine it in the console*!
+
+-   Switch the first and the third row index levels of `churn`. Assign
+    it to `churn_swap`.
+-   Reshape the `churn` DataFrame by unstacking the last level. Assign
+    it to `churn_unstack`.
+
+```{python, eval=F}
+# Switch the first and third row index levels in churn
+churn_swap = churn.swaplevel(0, 2)
+
+# Print churn_swap
+print(churn_swap)
+
+# Switch the first and third row index levels in churn
+churn_swap = churn.swaplevel(0, 2)
+
+# Reshape by unstacking the last row level 
+churn_unstack = churn_swap.unstack()
+
+# Print churn_unstack
+print(churn_unstack)
+```
+
+### Two many calls
+
+Your last analysis was successful, but you still have some questions to
+answer. You are not satisfied with the organization of the data in your
+DataFrame.
+
+For that reason, you plan on switching and rearranging row and column
+indices by chaining the stacking and unstacking processes. Also, you
+would like to rearrange several levels at the same time.
+
+The same `churn` DataFrame is available for you. It contains data about
+`minutes`, `voicemail`, and `data` plans for different years. The data
+is indexed by `state`, `city`, and `exited` status.
+
+-   Create a new DataFrame called `churn_unstack` by unstacking the
+    first and second row levels of the DataFrame `churn`.
+
+<!-- -->
+
+-   Stack the resulting DataFrame using the `plan` and `year` column
+    levels in that order. Assign it to `churn_py`.
+
+<!-- -->
+
+-   Switch the first and second column levels in the resulting
+    DataFrame. Assign it to `churn_switch`.
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long_v3.csv')
+churn = pd.pivot_table(churn, index=['exited', 'state', 'city'], columns=['year', 'plan'], values='value')
+
+# Unstack the first and second row level of churn
+churn_unstack = churn.unstack(level=[0, 1])
+
+# Print churn_unstack
+print(churn_unstack)
+
+# Unstack the first and second row level of churn
+churn_unstack = churn.unstack(level=[0, 1])
+
+# Stack the resulting DataFrame using plan and year
+churn_py = churn_unstack.stack(['plan', 'year'])
+
+# Print churn_py
+print(churn_py)
+
+# Unstack the first and second row level of churn
+churn_unstack = churn.unstack(level=[0, 1])
+
+# Stack the resulting DataFrame using plan and year
+churn_py = churn_unstack.stack(['plan', 'year'])
+
+# Switch the first and second column levels
+churn_switch = churn_py.swaplevel(0, 1, axis=1)
+
+# Print churn_switch
+print(churn_switch)
+```
+
+## Handling missing data
+
+### A missed phone call
+
+You finished reshaping your `churn` dataset in the previous exercises.
+Now, it is ready to be used. You remember that something caught your
+attention. You are sure you saw a clear pattern in the data.
+
+Before you fit a classification model, you decide to do something
+simpler. You want to see what else you can learn from the data. You will
+reshape your data by unstacking levels, but you know this process will
+generate missing data that you need to handle.
+
+The `churn` DataFrame contains different features of customers located
+in Los Angeles and New York, and is available for you. *Make sure to
+examine it in the console*!
+
+-   Reshape the `churn` DataFrame by unstacking the level named `churn`,
+    filling the missing values with zero.
+-   Sort the `churn` DataFrame by the `voice_mail_plan` column in
+    descending order, then by `international_plan` column in ascending
+    order.
+-   Print the final `churn_sorted` DataFrame.
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long_v4.csv')
+churn = pd.pivot_table(churn, index=['state', 'international_plan', 'voice_mail_plan', 'churn'], columns=['variable'], values='value')
+churn.columns.names = [None]
+
+# Unstack churn level and fill missing values with zero
+churn = churn.unstack(level='churn', fill_value=0)
+
+# Sort by descending voice mail plan and ascending international plan
+churn_sorted = churn.sort_index(level=["voice_mail_plan", "international_plan"], 
+                                ascending=[False, True])
+
+# Print final DataFrame and observe pattern
+print(churn_sorted)
+```
+
+### Don't drop the stack
+
+It's almost time to go home, but first, you need to finish your last
+task. You have a small dataset containing the total number of calls made
+by customers.
+
+To perform your analysis, you need to reshape your `churn` data by
+stacking different levels. You know this process will generate missing
+data. You want to check if it is worth keeping the rows that contain all
+missing values, or if it's better to drop that information.
+
+The `churn` DataFrame is available for you.
+
+Reshape the `churn` DataFrame by stacking the `type` level. Then, fill
+the missing values generated with the value zero.
+
+Stack the `scope` level of `churn` without dropping the rows with
+missing values. Then, fill the missing values with zero.
+
+
+```{python, eval=F}
+# edited/added
+churn = pd.read_csv('churn_long_v5.csv')
+churn = pd.pivot_table(churn, index=['location'], columns=['type', 'scope'], values='value')
+churn.index.names = [None]
+
+# Stack the level type from churn
+churn_stack = churn.stack(level='type')
+
+# Fill the resulting missing values with zero
+churn_fill = churn_stack.fillna(0)
+
+# Print churn_fill 
+print(churn_fill)
+
+# Stack the level scope without dropping rows with missing values
+churn_stack = churn.stack(level='scope', dropna=False)
+
+# Fill the resulting missing values with zero 
+churn_fill = churn_stack.fillna(0)
+
+# Print churn_fill
+print(churn_fill)
+```
+
+# Advanced Reshaping
+
+You'll finish by learning how to combine the reshaping process with grouping to produce quick data manipulations. Lastly, you'll discover how to transform list-like columns and handle complex nested data, such as nested JSON files.
+
+## Reshaping and combining data
+
+### Less fast food, please!
+
+Monday again! You will start working on a new project - analyzing the
+evolution of obesity through the years. You have a dataset called
+`obesity` with the percentage of obesity in different countries and
+years. The data is also disaggregated by biological sex.
+
+Your main goals are to get the mean percentage of obesity by year and
+sex, and by country and sex. Also, you want to get the difference
+between years.
+
+You notice that the dataset has multiple indices, so you know you will
+have to unstack levels to accomplish your goal.
+
+The `obesity` DataFrame is available in your session.
+
+Reshape the `obesity` DataFrame by unstacking the first level, then get
+the mean value of the columns.
+
+Define an `obesity_mean` DataFrame by unstacking the second level of
+`obesity` and getting the mean value for the columns.
+
+Lastly, unstack the third level of the `obesity` DataFrame, then get the
+difference between the columns using `.diff()`.
+
+```{python, eval=F}
+# edited/added
+obesity = pd.read_csv('obesity.csv')
+obesity.set_index(['country', 'biological_sex', 'year'], inplace=True)
+
+# Unstack the first level and calculate the mean of the columns
+obesity_general = obesity.unstack(level=0).mean(axis=1)
+
+# Print obesity_general
+print(obesity_general)
+
+# Unstack the second level and calculate the mean of the columns
+obesity_mean = obesity.unstack(level=1).mean(axis=1)
+
+# Print obesity_mean
+print(obesity_mean)
+
+# Unstack the third level and calculate the difference between columns
+obesity_variation = obesity.unstack(level=2).diff(axis=1)
+
+# Print obesity_variation
+print(obesity_variation)
+```
+
+### Only going up
+
+After your last analysis, you are excited to keep working with the
+`obesity` dataset. You have added an extra column, the `variation`
+column, which indicates the range in which the percentage varies through
+regions in the same country. You are not sure if the mean is the best
+metric to summarize obesity levels.
+
+So you decide to explore the median percentage and variation of obesity
+by year and biological sex. Also, you want to get the maximum percentage
+observed by country, year, and biological sex.
+
+The DataFrame `obesity` is available in your session. *Make sure to
+examine it in the console*!
+
+Stack the `obesity` DataFrame, get the median value of the columns, and
+finally, unstack it again.
+
+Stack `obesity` by the first level, get the sum of the columns, and
+finally, unstack the DataFrame by the second level.
+
+```{python, eval=F}
+# edited/added
+obesity = pd.read_csv('obesity_v1.csv')
+obesity = pd.pivot_table(obesity, index=['country', 'biological_sex'], columns=['year', 'metrics'], values='value')
+obesity.columns.names = ['year', None]
+
+# Stack obesity, get median of columns and unstack again
+median_obesity = obesity.stack().median(axis=1).unstack()
+
+# Print median_obesity
+print(median_obesity)
+
+# Stack the first level, get sum, and unstack the second level
+obesity_sum = obesity.stack(level=0).sum(axis=1).unstack(level=1)
+
+# Print obesity_max
+print(obesity_sum)
+```
+
+### A group analysis
+
+You are almost done working for the day, but there is an extra analysis
+you want to do. You want to know if the mean and median percentage of
+obesity by country are different.
+
+You analyze the DataFrame `obesity`. You realize that `country` is part
+of the column labels, so you need to reshape the DataFrame so `country`
+is part of the index.
+
+You want to take a different approach. You will perform the desired
+calculations, combining the stacking process and `.groupby()` function.
+
+The `obesity` DataFrame is available in your session. *Make sure to
+examine it in the console*!
+
+Stack the `country` level of `obesity`, group it by `country`, and take
+the mean of all the columns.
+
+Stack the `country` level of `obesity`, group by `country`, and take the
+median of all the columns.
+
+
+```{python, eval=F}
+# edited/added
+obesity = pd.read_csv('obesity_v2.csv')
+obesity = pd.pivot_table(obesity, index=['year', 'biological_sex'], columns=['metric', 'country'], values='value')
+obesity.columns.names = [None, 'country']
+
+# Stack country level, group by country and get the mean 
+obesity_mean = obesity.stack(level='country').groupby('country').mean()
+
+# Print obesity_mean
+print(obesity_mean)
+
+# Stack country level, group by country and get the median 
+obesity_median = obesity.stack(level='country').groupby('country').median()
+
+# Print obesity_mean
+print(obesity_median)
+```
+
+## Transforming a list-like column
+
+### Merge it all
+
+Time to keep working with the obesity project! You will analyze the mean
+obesity percentage in different countries, but this time, the `obesity`
+DataFrame has a new column named `bounds`. It contains the minimum and
+maximum values you can find in different parts of the same country.
+
+You notice that these values are given in a list, so you decide that you
+need to transform that column. You would like to have each element in a
+new row.
+
+The DataFrame `obesity` is available in your session. *Make sure to
+examine it in the console*!
+
+-   Explode the values of the list-like column `bounds` of the `obesity`
+    DataFrame to a separate row.
+-   Merge the resulting Series with the `country` and `perc_obesity`
+    columns from the original `obesity` DataFrame. Use the indexes to
+    perform the operation.
+
+```{python, eval=F}
+# edited/added
+obesity = pd.read_csv('obesity_list.csv')
+
+# Explode the values of bounds to a separate row
+obesity_bounds = obesity['bounds'].explode()
+
+# Print obesity_bounds
+print(obesity_bounds)
+
+# Explode the values of bounds to a separate row
+obesity_bounds = obesity['bounds'].explode()
+
+# Merge obesity_bounds with country and perc_obesity columns of obesity using the indexes
+obesity_final = obesity[['country', 'perc_obesity']].merge(obesity_bounds, 
+                                                           right_index=True, 
+                                                           left_index=True)
+
+# Print obesity_final
+print(obesity_final)
+```
+
+### Explode the bounds
+
+You were able to transform the list-like column successfully, but you
+are not satisfied with the steps you had to take. You want to find an
+easier way to get the same reshaped DataFrame.
+
+You remembered what you learned about exploding list-like columns, and
+you will apply a new strategy.
+
+The same DataFrame `obesity` is available in your session. It contains
+the `country`, `perc_obesity`, and the column `bounds` with the minimum
+and maximum values you can find in different parts of the same country.
+
+-   Transform the list-like column `bounds` in the DataFrame `obesity`
+    to get its elements in different rows.
+-   Modify the resulting DataFrame by resetting the index, dropping the
+    old one.
+
+```{python, eval=F}
+# Transform the list-like column named bounds 
+obesity_explode = obesity.explode('bounds')
+
+# Modify obesity_explode by resetting the index
+obesity_explode.reset_index(drop=True, inplace=True)
+
+# Print obesity_explode
+print(obesity_explode)
+```
+
+### The good old split
+
+You have to do one last task for the obesity project. Your colleague
+gave you a new dataset to analyze with which you will perform the same
+analysis as before.
+
+After inspecting the dataset `obesity`, you realize that you have the
+same columns as before, but the `bounds` column is not a list. This
+time, the column contains two values separated with a hyphen in the form
+of string.
+
+You will process the string and then transform the column.
+
+The DataFrame `obesity` is available in your session.
+
+-   Split the strings contained in the column `bounds`, using a hyphen
+    as the delimiter.
+
+<!-- -->
+
+-   Now, assign the result of splitting the `bounds` column to the
+    `bounds` column of `obesity` .
+
+<!-- -->
+
+-   Transform the list-like column `bounds` in the resulting DataFrame
+    to get its elements in different rows.
+
+```{python, eval=F}
+# Split the columns bounds using a hyphen as delimiter
+obesity_split = obesity['bounds'].str.split('-')
+
+# Print obesity_split
+print(obesity_split)
+
+# Assign the result of the split to the bounds column
+obesity_split = obesity.assign(bounds=obesity['bounds'].str.split('-'))
+
+# Print obesity_split
+print(obesity_split)
+
+# Transform the column bounds in the obesity DataFrame
+obesity_split = obesity.assign(bounds=obesity['bounds'].str.split('-')).explode('bounds')
+
+# Print obesity_split
+print(obesity_split)
+```
+
+## Reading nested data into a DataFrame
+
+### Nested movies
+
+You are curious about a `movies` dataset you've had on your computer for
+some time now that contains data about different movies. You would like
+to analyze that data, but you realize it's in a nested JSON format.
+
+To read it into a DataFrame, you will need to use the function you have
+just learned. After that, you will reshape the resulting DataFrame to
+make it easier to work with.
+
+The semi-structured JSON named `movies` is available for you. *Make sure
+to examine it in the console*!
+
+-   Import the `json_normalize()` function from `pandas`.
+-   Normalize the JSON contained in `movies`. Separate the names
+    generated from nested records with an underscore.
+-   Reshape the resulting `movies_norm` DataFrame from wide to long
+    format, using the `director` and `producer` columns as unique
+    indexes. Name the new variable created from the columns `movies`,
+    starting with `features`, separated by an underscore with a suffix
+    containing words.
+
+```{python, eval=F}
+# edited/added
+movies = [
+  {'director': 'Woody Allen',
+  'producer': 'Letty Aronson',
+  'features': {'title': 'Magic in the Moonlight', 'year': 2014}},
+  {'director': 'Niki Caro',
+  'producer': 'Jason Reed',
+  'features': {'title': 'Mulan', 'year': 2020}}
+]
+  
+# Import the json_normalize function
+from pandas import json_normalize
+
+# Normalize movies and separate the new columns with an underscore
+movies_norm = json_normalize(movies, sep='_')
+
+# Reshape using director and producer as index, create movies from column starting from features
+movies_long = pd.wide_to_long(movies_norm, stubnames='features', 
+                              i=['director', 'producer'], j='movies', 
+                              sep='_', suffix='\w+')
+
+# Print movies_long
+print(movies_long)
+```
+
+### A complex film
+
+You are surprised by your findings from analyzing the `movies` data, so
+you find more data to continue the analysis. You explore the data and
+realize it's in a nested JSON format again.
+
+But this time, it's more complex. You would like to read it into a
+DataFrame. You will take several steps to achieve that.
+
+The semi-structured JSON named `movies` is available for you. *Make sure
+to examine it in the console*!
+
+The required function for this exercise has been pre-loaded.
+
+-   Normalize the semi-structured JSON contained in the variable
+    `movies`.
+
+<!-- -->
+
+-   Specify that the column called `features` is the place where the
+    list of records is held.
+
+<!-- -->
+
+-   Specify that `director` and `producer` columns should be used as
+    metadata for each record in the resulting DataFrame.
+
+```{python, eval=F}
+# edited/added
+movies = [
+  {'director': 'Woody Allen',
+  'producer': 'Letty Aronson',
+  'features': [{'title': 'Magic in the Moonlight', 'year': 2014},
+  {'title': 'Vicky Cristina Barcelona', 'year': 2008},
+  {'title': 'Midnight in Paris', 'year': 2011}]},
+  {'director': 'Niki Caro',
+  'producer': 'Jason Reed',
+  'features': [{'title': 'Mulan', 'year': 2020}]}
+]
+  
+# Normalize the JSON contained in movies
+normalize_movies = json_normalize(movies)
+
+# Print normalize_movies
+print(normalize_movies)
+
+# Specify the features column as the list of records 
+normalize_movies = json_normalize(movies, 
+                                  record_path='features')
+
+# Print normalize_movies
+print(normalize_movies)
+
+# Specify director and producer to use as metadata for each record
+normalize_movies = json_normalize(movies, 
+                                  record_path='features', 
+                                  meta=['director', 'producer'])
+
+# Print normalize_movies
+print(normalize_movies)
+```
+
+## Dealing with nested data columns
+
+### Un-nesting birds
+
+Finally, your job for the day is done, but your colleague asked you a
+last minute favor. A client has provided data about birds he wants to
+classify.
+
+You examine the data and realize that it's in a bad format - the list of
+birds is in one file, and the characteristics of the birds are in
+another.
+
+You manage to read the bird names into a list called `names`. You read
+the bird facts into another list called `bird_facts`, but this list
+contains dictionaries in string format.
+
+To have a usable DataFrame, you will need to perform several operations.
+
+Both the `names` and `bird_facts` lists are available in your session.
+*Make sure to examine it in the console*! The `json` module is
+pre-loaded.
+
+-   Convert the `names` and `bird_facts` lists into columns of a new
+    DataFrame called `birds`, using the same names.
+
+<!-- -->
+
+-   Flatten out the dictionary contained in `bird_facts` column by
+    applying the `loads` method from `json` module to the column.
+
+<!-- -->
+
+-   Remove the `bird_facts` column from the `birds` DataFrame.
+
+<!-- -->
+
+-   Concatenate the columns of the `birds` and `data_split` DataFrames.
+
+```{python, eval=F}
+# edited/added
+import json
+names = ['Killdeer', 'Chipping Sparrow', 'Cedar Waxwing']
+bird_facts = [
+  '{"Size":"Large", "Color": "Golden brown", "Behavior": "Runs swiftly along ground", "Habitat": "Rocky areas"}',
+  '{"Size":"Small", "Color": "Gray-white", "Behavior": "Often in flocks", "Habitat": "Open woodlands"}',
+  '{"Size":"Small", "Color": "Gray-brown", "Behavior": "Catch insects over open water", "Habitat": "Parks"}'
+]
+ 
+# Define birds reading names and bird_facts lists into names and bird_facts columns 
+birds = pd.DataFrame(dict(names=names, bird_facts=bird_facts))
+
+# Print birds
+print(birds)
+
+# Define birds reading names and bird_facts lists into names and bird_facts columns 
+birds = pd.DataFrame(dict(names=names, bird_facts=bird_facts))
+
+# Apply the function json.loads function to the bird_facts column
+data_split = birds['bird_facts'].apply(json.loads).apply(pd.Series)
+
+# Print birds
+print(data_split)
+
+# Define birds reading names and bird_facts lists into names and bird_facts columns
+birds = pd.DataFrame(dict(names=names, bird_facts=bird_facts))
+
+# Apply to bird_facts column the function loads from json module
+data_split = birds['bird_facts'].apply(json.loads).apply(pd.Series)
+
+# Remove the bird_facts column from birds
+birds = birds.drop(columns='bird_facts')
+
+# Print birds
+print(birds)
+
+# Define birds reading names and bird_facts lists into names and bird_facts columns
+birds = pd.DataFrame(dict(names=names, bird_facts=bird_facts))
+
+# Apply to bird_facts column the function loads from json module
+data_split = birds['bird_facts'].apply(json.loads).apply(pd.Series)
+
+# Remove the bird_facts column from birds
+birds = birds.drop(columns='bird_facts')
+
+# Concatenate the columns of birds and data_split
+birds = pd.concat([birds,  data_split], axis=1)
+
+# Print birds
+print(birds)
+```
+
+### Don't dump the bird
+
+You want to read the `birds` data into a DataFrame like you did in the
+previous exercise, but this time, you would like to try a different
+approach.
+
+You would like to have a code that you can reuse in this situations, so
+you want to establish the fastest strategy to convert it into a usable
+DataFrame. You think that working with the `json` format could speed up
+the process.
+
+The `birds` DataFrame is available for you.
+
+-   Flatten out the content of the `bird_facts` column by applying the
+    `loads` method from the `json` module to the column. Transform the
+    result into a list.
+
+<!-- -->
+
+-   Convert the list contained in `birds_facts` into a JSON format.
+    Assign it to the `birds_dump` variable.
+
+<!-- -->
+
+-   Now, read the JSON contained in `birds_dump` into a DataFrame.
+
+<!-- -->
+
+-   Concatenate the `names` column of the `birds` DataFrame with all
+    columns in `birds_df`.
+
+```{python, eval=F}
+# edited/added
+birds = pd.read_csv('birds.csv')
+
+# Apply json.loads to the bird_facts column and transform it to a list
+birds_facts = birds['bird_facts'].apply(json.loads).to_list()
+
+# Print birds_facts
+print(birds_facts)
+
+# Apply json.loads to the bird_facts column and transform it to a list 
+birds_facts = birds['bird_facts'].apply(json.loads).to_list()
+
+# Convert birds_facts into a JSON 
+birds_dump = json.dumps(birds_facts)
+
+# Print birds_dump
+print(birds_dump)
+
+# Apply json.loads to the bird_facts column and transform it to a list 
+birds_facts = birds['bird_facts'].apply(json.loads).to_list()
+
+# Convert birds_facts into a JSON 
+birds_dump = json.dumps(birds_facts)
+
+# Read the JSON birds_dump into a DataFrame 
+birds_df = pd.read_json(birds_dump)
+
+# Print birds_df
+print(birds_df)
+
+# Apply json.loads to the bird_facts column and transform it to a list
+birds_facts = birds['bird_facts'].apply(json.loads).to_list()
+
+# Convert birds_fact into a JSON 
+birds_dump = json.dumps(birds_facts)
+
+# Read the JSON birds_dump into a DataFrame 
+birds_df = pd.read_json(birds_dump)
+
+# Concatenate the 'names' column of birds with birds_df 
+birds_final = pd.concat([birds['names'], birds_df], axis=1)
+
+# Print birds_final
+print(birds_final)
+```
+
+## The final reshape
+
+### The final reshape
+
+You have reached the end of this course on reshaping data with pandas.
+
+### Congrats!
+
+Congratulations! You have done a great job!
+
+### Chapter 1
+
+You started by understanding the concepts of long and wide formats and the advantages of using each. Then, you learned how to reshape data using the pivot method, using columns as unique variables and the index as identifiers for individual observations. You created pivot tables and studied the difference from using pivot(), as well as the advantages and best practices for using each.
+
+### Chapter 2
+
+You then advanced, learning to convert a DataFrame from wide to long format using the melt method and the wide_to_long function. Also, you saw how to handle string columns or modify the index by splitting a string column into two columns or concatenating multiple string columns into one.
+
+### Chapter 3
+
+In Chapter 3, you explored what a multi-level index is and the advantage of using them. You also saw how to stack and unstack multi-level index DataFrames. Because these processes generated new missing data, you learned to handle that missing data using several approaches.
+
+### Chapter 4
+
+Finally, you found out how to combine the reshaping process with the grouping process to produce fast data manipulations. You also transformed list-like values contained in a column of a DataFrame to separate rows. You saw the basic structure of JSON format and learned how to read it into a DataFrame. Moreover, you discover how to handle nested data in columns. You have mastered the concepts of reshaping data with pandas. You can start applying them in your own projects.
+
+### Thank you!
+
+Lastly, thank you for staying with me to the end of this journey! I wish you all the best in your path of learning.

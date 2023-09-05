@@ -1,0 +1,56 @@
+# Import OpenAI.
+from langchain.llms import OpenAI
+
+# Import ChatOpenAI.
+from langchain.chat_models import ChatOpenAI
+# Import the necessary classes from langchain.
+from langchain_experimental.agents.agent_toolkits import create_python_agent
+from langchain_experimental.tools.python.tool import PythonREPLTool
+
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Import the os package.
+import os
+
+# Import the openai package.
+import openai
+
+# Set openai.api_key to the OPENAI_API_KEY environment variable.
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+# Instantiate a Python agent, with the PythonREPLTool.
+agent_executor = create_python_agent(
+    llm=OpenAI(temperature=0, max_tokens=1000),
+    tool=PythonREPLTool(),
+    verbose=True
+)
+
+# Ask the agent for the solution of a mathematical equation.
+agent_executor.run("What is the square root of 250? Round the answer down to 4 decimals.")
+
+# Open the text file and read its lines.
+with open('financial_headlines.txt', 'r') as data:
+    headlines = data.readlines()
+
+# Print all headlines.
+headlines
+
+# Strip the new line character from all headlines.
+headlines = [line.strip("\n") for line in headlines]
+
+# Print all headlines.
+headlines
+
+# Run the agent
+agent_executor.run(f"""For every of the following headlines, extract the company name and whether the financial sentiment is   positive, neutral or negative. 
+   Load this data into a pandas dataframe. 
+   The dataframe will have three columns: the name of the company, whether the financial sentiment is positive or negative and the headline itself. 
+   The dataframe can then be saved in the current working directory under the name financial_analysis.csv.
+   If a csv file already exists with the same name, it should be overwritten.
+
+   The headlines are the following:
+   {headlines}
+   """)

@@ -16,6 +16,7 @@ seattle_weather = pd.read_csv('seattle_weather.csv')
 seattle_weather = seattle_weather[seattle_weather['STATION'] == 'USW00094290']
 seattle_weather['MONTH'] = seattle_weather['DATE']
 
+
 # Import the matplotlib.pyplot submodule and name it plt
 import matplotlib.pyplot as plt
 
@@ -47,6 +48,7 @@ plt.show()
 
 # edited/added
 fig, ax = plt.subplots()
+
 ax.plot(seattle_weather["MONTH"], seattle_weather["MLY-PRCP-NORMAL"])
 ax.plot(austin_weather["MONTH"], austin_weather["MLY-PRCP-NORMAL"])
 
@@ -90,6 +92,7 @@ ax[0].plot(seattle_weather["MONTH"], seattle_weather["MLY-PRCP-75PCTL"], color='
 ax[1].plot(austin_weather["MONTH"], austin_weather["MLY-PRCP-NORMAL"], color='r')
 ax[1].plot(austin_weather["MONTH"], austin_weather["MLY-PRCP-25PCTL"], color='r', linestyle='--')
 ax[1].plot(austin_weather["MONTH"], austin_weather["MLY-PRCP-75PCTL"], color='r', linestyle='--')
+
 plt.show()
 
 # Import pandas
@@ -97,6 +100,7 @@ import pandas as pd
 
 # Read the data from file using read_csv
 climate_change = pd.read_csv('climate_change.csv', parse_dates=["date"], index_col="date")
+
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 
@@ -111,6 +115,7 @@ ax.set_ylabel('Relative temperature (Celsius)')
 
 # Show the figure
 plt.show()
+
 import matplotlib.pyplot as plt
 
 # Use plt.subplots to create fig and ax
@@ -124,6 +129,7 @@ ax.plot(seventies.index, seventies["co2"])
 
 # Show the figure
 plt.show()
+
 import matplotlib.pyplot as plt
 
 # Initalize a Figure and Axes
@@ -137,22 +143,24 @@ ax2 = ax.twinx()
 
 # Plot the relative temperature in red
 ax2.plot(climate_change.index, climate_change["relative_temp"], color='red')
+
 plt.show()
 
 # Define a function called plot_timeseries
 def plot_timeseries(axes, x, y, color, xlabel, ylabel):
-  
+
   # Plot the inputs x,y in the provided color
   axes.plot(x, y, color=color)
-  
+
   # Set the x-axis label
   axes.set_xlabel(xlabel)
-  
+
   # Set the y-axis label
   axes.set_ylabel(ylabel, color=color)
-  
+
   # Set the colors tick params for y-axis
   axes.tick_params('y', colors=color)
+
 fig, ax = plt.subplots()
 
 # Plot the CO2 levels time-series in blue
@@ -163,7 +171,9 @@ ax2 = ax.twinx()
 
 # Plot the relative temperature data in red
 plot_timeseries(ax2, climate_change.index, climate_change['relative_temp'], 'red', "Time (years)", "Relative temperature (Celsius)")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Plot the relative temperature data
@@ -171,7 +181,9 @@ ax.plot(climate_change.index, climate_change['relative_temp'])
 
 # Annotate the date at which temperatures exceeded 1 degree
 ax.annotate(">1 degree", xy=(pd.Timestamp('2015-10-06'), 1))
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Plot the CO2 levels time-series in blue
@@ -185,12 +197,14 @@ plot_timeseries(ax2, climate_change.index, climate_change['relative_temp'], 'red
 
 # Annotate the point with relative temperature >1 degree
 ax2.annotate(">1 degree", xy=(pd.Timestamp('2015-10-06'), 1), xytext=(pd.Timestamp('2008-10-06'), -0.2), arrowprops={'arrowstyle':'->', 'color':'gray'})
+
 plt.show()
 
 # edited/added
 import pandas as pd
 import matplotlib.pyplot as plt
 medals = pd.read_csv('medals_by_country_2016.csv', index_col = 0)
+
 fig, ax = plt.subplots()
 
 # Plot a bar-chart of gold medals as a function of country
@@ -201,6 +215,7 @@ ax.set_xticklabels(medals.index, rotation=90)
 
 # Set the y-axis label
 ax.set_ylabel("Number of medals")
+
 plt.show()
 
 # edited/added
@@ -217,6 +232,7 @@ ax.bar(medals.index, medals["Bronze"], bottom=medals["Gold"] + medals["Silver"],
 
 # Display the legend
 ax.legend()
+
 plt.show()
 
 # edited/added
@@ -225,8 +241,8 @@ import matplotlib.pyplot as plt
 summer_2016_medals = pd.read_csv('summer2016.csv')
 mens_rowing = summer_2016_medals[(summer_2016_medals['Sport'] == 'Rowing') & (summer_2016_medals['Sex'] == 'M')]
 mens_gymnastics = summer_2016_medals[(summer_2016_medals['Sport'] == 'Gymnastics') & (summer_2016_medals['Sex'] == 'M')]
-fig, ax = plt.subplots()
 
+fig, ax = plt.subplots()
 # Plot a histogram of "Weight" for mens_rowing
 ax.hist(mens_rowing["Weight"])
 
@@ -237,9 +253,10 @@ ax.hist(mens_gymnastics["Weight"])
 ax.set_xlabel("Weight (kg)")
 
 # Set the y-axis label to "# of observations"
-
 ax.set_ylabel("# of observations")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Plot a histogram of "Weight" for mens_rowing
@@ -247,13 +264,14 @@ ax.hist(mens_rowing["Weight"], histtype='step', label="Rowing", bins=5)
 
 # Compare to histogram of "Weight" for mens_gymnastics
 ax.hist(mens_gymnastics["Weight"], histtype='step', label="Gymnastics", bins=5)
-ax.set_xlabel("Weight (kg)")
 
+ax.set_xlabel("Weight (kg)")
 ax.set_ylabel("# of observations")
 
 # Add the legend and show the Figure
 ax.legend()
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Add a bar for the rowing "Height" column mean/std
@@ -264,7 +282,9 @@ ax.bar("Gymnastics", mens_gymnastics["Height"].mean(), yerr=mens_gymnastics["Hei
 
 # Label the y-axis
 ax.set_ylabel("Height (cm)")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Add the Seattle temperature data in each month with standard deviation error bars
@@ -275,7 +295,9 @@ ax.errorbar(austin_weather["MONTH"], austin_weather["MLY-TAVG-NORMAL"], yerr=aus
 
 # Set the y-axis label
 ax.set_ylabel("Temperature (Fahrenheit)")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Add a boxplot for the "Height" column in the DataFrames
@@ -286,7 +308,9 @@ ax.set_xticklabels(["Rowing", "Gymnastics"])
 
 # Add a y-axis label
 ax.set_ylabel("Height (cm)")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Add data: "co2" on x-axis, "relative_temp" on y-axis
@@ -297,7 +321,9 @@ ax.set_xlabel("CO2 (ppm)")
 
 # Set the y-axis label to "Relative temperature (C)"
 ax.set_ylabel("Relative temperature (C)")
+
 plt.show()
+
 fig, ax = plt.subplots()
 
 # Add data: "co2", "relative_temp" as x-y, index as color
@@ -308,6 +334,7 @@ ax.set_xlabel("CO2 (ppm)")
 
 # Set the y-axis label to "Relative temperature (C)"
 ax.set_ylabel("Relative temperature (C)")
+
 plt.show()
 
 # Use the "ggplot" style and create new Figure/Axes
@@ -354,16 +381,16 @@ sports = sports_column.unique()
 
 # Print out the unique sports values
 print(sports)
+
 fig, ax = plt.subplots()
 
 # Loop over the different sports branches
 for sport in sports:
-  
   # Extract the rows only for this sport
   sport_df = summer_2016_medals[summer_2016_medals["Sport"] == sport]
-  
   # Add a bar for the "Weight" mean with std y error bar
   ax.bar(sport, sport_df["Weight"].mean(), yerr=sport_df["Weight"].std())
+
 ax.set_ylabel("Weight")
 ax.set_xticklabels(sports, rotation=90)
 
