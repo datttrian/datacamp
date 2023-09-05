@@ -2,6 +2,4 @@
 .python-version
 .html
 */.ipynb_checkpoints
-*/*.html
-*/*.Rmd
 */datacamp

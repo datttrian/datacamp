@@ -1,0 +1,2092 @@
+---
+title: "Object-Oriented Programming in Python"
+author: "Alex Yarosh"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<a href="https://github.com/datttrian/datacamp" target="_blank">![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-blue?logo=github)</a>
+
+**Course Description**
+
+Object-oriented programming (OOP) is a widely used programming paradigm that reduces development times—making it easier to read, reuse, and maintain your code. OOP shifts the focus from thinking about code as a sequence of actions to looking at your program as a collection of objects that interact with each other. In this course, you’ll learn how to create classes, which act as the blueprints for every object in Python. You’ll then leverage principles called inheritance and polymorphism to reuse and optimize code. Dive in and learn how to create beautiful code that’s clean and efficient!
+
+# OOP Fundamentals
+
+In this chapter, you'll learn what object-oriented programming (OOP) is, how it differs from procedural-programming, and how it can be applied. You'll then define your own classes, and learn how to create methods, attributes, and constructors.
+
+## What is OOP?
+
+### OOP termininology
+
+That was a lot of terminology at once -- classes, objects, methods, attributes… Before you start writing your own object-oriented code, make sure you have a solid grasp on the main concepts of OOP.
+
+-   Classify the cards into the correct buckets. Are the statements true or false?
+
+##### True
+
+- **Encapsulation** is a software design practice of bundling the data and
+the methods that operate on that data.
+- **Methods** encode behavior of an object and are represented by
+functions.
+- **Attributes** encode the state of an object and are represented by
+variables.
+
+##### False
+
+- A programming language can be either object-oriented or procedural, but
+not both.
+- *Object* and *class* are different terms describing the same concept.
+- `.columns` is an example of a method of a DataFrame object.
+- **Object** is an abstract template describing the general states and
+behaviors.
+
+### Exploring object interface
+
+The best way to learn how to write object-oriented code is to study the
+design of existing classes. You've already learned about exploration
+tools like `type()` and `dir()`.
+
+Another important function is `help()`: calling `help(x)` in the console
+will show the documentation for the object or class `x`.
+
+Most real world classes have many methods and attributes, and it is easy
+to get lost, so in this exercise, you will start with something simpler.
+We have defined a class, and created an object of that class called
+`mystery`. Explore the object in the console using the tools that you
+learned.
+
+What class does the `mystery` object have?
+
+- [ ] `numpy.ndarray`
+- [x] `__main__.Employee`
+- [ ] `pandas.core.DataFrame`
+- [ ] `salesforce.Customer`
+- [ ] It doesn't have a class
+
+So the `mystery` object is an `Employee`! Explore it in the console
+further to find out what attributes it has.
+
+-   Print the `mystery` employee's `name` attribute.
+-   Print the employee's salary.
+
+Natasha -- our `mystery` employee -- has their salary stored in the
+attribute `.salary`.
+
+-   Give Natasha a raise of $2500 by using a suitable method (use
+    `help()` again if you need to!).
+-   Print the salary again.
+
+```{python, eval=F}
+# edited/added
+class Employee:
+  
+    def __init__(self, name, salary=30000):
+        self.name = name
+        self.salary = salary
+        
+    def give_raise(self, amount):
+        self.salary += amount
+
+mystery = Employee(name = "Natasha Ting", salary = 73500)
+
+# Print the mystery employee's name
+print(mystery.name)
+
+# Print the mystery employee's salary
+print(mystery.salary)
+
+# Print the mystery employee's name
+print(mystery.name)
+
+# Print the mystery employee's salary
+print(mystery.salary)
+
+# Give the mystery employee a raise of $2500
+mystery.give_raise(2500)
+
+# Print the salary again
+print(mystery.salary)
+```
+
+## Class anatomy: attributes and methods
+
+### Understanding class definitions
+
+Objects and classes consist of attributes (storing the state) and methods (storing the behavior).
+
+Before you get to writing your own classes, you need to understand the basic structure of the class, and how attributes in the class definition relate to attributes in the object. In this exercise, you have a class with one method and one attribute, as well as the object of that class.
+
+-   Arrange the code blocks in the order that will produce the output
+    `6` when run.
+
+*Don't forget to indent the blocks correctly using the `<>` buttons to
+the left of the ☰ icon!*
+
+```{python, eval=F}
+class MyCounter:
+    def set_count(self, n):
+        self.count = n
+mc = MyCounter()
+mc.set_count(5)
+mc.count = mc.count + 1
+print(mc.count)
+```
+
+### Create your first class
+
+Time to write your first class! In this exercise, you'll start building
+the `Employee` class you briefly explored in the previous lesson. You'll
+start by creating methods that set attributes, and then add a few
+methods that manipulate them.
+
+As mentioned in the first video, an object-oriented approach is most
+useful when your code involves complex interactions of many objects. In
+real production code, classes can have dozens of attributes and methods
+with complicated logic, but the underlying structure is the same as with
+the most simple class.
+
+Your classes in this course will only have a few attributes and short
+methods, but the organizational principles behind the them will be
+directly translatable to more complicated code.
+
+-   Create an empty class `Employee`.
+-   Create an object `emp` of the class `Employee` by calling
+    `Employee()`.
+
+*Try printing the `.name` attribute of `emp` object in the console. What
+happens?*
+
+-   Modify the `Employee` class to include a `.set_name()` method that
+    takes a `new_name` argument, and assigns `new_name` to the `.name`
+    attribute of the class.
+-   Use the `set_name()` method on `emp` to set the name to
+    `'Korel Rossi'`.
+-   Print `emp.name`.
+
+-   Follow the pattern to add another method - `set_salary()` - that
+    will set the `salary` attribute of the class to the parameter
+    `new_salary` passed to method.
+-   Set the salary of `emp` to 50000.
+
+*Try printing `emp.salary` before and after calling `set_salary()`.*
+
+
+```{python, eval=F}
+# Create an empty class Employee
+class Employee:
+    pass
+
+# Create an object emp of class Employee  
+emp = Employee()
+
+# Include a set_name method
+class Employee:
+  
+  def set_name(self, new_name):
+    self.name = new_name
+  
+# Create an object emp of class Employee  
+emp = Employee()
+
+# Use set_name() on emp to set the name of emp to 'Korel Rossi'
+emp.set_name('Korel Rossi')
+
+# Print the name of emp
+print(emp.name)
+
+class Employee:
+  
+  def set_name(self, new_name):
+    self.name = new_name
+  
+  # Add set_salary() method  
+  def set_salary(self, new_salary):
+    self.salary = new_salary 
+  
+  
+# Create an object emp of class Employee  
+emp = Employee()
+
+# Use set_name to set the name of emp to 'Korel Rossi'
+emp.set_name('Korel Rossi')
+
+# Set the salary of emp to 50000
+emp.set_salary(50000)
+```
+
+### Using attributes in class definition
+
+In the previous exercise, you defined an `Employee` class with two
+attributes and two methods setting those attributes. This kind of
+method, aptly called a *setter* method, is far from the only possible
+kind. *Methods are functions*, so anything you can do with a function,
+you can also do with a method. For example, you can use methods to
+print, return values, make plots, and raise exceptions, as long as it
+makes sense as the behavior of the objects described by the class (an
+`Employee` probably wouldn't have a `pivot_table()` method).
+
+In this exercise, you'll go beyond the setter methods and learn how to
+use existing class attributes to define new methods. The `Employee`
+class and the `emp` object from the previous exercise are in your script
+pane.
+
+-   Print the `salary` attribute of `emp`.
+-   Attributes aren't read-only: use assignment (equality sign) to
+    increase the `salary` attribute of `emp` by 1500, and print it
+    again.
+
+Raising a salary for an employee is a *common pattern of behavior*, so
+it should be part of the class definition instead.
+
+-   Add a method `give_raise()` to `Employee` that increases the salary
+    by the amount passed to `give_raise()` as a parameter.
+
+Methods don't have to just modify the attributes - they can return
+values as well!
+
+-   Add a method `monthly_salary()` that `return`s the value of the
+    `.salary` attribute divided by 12.
+-   Call `.monthly_salary()` on `emp`, assign it to `mon_sal`, and
+    print.
+
+```{python, eval=F}
+class Employee:
+    def set_name(self, new_name):
+        self.name = new_name
+
+    def set_salary(self, new_salary):
+        self.salary = new_salary 
+  
+emp = Employee()
+emp.set_name('Korel Rossi')
+emp.set_salary(50000)
+
+# Print the salary attribute of emp
+print(emp.salary)
+
+# Increase salary of emp by 1500
+emp.salary = emp.salary + 1500
+
+# Print the salary attribute of emp again
+print(emp.salary)
+
+class Employee:
+    def set_name(self, new_name):
+        self.name = new_name
+
+    def set_salary(self, new_salary):
+        self.salary = new_salary 
+
+    # Add a give_raise() method with raise amount as a parameter
+    def give_raise(self, amount):
+        self.salary = self.salary + amount
+
+emp = Employee()
+emp.set_name('Korel Rossi')
+emp.set_salary(50000)
+
+print(emp.salary)
+emp.give_raise(1500)
+print(emp.salary)
+
+class Employee:
+    def set_name(self, new_name):
+        self.name = new_name
+
+    def set_salary(self, new_salary):
+        self.salary = new_salary 
+
+    def give_raise(self, amount):
+        self.salary = self.salary + amount
+
+    # Add monthly_salary method that returns 1/12th of salary attribute
+    def monthly_salary(self):
+        return self.salary / 12
+    
+emp = Employee()
+emp.set_name('Korel Rossi')
+emp.set_salary(50000)
+
+# Get monthly salary of emp and assign to mon_sal
+mon_sal = emp.monthly_salary()
+
+# Print mon_sal
+print(mon_sal)
+```
+
+## Class anatomy: the __init__ constructor
+
+### Correct use of __init__
+
+Python allows you to run custom code - for example, initializing
+attributes - any time an object is created: you just need to define a
+special method called `__init__()`. Use this exercise to check your
+understanding of `__init__()` mechanics!
+
+Which of the code blocks will **NOT** return an error when run?
+
+<img
+src="https://assets.datacamp.com/production/repositories/5748/datasets/b86dfcfce0ba2c0c3b26d7c25881863ca48bb640/constructors.png"
+alt="4 code blocks" />
+
+- [ ] 1
+- [x] 2
+- [ ] 3
+- [ ] 4
+
+### Add a class constructor
+
+In this exercise, you'll continue working on the `Employee` class.
+Instead of using the methods like `set_salary()` that you wrote in the
+previous lesson, you will introduce a constructor that assigns name and
+salary to the employee at the moment when the object is created.
+
+You'll also create a new attribute -- `hire_date` -- which will **not**
+be initialized through parameters, but instead will contain the current
+date.
+
+Initializing attributes in the constructor is a good idea, because this
+ensures that the object has all the necessary attributes the moment it
+is created.
+
+Define the class `Employee` with a constructor `__init__()` that:
+
+-   accepts two arguments, `name` and `salary` (with default value`0`),
+-   creates two attributes, also called `name` and `salary`,
+-   sets their values to the corresponding arguments.
+
+The `__init__()` method is a great place to do preprocessing.
+
+-   Modify `__init__()` to check whether the `salary` parameter is
+    positive:
+    -   if yes, assign it to the `salary` attribute,
+    -   if not, assign `0` to the attribute and print
+        `"Invalid salary!"`.
+
+-   Import `datetime` from the `datetime` module. This contains the
+    function that returns current date.
+-   Add an attribute `hire_date` and set it to `datetime.today()`.
+
+```{python, eval=F}
+class Employee:
+    # Create __init__() method
+    def __init__(self, name, salary=0):
+        # Create the name and salary attributes
+        self.name = name
+        self.salary = salary
+    
+    # From the previous lesson
+    def give_raise(self, amount):
+        self.salary += amount
+
+    def monthly_salary(self):
+        return self.salary/12
+        
+emp = Employee("Korel Rossi")
+print(emp.name)
+print(emp.salary)
+
+class Employee:
+    
+    def __init__(self, name, salary=0):
+        self.name = name
+        # Modify code below to check if salary is positive
+        if salary >= 0:
+          self.salary = salary
+        else:
+          self.salary = 0
+          print("Invalid salary!")
+        
+   
+   # ...Other methods omitted for brevity ... 
+      
+emp = Employee("Korel Rossi", -1000)
+print(emp.name)
+print(emp.salary)
+
+# Import datetime from datetime
+from datetime import datetime
+
+class Employee:
+    
+    def __init__(self, name, salary=0):
+        self.name = name
+        if salary > 0:
+          self.salary = salary
+        else:
+          self.salary = 0
+          print("Invalid salary!")
+          
+        # Add the hire_date attribute and set it to today's date
+        self.hire_date = datetime.today()
+        
+   # ...Other methods omitted for brevity ...
+      
+emp = Employee("Korel Rossi")
+print(emp.name)
+print(emp.hire_date)
+```
+
+### Write a class from scratch
+
+You are a Python developer writing a visualization package. For any
+element in a visualization, you want to be able to tell the position of
+the element, how far it is from other elements, and easily implement
+horizontal or vertical flip .
+
+The most basic element of any visualization is a single point. In this
+exercise, you'll write a class for a point on a plane from scratch.
+
+Define the class `Point` that has:
+
+-   *Two attributes, `x` and `y`* - the coordinates of the point on the
+    plane;
+-   *A constructor* that accepts two arguments, `x` and `y`, that
+    initialize the corresponding attributes. These arguments should have
+    default value of `0.0`;
+-   *A method `distance_to_origin()`* that *returns* the distance from
+    the point to the origin. The formula for that is \\\sqrt{x^2 +
+    y^2}\\.
+-   *A method `reflect()`*, that reflects the point with respect to the
+    x- or y-axis:
+    -   accepts one argument `axis`,
+    -   if `axis="x"` , it sets the `y` (not a typo!) attribute to the
+        negative value of the `y` attribute,
+    -   if `axis="y"`, it sets the `x` attribute to the negative value
+        of the `x` attribute,
+    -   for any other value of `axis`, prints an error message. <img
+        src="https://assets.datacamp.com/production/repositories/5748/datasets/ae24abb426a181d3785bba89c3130b17f7001704/reflect.png"
+        alt="Reflection of a point with respect to y and x axes" />
+
+Note: *You can choose to use `sqrt()` function from either the `numpy`
+or the `math` package, but whichever package you choose, **don't forget
+to import it** before starting the class definition!*
+
+------------------------------------------------------------------------
+
+*To check your work, you should be able to run the following code
+without errors:*
+
+    pt = Point(x=3.0)
+    pt.reflect("y")
+    print((pt.x, pt.y))
+    pt.y = 4.0
+    print(pt.distance_to_origin())
+
+*and return the output*
+
+    (-3.0,0.0)
+    5.0
+
+```{python, eval=F}
+# For use of np.sqrt
+import numpy as np
+
+class Point:
+    """ A point on a 2D plane
+    
+   Attributes
+    ----------
+    x : float, default 0.0. The x coordinate of the point        
+    y : float, default 0.0. The y coordinate of the point
+    """
+    def __init__(self, x=0.0, y=0.0):
+      self.x = x
+      self.y = y
+      
+    def distance_to_origin(self):
+      """Calculate distance from the point to the origin (0,0)"""
+      return np.sqrt(self.x ** 2 + self.y ** 2)
+    
+    def reflect(self, axis):
+      """Reflect the point with respect to x or y axis."""
+      if axis == "x":
+        self.y = - self.y
+      elif axis == "y":
+        self.x = - self.x
+      else:
+        print("The argument axis only accepts values 'x' and 'y'!")
+```
+
+# Inheritance and Polymorphism
+
+Inheritance and polymorphism are the core concepts of OOP that enable efficient and consistent code reuse. Learn how to inherit from a class, customize and redefine methods, and review the differences between class-level data and instance-level data.
+
+## Instance and class data
+
+### Class-level attributes
+
+Class attributes store data that is shared among all the class
+instances. They are assigned values in the class body, and are referred
+to using the `ClassName.` syntax rather than `self.` syntax when used in
+methods.
+
+In this exercise, you will be a game developer working on a game that
+will have several players moving on a grid and interacting with each
+other. As the first step, you want to define a `Player` class that will
+just move along a straight line. `Player` will have a `position`
+attribute and a `move()` method. The grid is limited, so the `position`
+of `Player` will have a maximal value.
+
+-   Define a class `Player` that has:
+-   A class attribute `MAX_POSITION` with value `10`.
+-   The `__init__()` method that sets the `position` instance attribute
+    to `0`.
+-   Print `Player.MAX_POSITION`.
+-   Create a `Player` object `p` and print its `MAX_POSITION`.
+
+Add a `move()` method with a `steps` parameter such that:
+
+-   if `position` plus `steps` is less than `MAX_POSITION`, then add
+    `steps` to `position` and assign the result back to `position`;
+-   otherwise, set `position` to `MAX_POSITION`.
+
+*Take a look at the console for a visualization*!
+
+```{python, eval=F}
+# Create a Player class
+class Player:
+    MAX_POSITION = 10
+    
+    def __init__(self):
+      self.position = 0
+
+# Print Player.MAX_POSITION  
+print(Player.MAX_POSITION)   
+
+# Create a player p and print its MAX_POSITITON
+p = Player()
+print(p.MAX_POSITION)
+
+class Player:
+    MAX_POSITION = 10
+    
+    def __init__(self):
+        self.position = 0
+
+    # Add a move() method with steps parameter     
+    def move(self, steps):
+        if self.position + steps < Player.MAX_POSITION:
+           self.position = self.position + steps 
+        else:
+           self.position = Player.MAX_POSITION
+    
+    # This method provides a rudimentary visualization in the console    
+    def draw(self):
+        drawing = "-" * self.position + "|" +"-"*(Player.MAX_POSITION - self.position)
+        print(drawing)
+
+p = Player(); p.draw()
+p.move(4); p.draw()
+p.move(5); p.draw()
+p.move(3); p.draw()
+```
+
+### Changing class attributes
+
+You learned how to define class attributes and how to access them from
+class instances. So what will happen if you try to assign another value
+to a class attribute when accessing it from an instance? The answer is
+not as simple as you might think!
+
+The `Player` class from the previous exercise is pre-defined. Recall
+that it has a `position` instance attribute, and `MAX_SPEED` and
+`MAX_POSITION` class attributes. The initial value of `MAX_SPEED` is
+`3`.
+
+-   Create two `Player` objects `p1` and `p2`.
+-   Print `p1.MAX_SPEED` and `p2.MAX_SPEED`.
+-   Assign `7` to `p1.MAX_SPEED`.
+-   Print `p1.MAX_SPEED` and `p2.MAX_SPEED` again.
+-   Print `Player.MAX_SPEED`.
+-   *Examine the output carefully.*
+
+Even though `MAX_SPEED` is shared across instances, assigning 7 to
+`p1.MAX_SPEED` didn't change the value of `MAX_SPEED` in `p2`, or in the
+`Player` class.
+
+So what happened? In fact, Python created a new *instance attribute* in
+`p1`, also called it `MAX_SPEED`, and assigned `7` to it, without
+touching the class attribute.
+
+Now let's change the class attribute value for real.
+
+-   Modify the assignment to assign `7` to `Player.MAX_SPEED` instead.
+
+```{python, eval=F}
+# edited/added
+class Player:
+    MAX_POSITION = 10
+    MAX_SPEED = 3
+    
+    def __init__(self):
+        self.position = 0
+    # Add a move() method with steps parameter     
+    def move(self, steps):
+        if self.position + steps < Player.MAX_POSITION:
+           self.position = self.position + steps 
+        else:
+           self.position = Player.MAX_POSITION
+    # This method provides a rudimentary visualization in the console    
+    def draw(self):
+        drawing = "-" * self.position + "|" +"-"*(Player.MAX_POSITION - self.position)
+        print(drawing)
+
+# Create Players p1 and p2
+p1, p2 = Player(), Player()
+
+print("MAX_SPEED of p1 and p2 before assignment:")
+# Print p1.MAX_SPEED and p2.MAX_SPEED
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+# Assign 7 to p1.MAX_SPEED
+p1.MAX_SPEED = 7
+
+print("MAX_SPEED of p1 and p2 after assignment:")
+# Print p1.MAX_SPEED and p2.MAX_SPEED
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+print("MAX_SPEED of Player:")
+# Print Player.MAX_SPEED
+print(Player.MAX_SPEED)
+
+# Create Players p1 and p2
+p1, p2 = Player(), Player()
+
+print("MAX_SPEED of p1 and p2 before assignment:")
+# Print p1.MAX_SPEED and p2.MAX_SPEED
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+# ---MODIFY THIS LINE---
+Player.MAX_SPEED = 7
+
+print("MAX_SPEED of p1 and p2 after assignment:")
+# Print p1.MAX_SPEED and p2.MAX_SPEED
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+print("MAX_SPEED of Player:")
+# Print Player.MAX_SPEED
+print(Player.MAX_SPEED)
+```
+
+### Alternative constructors
+
+Python allows you to define class *methods* as well, using the
+`@classmethod` decorator and a special first argument `cls`. The main
+use of class methods is defining methods that return an instance of the
+class, but aren't using the same code as `__init__()`.
+
+For example, you are developing a time series package and want to define
+your own class for working with dates, `BetterDate`. The attributes of
+the class will be `year`, `month`, and `day`. You want to have a
+constructor that creates `BetterDate` objects given the values for year,
+month, and day, but you also want to be able to create `BetterDate`
+objects from strings like `2020-04-30`.
+
+You might find the following functions useful:
+
+-   `.split("-")` method will split a string at`"-"` into an array, e.g.
+    `"2020-04-30".split("-")` returns `["2020", "04", "30"]`,
+-   `int()` will convert a string into a number, e.g. `int("2019")` is
+    `2019` .
+
+Add a class method `from_str()` that:
+
+-   accepts a string `datestr` of the format`'YYYY-MM-DD'`,
+-   splits `datestr` and converts each part into an integer,
+-   returns an instance of the class with the attributes set to the
+    values extracted from `datestr`.
+
+For compatibility, you also want to be able to convert a `datetime`
+object into a `BetterDate` object.
+
+-   Add a class method `from_datetime()` that accepts a `datetime`
+    object as the argument, and uses its attributes `.year`, `.month`
+    and `.day` to create a `BetterDate` object with the same attribute
+    values.
+
+```{python, eval=F}
+class BetterDate:
+    # Constructor
+    def __init__(self, year, month, day):
+      # Recall that Python allows multiple variable assignments in one line
+      self.year, self.month, self.day = year, month, day
+    
+    # Define a class method from_str
+    @classmethod
+    def from_str(cls, datestr):
+         # Split the string at "-" and  convert each part to integer
+        parts = datestr.split("-")
+        year, month, day = int(parts[0]), int(parts[1]), int(parts[2])
+        # Return the class instance
+        return cls(year, month, day)
+        
+bd = BetterDate.from_str('2020-04-30')   
+print(bd.year)
+print(bd.month)
+print(bd.day)
+
+# import datetime from datetime
+from datetime import datetime
+
+class BetterDate:
+    def __init__(self, year, month, day):
+      self.year, self.month, self.day = year, month, day
+      
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split("-"))
+        return cls(year, month, day)
+      
+    # Define a class method from_datetime accepting a datetime object
+    @classmethod
+    def from_datetime(cls, dateobj):
+      year, month, day = dateobj.year, dateobj.month, dateobj.day
+      return cls(year, month, day) 
+
+
+# You should be able to run the code below with no errors: 
+today = datetime.today()     
+bd = BetterDate.from_datetime(today)   
+print(bd.year)
+print(bd.month)
+print(bd.day)
+```
+
+## Class inheritance
+
+### Understanding inheritance
+
+Inheritance is a powerful tool of object-oriented languages that allows
+you to customize functionality of existing classes without having to
+re-implement methods from scratch.
+
+In this exercise you'll check your understanding of the basics of
+inheritance. In the questions, we'll make use of the following two
+classes:
+
+    class Counter:
+        def __init__(self, count):
+           self.count = count
+
+        def add_counts(self, n):
+           self.count += n
+
+    class Indexer(Counter):
+       pass
+
+\`
+
+-   Classify the cards into the correct buckets. Are the statements true or false?
+
+##### True
+
+- Inheritance represents is-a relationship.
+- Running `ind = Indexer()` will cause an error.
+- Class `Indexer` is inherited from `Counter`.
+- If `ind` is an `Indexer` object, then `isinstance(ind, Counter)` will
+return `True`.
+
+##### False
+
+- Every `Counter` object is an `Indexer` object.
+- If `ind` is an `Indexer` object, then running `ind.add_counts(5)` will
+cause an error.
+- Inheritance can be used to add some of the parts of one class to another
+class.
+
+### Create a subclass
+
+The purpose of child classes -- or sub-classes, as they are usually
+called - is to customize and extend functionality of the parent class.
+
+Recall the `Employee` class from earlier in the course. In most
+organizations, managers enjoy more privileges and more responsibilities
+than a regular employee. So it would make sense to introduce a `Manager`
+class that has more functionality than `Employee`.
+
+But a `Manager` is still an employee, so the `Manager` class should be
+*inherited* from the `Employee` class.
+
+-   Add an empty `Manager` class that is inherited from `Employee`.
+-   Create an object `mng` of the `Manager` class with the name
+    `Debbie Lashko` and salary `86500`.
+-   Print the name of `mng`.
+
+-   Remove the `pass` statement and add a `display()` method to the
+    `Manager` class that just prints the string `"Manager"` followed by
+    the full name, e.g. `"Manager Katie Flatcher"`
+-   Call the `.display()`method from the `mng`instance.
+
+```{python, eval=F}
+class Employee:
+  MIN_SALARY = 30000    
+
+  def __init__(self, name, salary=MIN_SALARY):
+      self.name = name
+      if salary >= Employee.MIN_SALARY:
+        self.salary = salary
+      else:
+        self.salary = Employee.MIN_SALARY
+        
+  def give_raise(self, amount):
+      self.salary += amount
+        
+# Define a new class Manager inheriting from Employee
+class Manager(Employee):
+  pass
+
+# Define a Manager object
+mng = Manager("Debbie Lashko", 86500)
+
+# Print mng's name
+print(mng.name)
+
+class Employee:
+  MIN_SALARY = 30000    
+
+  def __init__(self, name, salary=MIN_SALARY):
+      self.name = name
+      if salary >= Employee.MIN_SALARY:
+        self.salary = salary
+      else:
+        self.salary = Employee.MIN_SALARY
+        
+  def give_raise(self, amount):
+    self.salary += amount
+
+        
+# MODIFY Manager class and add a display method
+class Manager(Employee):
+  def display(self):
+    print("Manager ", self.name)
+
+
+mng = Manager("Debbie Lashko", 86500)
+print(mng.name)
+
+# Call mng.display()
+mng.display()
+```
+
+## Customizing functionality via inheritance
+
+
+### Method inheritance
+
+Inheritance is powerful because it allows us to reuse and customize code
+without rewriting existing code. By calling methods of the parent class
+within the child class, we reuse all the code in those methods, making
+our code concise and manageable.
+
+In this exercise, you'll continue working with the `Manager` class that
+is inherited from the `Employee` class. You'll add new data to the
+class, and customize the `give_raise()` method from Chapter 1 to
+increase the manager's raise amount by a bonus percentage whenever they
+are given a raise.
+
+A simplified version of the `Employee` class, as well as the beginning
+of the `Manager` class from the previous lesson is provided for you in
+the script pane.
+
+Add a constructor to `Manager` that:
+
+-   accepts `name`, `salary` (default `50000`), and `project` (default
+    `None`)
+-   calls the constructor of the `Employee` class with the `name` and
+    `salary` parameters,
+-   creates a `project` attribute and sets it to the `project`
+    parameter.
+
+Add a `give_raise()` method to `Manager` that:
+
+-   accepts the same parameters as `Employee.give_raise()`, plus a
+    `bonus` parameter with the default value of `1.05` (bonus of 5%),
+-   multiplies `amount` by `bonus`,
+-   uses the `Employee`'s method to raise salary by that product.
+
+```{python, eval=F}
+class Employee:
+    def __init__(self, name, salary=30000):
+        self.name = name
+        self.salary = salary
+
+    def give_raise(self, amount):
+        self.salary += amount
+
+        
+class Manager(Employee):
+  # Add a constructor 
+    def __init__(self, name, salary=50000, project=None):
+        # Call the parent's constructor   
+        Employee.__init__(self, name, salary)
+
+        # Assign project attribute
+        self.project = project
+  
+    def display(self):
+        print("Manager ", self.name)
+  
+class Employee:
+    def __init__(self, name, salary=30000):
+        self.name = name
+        self.salary = salary
+
+    def give_raise(self, amount):
+        self.salary += amount
+
+        
+class Manager(Employee):
+    def display(self):
+        print("Manager ", self.name)
+
+    def __init__(self, name, salary=50000, project=None):
+        Employee.__init__(self, name, salary)
+        self.project = project
+
+    # Add a give_raise method
+    def give_raise(self, amount, bonus=1.05):
+        new_amount = amount * bonus
+        Employee.give_raise(self, new_amount)
+    
+    
+mngr = Manager("Ashta Dunbar", 78500)
+mngr.give_raise(1000)
+print(mngr.salary)
+mngr.give_raise(2000, bonus=1.03)
+print(mngr.salary)
+```
+
+### Inheritance of class attributes
+
+In the beginning of this chapter, you learned about class attributes and
+methods that are shared among all the instances of a class. How do they
+work with inheritance?
+
+In this exercise, you'll create subclasses of the `Player` class from
+the first lesson of the chapter, and explore the inheritance of class
+attributes and methods.
+
+The `Player` class has been defined for you. Recall that the `Player`
+class had two class-level attributes: `MAX_POSITION` and `MAX_SPEED`,
+with default values `10` and `3`.
+
+-   Create a class `Racer` inherited from `Player`,
+-   Assign `5` to `MAX_SPEED` in the body of the class.
+-   Create a `Player` object `p` and a `Racer` object `r` (no arguments
+    needed for the constructor).
+
+*Examine the printouts carefully. Next step is a quiz!*
+
+Which of the following statements about inheritance of class attributes is correct?
+
+- [ ] Class attributes CANNOT be inherited, but new class attributes of
+    the same name CAN be created in a child class.
+- [ ] Class attributes CANNOT be inherited, and new class attributes of
+    the same name CANNOT be created in a child class.
+- [x] Class attributes CAN be inherited, and the value of class attributes
+    CAN be overwritten in the child class
+- [ ] Class attributes can be inherited, and the value of class attributes
+    CANNOT be overwritten in the child class
+
+```{python, eval=F}
+class Racer(Player):
+    MAX_SPEED = 5
+    
+p = Player()
+r = Racer()
+
+print("p.MAX_SPEED = ", p.MAX_SPEED)
+print("r.MAX_SPEED = ", r.MAX_SPEED)
+
+print("p.MAX_POSITION = ", p.MAX_POSITION)
+print("r.MAX_POSITION = ", r.MAX_POSITION)
+```
+
+### Customizing a DataFrame
+
+In your company, any data has to come with a timestamp recording when
+the dataset was created, to make sure that outdated information is not
+being used. You would like to use `pandas` DataFrames for processing
+data, but you would need to customize the class to allow for the use of
+timestamps.
+
+In this exercise, you will implement a small `LoggedDF` class that
+inherits from a regular `pandas` DataFrame but has a `created_at`
+attribute storing the timestamp. You will then augment the standard
+`to_csv()` method to always include a column storing the creation date.
+
+*Tip: all DataFrame methods have many parameters, and it is not
+sustainable to copy all of them for each method you're customizing. The
+trick is to use variable-length arguments `*args` and `**kwargs`to catch
+all of them.*
+
+-   Import `pandas` as `pd`.
+-   Define `LoggedDF` class inherited from `pd.DataFrame`.
+-   Define a constructor with arguments `*args` and `**kwargs` that:
+    -   calls the `pd.DataFrame` constructor with the same arguments,
+    -   assigns `datetime.today()` to `self.created_at`.
+
+-   Add a `to_csv()` method to `LoggedDF` that:
+-   copies `self` to a temporary DataFrame using `.copy()`,
+-   creates a new column `created_at` in the temporary DataFrame and
+    fills it with `self.created_at`
+-   calls `pd.DataFrame.to_csv()` *on the temporary variable*.
+
+```{python, eval=F}
+# Import pandas as pd
+import pandas as pd
+
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
+    
+    
+ldf = LoggedDF({"col1": [1,2], "col2": [3,4]})
+print(ldf.values)
+print(ldf.created_at)
+
+# Import pandas as pd
+import pandas as pd
+
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
+    
+  def to_csv(self, *args, **kwargs):
+    # Copy self to a temporary DataFrame
+    temp = self.copy()
+    
+    # Create a new column filled with self.created_at
+    temp["created_at"] = self.created_at
+    
+    # Call pd.DataFrame.to_csv on temp, passing in *args and **kwargs
+    pd.DataFrame.to_csv(temp, *args, **kwargs)
+```
+
+# Integrating with Standard Python
+
+In this chapter, you'll learn how to make sure that objects that store the same data are considered equal, how to define and customize string representations of objects, and even how to create new error types. Through interactive exercises, you’ll learn how to further customize your classes to make them work more like standard Python data types.
+
+## Operator overloading: comparison
+
+### Overloading equality
+
+When comparing two objects of a custom class using `==`, Python by
+default compares just the object references, not the data contained in
+the objects. To override this behavior, the class can implement the
+special `__eq__()` method, which accepts two arguments -- the objects to
+be compared -- and returns `True` or `False`. This method will be
+implicitly called when two objects are compared.
+
+The `BankAccount` class from the previous chapter is available for you
+in the script pane. It has one attribute, `balance`, and a `withdraw()`
+method. Two bank accounts with the same balance are not necessarily the
+same account, but a bank account usually has an *account number*, and
+two accounts with the same account number should be considered the same.
+
+*Try selecting the code in lines 1-7 and pressing the "Run code" button.
+Then try to create a few `BankAccount` objects in the console and
+compare them.*
+
+-   Modify the `__init__()` method to accept a new parameter -
+    `number` - and initialize a new `number` attribute.
+-   Define an `__eq__()` method that returns `True` if the `number`
+    attribute of two objects is equal.
+-   *Examine the print statements and the output in the console.*
+
+```{python, eval=F}
+class BankAccount:
+     # MODIFY to initialize a number attribute
+    def __init__(self, number, balance=0):
+        self.balance = balance
+        self.number = number
+      
+    def withdraw(self, amount):
+        self.balance -= amount 
+
+    # Define __eq__ that returns True if the number attributes are equal 
+    def __eq__(self, other):
+        return self.number == other.number    
+    
+acct1 = BankAccount(123, 1000)
+acct2 = BankAccount(123, 1000)
+acct3 = BankAccount(456, 1000)
+print(acct1 == acct2)
+print(acct1 == acct3)
+    
+```
+
+### Checking class equality
+
+In the previous exercise, you defined a `BankAccount` class with a
+`number` attribute that was used for comparison. But if you were to
+compare a `BankAccount` object to an object of another class that also
+has a `number` attribute, you could end up with unexpected results.
+
+For example, consider two classes
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre><code>class Phone:
+  def __init__(self, number):
+     self.number = number
+&#10;  def __eq__(self, other):
+    return self.number == \
+          other.number
+&#10;pn = Phone(873555333)</code></pre></td>
+<td><pre><code>class BankAccount:
+  def __init__(self, number):
+     self.number = number
+&#10;  def __eq__(self, other):
+    return self.number == \
+           other.number
+&#10;acct = BankAccount(873555333)</code></pre></td>
+</tr>
+</tbody>
+</table>
+
+Running `acct == pn` will return `True`, even though we're comparing a
+phone number with a bank account number.
+
+It is good practice to check the class of objects passed to the
+`__eq__()` method to make sure the comparison makes sense.
+
+*Both the `Phone` and the `BankAccount` classes have been defined. Try
+running the code as-is using the "Run code" button and examine the
+output.*
+
+-   Modify the definition of `BankAccount` to only return `True` if the
+    `number` attribute is the same **and** the `type()` of both objects
+    passed to it is the same.
+
+*Run the code and examine the output again.*
+
+```{python, eval=F}
+# edited/added
+class Phone:
+  def __init__(self, number):
+     self.number = number
+
+  def __eq__(self, other):
+    return self.number == \
+          other.number
+
+pn = Phone(873555333)
+
+class BankAccount:
+    def __init__(self, number, balance=0):
+        self.number, self.balance = number, balance
+      
+    def withdraw(self, amount):
+        self.balance -= amount 
+
+    # MODIFY to add a check for the type()
+    def __eq__(self, other):
+        return (self.number == other.number) and (type(self) == type(other))    
+
+acct = BankAccount(873555333)      
+pn = Phone(873555333)
+print(acct == pn)
+```
+
+### Comparison and inheritance
+
+What happens when an object is compared to an object of a child class?
+Consider the following two classes:
+
+    class Parent:
+        def __eq__(self, other):
+            print("Parent's __eq__() called")
+            return True
+
+    class Child(Parent):
+        def __eq__(self, other):
+            print("Child's __eq__() called")
+            return True
+
+The `Child` class inherits from the `Parent` class, and both implement
+the `__eq__()` method that includes a diagnostic printout.
+
+**Which `__eq__()` method will be called when the following code is
+run?**
+
+    p = Parent()
+    c = Child()
+
+    p == c 
+
+Feel free to experiment in the console -- the classes have already been
+defined for you.
+
+- [ ] `Parent`'s `__eq__()` method will be called.
+- [x] `Child`'s `__eq__()` method will be called.
+- [ ] The code will cause an error.
+
+## Operator overloading: string representation
+
+### String formatting review
+
+Before you start defining custom string representations for objects,
+make sure you are comfortable working with strings and formatting them.
+If you need a refresher, take a minute to look through the [official
+Python tutorial on string
+formatting](https://docs.python.org/3/library/stdtypes.html#str.format).
+
+In this exercise, consider the following code
+
+    my_num = 5
+    my_str = "Hello"
+
+    f = ...
+    print(f)
+
+where the definition for `f` is missing.
+
+Here are a few possible variants for the definition of `f`:
+
+1\.
+
+    f = "my_num is {0}, and my_str is {1}.".format(my_num, my_str)
+     
+
+2\.
+
+    f = "my_num is {}, and my_str is \"{}\".".format(my_num, my_str)
+
+3\.
+
+    f = "my_num is {n}, and my_str is '{s}'.".format(n=my_num, s=my_str)
+
+4\.
+
+    f = "my_num is {my_num}, and my_str is '{my_str}'.".format()
+
+Pick the definition of `f` that will make the code above print *exactly*
+the following:
+
+    my_num is 5, and my_str is "Hello".
+
+There is only one correct answer! Feel free to use the script pane or
+console to experiment.
+
+- [ ] 1
+- [x] 2
+- [ ] 3
+- [ ] 4
+
+### String representation of objects
+
+There are two special methods in Python that return a string
+representation of an object. `__str__()` is called when you use
+`print()` or `str()` on an object, and `__repr__()` is called when you
+use `repr()` on an object, print the object in the console without
+calling `print()`, or instead of `__str__()` if `__str__()` is not
+defined.
+
+`__str__()` is supposed to provide a "user-friendly" output describing
+an object, and `__repr__()` should return the expression that, when
+evaluated, will return the same object, ensuring the reproducibility of
+your code.
+
+In this exercise, you will continue working with the `Employee` class
+from Chapter 2.
+
+Add the `__str__()` method to `Employee` that satisfies the following:
+
+-   If `emp` is an `Employee` object with name `"Amar Howard"` and
+    salary of `40000`, then `print(emp)` outputs
+
+<!-- -->
+
+    Employee name: Amar Howard
+    Employee salary: 40000
+
+Add the `__repr__()` method to `Employee` that satisfies the following:
+
+-   If `emp` is an `Employee` object with name `"Amar Howard"` and
+    salary of `40000`, then `repr(emp)` outputs
+
+<!-- -->
+
+    Employee("Amar Howard", 40000)
+
+```{python, eval=F}
+class Employee:
+    def __init__(self, name, salary=30000):
+        self.name, self.salary = name, salary
+      
+    # Add the __str__() method
+    def __str__(self):
+        s = "Employee name: {name}\nEmployee salary: {salary}".format(name=self.name, salary=self.salary)      
+        return s
+
+emp1 = Employee("Amar Howard", 30000)
+print(emp1)
+emp2 = Employee("Carolyn Ramirez", 35000)
+print(emp2)
+
+class Employee:
+    def __init__(self, name, salary=30000):
+        self.name, self.salary = name, salary
+      
+
+    def __str__(self):
+        s = "Employee name: {name}\nEmployee salary: {salary}".format(name=self.name, salary=self.salary)      
+        return s
+      
+    # Add the __repr__method  
+    def __repr__(self):
+        s = "Employee(\"{name}\", {salary})".format(name=self.name, salary=self.salary)      
+        return s      
+
+emp1 = Employee("Amar Howard", 30000)
+print(repr(emp1))
+emp2 = Employee("Carolyn Ramirez", 35000)
+print(repr(emp2))
+```
+
+## Exceptions
+
+### Catching exceptions
+
+Before you start writing your own custom exceptions, let's make sure you
+have the basics of handling exceptions down.
+
+In this exercise, you are given a function `invert_at_index(x, ind)`
+that takes two arguments, a list `x` and an index `ind`, and inverts the
+element of the list at that index. For example
+`invert_at_index([5,6,7], 1)` returns `1/6`, or `0.166666` .
+
+Try running the code as-is and examine the output in the console. There
+are two unsafe operations in this function: first, if the element that
+we're trying to invert has the value `0`, then the code will cause a
+`ZeroDivisionError` exception. Second, if the index passed to the
+function is out of range for the list, the code will cause a
+`IndexError`. In both cases, the script will be interrupted, which might
+not be desirable.
+
+Use a `try` - `except` - `except` pattern (with two `except` blocks)
+inside the function to catch and handle two exceptions as follows:
+
+-   `try` executing the code as-is,
+-   if `ZeroDivisionError` occurs, print `"Cannot divide by zero!"`,
+-   if `IndexError` occurs, print `"Index out of range!"`
+
+*You know you got it right if the code runs without errors, and the
+output in the console is*:
+
+    0.16666666666666666
+    Cannot divide by zero!
+    None
+    Index out of range!
+    None
+
+```{python, eval=F}
+# MODIFY the function to catch exceptions
+def invert_at_index(x, ind):
+  try:
+    return 1/x[ind]
+  except ZeroDivisionError:
+    print("Cannot divide by zero!")
+  except IndexError:
+    print("Index out of range!")
+ 
+a = [5,6,0,7]
+
+# Works okay
+print(invert_at_index(a, 1))
+
+# Potential ZeroDivisionError
+print(invert_at_index(a, 2))
+
+# Potential IndexError
+print(invert_at_index(a, 5))
+```
+
+### Custom exceptions
+
+You don't have to rely solely on built-in exceptions like `IndexError`:
+you can define your own exceptions more specific to your application.
+You can also define exception hierarchies. All you need to define an
+exception is a class inherited from the built-in `Exception` class or
+one of its subclasses.
+
+In Chapter 1, you defined an `Employee` class and used `print`
+statements and default values to handle errors like creating an employee
+with a salary below the minimum or giving a raise that is too big. A
+better way to handle this situation is to use exceptions. Because these
+errors are specific to our application (unlike, for example, a division
+by zero error which is universal), it makes sense to use custom
+exception classes.
+
+-   Define an empty class `SalaryError` inherited from the built-in
+    `ValueError` class.
+-   Define an empty class `BonusError` inherited from the `SalaryError`
+    class.
+
+-   Complete the definition of `__init__()` to `raise` a `SalaryError`
+    with the message `"Salary is too low!"` if the `salary` parameter is
+    less than `MIN_SALARY` class attribute.
+
+*There's no need for `else` because `raise` terminates the program
+anyway.*
+
+Examine the `give_bonus()` method, and the rewrite it using exceptions
+instead of print statements:
+
+-   raise a `BonusError` if the bonus amount is too high;
+-   raise a `SalaryError` if the result of adding the bonus would be too
+    low.
+
+
+```{python, eval=F}
+# Define SalaryError inherited from ValueError
+class SalaryError(ValueError): pass
+
+# Define BonusError inherited from SalaryError
+class BonusError(SalaryError): pass
+
+class SalaryError(ValueError): pass
+class BonusError(SalaryError): pass
+
+class Employee:
+  MIN_SALARY = 30000
+  MAX_RAISE = 5000
+
+  def __init__(self, name, salary = 30000):
+    self.name = name
+    
+    # If salary is too low
+    if salary < Employee.MIN_SALARY:
+      # Raise a SalaryError exception
+      raise SalaryError("Salary is too low!")
+      
+    self.salary = salary
+
+class SalaryError(ValueError): pass
+class BonusError(SalaryError): pass
+
+class Employee:
+  MIN_SALARY = 30000
+  MAX_BONUS = 5000
+
+  def __init__(self, name, salary = 30000):
+    self.name = name    
+    if salary < Employee.MIN_SALARY:
+      raise SalaryError("Salary is too low!")      
+    self.salary = salary
+    
+  # Rewrite using exceptions  
+  def give_bonus(self, amount):
+    if amount > Employee.MAX_BONUS:
+       raise BonusError("The bonus amount is too high!")
+        
+    if self.salary + amount <  Employee.MIN_SALARY:
+       raise SalaryError("The salary after bonus is too low!")
+      
+    self.salary += amount
+```
+
+### Handling exception hierarchies
+
+Previously, you defined an `Employee` class with a method `get_bonus()`
+that raises a `BonusError` and a `SalaryError` depending on parameters.
+But the `BonusError` exception was inherited from the `SalaryError`
+exception. How does exception inheritance affect exception handling?
+
+The `Employee` class has been defined for you. It has a minimal salary
+of `30000` and a maximal bonus amount of `5000`.
+
+Experiment with the following code
+
+    emp = Employee("Katze Rik", salary=50000)
+    try:
+      emp.give_bonus(7000)
+    except SalaryError:
+      print("SalaryError caught!")
+
+    try:
+      emp.give_bonus(7000)
+    except BonusError:
+      print("BonusError caught!")
+
+    try:
+      emp.give_bonus(-100000)
+    except SalaryError:
+      print("SalaryError caught again!")
+
+    try:
+      emp.give_bonus(-100000)
+    except BonusError:
+      print("BonusError caught again!")  
+
+and select the statement which is TRUE about handling parent/child
+exception classes:
+
+- [x] `except` block for a parent exception will catch child exceptions
+- [ ] `except` block for a parent exception will *not* catch child
+    exceptions
+
+Experiment with two pieces of code:
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre><code>emp = Employee(&quot;Katze Rik&quot;,\
+                    50000)
+try:
+  emp.give_bonus(7000)
+except SalaryError:
+  print(&quot;SalaryError caught&quot;)
+except BonusError:
+  print(&quot;BonusError caught&quot;)
+      </code></pre></td>
+<td><pre><code>emp = Employee(&quot;Katze Rik&quot;,\
+                    50000)
+try:
+  emp.give_bonus(7000)
+except BonusError:
+  print(&quot;BonusError caught&quot;)
+except SalaryError:
+  print(&quot;SalaryError caught&quot;)
+      </code></pre></td>
+</tr>
+</tbody>
+</table>
+
+(one catches `BonusError` before `SalaryError`, and the other
+-`SalaryError` before `BonusError`)
+
+Select the statement which is TRUE about the order of `except` blocks:
+
+- [ ] The order of `except` blocks doesn't matter: the result is the same.
+- [ ] It's better to include an `except` block for a parent exception
+    before the block for a child exception to ensure that the most
+    general exception is handled first.
+- [x] It's better to include an `except` block for a child exception
+    before the block for a parent exception, otherwise the child
+    exceptions will be always be caught in the parent block, and the
+    `except` block for the child will never be executed.
+
+
+# Best Practices of Class Design
+
+How do you design classes for inheritance? Does Python have private attributes? Is it possible to control attribute access? You'll find answers to these questions (and more) as you learn class design best practices.
+
+## Designing for inheritance and polymorphism
+
+### Polymorphic methods
+
+To design classes effectively, you need to understand how inheritance
+and polymorphism work together.
+
+In this exercise, you have three classes - one parent and two children -
+each of which has a `talk()` method. Analyze the following code:
+
+    class Parent:
+        def talk(self):
+            print("Parent talking!")     
+
+    class Child(Parent):
+        def talk(self):
+            print("Child talking!")          
+
+    class TalkativeChild(Parent):
+        def talk(self):
+            print("TalkativeChild talking!")
+            Parent.talk(self)
+
+
+    p, c, tc = Parent(), Child(), TalkativeChild()
+
+    for obj in (p, c, tc):
+        obj.talk()
+
+What is the output of the code above?
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>2.</td>
+</tr>
+<tr class="even">
+<td><pre><code>Parent talking!
+Parent talking!
+Parent talking!      
+&#10;      </code></pre></td>
+<td><pre><code>Parent talking!
+Child talking!
+Talkative Child talking!     
+      &#10;      </code></pre></td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>4.</td>
+</tr>
+<tr class="even">
+<td><pre><code>Parent talking!
+Child talking!
+Parent talking! 
+Talkative Child talking!
+Parent talking!      
+      &#10;      </code></pre></td>
+<td><pre><code>Parent talking!
+Child talking!
+Talkative Child talking!
+Parent talking!      
+&#10;      </code></pre></td>
+</tr>
+</tbody>
+</table>
+
+**You should be able to complete the exercise just by reading the code,
+without running it in the console!**
+
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [x] 4
+- [ ] Code causes an error
+
+### Square and rectangle
+
+The classic example of a problem that violates the Liskov Substitution
+Principle is the [Circle-Ellipse
+problem](https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem),
+sometimes called the Square-Rectangle problem.
+
+By all means, it seems like you should be able to define a class
+`Rectangle`, with attributes `h` and `w` (for height and width), and
+then define a class `Square` that inherits from the `Rectangle`. After
+all, a square "is-a" rectangle!
+
+Unfortunately, this intuition doesn't apply to object-oriented design.
+
+-   Create a class `Rectangle` with a constructor that accepts two
+    parameters, `h` and `w`, and sets its `h` and `w` attributes to the
+    values of `h` and `w`.
+-   Create a class `Square` *inherited from* `Rectangle` with a
+    constructor that accepts *one* parameter `w`, and sets both the `h`
+    and `w` attributes to the value of `w`.
+
+The classes are defined for you. Experiment with them in the console.
+
+For example, in the console or the script pane, create a `Square` object
+with side length `4`. Then try assigning `7` to the `h` attribute.
+
+What went wrong with these classes?
+
+- [ ] This wasn't a correct use of inheritance: we did not call the parent
+    constructor in the child constructor.
+- [ ] We cannot set the `h` attribute to `7` in the `Square` object
+    because it will cause an error.
+- [x] The 4x4 `Square` object would no longer be a square if we assign `7`
+    to `h`.
+- [ ] Because a `Square` only has one side length, it should not have the
+    `h` attribute. We should not have included the `h` attribute in the
+    constructor.
+- [ ] All of the above.
+
+A `Square` inherited from a `Rectangle` will always have both the `h`
+and `w` attributes, but we can't allow them to change independently of
+each other.
+
+-   Define methods `set_h()` and `set_w()` in `Rectangle`, each
+    accepting one parameter and setting `h` and `w`.
+-   Define methods `set_h()` and `set_w()` in `Square`, each accepting
+    one parameter, and setting both `h` and `w` to that parameter in
+    both methods.
+
+Later in this chapter you'll learn how to make these setter methods run
+automatically when attributes are assigned new values, don't worry about
+that for now, just assume that when we assign a value to `h` of a
+square, now the `w` attribute will be changed accordingly.
+
+How does using these setter methods violate Liskov Substitution
+principle?
+
+- [ ] There are syntactic inconsistencies.
+- [x] Each of the setter methods of `Square` change both `h` and `w`
+    attributes, while setter methods of `Rectangle` change only one
+    attribute at a time, so the `Square` objects cannot be substituted
+    for `Rectangle` into programs that rely on one attribute staying
+    constant.
+- [ ] The setter methods of `Square` accept only limited range of
+    parameters, unlike the setter methods of `Rectangle`, so the
+    `Square` objects cannot be substituted for `Rectangle` into programs
+    that use parameter values outside that range.
+- [ ] All of the above.
+
+```{python, eval=F}
+# Define a Rectangle class
+class Rectangle:
+    def __init__(self, h, w):
+      self.h, self.w = h, w
+
+# Define a Square class
+class Square(Rectangle):
+    def __init__(self, w):
+      self.h, self.w = w, w  
+
+class Rectangle:
+    def __init__(self, w,h):
+      self.w, self.h = w,h
+      
+# Define set_h to set h       
+    def set_h(self, h):
+      self.h = h
+
+# Define set_w to set w
+    def set_w(self, w):
+      self.w = w   
+      
+class Square(Rectangle):
+    def __init__(self, w):
+      self.w, self.h = w, w 
+      
+# Define set_h to set w and h 
+    def set_h(self, h):
+      self.h = h
+      self.w = h
+      
+# Define set_w to set w and h 
+    def set_w(self, w):
+      self.w = w   
+      self.h = w  
+      
+```
+
+## Managing data access: private attributes
+
+### Attribute naming conventions
+
+In Python, all data is public. Instead of access modifiers common in languages like Java, Python uses naming conventions to communicate the developer's intention to class users, shifting the responsibility of safe class use onto the class user.
+
+Python uses underscores extensively to signal the purpose of methods and attributes. In this exercise, you will match a use case with the appropriate naming convention.
+
+-   Drag the cards into the bucket representing the most appropriate naming convention for the use case.
+
+##### \_name
+
+A helper method that checks validity of an attribute's value but isn't
+considered a part of class's public interface
+
+##### \_\_name
+
+A 'version' attribute that stores the current version of the class and
+shouldn't be passed to child classes, who will have their own versions.
+
+##### \_\_name\_\_
+
+A method that is run whenever the object is printed
+
+### Using internal attributes
+
+In this exercise, you'll return to the `BetterDate` class of Chapter 2.
+Your date class is *better* because it will use the sensible convention
+of having exactly 30 days in each month.
+
+You decide to add a method that checks the validity of the date, but you
+don't want to make it a part of `BetterDate`'s public interface.
+
+The class `BetterDate` is available in the script pane.
+
+-   Add a *class attribute* `_MAX_DAYS` storing the maximal number of
+    days in a month - `30`.
+-   Add another *class attribute* storing the maximal number of months
+    in a year - `12`. *Use the appropriate naming convention to indicate
+    that this is an internal attribute.*
+-   Add an `_is_valid()` method that returns `True` if the `day` and
+    `month` attributes are less than or equal to the corresponding
+    maximum values, and `False` otherwise. Make sure to refer to the
+    class attributes by their names!
+
+```{python, eval=F}
+# Add class attributes for max number of days and months
+class BetterDate:
+    _MAX_DAYS = 30
+    _MAX_MONTHS = 12
+    
+    def __init__(self, year, month, day):
+        self.year, self.month, self.day = year, month, day
+        
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split("-"))
+        return cls(year, month, day)
+        
+    # Add _is_valid() checking day and month values
+    def _is_valid(self):
+        return (self.day <= BetterDate._MAX_DAYS) and \
+               (self.month <= BetterDate._MAX_MONTHS)
+        
+bd1 = BetterDate(2020, 4, 30)
+print(bd1._is_valid())
+
+bd2 = BetterDate(2020, 6, 45)
+print(bd2._is_valid())
+```
+
+## Properties
+
+### What do properties do?
+
+You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you'd like to execute when assigning values to attributes.
+
+Which of the following statements is NOT TRUE about properties?
+
+- [ ] Properties can be used to implement "read-only" attributes
+- [x] Properties can prevent creation of new attributes via assignment
+- [ ] Properties can be accessed using the dot syntax just like regular attributes
+- [ ] Properties allow for validation of values that are assigned to them
+
+### Create and set properties
+
+There are two parts to defining a property:
+
+-   first, define an "internal" attribute that will contain the data;
+-   then, define a `@property`-decorated method whose *name is the
+    property name*, and that returns the internal attribute storing the
+    data.
+
+If you'd also like to define a custom *setter* method, there's an
+additional step:
+
+-   define *another* method whose name is exactly the property name
+    (again), and decorate it with `@prop_name.setter` where `prop_name`
+    is the name of the property. The method should take two arguments --
+    `self` (as always), and the value that's being assigned to the
+    property.
+
+In this exercise, you'll create a `balance` property for a `Customer`
+class - a better, more controlled version of the `balance` *attribute*
+that you worked with before.
+
+Create a `Customer` class with the `__init__()` method that:
+
+-   takes parameters `name` and `new_bal`,
+-   assigns `name` to the attribute `name`,
+-   raises a `ValueError` if `new_bal` is negative,
+-   otherwise, assigns `new_bal` to the attribute `_balance` (with `_`).
+
+-   Add a method `balance()` with a `@property` decorator that returns
+    the `_balance` attribute.
+
+Define *another* `balance()` method to serve as a *setter*, with the
+appropriate decorator and an additional parameter:
+
+-   Raise a `ValueError` if the parameter is negative,
+-   otherwise assign it to `_balance` ;
+-   print `"Setter method is called"`.
+
+Define *another* `balance()` method to serve as a *setter*, with the
+appropriate decorator and an additional parameter:
+
+-   Raise a `ValueError` if the parameter is negative,
+-   otherwise assign it to `_balance` ;
+-   print `"Setter method is called"`.
+
+```{python, eval=F}
+# Create a Customer class
+class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal
+
+class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal  
+
+    # Add a decorated balance() method returning _balance        
+    @property
+    def balance(self):
+        return self._balance
+      
+class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal  
+
+    # Add a decorated balance() method returning _balance        
+    @property
+    def balance(self):
+        return self._balance
+
+    # Add a setter balance() method
+    @balance.setter
+    def balance(self, new_bal):
+        # Validate the parameter value
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal
+        
+        # Print "Setter method is called"
+        print("Setter method is called")
+
+class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal  
+
+    # Add a decorated balance() method returning _balance        
+    @property
+    def balance(self):
+        return self._balance
+
+    # Add a setter balance() method
+    @balance.setter
+    def balance(self, new_bal):
+        # Validate the parameter value
+        if new_bal < 0:
+           raise ValueError("Invalid balance!")
+        self._balance = new_bal
+        print("Setter method called")
+        
+# Create a Customer        
+cust = Customer("Belinda Lutz", 2000)
+
+# Assign 3000 to the balance property
+cust.balance = 3000
+
+# Print the balance property
+# print(cust.balance)
+```
+
+### Read-only properties
+
+The `LoggedDF` class from Chapter 2 was an extension of the `pandas`
+DataFrame class that had an additional `created_at` attribute that
+stored the timestamp when the DataFrame was created, so that the user
+could see how out-of-date the data is.
+
+But that class wasn't very useful: we could just assign any value to
+`created_at` after the DataFrame was created, thus defeating the whole
+point of the attribute! Now, using properties, we can make the attribute
+read-only.
+
+The `LoggedDF` class from Chapter 2 is available for you in the script
+pane.
+
+-   Assign a new value of `'2035-07-13'` to the `created_at` attribute.
+-   Print the value of `ldf`'s `created_at` attribute to verify that
+    your assignment was successful.
+
+Define *another* `balance()` method to serve as a *setter*, with the
+appropriate decorator and an additional parameter:
+
+-   Raise a `ValueError` if the parameter is negative,
+-   otherwise assign it to `_balance` ;
+-   print `"Setter method is called"`.
+
+What happens when you assign `'2035-07-13'` to `ldf.created_at`?
+
+- [ ] The `created_at` attribute of `ldf` is updated to `'2035-07-13'`.
+- [ ] An `AttributeError` is thrown since `'2035-07-13'` is not a valid
+    date.
+- [ ] An `AttributeError` is thrown since the `created_at` attribute
+    doesn't exist.
+- [x] An `AttributeError` is thrown since `ldf.created_at` is read-only.
+
+```{python, eval=F}
+import pandas as pd
+from datetime import datetime
+
+# LoggedDF class definition from Chapter 2
+class LoggedDF(pd.DataFrame):
+    def __init__(self, *args, **kwargs):
+        pd.DataFrame.__init__(self, *args, **kwargs)
+        self.created_at = datetime.today()
+
+    def to_csv(self, *args, **kwargs):
+        temp = self.copy()
+        temp["created_at"] = self.created_at
+        pd.DataFrame.to_csv(temp, *args, **kwargs)   
+
+# Instantiate a LoggedDF called ldf
+ldf = LoggedDF({"col1": [1,2], "col2":[3,4]})
+
+# Assign a new value to ldf's created_at attribute and print
+ldf.created_at = '2035-07-13'
+print(ldf.created_at)
+
+import pandas as pd
+from datetime import datetime
+
+# MODIFY the class to use _created_at instead of created_at
+class LoggedDF(pd.DataFrame):
+    def __init__(self, *args, **kwargs):
+        pd.DataFrame.__init__(self, *args, **kwargs)
+        self._created_at = datetime.today()
+    
+    def to_csv(self, *args, **kwargs):
+        temp = self.copy()
+        temp["created_at"] = self._created_at
+        pd.DataFrame.to_csv(temp, *args, **kwargs)   
+    
+    # Add a read-only property: _created_at
+    @property  
+    def created_at(self):
+        return self._created_at
+
+# Instantiate a LoggedDF called ldf
+ldf = LoggedDF({"col1": [1,2], "col2":[3,4]}) 
+```
+
+## Congratulations!
+
+### Congratulations!
+Congratulations on completing this course on introduction to object-oriented programming in Python. You've done a great job!
+
+### Overview
+
+You learned how to think about your code in terms of classes and objects; how to create attributes and methods. You explored inheritance and polymorphism -- two ideas that allows you to leverage and customize existing code in powerful ways. You also learned the distinction between class-level data and instance-level data. What does it mean for two objects to be equal? Turns out, it can mean anything you want, as you learned in chapter 3. You defined custom equality functions, readable string representations, even built your own exceptions. Finally, you learned what makes a relationship between classes suitable for inheritance, how Python handles private vs public data, and how to use properties to manage data access.
+
+### What's next?
+
+So, where can you go from here? You could start by expanding your knowledge of functionality available in Python. For example, learn about mix-in classes and multiple inheritance -- a highly debated feature of Python that isn't present in many other object-oriented languages. You could learn how to override more built-in operators, like arithmetic operators, or the length operator; how to customize attribute access even more using special methods; how to create your own iterator classes that you could use to index loops. You could learn about abstract base classes used to create interfaces, or how leverage dataclasses -- a new type of class that is especially suitable for data storage.
+
+### What's next?
+
+Also consider learning more about object-oriented design, which is based on SOLID principles. Solid is an acronym, and you've already learned about the "L" is SOLID -- the Liskov substitution principle, but the other 4 letters are just as important. Finally, I encourage you to learn more about design patterns -- reusable solutions addressing most common problems in software design.
+
+### Thank you!
+
+Thank you so much for taking this course, and good luck in you future coding adventures!
