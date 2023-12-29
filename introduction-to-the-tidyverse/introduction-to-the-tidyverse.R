@@ -1,4 +1,3 @@
-## --------------------------------------------------------------------------------
 # Load the gapminder package
 library(gapminder)
 
@@ -9,7 +8,6 @@ library(dplyr)
 gapminder
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -18,7 +16,6 @@ gapminder %>%
   filter(year == 1957)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -27,7 +24,6 @@ gapminder %>%
   filter(country == "China", year == 2002)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -40,7 +36,6 @@ gapminder %>%
   arrange(desc(lifeExp))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -50,7 +45,6 @@ gapminder %>%
   arrange(desc(pop))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -63,7 +57,6 @@ gapminder %>%
   mutate(lifeExpMonths = lifeExp * 12)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -74,7 +67,6 @@ gapminder %>%
   arrange(desc(lifeExpMonths))
 
 
-## --------------------------------------------------------------------------------
 # Load the ggplot2 package as well
 library(gapminder)
 library(dplyr)
@@ -85,7 +77,6 @@ gapminder_1952 <- gapminder %>%
   filter(year == 1952)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -98,7 +89,6 @@ ggplot(gapminder_1952, aes(x = pop, y = gdpPercap)) +
   geom_point()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -111,7 +101,6 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   geom_point()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -125,7 +114,6 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   scale_x_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -140,7 +128,6 @@ ggplot(gapminder_1952, aes(x = pop, y = gdpPercap)) +
   scale_y_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -154,7 +141,6 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp, color = continent)) +
   scale_x_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -168,7 +154,6 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp, color = continent, size = gdpPe
   scale_x_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -183,7 +168,6 @@ ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
   facet_wrap(~ continent)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -196,7 +180,6 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)
   facet_wrap(~ year)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -205,7 +188,6 @@ gapminder %>%
   summarize(medianLifeExp = median(lifeExp))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -215,7 +197,6 @@ gapminder %>%
   summarize(medianLifeExp = median(lifeExp))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -226,7 +207,6 @@ gapminder %>%
             maxGdpPercap = max(gdpPercap))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -237,7 +217,6 @@ gapminder %>%
             maxGdpPercap = max(gdpPercap))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -249,7 +228,6 @@ gapminder %>%
             maxGdpPercap = max(gdpPercap))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 
@@ -260,7 +238,6 @@ gapminder %>%
             maxGdpPercap = max(gdpPercap))
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -276,7 +253,6 @@ ggplot(by_year, aes(x = year, y = medianLifeExp)) +
   expand_limits(y = 0)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -292,7 +268,6 @@ ggplot(by_year_continent, aes(x = year, y = medianGdpPercap, color = continent))
   expand_limits(y = 0)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -309,7 +284,6 @@ ggplot(by_continent_2007, aes(x = medianGdpPercap, y = medianLifeExp, color = co
   geom_point()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -325,7 +299,6 @@ ggplot(by_year, aes(x = year, y = medianGdpPercap)) +
   expand_limits(y = 0)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -341,7 +314,6 @@ ggplot(by_year_continent, aes(x = year, y = medianGdpPercap, color = continent))
   expand_limits(y = 0)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -357,7 +329,6 @@ ggplot(by_continent, aes(x = continent, y = medianGdpPercap)) +
   geom_col()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -371,7 +342,6 @@ ggplot(oceania_1952, aes(x = country, y = gdpPercap)) +
   geom_col()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -385,7 +355,6 @@ ggplot(gapminder_1952, aes(x = pop_by_mil)) +
   geom_histogram(bins = 50)
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -399,7 +368,6 @@ ggplot(gapminder_1952, aes(x = pop)) +
   scale_x_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
@@ -413,7 +381,6 @@ ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
   scale_y_log10()
 
 
-## --------------------------------------------------------------------------------
 library(gapminder)
 library(dplyr)
 library(ggplot2)
