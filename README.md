@@ -1,5 +1,25 @@
 # DataCamp
 
+## Developing AI Applications
+
+- [Working with the OpenAI API](https://github.com/datttrian/working-with-the-openai-api)
+- [ChatGPT Prompt Engineering for Developers](https://github.com/datttrian/chatgpt-prompt-engineering-for-developers)
+- [Introduction to Embeddings with the OpenAI API](https://github.com/datttrian/introduction-to-embeddings-with-the-openai-api)
+- [Developing LLM Applications with LangChain](https://github.com/datttrian/developing-llm-applications-with-langchain)
+
+## Machine Learning Fundamentals with Python
+
+- [Supervised Learning with scikit-learn](https://github.com/datttrian/supervised-learning-with-scikit-learn)
+- [Unsupervised Learning in Python](https://github.com/datttrian/unsupervised-learning-in-python)
+- [Linear Classifiers in Python](https://github.com/datttrian/linear-classifiers-in-python)
+
+## SQL Fundamentals
+
+- [Introduction to SQL](https://github.com/datttrian/introduction-to-sql)
+- [Intermediate SQL](https://github.com/datttrian/intermediate-sql)
+- [Joining Data in SQL](https://github.com/datttrian/joining-data-in-sql)
+- [Data Manipulation in SQL](https://github.com/datttrian/data-manipulation-in-sql)
+
 ## Python Data Fundamentals
 
 1. [Introduction to Python](introduction-to-python)
