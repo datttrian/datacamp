@@ -23,9 +23,9 @@
 
 ## Statistics Fundamentals with Python
 
-1. Introduction to Statistics in Python
-1. Sampling in Python
-1. Hypothesis Testing in Python
+1. [Introduction to Statistics in Python](https://github.com/datttrian/introduction-to-statistics-in-python)
+1. [Sampling in Python](https://github.com/datttrian/sampling-in-python)
+1. [Hypothesis Testing in Python](https://github.com/datttrian/hypothesis-testing-in-python)
 
 ## R Programming Fundamentals
 
