@@ -27,17 +27,28 @@
 1. Sampling in Python
 1. Hypothesis Testing in Python
 
-## 
+## R Programming Fundamentals
 
 1. [Introduction to R](introduction-to-r)
 1. [Intermediate R](intermediate-r)
+
+## Data Manipulation with R
+
 1. [Data Manipulation with dplyr](data-manipulation-with-dplyr)
 1. [Joining Data with dplyr](joining-data-with-dplyr)
+
+## Data Visualization with R
+
 1. [Introduction to Data Visualization with ggplot2](introduction-to-data-visualization-with-ggplot2)
 1. [Intermediate Data Visualization with ggplot2](intermediate-data-visualization-with-ggplot2)
-1. [Introduction to the Tidyverse](introduction-to-the-tidyverse)
-1. [Introduction to Statistics in R](introduction-to-statistics-in-r)
 
+## Tidyverse Fundamentals with R
+
+1. [Introduction to the Tidyverse](introduction-to-the-tidyverse)
+
+## Statistics Fundamentals with R
+
+1. [Introduction to Statistics in R](introduction-to-statistics-in-r)
 
 ## Projects
 
